@@ -97,15 +97,6 @@
                         <Font name="Comic Sans MS" size="41.0" />
                      </font>
                   </Label>
-                  <Button fx:id="newButton" mnemonicParsing="false" onAction="#uploadSong">
-                     <graphic>
-                        <ImageView pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Images/NewButton.jpg" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Button>
                </children>
             </HBox>
          </children>

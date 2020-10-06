@@ -40,7 +40,7 @@ public class Controller implements Initializable
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
-        source = new File("src\\Songs\\Offo.mp3").toURI().toString();
+        source = new File("src\\Songs\\Bang Bang.mp3").toURI().toString();
         media =  new Media(source);
         mediaPlayer = new MediaPlayer(media);
         //mv.setMediaPlayer(mediaPlayer);
