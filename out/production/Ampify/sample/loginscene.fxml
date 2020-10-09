@@ -38,7 +38,7 @@
                                                 <VBox prefHeight="73.0" prefWidth="89.0">
                                                    <children>
                                                       <Region prefHeight="51.0" prefWidth="89.0" />
-                                                      <Button fx:id="login" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#func" onMouseClicked="#LoginAct" text="Login" />
+                                                      <Button fx:id="login" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#OpenPlayerHome" onMouseClicked="#LoginAct" text="Login" />
                                                    </children>
                                                 </VBox>
                                              </children>

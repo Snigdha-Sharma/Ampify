@@ -14,9 +14,17 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+import java.security.spec.InvalidKeySpecException;
+import java.util.Arrays;
+import java.util.Base64;
+import java.util.Random;
+import javax.crypto.SecretKeyFactory;
+import javax.crypto.spec.PBEKeySpec;
 
 public class LoginControl implements Initializable
 {
@@ -52,6 +60,7 @@ public class LoginControl implements Initializable
             {
                 warning.setText("Enter a valid Username!");
             }
+            p1=generateSecurePassword(p1, "mnnit");
             String sql="SELECT * FROM login WHERE Uname = '"+u1+"' AND Passwd = '"+p1+"';";
             ResultSet resultSet=statement.executeQuery(sql);
 
@@ -82,6 +91,7 @@ public class LoginControl implements Initializable
             }
             if(p1.equals(retype))
             {
+                p1=generateSecurePassword(p1, "mnnit");
                 String sql="INSERT INTO login(Uname, Passwd) VALUES ('"+u1+"', '"+p1+"')";
                 Statement statement=connection.createStatement();
                 statement.executeUpdate(sql);
@@ -93,6 +103,32 @@ public class LoginControl implements Initializable
             e.printStackTrace();
         }
     }
+
+    private static final int ITERATIONS = 10000;
+    private static final int KEY_LENGTH = 256;
+
+    public static byte[] hash(char[] password, byte[] salt) {
+        PBEKeySpec spec = new PBEKeySpec(password, salt, ITERATIONS, KEY_LENGTH);
+        Arrays.fill(password, Character.MIN_VALUE);
+        try {
+            SecretKeyFactory skf = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
+            return skf.generateSecret(spec).getEncoded();
+        } catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
+            throw new AssertionError("Error while hashing a password: " + e.getMessage(), e);
+        } finally {
+            spec.clearPassword();
+        }
+    }
+    public static String generateSecurePassword(String password, String salt) {
+        String returnValue = null;
+        byte[] securePassword = hash(password.toCharArray(), salt.getBytes());
+
+        returnValue = Base64.getEncoder().encodeToString(securePassword);
+
+        return returnValue;
+    }
+
+
     public void OpenPlayerHome(ActionEvent event) throws IOException {
         Parent root1 = FXMLLoader.load(getClass().getResource("sample.fxml"));
         Scene second=new Scene(root1);

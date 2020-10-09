@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 09, 2020 at 01:55 PM
+-- Generation Time: Oct 09, 2020 at 02:33 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `login` (
   `Uname` varchar(20) NOT NULL,
-  `Passwd` varchar(20) NOT NULL
+  `Passwd` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -37,8 +37,10 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`Uname`, `Passwd`) VALUES
+('abcdefg', 'phOyuWRqtrr9xP3DroUxgQHnJWbPNHdsCqxJmrcpx2w='),
 ('gautam.purva', 'gautam.purva'),
-('purvag15', 'pgpg');
+('purvag15', 'pgpg'),
+('snigdha', 'vXOAs9vj76icfhaiR28vgFitrofIxC/LhE4jrHekzA0=');
 
 --
 -- Indexes for dumped tables
