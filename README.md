@@ -1,2 +1,2 @@
 Beginning
-owner bnao
+contributor bnao

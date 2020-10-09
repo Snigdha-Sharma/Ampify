@@ -28,8 +28,6 @@ public class Controller implements Initializable
     public JFXSlider seekbar;
     public Label duration;
 
-    public Button newButton;
-
     private MediaView mv;
     String source;
     static volatile Media media;

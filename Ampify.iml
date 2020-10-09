@@ -17,5 +17,6 @@
         <jarDirectory url="file://C:/Program Files (x86)/Oracle/JavaFX Scene Builder 2.0/jar" recursive="false" />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="mysql-connector-java-8.0.21" level="project" />
   </component>
 </module>
