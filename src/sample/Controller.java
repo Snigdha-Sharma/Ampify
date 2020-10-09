@@ -31,21 +31,21 @@ public class Controller implements Initializable
     public JFXSlider seekbar;
     public Label duration;
 
-    public MediaView mv;
+    private MediaView mv;
     String source;
     public Media media;
     public MediaPlayer mediaPlayer;
     Image playButtonImage,pauseButtonImage,muteButtonImage,unmuteButtonImage;
-    boolean songPlaying=false;
+    boolean songPlaying=false,seekbarClicked=false;
     Thread currSong;
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
-        source = new File("src\\Songs\\playVideo.mp4").toURI().toString();
+        source = new File("src\\Songs\\Offo.mp3").toURI().toString();
         media =  new Media(source);
         mediaPlayer = new MediaPlayer(media);
-        mv.setMediaPlayer(mediaPlayer);
+        //mv.setMediaPlayer(mediaPlayer);
         seekbar.setValue(0);
         playButtonImage=new Image(getClass().getResourceAsStream("..\\Images\\Play.jpg"));
         pauseButtonImage=new Image(getClass().getResourceAsStream("..\\Images\\Pause.jpg"));
@@ -64,16 +64,10 @@ public class Controller implements Initializable
         mediaPlayer=new MediaPlayer(media);
     }
 
-    synchronized public void getToAnySongLocation()
+    public void getToAnySongLocation()
     {
-        if (mediaPlayer.getStatus()==MediaPlayer.Status.PAUSED)
-        {
-            mediaPlayer.play();
-            playPause.setGraphic(new ImageView(pauseButtonImage));
-        }
         Double loc=seekbar.getValue();
         mediaPlayer.seek(Duration.millis((loc*media.getDuration().toMillis())/100));
-
         long insec= (long) mediaPlayer.getCurrentTime().toSeconds();
         long min=insec/60;
         long sec=insec%60;
@@ -152,14 +146,13 @@ public class Controller implements Initializable
                 }});
             try
             {
-                Thread.sleep(1000);
+                Thread.sleep(200);
             }
             catch(InterruptedException e)
             {
 
             }
         }
-        currSong.stop();
     }
 
     public void stopCurrSong()
@@ -169,7 +162,6 @@ public class Controller implements Initializable
         playPause.setGraphic(new ImageView(playButtonImage));
         duration.setText("0:00");
         seekbar.setValue(0);
-        currSong.stop();
     }
 
     public void increaseVolume()
