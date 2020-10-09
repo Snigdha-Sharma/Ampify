@@ -1,13 +1,19 @@
 package sample;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import Connectivity.ConnClass;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -86,5 +92,12 @@ public class LoginControl implements Initializable
         } catch (SQLException e) {
             e.printStackTrace();
         }
+    }
+    public void OpenPlayerHome(ActionEvent event) throws IOException {
+        Parent root1 = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Scene second=new Scene(root1);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(second);
+        window.show();
     }
 }
