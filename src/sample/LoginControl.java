@@ -49,7 +49,7 @@ public class LoginControl implements Initializable
 //    System.out.println("Program is running");
 //}
 
-    public void LoginAct() {
+    public void LoginAct(ActionEvent event) {
         ConnClass connectionClass=new ConnClass();
         Connection connection=connectionClass.getConnection();
         try {
@@ -66,6 +66,13 @@ public class LoginControl implements Initializable
 
             if (resultSet.next()){
                 System.out.println("Connected");
+                try {
+                    OpenPlayerHome(event);
+                }
+                catch(IOException e)
+                {
+                    e.printStackTrace();
+                }
             }else {
                 warning.setText("Invalid UserId/Password");
             }
@@ -74,7 +81,7 @@ public class LoginControl implements Initializable
         }
     }
 
-    public void RegisterAct () {
+    public void RegisterAct (ActionEvent event) {
         ConnClass connectionClass=new ConnClass();
         Connection connection=connectionClass.getConnection();
         try {
@@ -95,6 +102,13 @@ public class LoginControl implements Initializable
                 String sql="INSERT INTO login(Uname, Passwd) VALUES ('"+u1+"', '"+p1+"')";
                 Statement statement=connection.createStatement();
                 statement.executeUpdate(sql);
+                try {
+                    GoToLogin(event);
+                }
+                catch(IOException e)
+                {
+                    e.printStackTrace();
+                }
             }
             else warning2.setText("Password and repeat password do not match!");
 //            System.out.println(p1);
@@ -134,6 +148,7 @@ public class LoginControl implements Initializable
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(second);
         window.show();
+        warning.setText("Registration Successful! Ready to login.");
     }
 
     public void OpenPlayerHome(ActionEvent event) throws IOException {

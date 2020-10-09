@@ -38,7 +38,7 @@
                                                 <VBox prefHeight="73.0" prefWidth="89.0">
                                                    <children>
                                                       <Region prefHeight="51.0" prefWidth="89.0" />
-                                                      <Button fx:id="login" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#OpenPlayerHome" onMouseClicked="#LoginAct" text="Login" />
+                                                      <Button fx:id="login" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#LoginAct" text="Login" />
                                                    </children>
                                                 </VBox>
                                              </children>
@@ -86,7 +86,7 @@
                                     <VBox>
                                        <children>
                                           <Region prefHeight="19.0" prefWidth="188.0" />
-                                          <Button fx:id="signup" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#GoToLogin" onMouseClicked="#RegisterAct" text="Sign Up" />
+                                          <Button fx:id="signup" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#LoginAct" text="Sign Up" />
                                        </children>
                                     </VBox>
                                  </children>

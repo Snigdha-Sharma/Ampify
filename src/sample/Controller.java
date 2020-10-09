@@ -1,6 +1,7 @@
 package sample;
 
 import com.jfoenix.controls.JFXSlider;
+import javafx.application.Platform;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -9,9 +10,11 @@ import javafx.scene.image.ImageView;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
+import javafx.stage.FileChooser;
 import javafx.util.Duration;
 
 import java.io.File;
+import java.lang.management.PlatformLoggingMXBean;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -30,19 +33,20 @@ public class Controller implements Initializable
 
     private MediaView mv;
     String source;
-    static volatile Media media;
-    static volatile MediaPlayer mediaPlayer;
+    public Media media;
+    public MediaPlayer mediaPlayer;
     Image playButtonImage,pauseButtonImage,muteButtonImage,unmuteButtonImage;
-    boolean songPlaying=false;
+    boolean songPlaying=false,seekbarClicked=false;
+    Thread currSong;
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
-        source = new File("src\\Songs\\Bang Bang.mp3").toURI().toString();
+        source = new File("src\\Songs\\Offo.mp3").toURI().toString();
         media =  new Media(source);
         mediaPlayer = new MediaPlayer(media);
         //mv.setMediaPlayer(mediaPlayer);
-
+        seekbar.setValue(0);
         playButtonImage=new Image(getClass().getResourceAsStream("..\\Images\\Play.jpg"));
         pauseButtonImage=new Image(getClass().getResourceAsStream("..\\Images\\Pause.jpg"));
         muteButtonImage=new Image(getClass().getResourceAsStream("..\\Images\\Mute.jpg"));
@@ -52,13 +56,30 @@ public class Controller implements Initializable
 
     public void uploadSong()
     {
-        System.out.println("HEYA!!!");
+        FileChooser fileChooser=new FileChooser();
+        fileChooser.setTitle("Open a mp3 file");
+        File selectedFile=fileChooser.showOpenDialog(null);
+        source=new File(String.valueOf(selectedFile.getAbsoluteFile())).toURI().toString();
+        media=new Media(source);
+        mediaPlayer=new MediaPlayer(media);
     }
 
     public void getToAnySongLocation()
     {
         Double loc=seekbar.getValue();
         mediaPlayer.seek(Duration.millis((loc*media.getDuration().toMillis())/100));
+        long insec= (long) mediaPlayer.getCurrentTime().toSeconds();
+        long min=insec/60;
+        long sec=insec%60;
+        if (sec/10==0)
+        {
+            duration.setText(min+":0"+sec);
+        }
+        else
+        {
+            sec=Math.round((sec*100.0)/100.0);
+            duration.setText(min+":"+sec);
+        }
     }
 
     public void goToPrevSong()
@@ -95,17 +116,41 @@ public class Controller implements Initializable
         else
         {
             playPause.setGraphic(new ImageView(pauseButtonImage));
-            mediaPlayer.play();
-            System.out.println(media.getMetadata());
             if (songPlaying==false)
             {
                 songPlaying=true;
-                System.out.println(media.getTracks());
-                long insec= (long) media.getDuration().toSeconds();
+                currSong=new Thread(this::updateCurrSongLoc);
+                currSong.start();
+            }
+            mediaPlayer.play();
+        }
+    }
+
+    public void updateCurrSongLoc()
+    {
+        while(songPlaying)
+        {
+            Platform.runLater(()->{
+                seekbar.setValue((mediaPlayer.getCurrentTime().toSeconds()/ media.getDuration().toSeconds()) *100);
+                long insec= (long) mediaPlayer.getCurrentTime().toSeconds();
                 long min=insec/60;
                 long sec=insec%60;
-                sec=Math.round((sec*100.0)/100.0);
-                duration.setText(min+":"+sec);
+                if (sec/10==0)
+                {
+                    duration.setText(min+":0"+sec);
+                }
+                else
+                {
+                    sec=Math.round((sec*100.0)/100.0);
+                    duration.setText(min+":"+sec);
+                }});
+            try
+            {
+                Thread.sleep(200);
+            }
+            catch(InterruptedException e)
+            {
+
             }
         }
     }
@@ -116,6 +161,7 @@ public class Controller implements Initializable
         songPlaying=false;
         playPause.setGraphic(new ImageView(playButtonImage));
         duration.setText("0:00");
+        seekbar.setValue(0);
     }
 
     public void increaseVolume()
