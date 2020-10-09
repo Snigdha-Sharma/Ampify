@@ -86,7 +86,7 @@
                                     <VBox>
                                        <children>
                                           <Region prefHeight="19.0" prefWidth="188.0" />
-                                          <Button fx:id="signup" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#LoginAct" text="Sign Up" />
+                                          <Button fx:id="signup" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#RegisterAct" text="Sign Up" />
                                        </children>
                                     </VBox>
                                  </children>
