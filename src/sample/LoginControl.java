@@ -128,6 +128,13 @@ public class LoginControl implements Initializable
         return returnValue;
     }
 
+    public void GoToLogin(ActionEvent event) throws IOException {
+        Parent root1 = FXMLLoader.load(getClass().getResource("loginscene.fxml"));
+        Scene second=new Scene(root1);
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(second);
+        window.show();
+    }
 
     public void OpenPlayerHome(ActionEvent event) throws IOException {
         Parent root1 = FXMLLoader.load(getClass().getResource("sample.fxml"));
