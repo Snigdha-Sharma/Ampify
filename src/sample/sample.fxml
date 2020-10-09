@@ -8,6 +8,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.scene.media.MediaView?>
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <bottom>
       <VBox BorderPane.alignment="CENTER">
@@ -102,4 +103,11 @@
          </children>
       </VBox>
    </bottom>
+   <center>
+      <MediaView fx:id="mv" fitHeight="500.0" fitWidth="800.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets right="20.0" />
+         </BorderPane.margin>
+      </MediaView>
+   </center>
 </BorderPane>
