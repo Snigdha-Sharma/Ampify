@@ -23,17 +23,19 @@ public class LoginControl implements Initializable
     public PasswordField repass;
     public CheckBox check;
     public Label warning;
+    public Label warning2;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         warning.setText("");
+        warning2.setText("");
     }
 //public void button(ActionEvent actionEvent) throws SQLException {
 //    System.out.println(uname1.getText());
 //    System.out.println("Program is running");
 //}
 
-    public void LoginAct(ActionEvent actionEvent) {
+    public void LoginAct() {
         ConnClass connectionClass=new ConnClass();
         Connection connection=connectionClass.getConnection();
         try {
@@ -44,40 +46,43 @@ public class LoginControl implements Initializable
             {
                 warning.setText("Enter a valid Username!");
             }
-            String sql="SELECT * FROM login WHERE username = '"+u1+"' AND password = '"+p1+"';";
+            String sql="SELECT * FROM login WHERE Uname = '"+u1+"' AND Passwd = '"+p1+"';";
             ResultSet resultSet=statement.executeQuery(sql);
 
             if (resultSet.next()){
                 System.out.println("Connected");
             }else {
-                System.out.println("Invalid UserId/Password");
+                warning.setText("Invalid UserId/Password");
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public void RegisterAct (ActionEvent actionEvent) {
+    public void RegisterAct () {
         ConnClass connectionClass=new ConnClass();
         Connection connection=connectionClass.getConnection();
         try {
-            String u1=uname1.getText();
-            String p1=pass1.getText();
-            String retype=pass2.getText();
+            String u1=uname2.getText();
+            String p1=pass2.getText();
+            String retype=repass.getText();
+//            System.out.println(u1);
+//            System.out.println(p1);
+//            System.out.println(retype);
             if(u1.length()<5)
             {
-                warning.setText("Enter a valid Username!");
+                warning2.setText("Enter a valid Username!");
                 return;
             }
-            if(p1!=retype || p1.length()<5)
+            if(p1.equals(retype))
             {
-                warning.setText("Enter a valid Password!");
-                return;
+                String sql="INSERT INTO login(Uname, Passwd) VALUES ('"+u1+"', '"+p1+"')";
+                Statement statement=connection.createStatement();
+                statement.executeUpdate(sql);
             }
-            String sql="INSERT INTO Login VALUES ('"+u1+"', '"+p1+"')";
-            Statement statement=connection.createStatement();
-            statement.executeUpdate(sql);
-
+            else warning2.setText("Password and repeat password do not match!");
+//            System.out.println(p1);
+//            System.out.println(retype);
         } catch (SQLException e) {
             e.printStackTrace();
         }
