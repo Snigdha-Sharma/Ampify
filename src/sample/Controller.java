@@ -56,12 +56,19 @@ public class Controller implements Initializable
 
     public void uploadSong()
     {
+        if (mediaPlayer.getStatus()== MediaPlayer.Status.PLAYING)
+        {
+            playPause.setGraphic(new ImageView(playButtonImage));
+            mediaPlayer.pause();
+        }
         FileChooser fileChooser=new FileChooser();
-        fileChooser.setTitle("Open a mp3 file");
+        fileChooser.setTitle("Open a mp3/mp4 file");
         File selectedFile=fileChooser.showOpenDialog(null);
         source=new File(String.valueOf(selectedFile.getAbsoluteFile())).toURI().toString();
+        playPause.setGraphic(new ImageView(playButtonImage));
         media=new Media(source);
         mediaPlayer=new MediaPlayer(media);
+        mv.setMediaPlayer(mediaPlayer);
     }
 
     synchronized public void getToAnySongLocation()

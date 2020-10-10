@@ -11,15 +11,15 @@ public class Main extends Application
     @Override
     public void start(Stage primaryStage) throws Exception
     {
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Ampify");
-        primaryStage.setScene(new Scene(root, 800, 500));
-        primaryStage.show();
-
-//        Parent root = FXMLLoader.load(getClass().getResource("loginscene.fxml"));
-//        primaryStage.setTitle("Login/Register");
+//        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+//        primaryStage.setTitle("Ampify");
 //        primaryStage.setScene(new Scene(root, 800, 500));
 //        primaryStage.show();
+
+        Parent root = FXMLLoader.load(getClass().getResource("loginscene.fxml"));
+        primaryStage.setTitle("Login/Register");
+        primaryStage.setScene(new Scene(root, 800, 500));
+        primaryStage.show();
     }
 
     public static void main(String[] args) {
