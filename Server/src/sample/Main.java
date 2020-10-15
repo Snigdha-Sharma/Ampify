@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import java.io.DataInputStream;
@@ -11,9 +12,15 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Scanner;
 
 public class Main extends Application
 {
+
+    static HashSet<String> activeUsers;
+    protected static boolean closeServer=false;
 
     @Override
     public void start(Stage primaryStage) throws Exception
@@ -22,28 +29,37 @@ public class Main extends Application
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
+        primaryStage.setOnCloseRequest(e->{closeServer=true;
+        System.out.println("Server Closed!");});
     }
+
+
 
     public static void main(String[] args) throws IOException
     {
         //launch(args);
         ServerSocket ss= new ServerSocket(5056);
-        while(true)
+        while(closeServer==false)
         {
-            Socket s=null;
+            Socket s = null;
             try
             {
-                s=ss.accept();
-                DataInputStream dis=new DataInputStream(s.getInputStream());
-                DataOutputStream dos=new DataOutputStream(s.getOutputStream());
-                Thread t=new ClientHandler(s,dis,dos);
+                s = ss.accept();
+                DataInputStream dis = new DataInputStream(s.getInputStream());
+                DataOutputStream dos = new DataOutputStream(s.getOutputStream());
+                Thread t = new ClientHandler(s, dis, dos);
                 t.start();
             }
-            catch(Exception e)
+            catch (Exception e)
             {
-                s.close();
+                if (s != null)
+                {
+                    s.close();
+                }
                 e.printStackTrace();
             }
+            //closeServer=(new Scanner(System.in)).nextBoolean();
+            //System.out.println(closeServer);
         }
     }
 }
@@ -76,6 +92,10 @@ class ClientHandler extends Thread
                 pwd= dis.readUTF();
                 ServerLoginRequest ob=new ServerLoginRequest(uname,pwd);
                 dos.writeBoolean(ob.isValidUser());
+                if(ob.isValidUser()==true)
+                {
+                    Main.activeUsers.add(uname);
+                }
                 s.close();
                 break;
                 case "RegisterNewUser": uname=dis.readUTF();

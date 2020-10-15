@@ -46,6 +46,7 @@ public class LoginControl implements Initializable
     {
         warning.setText("");
         warning2.setText("");
+        check.setSelected(false);
     }
 
     public void LoginAct(ActionEvent event)
@@ -56,11 +57,20 @@ public class LoginControl implements Initializable
             String p1=pass1.getText();
             LoginRequest ob=new LoginRequest(u1,p1);
             ob.myRequest();
-            if(u1.length()<5)
+            if(!check.isSelected())
             {
-                warning.setText("Enter a valid Username!");
+                warning.setText("Please verify that you are not a robot.");
+                uname1.setText("");
+                pass1.setText("");
+                return;
             }
-
+            else if(p1.isEmpty())
+            {
+                warning.setText("Password field empty!");
+                uname1.setText("");
+                pass1.setText("");
+                return;
+            }
             if (ob.isValidUser()==true)
             {
                 try
@@ -89,9 +99,79 @@ public class LoginControl implements Initializable
         String p1=pass2.getText();
         String retype=repass.getText();
 
+        boolean b=false, c1=false, c2=false, c3=false;
+        for(int i=0; i<u1.length(); i++) {
+            Character ch = u1.charAt(i);
+            if( Character.isDigit(ch)) {
+                c1 = true;
+            }
+            else if (Character.isUpperCase(ch)) {
+                c2 = true;
+            } else if (Character.isLowerCase(ch)) {
+                c3 = true;
+            }
+            if(c1 && c2 && c3) {
+                b = true;
+                break;
+            }
+        }
+        if(!b)
+        {
+            if(!c1)
+            {
+                warning2.setText("Username should have atleast one digit.");
+                uname2.setText("");
+                pass2.setText("");
+                repass.setText("");
+                return;
+            }
+            if(!c2)
+            {
+                warning2.setText("Username should have atleast one uppercase letter.");
+                uname2.setText("");
+                pass2.setText("");
+                repass.setText("");
+                return;
+            }
+            if(!c3)
+            {
+                warning2.setText("Username should have atleast one lowercase letter.");
+                uname2.setText("");
+                pass2.setText("");
+                repass.setText("");
+                return;
+            }
+        }
+
         if(u1.length()<5)
         {
-            warning2.setText("Enter a valid Username!");
+            warning2.setText("Username size > 5 expected");
+            uname1.setText("");
+            pass2.setText("");
+            repass.setText("");
+            return;
+        }
+        else if(u1.indexOf('*')==-1 && u1.indexOf('&')==-1 && u1.indexOf('@')==-1 && u1.indexOf('%')==-1) {
+            warning2.setText("Username should have atleast one special character: *, &, @, %.");
+            uname2.setText("");
+            pass2.setText("");
+            repass.setText("");
+            return;
+        }
+        else if(p1.isEmpty() || retype.isEmpty())
+        {
+            warning2.setText("Password field empty!");
+            uname1.setText("");
+            pass2.setText("");
+            repass.setText("");
+            return;
+        }
+        else if(p1.contains(u1))
+        {
+            warning2.setText("Password should not be same as username!");
+            uname2.setText("");
+            pass2.setText("");
+            repass.setText("");
             return;
         }
         if(p1.equals(retype))
@@ -105,9 +185,18 @@ public class LoginControl implements Initializable
             else
             {
                 warning2.setText("User already exists!");
+                uname2.setText("");
+                pass2.setText("");
+                repass.setText("");
             }
         }
-        else warning2.setText("Password and repeat password do not match!");
+        else
+        {
+            warning2.setText("Password and repeat password do not match!");
+            uname2.setText("");
+            pass2.setText("");
+            repass.setText("");
+        }
     }
 
     public void GoToLogin(ActionEvent event) throws IOException

@@ -140,7 +140,6 @@ public class Controller implements Initializable
             }
             mediaPlayer.play();
             songName.setText((String) media.getMetadata().get("title"));
-            System.out.println(mediaPlayer.getStatus());
         }
     }
 
