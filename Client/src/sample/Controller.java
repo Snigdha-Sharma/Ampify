@@ -1,10 +1,14 @@
 package sample;
 
+import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXSlider;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.media.Media;
@@ -13,10 +17,12 @@ import javafx.scene.media.MediaView;
 import javafx.stage.FileChooser;
 import javafx.util.Duration;
 
-import java.io.File;
+import java.io.*;
 import java.lang.management.PlatformLoggingMXBean;
-import java.net.URL;
+import java.net.*;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 
 public class Controller implements Initializable
 {
@@ -28,9 +34,11 @@ public class Controller implements Initializable
     public Button volumeDown;
     public Button volumeUp;
     public Button uploadButton;
+    public Button logOffButton;
     public JFXSlider seekbar;
     public Label duration;
     public Label songName;
+    public ListView<String> SongList;
 
     public MediaView mv;
     String source;
@@ -43,11 +51,25 @@ public class Controller implements Initializable
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
-        source = new File("src\\Songs\\playVideo.mp4").toURI().toString();
-        //source="https://www.youtube.com/watch?v=O8rtVNTr0Vk";
-        media =  new Media(source);
-
-        //songName.setText(media.getMetadata()[]);
+        try
+        {
+            System.out.println("Called create song list");
+            createCurrSongList();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        try
+        {
+            source="http://localhost:8080/Sunflower.mp3";
+        }
+        catch(Exception e)
+        {
+            System.out.println("HTTP Server down!");
+        }
+        //source = new File("src\\Songs\\playVideo.mp4").toURI().toString();
+        media=new Media(source);
         mediaPlayer = new MediaPlayer(media);
         mv.setMediaPlayer(mediaPlayer);
         seekbar.setValue(0);
@@ -56,6 +78,19 @@ public class Controller implements Initializable
         muteButtonImage=new Image(getClass().getResourceAsStream("..\\Images\\Mute.jpg"));
         unmuteButtonImage=new Image(getClass().getResourceAsStream("..\\Images\\NotMute.jpg"));
         duration.setText("0:00");
+    }
+
+    public void createCurrSongList() throws IOException
+    {
+        AllSongsRequest asr=new AllSongsRequest();
+        List<String> allSongs;
+        System.out.println("Request sent");
+        asr.myRequest();
+        allSongs=asr.allSongsList();
+        ObservableList<String> observeAllSongs=FXCollections.observableList(allSongs);
+        SongList=new ListView<>(observeAllSongs);
+        System.out.println("Got the list");
+        SongList.setItems(observeAllSongs);
     }
 
     public void uploadSong()
@@ -73,6 +108,13 @@ public class Controller implements Initializable
         media=new Media(source);
         mediaPlayer=new MediaPlayer(media);
         mv.setMediaPlayer(mediaPlayer);
+    }
+
+    public void logOff() throws IOException
+    {
+        LogOffRequest ob=new LogOffRequest();
+        ob.myRequest();
+        LoginControl.closePlayer();
     }
 
     synchronized public void getToAnySongLocation()
@@ -139,6 +181,7 @@ public class Controller implements Initializable
                 currSong.start();
             }
             mediaPlayer.play();
+            //System.out.println(mediaPlayer.getCurrentTime());
             songName.setText((String) media.getMetadata().get("title"));
         }
     }

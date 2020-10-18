@@ -39,7 +39,7 @@ public class LoginControl implements Initializable
     public Label warning;//Login
     public Label warning2;//Register
 
-    Stage window;
+    static Stage window;
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
@@ -219,7 +219,7 @@ public class LoginControl implements Initializable
         window.setOnCloseRequest(e->closePlayer());
     }
 
-    private void closePlayer()
+    public static void closePlayer()
     {
         Controller.closePlayer();
         window.close();

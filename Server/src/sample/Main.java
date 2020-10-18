@@ -1,20 +1,18 @@
 package sample;
 
 import javafx.application.Application;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.Scanner;
+import java.sql.ResultSet;
+import java.util.*;
 
 public class Main extends Application
 {
@@ -32,7 +30,6 @@ public class Main extends Application
         primaryStage.setOnCloseRequest(e->{closeServer=true;
         System.out.println("Server Closed!");});
     }
-
 
 
     public static void main(String[] args) throws IOException
@@ -85,6 +82,7 @@ class ClientHandler extends Thread
         try
         {
             requestType=dis.readUTF();
+            System.out.println(requestType);
             switch(requestType)
             {
                 case "LoginRequest": String uname,pwd;
@@ -96,16 +94,34 @@ class ClientHandler extends Thread
                 {
                     Main.activeUsers.add(uname);
                 }
-                s.close();
                 break;
+
                 case "RegisterNewUser": uname=dis.readUTF();
                 pwd= dis.readUTF();
                 ServerRegisterNewUser newUser=new ServerRegisterNewUser(uname,pwd);
                 dos.writeBoolean(newUser.isRegisteredSuccessfully());
-                s.close();
                 break;
-                case "LogOff": s.close();
+
+                case "AllSongsRequest":System.out.println("Request Reached");
+                ServerAllSongsRequest asr=new ServerAllSongsRequest();
+                ResultSet rs=asr.getAllSongsSet();
+                OutputStream os=s.getOutputStream();
+                ObjectOutputStream oos=new ObjectOutputStream(os);
+                //System.out.println(rs);
+                List<String> back = new ArrayList<>();
+                while(rs.next())
+                {
+                    System.out.println(rs.getString(1));
+                    back.add(rs.getString(1));
+                    //dos.writeUTF(rs.getString(1));
+                }
+                oos.writeObject(back);
+                System.out.println("Object sent to client");
                 break;
+
+                case "LogOff": //uname=dis.readUTF();
+                break;
+
                 default: dos.writeBoolean(false);
             }
         }
@@ -117,6 +133,7 @@ class ClientHandler extends Thread
         try
         {
             // closing resources
+            s.close();
             this.dis.close();
             this.dos.close();
         }
