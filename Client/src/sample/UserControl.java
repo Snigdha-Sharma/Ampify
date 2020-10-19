@@ -1,6 +1,5 @@
 package sample;
 
-
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.io.IOException;
@@ -28,6 +27,7 @@ public class UserControl implements Initializable
     public TextField phn;
     public ChoiceBox state;
     public DatePicker dob;
+
     public CheckBox pop;
     public CheckBox rap;
     public CheckBox contemp;
