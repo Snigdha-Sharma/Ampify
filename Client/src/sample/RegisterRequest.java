@@ -6,7 +6,7 @@ import java.io.IOException;
 
 public class RegisterRequest extends Request
 {
-    private String uname,pwd;
+    private final String uname,pwd;
     private boolean registered=false;
 
     RegisterRequest(String uname,String pwd) throws IOException

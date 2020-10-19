@@ -7,7 +7,7 @@ import java.io.IOException;
 public class LoginRequest extends Request
 {
     boolean found=false;
-    private String uname,pwd;
+    private final String uname,pwd;
 
     LoginRequest(String uname,String pwd) throws IOException
     {
