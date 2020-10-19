@@ -55,8 +55,6 @@ public class LoginControl implements Initializable
         {
             String u1=uname1.getText();
             String p1=pass1.getText();
-            LoginRequest ob=new LoginRequest(u1,p1);
-            ob.myRequest();
             if(!check.isSelected())
             {
                 warning.setText("Please verify that you are not a robot.");
@@ -71,6 +69,9 @@ public class LoginControl implements Initializable
                 pass1.setText("");
                 return;
             }
+            p1=generateSecurePassword(p1, "mnnit");
+            LoginRequest ob=new LoginRequest(u1,p1);
+            ob.myRequest();
             if (ob.isValidUser()==true)
             {
                 try
@@ -176,6 +177,7 @@ public class LoginControl implements Initializable
         }
         if(p1.equals(retype))
         {
+            p1=generateSecurePassword(p1, "mnnit");
             RegisterRequest ob=new RegisterRequest(u1,p1);
             ob.myRequest();
             if(ob.isSuccessfullyRegistered()==true)
@@ -197,6 +199,35 @@ public class LoginControl implements Initializable
             pass2.setText("");
             repass.setText("");
         }
+    }
+
+    private static final int ITERATIONS = 10000;
+    private static final int KEY_LENGTH = 256;
+
+    public static byte[] hash(char[] password, byte[] salt)
+    {
+        PBEKeySpec spec = new PBEKeySpec(password, salt, ITERATIONS, KEY_LENGTH);
+        Arrays.fill(password, Character.MIN_VALUE);
+        try
+        {
+            SecretKeyFactory skf = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
+            return skf.generateSecret(spec).getEncoded();
+        }
+        catch (NoSuchAlgorithmException | InvalidKeySpecException e)
+        {
+            throw new AssertionError("Error while hashing a password: " + e.getMessage(), e);
+        }
+        finally
+        {
+            spec.clearPassword();
+        }
+    }
+    public static String generateSecurePassword(String password, String salt)
+    {
+        String returnValue = null;
+        byte[] securePassword = hash(password.toCharArray(), salt.getBytes());
+        returnValue = Base64.getEncoder().encodeToString(securePassword);
+        return returnValue;
     }
 
     public void GoToLogin(ActionEvent event) throws IOException

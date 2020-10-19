@@ -90,7 +90,7 @@ class ClientHandler extends Thread
                 pwd= dis.readUTF();
                 ServerLoginRequest ob=new ServerLoginRequest(uname,pwd);
                 dos.writeBoolean(ob.isValidUser());
-                if(ob.isValidUser()==true)
+                if(ob.isValidUser())
                 {
                     Main.activeUsers.add(uname);
                 }

@@ -29,7 +29,6 @@ public class ServerRegisterNewUser
         Connectivity.ConnClass connectionClass=new ConnClass();
         Connection connection=connectionClass.getConnection();
         Statement statement=connection.createStatement();
-        pwd=generateSecurePassword(pwd, "mnnit");
         String sql="SELECT * FROM login WHERE Uname = '"+uname+"' AND Passwd = '"+pwd+"';";
         ResultSet resultSet=statement.executeQuery(sql);
         if (resultSet.next())
@@ -42,34 +41,4 @@ public class ServerRegisterNewUser
         registered=true;
         return registered;
     }
-
-    private static final int ITERATIONS = 10000;
-    private static final int KEY_LENGTH = 256;
-
-    public static byte[] hash(char[] password, byte[] salt)
-    {
-        PBEKeySpec spec = new PBEKeySpec(password, salt, ITERATIONS, KEY_LENGTH);
-        Arrays.fill(password, Character.MIN_VALUE);
-        try
-        {
-            SecretKeyFactory skf = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
-            return skf.generateSecret(spec).getEncoded();
-        }
-        catch (NoSuchAlgorithmException | InvalidKeySpecException e)
-        {
-            throw new AssertionError("Error while hashing a password: " + e.getMessage(), e);
-        }
-        finally
-        {
-            spec.clearPassword();
-        }
-    }
-    public static String generateSecurePassword(String password, String salt)
-    {
-        String returnValue = null;
-        byte[] securePassword = hash(password.toCharArray(), salt.getBytes());
-        returnValue = Base64.getEncoder().encodeToString(securePassword);
-        return returnValue;
-    }
-
 }
