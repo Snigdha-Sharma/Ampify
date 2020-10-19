@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.SelectionMode;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.media.Media;
@@ -53,25 +54,24 @@ public class Controller implements Initializable
     {
         try
         {
-            System.out.println("Called create song list");
             createCurrSongList();
         }
         catch (IOException e)
         {
             e.printStackTrace();
         }
-        try
-        {
-            source="http://localhost:8080/Sunflower.mp3";
-        }
-        catch(Exception e)
-        {
-            System.out.println("HTTP Server down!");
-        }
+//        try
+//        {
+//            source="http://localhost:8080/BlindingLights.mp3";
+//        }
+//        catch(Exception e)
+//        {
+//            System.out.println("HTTP Server down!");
+//        }
         //source = new File("src\\Songs\\playVideo.mp4").toURI().toString();
-        media=new Media(source);
-        mediaPlayer = new MediaPlayer(media);
-        mv.setMediaPlayer(mediaPlayer);
+//        media=new Media(source);
+//        mediaPlayer = new MediaPlayer(media);
+//        mv.setMediaPlayer(mediaPlayer);
         seekbar.setValue(0);
         playButtonImage=new Image(getClass().getResourceAsStream("..\\Images\\Play.jpg"));
         pauseButtonImage=new Image(getClass().getResourceAsStream("..\\Images\\Pause.jpg"));
@@ -84,13 +84,37 @@ public class Controller implements Initializable
     {
         AllSongsRequest asr=new AllSongsRequest();
         List<String> allSongs;
-        System.out.println("Request sent");
+        //System.out.println("Request sent");
         asr.myRequest();
         allSongs=asr.allSongsList();
-        ObservableList<String> observeAllSongs=FXCollections.observableList(allSongs);
-        SongList=new ListView<>(observeAllSongs);
-        System.out.println("Got the list");
+        ObservableList<String> observeAllSongs=FXCollections.observableArrayList(allSongs);
+        //SongList=new ListView<>(observeAllSongs);
+        //System.out.println("Got the list");
         SongList.setItems(observeAllSongs);
+        SongList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+    }
+
+    public void selectSong()
+    {
+        songPlaying=false;
+        if (mediaPlayer!=null)
+        {
+            playOrPause();
+            mediaPlayer=null;
+            stopCurrSong();
+        }
+
+        source=SongList.getSelectionModel().getSelectedItem();
+        source=source.replaceAll("\\s", "");
+        source="http://localhost:8080/"+source+".mp3";
+        System.out.println(source);
+        media=new Media(source);
+        mediaPlayer = new MediaPlayer(media);
+        mv.setMediaPlayer(mediaPlayer);
+        mediaPlayer.setAutoPlay(true);
+        playOrPause();
+        System.out.println(media.getMetadata());
+        seekbar.setValue(0);
     }
 
     public void uploadSong()
@@ -166,6 +190,7 @@ public class Controller implements Initializable
 
     public void playOrPause()
     {
+        System.out.println("Hey:"+media.getMetadata());
         if (mediaPlayer.getStatus()== MediaPlayer.Status.PLAYING)
         {
             playPause.setGraphic(new ImageView(playButtonImage));
@@ -184,6 +209,7 @@ public class Controller implements Initializable
             //System.out.println(mediaPlayer.getCurrentTime());
             songName.setText((String) media.getMetadata().get("title"));
         }
+        System.out.println("Here:"+media.getMetadata());
     }
 
     public void updateCurrSongLoc()

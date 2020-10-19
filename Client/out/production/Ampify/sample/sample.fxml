@@ -131,6 +131,13 @@
       </HBox>
    </top>
    <left>
-      <ListView fx:id="SongList" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <AnchorPane BorderPane.alignment="CENTER">
+         <children>
+            <ListView fx:id="SongList" onMouseClicked="#selectSong" prefHeight="172.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children>
+         <BorderPane.margin>
+            <Insets left="20.0" />
+         </BorderPane.margin>
+      </AnchorPane>
    </left>
 </BorderPane>
