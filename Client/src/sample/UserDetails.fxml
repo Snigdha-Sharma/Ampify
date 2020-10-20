@@ -5,14 +5,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane prefHeight="897.0" prefWidth="907.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UserControl">
+<Pane prefHeight="897.0" prefWidth="907.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox prefHeight="897.0" prefWidth="907.0">
          <children>
             <Region prefHeight="759.0" prefWidth="424.0" />
-            <VBox prefHeight="897.0" prefWidth="709.0">
+            <VBox>
                <children>
-                  <Region prefHeight="16.0" prefWidth="374.0" />
+                  <Region prefHeight="30.0" prefWidth="600.0" />
                   <Label text="Name" />
                   <TextField fx:id="name" />
                   <Region prefHeight="12.0" prefWidth="325.0" />
@@ -21,10 +21,14 @@
                   <Region prefHeight="12.0" prefWidth="325.0" />
                   <Label text="E-Mail ID" />
                   <TextField fx:id="email" />
-                  <Region prefHeight="9.0" prefWidth="422.0" />
+                  <Region prefHeight="22.0" prefWidth="488.0" />
                   <Label text="State of Residence" />
                   <ChoiceBox fx:id="state" prefWidth="150.0" />
+<<<<<<< HEAD
                   <Region prefHeight="8.0" prefWidth="495.0" />
+=======
+                  <Region prefHeight="22.0" prefWidth="488.0" />
+>>>>>>> b5b87c2e518fd266bb9813f82feac7a579ba01d0
                   <Label text="Date of Birth" />
                   <DatePicker fx:id="dob" />
                   <Region prefHeight="21.0" prefWidth="488.0" />
@@ -125,7 +129,11 @@
                   <HBox prefHeight="60.0" prefWidth="422.0">
                      <children>
                         <Region prefHeight="60.0" prefWidth="162.0" />
+<<<<<<< HEAD
                         <Button fx:id="submit" mnemonicParsing="false" onAction="#submitAct" text="Submit" />
+=======
+                        <Button fx:id="submit" mnemonicParsing="false" text="Submit" />
+>>>>>>> b5b87c2e518fd266bb9813f82feac7a579ba01d0
                         <Region prefHeight="60.0" prefWidth="176.0" />
                      </children>
                   </HBox>

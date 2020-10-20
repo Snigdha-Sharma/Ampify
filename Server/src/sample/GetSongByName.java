@@ -14,6 +14,8 @@ import java.net.Socket;
 import java.util.Date;
 import java.util.StringTokenizer;
 
+import static java.lang.Thread.sleep;
+
 class TestHTTPServer implements Runnable
 {
 
@@ -129,8 +131,17 @@ class TestHTTPServer implements Runnable
                 {
                     // GET method so we return content
                     byte[] fileData = readFileData(file, fileLength);
-
-                    // send HTTP Headers
+                    System.out.println("File data read");
+                    try
+                    {
+                        sleep(2000);
+                    }
+                    catch (InterruptedException e)
+                    {
+                        System.out.println("Exception from here");
+                        e.printStackTrace();
+                    }
+                     //send HTTP Headers
                     out.println("HTTP/1.1 200 OK");
                     out.println("Server: Java HTTP Server from SSaurel : 1.0");
                     out.println("Date: " + new Date());
@@ -139,7 +150,9 @@ class TestHTTPServer implements Runnable
                     out.println(); // blank line between headers and content, very important !
                     out.flush(); // flush character output stream buffer
 
+                    System.out.println("Started writing file data");
                     dataOut.write(fileData, 0, fileLength);
+                    System.out.println("file data written");
                     dataOut.flush();
                 }
                 if (verbose)
@@ -150,6 +163,7 @@ class TestHTTPServer implements Runnable
         }
         catch (FileNotFoundException fnfe)
         {
+            System.out.println("WTH");
             try
             {
                 fileNotFound(out, dataOut, fileRequested);
@@ -161,6 +175,7 @@ class TestHTTPServer implements Runnable
         }
         catch (IOException ioe)
         {
+            System.out.println("Here??");
             System.err.println("Server error : " + ioe);
         }
         finally
@@ -170,7 +185,8 @@ class TestHTTPServer implements Runnable
                 in.close();
                 out.close();
                 dataOut.close();
-                //connect.close(); // we close socket connection
+                connect.close(); // we close socket connection
+                System.out.println("Request closed");
             }
             catch (Exception e)
             {
@@ -193,6 +209,10 @@ class TestHTTPServer implements Runnable
         {
             fileIn = new FileInputStream(file);
             fileIn.read(fileData);
+        }
+        catch(Exception e)
+        {
+            System.out.println("Was the error here?");
         }
         finally
         {
@@ -218,6 +238,11 @@ class TestHTTPServer implements Runnable
         else if (fileRequested.endsWith(".mp4"))
         {
             return "video/mp4";
+        }
+        else if (fileRequested.endsWith(".m3u8"))
+        {
+            //return "application/vnd.apple.mpegurl";
+            return "audio/mpegurl";
         }
         else
         {

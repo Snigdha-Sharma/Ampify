@@ -3,6 +3,11 @@ package sample;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import Connectivity.ConnClass;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -15,8 +20,6 @@ import javafx.stage.Stage;
 
 public class UserControl implements Initializable
 {
-    static Stage window;
-
     public Button submit;
     public Label warn;
     public TextField name;
@@ -71,120 +74,100 @@ public class UserControl implements Initializable
             String phn1 = phn.getText();
             String email1 = email.getText();
             String state1 = state.getId();
-            String dob1 = dob.getId();
-            String pop1="", rap1="", classical1="", metal1="", contemp1="", folk1="", romantic1="", hiphop1="", brostep1="", regional1="", band1="", rock1="";
-            String eng1="", hindi1="", telugu1="", harayanvi1="", bihari1="", punjabi1="", french1="", spanish1="", tamil1="", marathi1="", guj1="", raja1="";
 
-            LoginControl lg = new LoginControl();
-            String username="abcd";
-                    username = lg.getUname();
             if(pop.isSelected())
             {
-                pop1="Pop";
+
             }
             if(classical.isSelected())
             {
-                classical1="Classical";
+
             }
             if(metal.isSelected())
             {
-                metal1="Metal";
+
             }
             if(folk.isSelected())
             {
-                folk1="Folk";
+
             }
             if(romantic.isSelected())
             {
-                romantic1="Romantic";
+
             }
             if(contemp.isSelected())
             {
-                contemp1="Contemporary";
+
             }
             if(rap.isSelected())
             {
-                rap1="Rap";
+
             }
             if(brostep.isSelected())
             {
-                brostep1="Brostep";
+
             }
             if(regional.isSelected())
             {
-                regional1="Regional";
+
             }
             if(hiphop.isSelected())
             {
-                hiphop1="Hiphop";
+
             }
             if(band.isSelected())
             {
-                band1="Band";
+
             }
             if(rock.isSelected())
             {
-                rock1="Rock";
+
             }
 //            --------------------------------LANGUAGES---------------------------------------
             if(english.isSelected())
             {
-                eng1="English";
+
             }if(hindi.isSelected())
             {
-                hindi1="Hindi";
+
             }if(punjabi.isSelected())
             {
-                punjabi1="Punjabi";
+
             }if(harayanvi.isSelected())
             {
-                harayanvi1="Harayanvi";
+
             }if(bihari.isSelected())
             {
-                bihari1="Bihari";
+
             }if(telugu.isSelected())
             {
-                telugu1="Telugu";
+
             }if(marathi.isSelected())
             {
-                marathi1="Marathi";
+
             }if(gujarati.isSelected())
             {
-                guj1="Gujarati";
+
             }if(french.isSelected())
             {
-                french1="French";
+
             }if(spanish.isSelected())
             {
-                spanish1="Spanish";
+
             }if(rajasthani.isSelected())
             {
-                raja1="Rajasthani";
+
             }if(tamil.isSelected())
             {
-                tamil1="Tamil";
+
             }
-            UserRequest ob=new UserRequest(username, name1, phn1, email1, dob1, state1, pop1, rap1, classical1, metal1, contemp1, folk1, romantic1, hiphop1, brostep1, regional1, band1, rock1, eng1, hindi1, telugu1, harayanvi1, bihari1, punjabi1, french1, spanish1, tamil1, marathi1, guj1, raja1);
-            ob.myRequest();
-            if(ob.isSuccessful()==true)
-            {
-//                setUname(u1);
-                GoToLogin(event);
-            }
+
+
 
         }
         catch (Exception e)
         {
             e.printStackTrace();
         }
-    }
-
-    public void GoToLogin(ActionEvent event) throws IOException
-    {
-        Parent root1 = FXMLLoader.load(getClass().getResource("loginscene.fxml"));
-        Scene second=new Scene(root1);
-        window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(second);
-        window.show();
     }
 }

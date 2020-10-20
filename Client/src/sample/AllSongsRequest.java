@@ -20,7 +20,6 @@ public class AllSongsRequest extends Request
     public void myRequest() throws IOException
     {
         dos.writeUTF("AllSongsRequest");
-        System.out.println("Request sent to server");
         InputStream is=s.getInputStream();
         ObjectInputStream ois=new ObjectInputStream(is);
         try
