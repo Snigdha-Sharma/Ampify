@@ -1,5 +1,9 @@
 package sample;
 
+//<<<<<<< HEAD
+//public class ServerUserDataRequest
+//{
+//=======
 import Connectivity.ConnClass;
 
 import java.io.IOException;
@@ -8,7 +12,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class ServerUserDataRequest {
+public class ServerUserDataRequest
+{
     String username, name, phn, email, dob, state;
     String pop1, rap1, classical1, metal1, contemp1, folk1, romantic1, hiphop1, brostep1, regional1, band1, rock1;
     String eng1, hindi1, telugu1, harayanvi1, bihari1, punjabi1, french1, spanish1, tamil1, marathi1, guj1, raja1;
@@ -70,4 +75,5 @@ public class ServerUserDataRequest {
         return registered;
     }
 
+//>>>>>>> 55e1bcfceafaea494be8426b145aa28e26db911a
 }

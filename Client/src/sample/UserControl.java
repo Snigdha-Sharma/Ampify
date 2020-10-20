@@ -67,6 +67,7 @@ public class UserControl implements Initializable
     public void submitAct(ActionEvent event)
     {
         try {
+            String username;
             String name1 = name.getText();
             String phn1 = phn.getText();
             String email1 = email.getText();
@@ -75,9 +76,6 @@ public class UserControl implements Initializable
             String pop1="", rap1="", classical1="", metal1="", contemp1="", folk1="", romantic1="", hiphop1="", brostep1="", regional1="", band1="", rock1="";
             String eng1="", hindi1="", telugu1="", harayanvi1="", bihari1="", punjabi1="", french1="", spanish1="", tamil1="", marathi1="", guj1="", raja1="";
 
-            LoginControl lg = new LoginControl();
-            String username="abcd";
-                    username = lg.getUname();
             if(pop.isSelected())
             {
                 pop1="Pop";
@@ -164,6 +162,8 @@ public class UserControl implements Initializable
             {
                 tamil1="Tamil";
             }
+            username = receiveData(event);
+            System.out.println(username);
             UserRequest ob=new UserRequest(username, name1, phn1, email1, dob1, state1, pop1, rap1, classical1, metal1, contemp1, folk1, romantic1, hiphop1, brostep1, regional1, band1, rock1, eng1, hindi1, telugu1, harayanvi1, bihari1, punjabi1, french1, spanish1, tamil1, marathi1, guj1, raja1);
             ob.myRequest();
             if(ob.isSuccessful())
@@ -171,12 +171,30 @@ public class UserControl implements Initializable
 //                setUname(u1);
                 GoToLogin(event);
             }
+            else
+            {
+                System.out.println("False");
+            }
 
         }
         catch (Exception e)
         {
             e.printStackTrace();
         }
+    }
+
+    protected String receiveData(ActionEvent event) {
+        // Step 1
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        // Step 2
+        LoginControl lg = (LoginControl) stage.getUserData();
+
+//        LoginControl lg = new LoginControl();
+        String username;
+        username = lg.getUname();
+        System.out.println(username);
+        return username;
     }
 
     public void GoToLogin(ActionEvent event) throws IOException
