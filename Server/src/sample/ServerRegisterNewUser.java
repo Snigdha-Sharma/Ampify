@@ -37,8 +37,13 @@ public class ServerRegisterNewUser
         }
         sql="INSERT INTO login(Uname, Passwd) VALUES ('"+uname+"', '"+pwd+"')";
         statement=connection.createStatement();
-        statement.executeUpdate(sql);
-        registered=true;
+        try {
+            statement.executeUpdate(sql);
+            registered=true;
+        }
+        catch(Exception e){
+            registered = false;
+        }
         return registered;
     }
 }
