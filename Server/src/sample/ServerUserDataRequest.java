@@ -1,4 +1,5 @@
 package sample;
 
-public class ServerUserDataRequest {
+public class ServerUserDataRequest
+{
 }
