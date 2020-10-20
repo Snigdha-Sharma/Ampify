@@ -1,11 +1,6 @@
 package sample;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import Connectivity.ConnClass;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -18,11 +13,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import java.security.NoSuchAlgorithmException;
-import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
 import java.util.Arrays;
 import java.util.Base64;
-import java.util.Random;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 
@@ -49,6 +42,17 @@ public class LoginControl implements Initializable
         check.setSelected(false);
     }
 
+    private String unamee;
+    protected String getUname()
+    {
+        return this.unamee;
+    }
+
+    protected void setUname(String uname)
+    {
+        unamee=uname;
+    }
+
     public void LoginAct(ActionEvent event)
     {
         try
@@ -72,10 +76,11 @@ public class LoginControl implements Initializable
             p1=generateSecurePassword(p1, "mnnit");
             LoginRequest ob=new LoginRequest(u1,p1);
             ob.myRequest();
-            if (ob.isValidUser()==true)
+            if (ob.isValidUser())
             {
                 try
                 {
+                    setUname(u1);
                     OpenPlayerHome(event);
                 }
                 catch(IOException e)
@@ -169,7 +174,7 @@ public class LoginControl implements Initializable
         }
         else if(p1.contains(u1))
         {
-            warning2.setText("Password should not be same as username!");
+            warning2.setText("Password should not contain username!");
             uname2.setText("");
             pass2.setText("");
             repass.setText("");
@@ -180,9 +185,10 @@ public class LoginControl implements Initializable
             p1=generateSecurePassword(p1, "mnnit");
             RegisterRequest ob=new RegisterRequest(u1,p1);
             ob.myRequest();
-            if(ob.isSuccessfullyRegistered()==true)
+            if(ob.isSuccessfullyRegistered())
             {
-                GoToLogin(event);
+                setUname(u1);
+                GoToData(event);
             }
             else
             {
@@ -230,9 +236,9 @@ public class LoginControl implements Initializable
         return returnValue;
     }
 
-    public void GoToLogin(ActionEvent event) throws IOException
+    public void GoToData(ActionEvent event) throws IOException
     {
-        Parent root1 = FXMLLoader.load(getClass().getResource("loginscene.fxml"));
+        Parent root1 = FXMLLoader.load(getClass().getResource("UserDetails.fxml"));
         Scene second=new Scene(root1);
         window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(second);
