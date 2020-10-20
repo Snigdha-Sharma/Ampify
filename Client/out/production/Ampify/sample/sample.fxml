@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.media.MediaView?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <bottom>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <JFXSlider fx:id="seekbar" onMouseClicked="#getToAnySongLocation">
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </JFXSlider>
+            <HBox alignment="TOP_CENTER" VBox.vgrow="ALWAYS">
+               <children>
+                  <Button fx:id="prevSongButton" mnemonicParsing="false" onAction="#goToPrevSong" HBox.hgrow="ALWAYS">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/Prev.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button fx:id="playPause" mnemonicParsing="false" onAction="#playOrPause">
+                     <graphic>
+                        <ImageView fx:id="playPauseButtonImage" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/Play.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button fx:id="nextSongButton" mnemonicParsing="false" onAction="#setNextSongButton">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/Next.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button fx:id="stop" mnemonicParsing="false" onAction="#stopCurrSong">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/Stop.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button fx:id="muteUnmuteButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#muteOrUnmute">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/NotMute.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button fx:id="volumeDown" mnemonicParsing="false" onAction="#decreaseVolume">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/VolumeDown.jpg" />
+                           </image></ImageView>
+                     </graphic></Button>
+                  <Button fx:id="volumeUp" mnemonicParsing="false" onAction="#increaseVolume">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/VolumeUp.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button fx:id="uploadButton" mnemonicParsing="false" onAction="#uploadSong">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/Upload.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Label fx:id="duration" alignment="BOTTOM_CENTER" textAlignment="CENTER" textFill="#1d1057">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Comic Sans MS" size="41.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+   <center>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" BorderPane.alignment="CENTER">
+         <children>
+            <MediaView fx:id="mv" cacheHint="SCALE" fitHeight="450" fitWidth="800" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="false" smooth="false" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </Pane>
+   </center>
+   <top>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="songName">
+               <font>
+                  <Font name="Comic Sans MS" size="35.0" />
+               </font>
+            </Label>
+            <Region HBox.hgrow="ALWAYS" />
+            <Button fx:id="logOffButton" mnemonicParsing="false" onAction="#logOff">
+               <graphic>
+                  <ImageView pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/LogOff.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <AnchorPane BorderPane.alignment="CENTER">
+         <children>
+            <ListView fx:id="SongList" onMouseClicked="#selectSong" prefHeight="172.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children>
+         <BorderPane.margin>
+            <Insets left="20.0" />
+         </BorderPane.margin>
+      </AnchorPane>
+   </left>
+</BorderPane>
