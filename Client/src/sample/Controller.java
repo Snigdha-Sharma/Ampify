@@ -25,6 +25,8 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
+import static java.lang.Thread.sleep;
+
 public class Controller implements Initializable
 {
     public Button prevSongButton;
@@ -60,18 +62,7 @@ public class Controller implements Initializable
         {
             e.printStackTrace();
         }
-//        try
-//        {
-//            source="http://localhost:8080/BlindingLights.mp3";
-//        }
-//        catch(Exception e)
-//        {
-//            System.out.println("HTTP Server down!");
-//        }
         //source = new File("src\\Songs\\playVideo.mp4").toURI().toString();
-//        media=new Media(source);
-//        mediaPlayer = new MediaPlayer(media);
-//        mv.setMediaPlayer(mediaPlayer);
         seekbar.setValue(0);
         playButtonImage=new Image(getClass().getResourceAsStream("..\\Images\\Play.jpg"));
         pauseButtonImage=new Image(getClass().getResourceAsStream("..\\Images\\Pause.jpg"));
@@ -84,36 +75,29 @@ public class Controller implements Initializable
     {
         AllSongsRequest asr=new AllSongsRequest();
         List<String> allSongs;
-        //System.out.println("Request sent");
         asr.myRequest();
         allSongs=asr.allSongsList();
         ObservableList<String> observeAllSongs=FXCollections.observableArrayList(allSongs);
-        //SongList=new ListView<>(observeAllSongs);
-        //System.out.println("Got the list");
         SongList.setItems(observeAllSongs);
         SongList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
     }
 
     public void selectSong()
     {
-        songPlaying=false;
+        source=SongList.getSelectionModel().getSelectedItem();
+        songName.setText("Loading...");
         if (mediaPlayer!=null)
         {
-            playOrPause();
-            mediaPlayer=null;
             stopCurrSong();
         }
-
-        source=SongList.getSelectionModel().getSelectedItem();
         source=source.replaceAll("\\s", "");
         source="http://localhost:8080/"+source+".mp3";
-        System.out.println(source);
+        //source="http://localhost:8080/AllSongsPlaylist.m3u8";
         media=new Media(source);
         mediaPlayer = new MediaPlayer(media);
         mv.setMediaPlayer(mediaPlayer);
-        mediaPlayer.setAutoPlay(true);
+        //mediaPlayer.setAutoPlay(true);
         playOrPause();
-        System.out.println(media.getMetadata());
         seekbar.setValue(0);
     }
 
@@ -190,7 +174,10 @@ public class Controller implements Initializable
 
     public void playOrPause()
     {
-        System.out.println("Hey:"+media.getMetadata());
+        if (media==null)
+        {
+            return;
+        }
         if (mediaPlayer.getStatus()== MediaPlayer.Status.PLAYING)
         {
             playPause.setGraphic(new ImageView(playButtonImage));
@@ -206,10 +193,8 @@ public class Controller implements Initializable
                 currSong.start();
             }
             mediaPlayer.play();
-            //System.out.println(mediaPlayer.getCurrentTime());
-            songName.setText((String) media.getMetadata().get("title"));
+            System.out.println(media.getMetadata());
         }
-        System.out.println("Here:"+media.getMetadata());
     }
 
     public void updateCurrSongLoc()
@@ -218,6 +203,7 @@ public class Controller implements Initializable
         {
             Platform.runLater(()->{
                 seekbar.setValue((mediaPlayer.getCurrentTime().toSeconds()/ media.getDuration().toSeconds()) *100);
+                songName.setText((String) media.getMetadata().get("title"));
                 long insec= (long) mediaPlayer.getCurrentTime().toSeconds();
                 long min=insec/60;
                 long sec=insec%60;
@@ -232,7 +218,7 @@ public class Controller implements Initializable
                 }});
             try
             {
-                Thread.sleep(1000);
+                sleep(1000);
             }
             catch(InterruptedException e)
             {

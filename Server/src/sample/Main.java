@@ -79,95 +79,44 @@ class ClientHandler extends Thread
     public void run()
     {
         String requestType;
-        String uname="",pwd;
         try
         {
             requestType=dis.readUTF();
             System.out.println(requestType);
             switch(requestType)
             {
-                case "LoginRequest":
-                    uname=dis.readUTF();
-                    pwd= dis.readUTF();
-                    ServerLoginRequest ob=new ServerLoginRequest(uname,pwd);
-                    dos.writeBoolean(ob.isValidUser());
-                    if(ob.isValidUser())
-                    {
-                        Main.activeUsers.add(uname);
-                    }
+                case "LoginRequest": String uname,pwd;
+                uname=dis.readUTF();
+                pwd= dis.readUTF();
+                ServerLoginRequest ob=new ServerLoginRequest(uname,pwd);
+                dos.writeBoolean(ob.isValidUser());
+//                if(ob.isValidUser())
+//                {
+//                    Main.activeUsers.add(uname);
+//                }
                 break;
 
-                case "RegisterNewUser":
-                    uname=dis.readUTF();
-                    pwd= dis.readUTF();
-                    ServerRegisterNewUser newUser=new ServerRegisterNewUser(uname,pwd);
-                    dos.writeBoolean(newUser.isRegisteredSuccessfully());
-                    break;
+                case "RegisterNewUser": uname=dis.readUTF();
+                pwd= dis.readUTF();
+                ServerRegisterNewUser newUser=new ServerRegisterNewUser(uname,pwd);
+                dos.writeBoolean(newUser.isRegisteredSuccessfully());
+                break;
 
-                case "AllSongsRequest":
-                    System.out.println("Request Reached");
-                    ServerAllSongsRequest asr=new ServerAllSongsRequest();
-                    ResultSet rs=asr.getAllSongsSet();
-                    OutputStream os=s.getOutputStream();
-                    ObjectOutputStream oos=new ObjectOutputStream(os);
-                    //System.out.println(rs);
-                    List<String> back = new ArrayList<>();
-                    while(rs.next())
-                    {
-                        System.out.println(rs.getString(1));
-                        back.add(rs.getString(1));
-                        //dos.writeUTF(rs.getString(1));
-                    }
-                    oos.writeObject(back);
-                    System.out.println("Object sent to client");
-                    break;
-
-                case "UserRequest":
-                    String username, name, phn, email, dob, state;
-                    String pop1, rap1, classical1, metal1, contemp1, folk1, romantic1, hiphop1, brostep1, regional1, band1, rock1;
-                    String eng1, hindi1, telugu1, harayanvi1, bihari1, punjabi1, french1, spanish1, tamil1, marathi1, guj1, raja1;
-
-                    username = dis.readUTF();
-                    name=dis.readUTF();
-                    phn=dis.readUTF();
-                    email=dis.readUTF();
-                    dob=dis.readUTF();
-                    state=dis.readUTF();
-
-//                    String dtt=uname;
-
-                    pop1=dis.readUTF();
-                    rap1=dis.readUTF();
-                    classical1=dis.readUTF();
-                    metal1=dis.readUTF();
-                    contemp1=dis.readUTF();
-                    folk1=dis.readUTF();
-                    romantic1=dis.readUTF();
-                    hiphop1=dis.readUTF();
-                    brostep1=dis.readUTF();
-                    regional1=dis.readUTF();
-                    band1=dis.readUTF();
-                    rock1=dis.readUTF();
-
-                    eng1=dis.readUTF();
-                    hindi1=dis.readUTF();
-                    telugu1=dis.readUTF();
-                    harayanvi1=dis.readUTF();
-                    bihari1=dis.readUTF();
-                    punjabi1=dis.readUTF();
-                    french1=dis.readUTF();
-                    spanish1=dis.readUTF();
-                    tamil1=dis.readUTF();
-                    marathi1=dis.readUTF();
-                    guj1=dis.readUTF();
-                    raja1=dis.readUTF();
-
-                    ServerUserDataRequest newData=new ServerUserDataRequest(username, name, phn, email, dob, state, pop1, rap1, classical1, metal1, contemp1, folk1, romantic1, hiphop1, brostep1, regional1, band1, rock1, eng1, hindi1, telugu1, harayanvi1, bihari1, punjabi1, french1, spanish1, tamil1, marathi1, guj1, raja1);
-                    dos.writeBoolean(newData.isFullSuccessful());
-                    break;
+                case "AllSongsRequest":System.out.println("Request Reached");
+                ServerAllSongsRequest asr=new ServerAllSongsRequest();
+                ResultSet rs=asr.getAllSongsSet();
+                OutputStream os=s.getOutputStream();
+                ObjectOutputStream oos=new ObjectOutputStream(os);
+                List<String> back = new ArrayList<>();
+                while(rs.next())
+                {
+                    back.add(rs.getString(1));
+                }
+                oos.writeObject(back);
+                break;
 
                 case "LogOff": //uname=dis.readUTF();
-                    break;
+                break;
 
                 default: dos.writeBoolean(false);
             }

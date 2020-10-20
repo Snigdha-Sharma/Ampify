@@ -1,6 +1,11 @@
 package sample;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import Connectivity.ConnClass;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -13,9 +18,11 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.security.spec.InvalidKeySpecException;
 import java.util.Arrays;
 import java.util.Base64;
+import java.util.Random;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 
@@ -40,17 +47,6 @@ public class LoginControl implements Initializable
         warning.setText("");
         warning2.setText("");
         check.setSelected(false);
-    }
-
-    private String unamee;
-    protected String getUname()
-    {
-        return this.unamee;
-    }
-
-    protected void setUname(String uname)
-    {
-        unamee=uname;
     }
 
     public void LoginAct(ActionEvent event)
@@ -80,7 +76,6 @@ public class LoginControl implements Initializable
             {
                 try
                 {
-                    setUname(u1);
                     OpenPlayerHome(event);
                 }
                 catch(IOException e)
@@ -187,8 +182,7 @@ public class LoginControl implements Initializable
             ob.myRequest();
             if(ob.isSuccessfullyRegistered()==true)
             {
-                setUname(u1);
-                GoToData(event);
+                GoToLogin(event);
             }
             else
             {
@@ -236,9 +230,9 @@ public class LoginControl implements Initializable
         return returnValue;
     }
 
-    public void GoToData(ActionEvent event) throws IOException
+    public void GoToLogin(ActionEvent event) throws IOException
     {
-        Parent root1 = FXMLLoader.load(getClass().getResource("UserDetails.fxml"));
+        Parent root1 = FXMLLoader.load(getClass().getResource("loginscene.fxml"));
         Scene second=new Scene(root1);
         window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(second);
