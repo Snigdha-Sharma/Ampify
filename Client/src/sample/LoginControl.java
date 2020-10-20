@@ -42,6 +42,17 @@ public class LoginControl implements Initializable
         check.setSelected(false);
     }
 
+    private String unamee;
+    protected String getUname()
+    {
+        return this.unamee;
+    }
+
+    protected void setUname(String uname)
+    {
+        unamee=uname;
+    }
+
     public void LoginAct(ActionEvent event)
     {
         try
@@ -69,6 +80,7 @@ public class LoginControl implements Initializable
             {
                 try
                 {
+                    setUname(u1);
                     OpenPlayerHome(event);
                 }
                 catch(IOException e)
@@ -175,7 +187,8 @@ public class LoginControl implements Initializable
             ob.myRequest();
             if(ob.isSuccessfullyRegistered()==true)
             {
-                GoToLogin(event);
+                setUname(u1);
+                GoToData(event);
             }
             else
             {
@@ -223,9 +236,9 @@ public class LoginControl implements Initializable
         return returnValue;
     }
 
-    public void GoToLogin(ActionEvent event) throws IOException
+    public void GoToData(ActionEvent event) throws IOException
     {
-        Parent root1 = FXMLLoader.load(getClass().getResource("loginscene.fxml"));
+        Parent root1 = FXMLLoader.load(getClass().getResource("UserDetails.fxml"));
         Scene second=new Scene(root1);
         window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(second);

@@ -9,12 +9,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class ServerUserDataRequest {
-    String name, phn, email, dob, state;
+    String username, name, phn, email, dob, state;
     String pop1, rap1, classical1, metal1, contemp1, folk1, romantic1, hiphop1, brostep1, regional1, band1, rock1;
     String eng1, hindi1, telugu1, harayanvi1, bihari1, punjabi1, french1, spanish1, tamil1, marathi1, guj1, raja1;
     boolean registered=false;
 
-    ServerUserDataRequest(String name, String phn, String email, String dob, String state, String pop1, String rap1, String classical1, String metal1, String folk1, String romantic1, String contemp1, String brostep1, String regional1, String hiphop1, String band1, String rock1, String eng1, String hindi1, String punjabi1, String harayanvi1, String bihari1, String telugu1, String marathi1, String guj1, String french1, String spanish1, String raja1, String tamil1) throws IOException {
+    ServerUserDataRequest(String username, String name, String phn, String email, String dob, String state, String pop1, String rap1, String classical1, String metal1, String folk1, String romantic1, String contemp1, String brostep1, String regional1, String hiphop1, String band1, String rock1, String eng1, String hindi1, String punjabi1, String harayanvi1, String bihari1, String telugu1, String marathi1, String guj1, String french1, String spanish1, String raja1, String tamil1) throws IOException {
+        this.username=username;
         this.name=name;
         this.phn=phn;
         this.email=email;
@@ -50,13 +51,15 @@ public class ServerUserDataRequest {
         Connectivity.ConnClass connectionClass=new ConnClass();
         Connection connection=connectionClass.getConnection();
         Statement statement=connection.createStatement();
-        String sql="SELECT * FROM login WHERE Uname = '"+uname+"' AND Passwd = '"+pwd+"';";
-        ResultSet resultSet=statement.executeQuery(sql);
-        if (resultSet.next())
-        {
-            return false;
-        }
-        sql="INSERT INTO login(Uname, Passwd) VALUES ('"+uname+"', '"+pwd+"')";
+
+//        String sql="SELECT * FROM login WHERE Uname = '"+uname+"' AND Passwd = '"+pwd+"';";
+//        ResultSet resultSet=statement.executeQuery(sql);
+//        if (resultSet.next())
+//        {
+//            return false;
+//        }
+        String sql="INSERT INTO Userdata(USERID, Name, PhoneNo., Dob, EmailID, State) VALUES " +
+                "('"+username+"', '"+name+"', '"+phn+"', '"+dob+"', '"+email+"', '"+state+"')";
         statement=connection.createStatement();
         statement.executeUpdate(sql);
         registered=true;

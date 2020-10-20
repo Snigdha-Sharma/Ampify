@@ -79,6 +79,7 @@ class ClientHandler extends Thread
     public void run()
     {
         String requestType;
+        String uname="",pwd;
         try
         {
             requestType=dis.readUTF();
@@ -86,7 +87,6 @@ class ClientHandler extends Thread
             switch(requestType)
             {
                 case "LoginRequest":
-                    String uname,pwd;
                     uname=dis.readUTF();
                     pwd= dis.readUTF();
                     ServerLoginRequest ob=new ServerLoginRequest(uname,pwd);
@@ -123,14 +123,18 @@ class ClientHandler extends Thread
                     break;
 
                 case "UserRequest":
-                    String name, phn, email, dob, state;
+                    String username, name, phn, email, dob, state;
                     String pop1, rap1, classical1, metal1, contemp1, folk1, romantic1, hiphop1, brostep1, regional1, band1, rock1;
                     String eng1, hindi1, telugu1, harayanvi1, bihari1, punjabi1, french1, spanish1, tamil1, marathi1, guj1, raja1;
+
+                    username = dis.readUTF();
                     name=dis.readUTF();
                     phn=dis.readUTF();
                     email=dis.readUTF();
                     dob=dis.readUTF();
                     state=dis.readUTF();
+
+//                    String dtt=uname;
 
                     pop1=dis.readUTF();
                     rap1=dis.readUTF();
@@ -158,7 +162,7 @@ class ClientHandler extends Thread
                     guj1=dis.readUTF();
                     raja1=dis.readUTF();
 
-                    ServerUserDataRequest newData=new ServerUserDataRequest(name, phn, email, dob, state, pop1, rap1, classical1, metal1, contemp1, folk1, romantic1, hiphop1, brostep1, regional1, band1, rock1, eng1, hindi1, telugu1, harayanvi1, bihari1, punjabi1, french1, spanish1, tamil1, marathi1, guj1, raja1);
+                    ServerUserDataRequest newData=new ServerUserDataRequest(username, name, phn, email, dob, state, pop1, rap1, classical1, metal1, contemp1, folk1, romantic1, hiphop1, brostep1, regional1, band1, rock1, eng1, hindi1, telugu1, harayanvi1, bihari1, punjabi1, french1, spanish1, tamil1, marathi1, guj1, raja1);
                     dos.writeBoolean(newData.isFullSuccessful());
                     break;
 

@@ -3,11 +3,6 @@ package sample;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import Connectivity.ConnClass;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -20,6 +15,8 @@ import javafx.stage.Stage;
 
 public class UserControl implements Initializable
 {
+    static Stage window;
+
     public Button submit;
     public Label warn;
     public TextField name;
@@ -77,6 +74,10 @@ public class UserControl implements Initializable
             String dob1 = dob.getId();
             String pop1="", rap1="", classical1="", metal1="", contemp1="", folk1="", romantic1="", hiphop1="", brostep1="", regional1="", band1="", rock1="";
             String eng1="", hindi1="", telugu1="", harayanvi1="", bihari1="", punjabi1="", french1="", spanish1="", tamil1="", marathi1="", guj1="", raja1="";
+
+            LoginControl lg = new LoginControl();
+            String username="abcd";
+                    username = lg.getUname();
             if(pop.isSelected())
             {
                 pop1="Pop";
@@ -163,14 +164,27 @@ public class UserControl implements Initializable
             {
                 tamil1="Tamil";
             }
-            UserRequest ob=new UserRequest(name1, phn1, email1, dob1, state1, pop1, rap1, classical1, metal1, contemp1, folk1, romantic1, hiphop1, brostep1, regional1, band1, rock1, eng1, hindi1, telugu1, harayanvi1, bihari1, punjabi1, french1, spanish1, tamil1, marathi1, guj1, raja1);
+            UserRequest ob=new UserRequest(username, name1, phn1, email1, dob1, state1, pop1, rap1, classical1, metal1, contemp1, folk1, romantic1, hiphop1, brostep1, regional1, band1, rock1, eng1, hindi1, telugu1, harayanvi1, bihari1, punjabi1, french1, spanish1, tamil1, marathi1, guj1, raja1);
             ob.myRequest();
-
+            if(ob.isSuccessful()==true)
+            {
+//                setUname(u1);
+                GoToLogin(event);
+            }
 
         }
         catch (Exception e)
         {
             e.printStackTrace();
         }
+    }
+
+    public void GoToLogin(ActionEvent event) throws IOException
+    {
+        Parent root1 = FXMLLoader.load(getClass().getResource("loginscene.fxml"));
+        Scene second=new Scene(root1);
+        window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(second);
+        window.show();
     }
 }
