@@ -1,9 +1,5 @@
 package sample;
 
-//<<<<<<< HEAD
-//public class ServerUserDataRequest
-//{
-//=======
 import Connectivity.ConnClass;
 
 import java.io.IOException;
@@ -74,6 +70,4 @@ public class ServerUserDataRequest
         }
         return registered;
     }
-
-//>>>>>>> 55e1bcfceafaea494be8426b145aa28e26db911a
 }

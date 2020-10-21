@@ -32,7 +32,7 @@ public class LoginControl implements Initializable
     public Label warning;//Login
     public Label warning2;//Register
 
-    static Stage window;
+    //static Stage window;
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
@@ -241,29 +241,29 @@ public class LoginControl implements Initializable
         LoginControl lg = new LoginControl();
         Parent root1 = FXMLLoader.load(getClass().getResource("UserDetails.fxml"));
         Scene second=new Scene(root1);
-        window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        //window = (Stage)((Node)event.getSource()).getScene().getWindow();
 
         lg.setUname(u1);
-        window.setUserData(lg);
+        Main.window.setUserData(lg);
 
-        window.setScene(second);
-        window.show();
+        Main.window.setScene(second);
+        Main.window.show();
         warning.setText("Registration Successful! Ready to login.");
     }
 
     public void OpenPlayerHome(ActionEvent event) throws IOException
     {
-        Parent root1 = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Parent root1 = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
         Scene second=new Scene(root1);
-        window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window.setScene(second);
-        window.show();
-        window.setOnCloseRequest(e->closePlayer());
+        //window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Main.window.setScene(second);
+        Main.window.show();
+        Main.window.setOnCloseRequest(e->closePlayer());
     }
 
     public static void closePlayer()
     {
         Controller.closePlayer();
-        window.close();
+        Main.window.close();
     }
 }

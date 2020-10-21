@@ -5,6 +5,7 @@ import com.jfoenix.controls.JFXSlider;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -54,14 +55,8 @@ public class Controller implements Initializable
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
-        try
-        {
-            createCurrSongList();
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
+        //System.out.println("HEYAAAAA:"+ getClass().getResource("sample.fxml"));
+        createCurrSongList();
         //source = new File("src\\Songs\\playVideo.mp4").toURI().toString();
         seekbar.setValue(0);
         playButtonImage=new Image(getClass().getResourceAsStream("..\\Images\\Play.jpg"));
@@ -71,12 +66,12 @@ public class Controller implements Initializable
         duration.setText("0:00");
     }
 
-    public void createCurrSongList() throws IOException
+    public void createCurrSongList()
     {
-        AllSongsRequest asr=new AllSongsRequest();
+//        AllSongsRequest asr=new AllSongsRequest();
         List<String> allSongs;
-        asr.myRequest();
-        allSongs=asr.allSongsList();
+//        asr.myRequest();
+        allSongs=MiddlePageController.currPlayList;
         ObservableList<String> observeAllSongs=FXCollections.observableArrayList(allSongs);
         SongList.setItems(observeAllSongs);
         SongList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
@@ -115,7 +110,7 @@ public class Controller implements Initializable
         playPause.setGraphic(new ImageView(playButtonImage));
         media=new Media(source);
         mediaPlayer=new MediaPlayer(media);
-        mv.setMediaPlayer(mediaPlayer);
+        //mv.setMediaPlayer(mediaPlayer);
     }
 
     public void logOff() throws IOException
