@@ -46,7 +46,6 @@ public class UserRequest extends Request {
         dos=new DataOutputStream(s.getOutputStream());
     }
 
-
     @Override
     public void myRequest() throws IOException
     {

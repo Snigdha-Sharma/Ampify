@@ -43,12 +43,12 @@ public class LoginControl implements Initializable
     }
 
     private String unamee;
-    protected String getUname()
+    String getUname()
     {
-        return this.unamee;
+        return unamee;
     }
 
-    protected void setUname(String uname)
+    void setUname(String uname)
     {
         unamee=uname;
     }
@@ -187,8 +187,8 @@ public class LoginControl implements Initializable
             ob.myRequest();
             if(ob.isSuccessfullyRegistered())
             {
-                setUname(u1);
-                GoToData(event);
+//                setUname(u1);
+                GoToData(event, u1);
             }
             else
             {
@@ -236,11 +236,16 @@ public class LoginControl implements Initializable
         return returnValue;
     }
 
-    public void GoToData(ActionEvent event) throws IOException
+    public void GoToData(ActionEvent event, String u1) throws IOException
     {
+        LoginControl lg = new LoginControl();
         Parent root1 = FXMLLoader.load(getClass().getResource("UserDetails.fxml"));
         Scene second=new Scene(root1);
         window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        lg.setUname(u1);
+        window.setUserData(lg);
+
         window.setScene(second);
         window.show();
         warning.setText("Registration Successful! Ready to login.");

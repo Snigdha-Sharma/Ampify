@@ -83,7 +83,6 @@ class ClientHandler extends Thread
         try
         {
             requestType=dis.readUTF();
-            System.out.println(requestType);
             switch(requestType)
             {
                 case "LoginRequest":
