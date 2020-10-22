@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 19, 2020 at 10:52 AM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.10
+-- Generation Time: Oct 22, 2020 at 10:42 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.4.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -37,13 +37,38 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`Uname`, `Passwd`) VALUES
+('aB@#23', '/A4V3QIkObJduVHhAqD2mTOXVD9RfNuQG/e9rWhvZeM='),
 ('abcdefg', 'phOyuWRqtrr9xP3DroUxgQHnJWbPNHdsCqxJmrcpx2w='),
+('alPha@23', '/A4V3QIkObJduVHhAqD2mTOXVD9RfNuQG/e9rWhvZeM='),
+('amcnN@#@!23', '/A4V3QIkObJduVHhAqD2mTOXVD9RfNuQG/e9rWhvZeM='),
+('bAS@#23', '/A4V3QIkObJduVHhAqD2mTOXVD9RfNuQG/e9rWhvZeM='),
 ('divyasri', 'ESSpZsvTADsA1BifvkobtcQuCAre6SDYIQCcZOtAo7Y='),
+('dlksdklsK@2323', '/A4V3QIkObJduVHhAqD2mTOXVD9RfNuQG/e9rWhvZeM='),
 ('gautam.purva', 'gautam.purva'),
+('Ksh@121', '/A4V3QIkObJduVHhAqD2mTOXVD9RfNuQG/e9rWhvZeM='),
+('Ksh@123', '/A4V3QIkObJduVHhAqD2mTOXVD9RfNuQG/e9rWhvZeM='),
+('Ksh@1234', '/A4V3QIkObJduVHhAqD2mTOXVD9RfNuQG/e9rWhvZeM='),
+('Ksh@123423', '/A4V3QIkObJduVHhAqD2mTOXVD9RfNuQG/e9rWhvZeM='),
+('Ksh@12345', '/A4V3QIkObJduVHhAqD2mTOXVD9RfNuQG/e9rWhvZeM='),
+('KsHiS@2', '/A4V3QIkObJduVHhAqD2mTOXVD9RfNuQG/e9rWhvZeM='),
+('kshitij', '8902340934'),
+('Kshk@!23', '/A4V3QIkObJduVHhAqD2mTOXVD9RfNuQG/e9rWhvZeM='),
+('ljsakJ@32', '/A4V3QIkObJduVHhAqD2mTOXVD9RfNuQG/e9rWhvZeM='),
+('lkjhAS@#234', '/A4V3QIkObJduVHhAqD2mTOXVD9RfNuQG/e9rWhvZeM='),
+('lkjhAS@#23466', '/A4V3QIkObJduVHhAqD2mTOXVD9RfNuQG/e9rWhvZeM='),
+('lkjhAS@#23489', '/A4V3QIkObJduVHhAqD2mTOXVD9RfNuQG/e9rWhvZeM='),
+('maNK@21223', '/A4V3QIkObJduVHhAqD2mTOXVD9RfNuQG/e9rWhvZeM='),
 ('purvag15', 'pgpg'),
 ('rishabh', 'VTNGyc+ZtL7fQjsuzE/p9eg40CdlrrlbX4r6kL8wmaM='),
 ('saloni', 'zE8wdBA5XZ+jqX5PwqdoMh9gHSVqEGVsiJs+pOpXQEw='),
-('snigdha', 'vXOAs9vj76icfhaiR28vgFitrofIxC/LhE4jrHekzA0=');
+('sijakK@#23', '/A4V3QIkObJduVHhAqD2mTOXVD9RfNuQG/e9rWhvZeM='),
+('skdK2@', '/A4V3QIkObJduVHhAqD2mTOXVD9RfNuQG/e9rWhvZeM='),
+('snigdha', 'vXOAs9vj76icfhaiR28vgFitrofIxC/LhE4jrHekzA0='),
+('Syn@2k', '/A4V3QIkObJduVHhAqD2mTOXVD9RfNuQG/e9rWhvZeM='),
+('Syn@2k_', '/A4V3QIkObJduVHhAqD2mTOXVD9RfNuQG/e9rWhvZeM='),
+('Syn@2k_1', '/A4V3QIkObJduVHhAqD2mTOXVD9RfNuQG/e9rWhvZeM='),
+('Syn@2k_2', '/A4V3QIkObJduVHhAqD2mTOXVD9RfNuQG/e9rWhvZeM='),
+('Syn@2k_3', '/A4V3QIkObJduVHhAqD2mTOXVD9RfNuQG/e9rWhvZeM=');
 
 -- --------------------------------------------------------
 
@@ -87,6 +112,50 @@ INSERT INTO `song` (`SongId`, `Name`, `Path`, `Lyrics`, `PublishYear`, `DateAdde
 (20, 'Youngblood', '..\\Songs\\Youngblood.mp3', '..\\Songs\\Youngblood.srt', 2018, '2020-10-18'),
 (21, 'Wakhra Swag', '..\\Songs\\WakhraSwag.mp3', '\\Songs\\WakhraSwag.srt', 2015, '2020-10-19');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `userdata`
+--
+
+CREATE TABLE `userdata` (
+  `USERID` varchar(10) NOT NULL,
+  `Name` varchar(50) NOT NULL,
+  `PhoneNo` varchar(10) DEFAULT NULL,
+  `Dob` datetime(6) DEFAULT current_timestamp(6),
+  `Email` varchar(60) DEFAULT NULL,
+  `State` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `userdata`
+--
+
+INSERT INTO `userdata` (`USERID`, `Name`, `PhoneNo`, `Dob`, `Email`, `State`) VALUES
+('Ksh@121', 'kshitij111', 'abcd', '2020-10-09 00:00:00.000000', 'jksal', 'Uttarakhand');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `usergenre`
+--
+
+CREATE TABLE `usergenre` (
+  `USERID` varchar(20) NOT NULL,
+  `Genre` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `userlang`
+--
+
+CREATE TABLE `userlang` (
+  `USERID` varchar(20) NOT NULL,
+  `Language` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Indexes for dumped tables
 --
@@ -104,6 +173,24 @@ ALTER TABLE `song`
   ADD PRIMARY KEY (`SongId`);
 
 --
+-- Indexes for table `userdata`
+--
+ALTER TABLE `userdata`
+  ADD PRIMARY KEY (`USERID`,`Name`);
+
+--
+-- Indexes for table `usergenre`
+--
+ALTER TABLE `usergenre`
+  ADD KEY `USERID` (`USERID`);
+
+--
+-- Indexes for table `userlang`
+--
+ALTER TABLE `userlang`
+  ADD KEY `USERID` (`USERID`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -112,6 +199,28 @@ ALTER TABLE `song`
 --
 ALTER TABLE `song`
   MODIFY `SongId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `userdata`
+--
+ALTER TABLE `userdata`
+  ADD CONSTRAINT `userdata_ibfk_1` FOREIGN KEY (`USERID`) REFERENCES `login` (`Uname`);
+
+--
+-- Constraints for table `usergenre`
+--
+ALTER TABLE `usergenre`
+  ADD CONSTRAINT `usergenre_ibfk_1` FOREIGN KEY (`USERID`) REFERENCES `login` (`Uname`);
+
+--
+-- Constraints for table `userlang`
+--
+ALTER TABLE `userlang`
+  ADD CONSTRAINT `userlang_ibfk_1` FOREIGN KEY (`USERID`) REFERENCES `login` (`Uname`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
