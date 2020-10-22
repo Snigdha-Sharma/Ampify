@@ -32,7 +32,7 @@ public class LoginControl implements Initializable
     public Label warning;//Login
     public Label warning2;//Register
 
-    //static Stage window;
+    static Stage window;
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
@@ -81,7 +81,7 @@ public class LoginControl implements Initializable
                 try
                 {
                     setUname(u1);
-                    OpenPlayerHome(event);
+                    OpenPlayerHome(event,u1);
                 }
                 catch(IOException e)
                 {
@@ -251,14 +251,19 @@ public class LoginControl implements Initializable
         warning.setText("Registration Successful! Ready to login.");
     }
 
-    public void OpenPlayerHome(ActionEvent event) throws IOException
+    public void OpenPlayerHome(ActionEvent event,String u1) throws IOException
     {
+        LoginControl lg = new LoginControl();
         Parent root1 = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
         Scene second=new Scene(root1);
-        //window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Main.window.setScene(second);
-        Main.window.show();
-        Main.window.setOnCloseRequest(e->closePlayer());
+        window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        lg.setUname(u1);
+        window.setUserData(lg);
+
+        window.setScene(second);
+        window.show();
+        window.setOnCloseRequest(e->closePlayer());
     }
 
     public static void closePlayer()

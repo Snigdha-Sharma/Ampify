@@ -6,8 +6,10 @@ import com.jfoenix.controls.JFXSlider;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -20,6 +22,7 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.*;
@@ -305,5 +308,21 @@ public class Controller implements Initializable
     protected static void closePlayer()
     {
         System.exit(0);
+    }
+
+    public void displayName(ActionEvent event)
+    {
+        String username = receiveData(event);
+        System.out.println("hello "+username);
+    }
+
+    public String receiveData(ActionEvent event) {
+        Node node = (Node) event.getSource();
+        Stage stage = (Stage) node.getScene().getWindow();
+        LoginControl lg = (LoginControl) stage.getUserData();
+        String username;
+        username = lg.getUname();
+//        System.out.println(username);
+        return username;
     }
 }
