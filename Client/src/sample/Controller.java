@@ -1,5 +1,6 @@
 package sample;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXSlider;
 import javafx.application.Platform;
@@ -7,6 +8,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -22,9 +25,7 @@ import javafx.util.Duration;
 import java.io.*;
 import java.lang.management.PlatformLoggingMXBean;
 import java.net.*;
-import java.util.List;
-import java.util.ResourceBundle;
-import java.util.Scanner;
+import java.util.*;
 
 import static java.lang.Thread.sleep;
 
@@ -39,6 +40,7 @@ public class Controller implements Initializable
     public Button volumeUp;
     public Button uploadButton;
     public Button logOffButton;
+    public Button goBackButton;
     public JFXSlider seekbar;
     public Label duration;
     public Label songName;
@@ -49,8 +51,9 @@ public class Controller implements Initializable
     public Media media;
     public MediaPlayer mediaPlayer;
     Image playButtonImage,pauseButtonImage,muteButtonImage,unmuteButtonImage;
-    boolean songPlaying=false;
+    boolean songPlaying=false,isLocal=false;
     Thread currSong;
+    HashMap<String,String> localSongMap;
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
@@ -58,20 +61,60 @@ public class Controller implements Initializable
         //System.out.println("HEYAAAAA:"+ getClass().getResource("sample.fxml"));
         createCurrSongList();
         //source = new File("src\\Songs\\playVideo.mp4").toURI().toString();
-        seekbar.setValue(0);
         playButtonImage=new Image(getClass().getResourceAsStream("..\\Images\\Play.jpg"));
         pauseButtonImage=new Image(getClass().getResourceAsStream("..\\Images\\Pause.jpg"));
         muteButtonImage=new Image(getClass().getResourceAsStream("..\\Images\\Mute.jpg"));
         unmuteButtonImage=new Image(getClass().getResourceAsStream("..\\Images\\NotMute.jpg"));
+        seekbar.setValue(0);
         duration.setText("0:00");
+    }
+
+    public void goBackToMiddlePage() throws IOException
+    {
+        if (mediaPlayer!=null)
+        {
+            mediaPlayer.pause();
+        }
+        MiddlePageController.currPlayList=null;
+        Parent root1 = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
+        Scene second=new Scene(root1);
+        Main.window.setScene(second);
+        Main.window.show();
+    }
+
+    public String extractSongName(String path)
+    {
+        String name = null;
+        int len=path.length(),i=len-1;
+        while(i>0)
+        {
+            if (path.charAt(i)=='\\')
+            {
+                name=path.substring(i+1,len-4);
+                break;
+            }
+            i--;
+        }
+        return name;
     }
 
     public void createCurrSongList()
     {
-//        AllSongsRequest asr=new AllSongsRequest();
-        List<String> allSongs;
-//        asr.myRequest();
-        allSongs=MiddlePageController.currPlayList;
+        List<String> allSongs=MiddlePageController.currPlayList;
+        if (allSongs==null)
+        {
+            allSongs=new ArrayList<>();
+            localSongMap=new HashMap<>();
+            String name=null;
+            for (String path:MiddlePageController.localSongsPlaylist)
+            {
+                name=extractSongName(path);
+                allSongs.add(name);
+                localSongMap.put(name,path);
+            }
+            //allSongs=MiddlePageController.localSongsPlaylist;
+            isLocal=true;
+        }
         ObservableList<String> observeAllSongs=FXCollections.observableArrayList(allSongs);
         SongList.setItems(observeAllSongs);
         SongList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
@@ -85,8 +128,18 @@ public class Controller implements Initializable
         {
             stopCurrSong();
         }
-        source=source.replaceAll("\\s", "");
-        source="http://localhost:8080/"+source+".mp3";
+        if (isLocal==false)
+        {
+            source=source.replaceAll("\\s", "");
+            source="http://localhost:8080/"+source+".mp3";
+        }
+        else
+        {
+            source=localSongMap.get(source);
+            //source=source.replaceAll("\\s", "");
+            source=new File(source).toURI().toString();
+        }
+
         //source="http://localhost:8080/AllSongsPlaylist.m3u8";
         media=new Media(source);
         mediaPlayer = new MediaPlayer(media);

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.paint.*?>
@@ -35,10 +36,28 @@
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton buttonType="RAISED" text="Local Songs" textAlignment="CENTER" textFill="#860e0e">
+            <JFXButton fx:id="localSongsButton" buttonType="RAISED" onAction="#getLocalSongs" text="Local Songs" textAlignment="CENTER" textFill="#860e0e">
                <font>
                   <Font name="Comic Sans MS Bold" size="33.0" />
                </font>
+               <effect>
+                  <Glow level="0.43">
+                     <input>
+                        <Shadow />
+                     </input>
+                  </Glow>
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="refreshLocalSongListButton" buttonType="RAISED" onAction="#refreshLocalSongList" text="Refresh Local Song List" textAlignment="CENTER" textFill="#831010">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="33.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
             </JFXButton>
          </children>
          <StackPane.margin>

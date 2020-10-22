@@ -1,21 +1,23 @@
 package sample;
 
+import javafx.concurrent.Task;
+
 import java.io.File;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Stack;
 
-public class LocalSongFiles
+public class LocalSongFiles extends Task<ArrayList<Integer>>
 {
     File file;
     FileWriter writer;
-    FileReader reader;
 
     public void makeFreshFile()
     {
+        System.out.println("Creating a fresh file");
         try
         {
             Files.deleteIfExists(Paths.get("./LocalSongs.txt"));
@@ -35,35 +37,61 @@ public class LocalSongFiles
         }
     }
 
-    public void searchLocalSongs()
+//    public void searchLocalSongs()
+//    {
+//
+//    }
+
+    @Override
+    protected ArrayList<Integer> call() throws Exception
     {
+        makeFreshFile();
+        System.out.println("File made");
+        int countSongs=0,countVideos=0;
         Stack<File> path=new Stack<File>();
         File[] init=File.listRoots();
         for (File x:init)
         {
             path.push(x);
-            System.out.println(x.getAbsolutePath());
         }
         while(!path.empty())
         {
             File temp=path.peek();
             path.pop();
-            System.out.println(temp);
             File[] subFiles=temp.listFiles();
-            //System.out.println(subFiles);
-            if (subFiles!=null) {
-                for (File x : subFiles) {
-                    if (x.getName().endsWith(".mp3")) {
-                        try {
+            if (subFiles!=null)
+            {
+                for (File x : subFiles)
+                {
+                    if (x.getName().endsWith(".mp3") || (x.getName().endsWith(".mp4")))
+                    {
+                        try
+                        {
+                            if (x.getName().endsWith(".mp3"))
+                            {
+                                countSongs++;
+                            }
+                            else
+                            {
+                                countVideos++;
+                            }
                             writer.write(x.getAbsolutePath());
-                        } catch (IOException e) {
+                            System.out.println(x.getAbsolutePath());
+                            writer.write("\n");
+                        }
+                        catch (IOException e)
+                        {
                             e.printStackTrace();
                         }
-                    } else if (x.isDirectory()) {
+                    }
+                    else if (x.isDirectory())
+                    {
                         path.push(x);
                     }
+
                 }
             }
+            updateTitle(String.valueOf(countSongs+countVideos));
         }
         try
         {
@@ -73,12 +101,16 @@ public class LocalSongFiles
         {
             e.printStackTrace();
         }
+        ArrayList<java.lang.Integer> ar=new ArrayList<>();
+        ar.add(countSongs);
+        ar.add(countVideos);
+        return ar;
     }
 
-    public static void main(String[]args)
-    {
-        LocalSongFiles l=new LocalSongFiles();
-        l.makeFreshFile();
-        l.searchLocalSongs();
-    }
+//    public static void main(String[]args)
+//    {
+//        LocalSongFiles l=new LocalSongFiles();
+//        l.makeFreshFile();
+//        l.searchLocalSongs();
+//    }
 }
