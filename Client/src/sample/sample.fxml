@@ -86,6 +86,15 @@
                         </ImageView>
                      </graphic>
                   </Button>
+                  <JFXButton>
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/Download.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
                   <Label fx:id="duration" alignment="BOTTOM_CENTER" textAlignment="CENTER" textFill="#1d1057">
                      <HBox.margin>
                         <Insets />
