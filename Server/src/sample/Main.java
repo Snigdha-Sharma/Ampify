@@ -92,7 +92,7 @@ class ClientHandler extends Thread
                     dos.writeBoolean(ob.isValidUser());
                     if(ob.isValidUser())
                     {
-                        Main.activeUsers.add(uname);
+                        //Main.activeUsers.add(uname);
                     }
                 break;
 

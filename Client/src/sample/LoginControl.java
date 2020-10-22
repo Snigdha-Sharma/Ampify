@@ -81,7 +81,7 @@ public class LoginControl implements Initializable
                 try
                 {
                     setUname(u1);
-                    OpenPlayerHome(event);
+                    OpenPlayerHome(event,u1);
                 }
                 catch(IOException e)
                 {
@@ -241,21 +241,26 @@ public class LoginControl implements Initializable
         LoginControl lg = new LoginControl();
         Parent root1 = FXMLLoader.load(getClass().getResource("UserDetails.fxml"));
         Scene second=new Scene(root1);
+        //window = (Stage)((Node)event.getSource()).getScene().getWindow();
+
+        lg.setUname(u1);
+        Main.window.setUserData(lg);
+
+        Main.window.setScene(second);
+        Main.window.show();
+        warning.setText("Registration Successful! Ready to login.");
+    }
+
+    public void OpenPlayerHome(ActionEvent event,String u1) throws IOException
+    {
+        LoginControl lg = new LoginControl();
+        Parent root1 = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
+        Scene second=new Scene(root1);
         window = (Stage)((Node)event.getSource()).getScene().getWindow();
 
         lg.setUname(u1);
         window.setUserData(lg);
 
-        window.setScene(second);
-        window.show();
-        warning.setText("Registration Successful! Ready to login.");
-    }
-
-    public void OpenPlayerHome(ActionEvent event) throws IOException
-    {
-        Parent root1 = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        Scene second=new Scene(root1);
-        window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(second);
         window.show();
         window.setOnCloseRequest(e->closePlayer());
@@ -264,6 +269,6 @@ public class LoginControl implements Initializable
     public static void closePlayer()
     {
         Controller.closePlayer();
-        window.close();
+        Main.window.close();
     }
 }

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane prefHeight="736.0" prefWidth="1090.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MiddlePageController">
+   <children>
+      <ScrollPane>
+        <content>
+          <AnchorPane>
+               <children>
+                  <ImageView pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/BgScene2.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+        </content>
+      </ScrollPane>
+      <JFXMasonryPane>
+         <children>
+            <JFXButton fx:id="allSongsButton" buttonType="RAISED" onAction="#getAllSongs" ripplerFill="#7c0606" text="All Songs" textAlignment="CENTER" textFill="#970c0c">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="33.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="localSongsButton" buttonType="RAISED" onAction="#getLocalSongs" text="Local Songs" textAlignment="CENTER" textFill="#860e0e">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="33.0" />
+               </font>
+               <effect>
+                  <Glow level="0.43">
+                     <input>
+                        <Shadow />
+                     </input>
+                  </Glow>
+               </effect>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="refreshLocalSongListButton" buttonType="RAISED" onAction="#refreshLocalSongList" text="Refresh Local Song List" textAlignment="CENTER" textFill="#831010">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="33.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+         <StackPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </StackPane.margin>
+      </JFXMasonryPane>
+   </children>
+</StackPane>

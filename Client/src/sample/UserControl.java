@@ -71,8 +71,8 @@ public class UserControl implements Initializable
             String name1 = name.getText();
             String phn1 = phn.getText();
             String email1 = email.getText();
-            String state1 = state.getId();
-            String dob1 = dob.getId();
+            String state1 = (String)state.getValue();
+            String dob1 = String.valueOf(dob.getValue());
             String pop1="", rap1="", classical1="", metal1="", contemp1="", folk1="", romantic1="", hiphop1="", brostep1="", regional1="", band1="", rock1="";
             String eng1="", hindi1="", telugu1="", harayanvi1="", bihari1="", punjabi1="", french1="", spanish1="", tamil1="", marathi1="", guj1="", raja1="";
 

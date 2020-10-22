@@ -15,7 +15,7 @@ import java.nio.file.Path;
 
 public class Main extends Application
 {
-    Stage window;
+    public static Stage window;
     @Override
     public void start(Stage primaryStage) throws Exception
     {
