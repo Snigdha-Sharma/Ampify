@@ -22,62 +22,69 @@
             </JFXSlider>
             <HBox alignment="TOP_CENTER" VBox.vgrow="ALWAYS">
                <children>
-                  <Button fx:id="prevSongButton" mnemonicParsing="false" onAction="#goToPrevSong" HBox.hgrow="ALWAYS">
+                  <JFXButton fx:id="prevSongButton" buttonType="RAISED" onAction="#goToPrevSong" text="" textAlignment="CENTER">
                      <graphic>
                         <ImageView pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../Images/Prev.jpg" />
                            </image>
                         </ImageView>
-                     </graphic></Button>
-                  <Button fx:id="playPause" mnemonicParsing="false" onAction="#playOrPause">
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="playPause" buttonType="RAISED" onAction="#playOrPause" text="">
                      <graphic>
                         <ImageView fx:id="playPauseButtonImage" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../Images/Play.jpg" />
                            </image>
                         </ImageView>
-                     </graphic></Button>
-                  <Button fx:id="nextSongButton" mnemonicParsing="false" onAction="#setNextSongButton">
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="nextSongButton" buttonType="RAISED" onAction="#goToNextSong" text="">
                      <graphic>
                         <ImageView pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../Images/Next.jpg" />
                            </image>
                         </ImageView>
-                     </graphic></Button>
-                  <Button fx:id="stop" mnemonicParsing="false" onAction="#stopCurrSong">
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="stop" buttonType="RAISED" onAction="#stopCurrSong" text="">
                      <graphic>
                         <ImageView pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../Images/Stop.jpg" />
                            </image>
                         </ImageView>
-                     </graphic></Button>
-                  <Button fx:id="muteUnmuteButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#muteOrUnmute">
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="muteUnmuteButton" buttonType="RAISED" onAction="#muteOrUnmute" text="">
                      <graphic>
                         <ImageView pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../Images/NotMute.jpg" />
                            </image>
                         </ImageView>
-                     </graphic></Button>
-                  <Button fx:id="volumeDown" mnemonicParsing="false" onAction="#decreaseVolume">
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="volumeDown" buttonType="RAISED" onAction="#decreaseVolume" text="">
                      <graphic>
                         <ImageView pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../Images/VolumeDown.jpg" />
                            </image></ImageView>
-                     </graphic></Button>
-                  <Button fx:id="volumeUp" mnemonicParsing="false" onAction="#increaseVolume">
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="volumeUp" buttonType="RAISED" onAction="#increaseVolume" text="">
                      <graphic>
                         <ImageView pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../Images/VolumeUp.jpg" />
                            </image>
                         </ImageView>
-                     </graphic></Button>
-                  <Button fx:id="uploadButton" mnemonicParsing="false" onAction="#uploadSong">
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="uploadButton" buttonType="RAISED" onAction="#uploadSong" text="">
                      <graphic>
                         <ImageView pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -85,12 +92,30 @@
                            </image>
                         </ImageView>
                      </graphic>
-                  </Button>
-                  <JFXButton>
+                  </JFXButton>
+                  <JFXButton fx:id="shuffleButton" buttonType="RAISED" onAction="#shuffleSongs" text="" textAlignment="CENTER">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/Shuffle.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="downloadButton" buttonType="RAISED" onAction="#downloadSongs" text="" textAlignment="CENTER">
                      <graphic>
                         <ImageView pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../Images/Download.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="repeatButton" buttonType="RAISED" onAction="#repeat" text="">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/RepeatPlaylist.jpg" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -127,7 +152,7 @@
                </font>
             </Label>
             <Region HBox.hgrow="ALWAYS" />
-            <Button fx:id="logOffButton" mnemonicParsing="false" onAction="#logOff">
+            <JFXButton fx:id="logOffButton" buttonType="RAISED" onAction="#logOff" text="">
                <graphic>
                   <ImageView pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -135,8 +160,8 @@
                      </image>
                   </ImageView>
                </graphic>
-            </Button>
-            <JFXButton fx:id="goBackButton" buttonType="RAISED" onAction="#goBackToMiddlePage">
+            </JFXButton>
+            <JFXButton fx:id="goBackButton" buttonType="RAISED" onAction="#goBackToMiddlePage" text="">
                <graphic>
                   <ImageView pickOnBounds="true" preserveRatio="true">
                      <image>

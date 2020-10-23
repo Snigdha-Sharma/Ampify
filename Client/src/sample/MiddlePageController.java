@@ -7,6 +7,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
@@ -43,21 +44,33 @@ public class MiddlePageController
     {
         localSongsPlaylist=new ArrayList<>();
         FileInputStream reader= null;
+        File file;
         try
         {
-            reader = new FileInputStream("LocalSongs.txt");
+            file=new File("LocalSongs.txt");
+            reader = new FileInputStream(file);
         }
         catch (FileNotFoundException e)
         {
             refreshLocalSongList();
-            reader=new FileInputStream("LocalSongs.txt");
+            file=new File("LocalSongs.txt");
+            reader=new FileInputStream(file);
+        }
+
+        if (file.length()==0)
+        {
+            Alert a=new Alert(Alert.AlertType.NONE);
+            a.setHeaderText("Alert!");
+            a.setContentText("Your local song list is empty. Please refresh to get local songs!");
+            a.setAlertType(Alert.AlertType.INFORMATION);
+            a.showAndWait();
+            return;
         }
         Scanner sc=new Scanner(reader);
 
         while(sc.hasNextLine())
         {
             String path=sc.nextLine();
-            //System.out.println("Path:"+path);
             localSongsPlaylist.add(path);
         }
         sc.close();
@@ -77,5 +90,9 @@ public class MiddlePageController
         progressStage.setScene(second);
         progressStage.initModality(Modality.APPLICATION_MODAL);
         progressStage.showAndWait();
+        root1 = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        second=new Scene(root1);
+        Main.window.setScene(second);
+        Main.window.show();
     }
 }
