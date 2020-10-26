@@ -51,7 +51,6 @@ public class UserControl implements Initializable
     public CheckBox gujarati;
     public CheckBox rajasthani;
 
-
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
