@@ -54,7 +54,7 @@ public class UserControl implements Initializable
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
-        String states[]={"Madhya Pradesh", "Uttar Pradesh", "bihar", "Punjab", "Harayana",
+        String states[]={"Madhya Pradesh", "Uttar Pradesh", "Bihar", "Punjab", "Harayana",
                 "Chhattisgarh", "Gujarat", "Maharashtra", "Jammu & Kashmir", "Andhra Pradesh",
         "Telangana", "Uttar Pradesh", "Uttarakhand", "North-Eastern States", "Kerela", "Karnataka",
         "Tamil Nadu", "Odisha", "West Bengal"};

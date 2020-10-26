@@ -7,17 +7,18 @@ import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
@@ -25,8 +26,10 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.io.*;
-import java.lang.management.PlatformLoggingMXBean;
 import java.net.*;
 import java.util.*;
 
@@ -34,40 +37,51 @@ import static java.lang.Thread.sleep;
 
 public class Controller implements Initializable
 {
-    public Button prevSongButton;
-    public Button nextSongButton;
-    public Button playPause;
-    public Button stop;
-    public Button muteUnmuteButton;
-    public Button volumeDown;
-    public Button volumeUp;
-    public Button uploadButton;
-    public Button logOffButton;
-    public Button goBackButton;
+    public JFXButton prevSongButton;
+    public JFXButton nextSongButton;
+    public JFXButton playPause;
+    public JFXButton stop;
+    public JFXButton muteUnmuteButton;
+    public JFXButton volumeDown;
+    public JFXButton volumeUp;
+    public JFXButton uploadButton;
+    public JFXButton logOffButton;
+    public JFXButton goBackButton;
+    public JFXButton downloadButton;
+    public JFXButton shuffleButton;
+    public JFXButton repeatButton;
     public JFXSlider seekbar;
     public Label duration;
     public Label songName;
     public ListView<String> SongList;
 
+    String repeatMode="None";
+    int currIdx=-1;
+
     public MediaView mv;
     String source;
     public Media media;
     public MediaPlayer mediaPlayer;
-    Image playButtonImage,pauseButtonImage,muteButtonImage,unmuteButtonImage;
-    boolean songPlaying=false,isLocal=false;
+    Image playButtonImage,pauseButtonImage,muteButtonImage,unmuteButtonImage,shuffleButtonOn,shuffleButtonOff,repeatSongImage,repeatPlaylistImage,repeatOffImage;
+    boolean songPlaying=false,isLocal=false,isShuffleOn=false;
     Thread currSong;
     HashMap<String,String> localSongMap;
+    List<String> allSongs;
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
-        //System.out.println("HEYAAAAA:"+ getClass().getResource("sample.fxml"));
         createCurrSongList();
-        //source = new File("src\\Songs\\playVideo.mp4").toURI().toString();
         playButtonImage=new Image(getClass().getResourceAsStream("..\\Images\\Play.jpg"));
         pauseButtonImage=new Image(getClass().getResourceAsStream("..\\Images\\Pause.jpg"));
         muteButtonImage=new Image(getClass().getResourceAsStream("..\\Images\\Mute.jpg"));
         unmuteButtonImage=new Image(getClass().getResourceAsStream("..\\Images\\NotMute.jpg"));
+        shuffleButtonOn=new Image(getClass().getResourceAsStream("..\\Images\\ShuffleOn.jpg"));
+        shuffleButtonOff=new Image(getClass().getResourceAsStream("..\\Images\\Shuffle.jpg"));
+        repeatOffImage=new Image(getClass().getResourceAsStream("..\\Images\\RepeatPlaylist.jpg"));
+        repeatSongImage=new Image(getClass().getResourceAsStream("..\\Images\\RepeatSong.jpg"));
+        repeatPlaylistImage=new Image(getClass().getResourceAsStream("..\\Images\\RepeatOn.jpg"));
+
         seekbar.setValue(0);
         duration.setText("0:00");
     }
@@ -101,9 +115,52 @@ public class Controller implements Initializable
         return name;
     }
 
+    public void downloadSongs()
+    {
+
+    }
+
+    public void shuffleSongs()
+    {
+        if (isShuffleOn==false && repeatMode!="Song")
+        {
+            isShuffleOn=true;
+            shuffleButton.setGraphic(new ImageView(shuffleButtonOn));
+        }
+        else
+        {
+            isShuffleOn=false;
+            shuffleButton.setGraphic(new ImageView(shuffleButtonOff));
+        }
+    }
+
+    public void repeat()
+    {
+        if (repeatMode=="None")
+        {
+            repeatMode="Playlist";
+            repeatButton.setGraphic(new ImageView(repeatPlaylistImage));
+        }
+        else if (repeatMode=="Playlist")
+        {
+            repeatMode="Song";
+            repeatButton.setGraphic(new ImageView(repeatSongImage));
+            //If repeat mode was changed to that particular song then turn off shuffling for that playlist if applied
+            if (isShuffleOn)
+            {
+                shuffleSongs();
+            }
+        }
+        else if (repeatMode=="Song")
+        {
+            repeatMode="None";
+            repeatButton.setGraphic(new ImageView(repeatOffImage));
+        }
+    }
+
     public void createCurrSongList()
     {
-        List<String> allSongs=MiddlePageController.currPlayList;
+        allSongs=MiddlePageController.currPlayList;
         if (allSongs==null)
         {
             allSongs=new ArrayList<>();
@@ -115,7 +172,6 @@ public class Controller implements Initializable
                 allSongs.add(name);
                 localSongMap.put(name,path);
             }
-            //allSongs=MiddlePageController.localSongsPlaylist;
             isLocal=true;
         }
         ObservableList<String> observeAllSongs=FXCollections.observableArrayList(allSongs);
@@ -123,33 +179,49 @@ public class Controller implements Initializable
         SongList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
     }
 
+    public void setSongOnPlayer(String s)
+    {
+        System.out.println("Selecting song:"+s);
+        media=new Media(s);
+        mediaPlayer = new MediaPlayer(media);
+        playOrPause();
+        mv.setMediaPlayer(mediaPlayer);
+        seekbar.setValue(0);
+    }
+
+    public String getPathForLocalSong(String s)
+    {
+        s=localSongMap.get(s);
+        s=new File(s).toURI().toString();
+        return s;
+    }
+
+    public String getPathForHostedSong(String s)
+    {
+        s=s.replaceAll("\\s", "");
+        s="http://localhost:8080/"+s+".mp3";
+        return s;
+    }
+
     public void selectSong()
     {
         source=SongList.getSelectionModel().getSelectedItem();
-        songName.setText("Loading...");
+        songName.setText(source);
+        currIdx=SongList.getSelectionModel().getSelectedIndex();
+        //SongList.getSelectionModel().clearSelection();
         if (mediaPlayer!=null)
         {
             stopCurrSong();
         }
         if (isLocal==false)
         {
-            source=source.replaceAll("\\s", "");
-            source="http://localhost:8080/"+source+".mp3";
+            source=getPathForHostedSong(source);
         }
         else
         {
-            source=localSongMap.get(source);
-            //source=source.replaceAll("\\s", "");
-            source=new File(source).toURI().toString();
+            source=getPathForLocalSong(source);
         }
-
-        //source="http://localhost:8080/AllSongsPlaylist.m3u8";
-        media=new Media(source);
-        mediaPlayer = new MediaPlayer(media);
-        mv.setMediaPlayer(mediaPlayer);
-        //mediaPlayer.setAutoPlay(true);
-        playOrPause();
-        seekbar.setValue(0);
+        setSongOnPlayer(source);
     }
 
     public void uploadSong()
@@ -166,7 +238,7 @@ public class Controller implements Initializable
         playPause.setGraphic(new ImageView(playButtonImage));
         media=new Media(source);
         mediaPlayer=new MediaPlayer(media);
-        //mv.setMediaPlayer(mediaPlayer);
+        mv.setMediaPlayer(mediaPlayer);
     }
 
     public void logOff() throws IOException
@@ -201,12 +273,57 @@ public class Controller implements Initializable
 
     public void goToPrevSong()
     {
-
+        if (mediaPlayer!=null)
+        {
+            stopCurrSong();
+        }
+        //System.out.println("Currently playing media source:"+allSongs.get(currIdx-1));
+        currIdx=currIdx-1;
+        if (currIdx>=0)
+        {
+            if (isLocal==true)
+            {
+                System.out.println("Prev Song:"+allSongs.get(currIdx));
+                setSongOnPlayer(getPathForLocalSong(allSongs.get(currIdx)));
+            }
+            else
+            {
+                setSongOnPlayer(getPathForHostedSong(allSongs.get(currIdx)));
+            }
+        }
     }
 
-    public void setNextSongButton()
+    public void goToNextSong()
     {
-
+        if (mediaPlayer!=null)
+        {
+            stopCurrSong();
+        }
+        System.out.println("Current Index:"+currIdx+"Song List Size:"+allSongs.size());
+        currIdx=currIdx+1;
+        if (currIdx>=allSongs.size())
+        {
+            if (repeatMode=="Playlist")
+            {
+                currIdx=0;
+            }
+            else if (repeatMode=="Song")
+            {
+                currIdx=currIdx-1;
+            }
+            else
+            {
+                return;
+            }
+        }
+        if (isLocal==true)
+        {
+            setSongOnPlayer(getPathForLocalSong(allSongs.get(currIdx)));
+        }
+        else
+        {
+            setSongOnPlayer(getPathForHostedSong(allSongs.get(currIdx)));
+        }
     }
 
     public void muteOrUnmute()
@@ -244,7 +361,21 @@ public class Controller implements Initializable
                 currSong.start();
             }
             mediaPlayer.play();
-            System.out.println(media.getMetadata());
+            //System.out.println(media.getMetadata());
+        }
+    }
+
+    public void setRandomSong()
+    {
+        int len=allSongs.size()-1;
+        currIdx=(int)(Math.random()*len);
+        if (isLocal==true)
+        {
+            setSongOnPlayer(getPathForLocalSong(allSongs.get(currIdx)));
+        }
+        else
+        {
+            setSongOnPlayer(getPathForHostedSong(allSongs.get(currIdx)));
         }
     }
 
@@ -252,9 +383,11 @@ public class Controller implements Initializable
     {
         while(songPlaying)
         {
-            Platform.runLater(()->{
+            Platform.runLater(()->
+            {
                 seekbar.setValue((mediaPlayer.getCurrentTime().toSeconds()/ media.getDuration().toSeconds()) *100);
                 songName.setText((String) media.getMetadata().get("title"));
+//                System.out.println("Thread:"+mediaPlayer.getMedia().getMetadata());
                 long insec= (long) mediaPlayer.getCurrentTime().toSeconds();
                 long min=insec/60;
                 long sec=insec%60;
@@ -266,7 +399,36 @@ public class Controller implements Initializable
                 {
                     sec=Math.round((sec*100.0)/100.0);
                     duration.setText(min+":"+sec);
-                }});
+                }
+                //System.out.println(mediaPlayer.getStatus());
+                mediaPlayer.setOnEndOfMedia(()->{
+                    System.out.println("Song complete");
+                    mediaPlayer.stop();
+                    if (repeatMode=="Song")
+                    {
+                        currIdx=currIdx-1;
+                        goToNextSong();
+                        return;
+                    }
+                    else if (repeatMode=="Playlist")
+                    {
+                        if (currIdx>=allSongs.size())
+                        {
+                            currIdx=-1;
+                        }
+                        goToNextSong();
+                        return;
+                    }
+                    if (isShuffleOn==false)
+                    {
+                        goToNextSong();
+                    }
+                    else
+                    {
+                        setRandomSong();
+                    }
+                });
+            });
             try
             {
                 sleep(1000);
@@ -286,7 +448,6 @@ public class Controller implements Initializable
         playPause.setGraphic(new ImageView(playButtonImage));
         duration.setText("0:00");
         seekbar.setValue(0);
-        currSong.stop();
     }
 
     public void increaseVolume()
@@ -316,7 +477,8 @@ public class Controller implements Initializable
         System.out.println("hello "+username);
     }
 
-    public String receiveData(ActionEvent event) {
+    public String receiveData(ActionEvent event)
+    {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         LoginControl lg = (LoginControl) stage.getUserData();
@@ -325,4 +487,5 @@ public class Controller implements Initializable
 //        System.out.println(username);
         return username;
     }
+
 }

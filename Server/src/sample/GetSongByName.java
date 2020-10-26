@@ -143,7 +143,7 @@ class TestHTTPServer implements Runnable
                     }
                      //send HTTP Headers
                     out.println("HTTP/1.1 200 OK");
-                    out.println("Server: Java HTTP Server from SSaurel : 1.0");
+                    out.println("Server: Java HTTP Server from Coffee N' Code: 1.0");
                     out.println("Date: " + new Date());
                     out.println("Content-type: " + content);
                     out.println("Content-length: " + fileLength);
