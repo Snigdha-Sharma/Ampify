@@ -9,12 +9,13 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
 
 public class ServerUserDataRequest {
     String username, name, phn, email, dob, state;
     String pop1, rap1, classical1, metal1, contemp1, folk1, romantic1, hiphop1, brostep1, regional1, band1, rock1;
     String eng1, hindi1, telugu1, harayanvi1, bihari1, punjabi1, french1, spanish1, tamil1, marathi1, guj1, raja1;
-    boolean registered = false;
+    boolean registered=false;
 
     ServerUserDataRequest(String username, String name, String phn, String email, String dob, String state, String pop1, String rap1, String classical1, String metal1, String folk1, String romantic1, String contemp1, String brostep1, String regional1, String hiphop1, String band1, String rock1, String eng1, String hindi1, String punjabi1, String harayanvi1, String bihari1, String telugu1, String marathi1, String guj1, String french1, String spanish1, String raja1, String tamil1) throws IOException {
         this.username = username;
@@ -71,8 +72,45 @@ public class ServerUserDataRequest {
             statement.executeUpdate(sql);
             registered = true;
         } catch (Exception e) {
-            e.printStackTrace();
+//            e.printStackTrace();
             registered = false;
+            return registered;
+        }
+
+        String gen[]={pop1, rap1, classical1, metal1, contemp1, folk1, romantic1, hiphop1, brostep1, regional1, band1, rock1};
+        String lang[]={eng1, hindi1, telugu1, harayanvi1, bihari1, punjabi1, french1, spanish1, tamil1, marathi1, guj1, raja1};
+
+        //Traversing the list of genres and storing ticked entries in database
+        for (String str : gen)
+        {
+            System.out.println(str);
+            if(str.isEmpty())
+                continue;
+            sql = "INSERT INTO usergenre(USERID, genre) VALUES ('"+username+"','"+str+"')";
+            statement = connection.createStatement();
+            try {
+                statement.executeUpdate(sql);
+            } catch (Exception e) {
+                e.printStackTrace();
+                registered = false;
+                return registered;
+            }
+        }
+        //Traversing the list of languages and storing ticked entries in database
+        for (String str : lang)
+        {
+            System.out.println(str);
+            if(str.isEmpty())
+                continue;
+            sql = "INSERT INTO userlang(USERID, Language) VALUES ('"+username+"','"+str+"')";
+            statement = connection.createStatement();
+            try {
+                statement.executeUpdate(sql);
+            } catch (Exception e) {
+                e.printStackTrace();
+                registered = false;
+                return registered;
+            }
         }
 
         System.out.println(registered);
