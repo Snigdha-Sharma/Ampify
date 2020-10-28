@@ -123,8 +123,9 @@ class ClientHandler extends Thread
 
                 case "UserRequest":
                     String username, name, phn, email, dob, state;
-                    String pop1, rap1, classical1, metal1, contemp1, folk1, romantic1, hiphop1, brostep1, regional1, band1, rock1;
-                    String eng1, hindi1, telugu1, harayanvi1, bihari1, punjabi1, french1, spanish1, tamil1, marathi1, guj1, raja1;
+                    String pop1, rap1, classical1, metal1, contemp1, folk1, romantic1, hiphop1, brostep1, band1, rock1;
+                    String eng1, hindi1, telugu1, harayanvi1, bihari1, punjabi1, french1, spanish1, marathi1, guj1;
+                    String a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14;
 
                     username = dis.readUTF();
                     name=dis.readUTF();
@@ -132,8 +133,6 @@ class ClientHandler extends Thread
                     email=dis.readUTF();
                     dob=dis.readUTF();
                     state=dis.readUTF();
-
-//                    String dtt=uname;
 
                     pop1=dis.readUTF();
                     rap1=dis.readUTF();
@@ -144,7 +143,6 @@ class ClientHandler extends Thread
                     romantic1=dis.readUTF();
                     hiphop1=dis.readUTF();
                     brostep1=dis.readUTF();
-                    regional1=dis.readUTF();
                     band1=dis.readUTF();
                     rock1=dis.readUTF();
 
@@ -156,16 +154,29 @@ class ClientHandler extends Thread
                     punjabi1=dis.readUTF();
                     french1=dis.readUTF();
                     spanish1=dis.readUTF();
-                    tamil1=dis.readUTF();
                     marathi1=dis.readUTF();
                     guj1=dis.readUTF();
-                    raja1=dis.readUTF();
 
-                    ServerUserDataRequest newData=new ServerUserDataRequest(username, name, phn, email, dob, state, pop1, rap1, classical1, metal1, contemp1, folk1, romantic1, hiphop1, brostep1, regional1, band1, rock1, eng1, hindi1, telugu1, harayanvi1, bihari1, punjabi1, french1, spanish1, tamil1, marathi1, guj1, raja1);
+                    a1=dis.readUTF();
+                    a2=dis.readUTF();
+                    a3=dis.readUTF();
+                    a4=dis.readUTF();
+                    a5=dis.readUTF();
+                    a6=dis.readUTF();
+                    a7=dis.readUTF();
+                    a8=dis.readUTF();
+                    a9=dis.readUTF();
+                    a10=dis.readUTF();
+                    a11=dis.readUTF();
+                    a12=dis.readUTF();
+                    a13=dis.readUTF();
+                    a14=dis.readUTF();;
+
+                    ServerUserDataRequest newData=new ServerUserDataRequest(username, name, phn, email, dob, state, pop1, rap1, classical1, metal1, contemp1, folk1, romantic1, hiphop1, brostep1, band1, rock1, eng1, hindi1, telugu1, harayanvi1, bihari1, punjabi1, french1, spanish1, marathi1, guj1, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
                     dos.writeBoolean(newData.isFullSuccessful());
                     break;
 
-                case "LogOff": //uname=dis.readUTF();
+                case "LogOff":
                     break;
 
                 default: dos.writeBoolean(false);
