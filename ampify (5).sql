@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 28, 2020 at 01:27 PM
+-- Generation Time: Oct 29, 2020 at 05:35 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -24,6 +24,90 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `artist`
+--
+
+CREATE TABLE `artist` (
+  `ID` int(11) NOT NULL,
+  `Artist` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `artist`
+--
+
+INSERT INTO `artist` (`ID`, `Artist`) VALUES
+(1, 'The Chainsmokers'),
+(2, 'Alec Benjamin'),
+(3, 'Marshmallow'),
+(4, 'Harry Styles'),
+(5, 'Eminem'),
+(6, 'Shawn Mendes'),
+(7, 'Ed Sheeran'),
+(8, 'Maroon 5'),
+(9, 'Billie Eilish'),
+(10, 'Post Malone'),
+(11, 'Panic! And the Disco'),
+(12, 'Tones and I'),
+(13, 'Queen'),
+(14, 'Lil Nas X');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `genre`
+--
+
+CREATE TABLE `genre` (
+  `ID` int(11) NOT NULL,
+  `Genre` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `genre`
+--
+
+INSERT INTO `genre` (`ID`, `Genre`) VALUES
+(1, 'Pop'),
+(2, 'Rap'),
+(3, 'Romantic'),
+(4, 'Contemporary'),
+(5, 'Metal'),
+(6, 'Band'),
+(7, 'Folk'),
+(8, 'Classical'),
+(9, 'Brostep'),
+(10, 'Hiphop'),
+(11, 'Rock');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `language`
+--
+
+CREATE TABLE `language` (
+  `ID` int(11) NOT NULL,
+  `Language` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `language`
+--
+
+INSERT INTO `language` (`ID`, `Language`) VALUES
+(1, 'English'),
+(2, 'Hindi'),
+(3, 'Spanish'),
+(4, 'French'),
+(7, 'Telugu'),
+(8, 'Harayanvi'),
+(9, 'Bihari'),
+(10, 'Punjabi');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `login`
 --
 
@@ -37,7 +121,10 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`Uname`, `Passwd`) VALUES
+('Afk@13', 'GZ7bNNbbf0ddNWVk+nVNfgmQJYAfr/g0tOybpiTu79M='),
+('Anon@123', '4cB4+xog3Vps3FHxT70tszVWfYVb9Z0jZsBhbF5c6hc='),
 ('divyasri', 'ESSpZsvTADsA1BifvkobtcQuCAre6SDYIQCcZOtAo7Y='),
+('Ksh12@', '/A4V3QIkObJduVHhAqD2mTOXVD9RfNuQG/e9rWhvZeM='),
 ('Purva@123', 'EBLwN4oc7RBGwI8dl0/TMQ1sfCW00NxC3XqbrPNXEdA='),
 ('Purva@1234', 'uXcyhDs29cEz/Iti8h5GztMkjB+lhYd7h2YsUH/c8F0='),
 ('rishabh', 'VTNGyc+ZtL7fQjsuzE/p9eg40CdlrrlbX4r6kL8wmaM='),
@@ -95,7 +182,7 @@ INSERT INTO `song` (`SongId`, `Name`, `Path`, `Lyrics`, `PublishYear`, `DateAdde
 
 CREATE TABLE `userartist` (
   `USERID` varchar(20) NOT NULL,
-  `Artist` varchar(30) NOT NULL
+  `Artist` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -103,12 +190,12 @@ CREATE TABLE `userartist` (
 --
 
 INSERT INTO `userartist` (`USERID`, `Artist`) VALUES
-('Purva@1234', 'Ed Sheeran'),
-('Purva@1234', 'Maroon 5'),
-('Purva@1234', 'Marshmallow'),
-('Purva@1234', 'Post Malone'),
-('Purva@1234', 'Shawn Mendes'),
-('Purva@1234', 'The Chainsmokers');
+('Ksh12@', 1),
+('Ksh12@', 3),
+('Ksh12@', 5),
+('Ksh12@', 6),
+('Ksh12@', 7),
+('Ksh12@', 8);
 
 -- --------------------------------------------------------
 
@@ -130,6 +217,7 @@ CREATE TABLE `userdata` (
 --
 
 INSERT INTO `userdata` (`USERID`, `Name`, `PhoneNo`, `Dob`, `Email`, `State`) VALUES
+('Ksh12@', 'Kshitij', '9263046669', '2000-02-04 00:00:00.000000', 'kshtj09@gmail.com', 'Madhya Pradesh'),
 ('Purva@1234', 'Purva Gautam', '7987318738', '2001-01-15 00:00:00.000000', 'gautam.purva@gmail.com', 'Madhya Pradesh'),
 ('uhU@123', 'Hello', '8978939890', '1999-10-08 00:00:00.000000', 'mdsnkj@manksh.com', 'Karnataka');
 
@@ -141,24 +229,8 @@ INSERT INTO `userdata` (`USERID`, `Name`, `PhoneNo`, `Dob`, `Email`, `State`) VA
 
 CREATE TABLE `usergenre` (
   `USERID` varchar(20) NOT NULL,
-  `Genre` varchar(25) NOT NULL
+  `Genre` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `usergenre`
---
-
-INSERT INTO `usergenre` (`USERID`, `Genre`) VALUES
-('Purva@1234', 'Band'),
-('Purva@1234', 'Classical'),
-('Purva@1234', 'Contemporary'),
-('Purva@1234', 'Folk'),
-('Purva@1234', 'Hiphop'),
-('Purva@1234', 'Rock'),
-('Purva@1234', 'Romantic'),
-('uhU@123', 'Band'),
-('uhU@123', 'Brostep'),
-('uhU@123', 'Regional');
 
 -- --------------------------------------------------------
 
@@ -168,7 +240,7 @@ INSERT INTO `usergenre` (`USERID`, `Genre`) VALUES
 
 CREATE TABLE `userlang` (
   `USERID` varchar(20) NOT NULL,
-  `Language` varchar(20) NOT NULL
+  `Language` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -176,18 +248,32 @@ CREATE TABLE `userlang` (
 --
 
 INSERT INTO `userlang` (`USERID`, `Language`) VALUES
-('Purva@1234', 'English'),
-('Purva@1234', 'French'),
-('Purva@1234', 'Hindi'),
-('Purva@1234', 'Punjabi'),
-('Purva@1234', 'Spanish'),
-('uhU@123', 'Hindi'),
-('uhU@123', 'Punjabi'),
-('uhU@123', 'Telugu');
+('Ksh12@', 1),
+('Ksh12@', 2),
+('Ksh12@', 3),
+('Ksh12@', 10);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `artist`
+--
+ALTER TABLE `artist`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `genre`
+--
+ALTER TABLE `genre`
+  ADD PRIMARY KEY (`ID`);
+
+--
+-- Indexes for table `language`
+--
+ALTER TABLE `language`
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indexes for table `login`
@@ -205,7 +291,8 @@ ALTER TABLE `song`
 -- Indexes for table `userartist`
 --
 ALTER TABLE `userartist`
-  ADD PRIMARY KEY (`USERID`,`Artist`);
+  ADD PRIMARY KEY (`USERID`,`Artist`),
+  ADD KEY `Artist` (`Artist`);
 
 --
 -- Indexes for table `userdata`
@@ -218,18 +305,38 @@ ALTER TABLE `userdata`
 --
 ALTER TABLE `usergenre`
   ADD PRIMARY KEY (`USERID`,`Genre`),
-  ADD KEY `USERID` (`USERID`);
+  ADD KEY `USERID` (`USERID`),
+  ADD KEY `Genre` (`Genre`);
 
 --
 -- Indexes for table `userlang`
 --
 ALTER TABLE `userlang`
   ADD PRIMARY KEY (`USERID`,`Language`),
-  ADD KEY `USERID` (`USERID`);
+  ADD KEY `USERID` (`USERID`),
+  ADD KEY `Language` (`Language`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `artist`
+--
+ALTER TABLE `artist`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- AUTO_INCREMENT for table `genre`
+--
+ALTER TABLE `genre`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `language`
+--
+ALTER TABLE `language`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `song`
@@ -246,7 +353,9 @@ ALTER TABLE `song`
 --
 ALTER TABLE `userartist`
   ADD CONSTRAINT `userartist_ibfk_1` FOREIGN KEY (`USERID`) REFERENCES `login` (`Uname`),
-  ADD CONSTRAINT `userartist_ibfk_2` FOREIGN KEY (`USERID`) REFERENCES `login` (`Uname`);
+  ADD CONSTRAINT `userartist_ibfk_2` FOREIGN KEY (`USERID`) REFERENCES `login` (`Uname`),
+  ADD CONSTRAINT `userartist_ibfk_3` FOREIGN KEY (`Artist`) REFERENCES `artist` (`ID`),
+  ADD CONSTRAINT `userartist_ibfk_4` FOREIGN KEY (`USERID`) REFERENCES `login` (`Uname`);
 
 --
 -- Constraints for table `userdata`
@@ -258,13 +367,15 @@ ALTER TABLE `userdata`
 -- Constraints for table `usergenre`
 --
 ALTER TABLE `usergenre`
-  ADD CONSTRAINT `usergenre_ibfk_1` FOREIGN KEY (`USERID`) REFERENCES `login` (`Uname`);
+  ADD CONSTRAINT `usergenre_ibfk_1` FOREIGN KEY (`USERID`) REFERENCES `login` (`Uname`),
+  ADD CONSTRAINT `usergenre_ibfk_2` FOREIGN KEY (`Genre`) REFERENCES `genre` (`ID`);
 
 --
 -- Constraints for table `userlang`
 --
 ALTER TABLE `userlang`
-  ADD CONSTRAINT `userlang_ibfk_1` FOREIGN KEY (`USERID`) REFERENCES `login` (`Uname`);
+  ADD CONSTRAINT `userlang_ibfk_1` FOREIGN KEY (`USERID`) REFERENCES `login` (`Uname`),
+  ADD CONSTRAINT `userlang_ibfk_2` FOREIGN KEY (`Language`) REFERENCES `language` (`ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

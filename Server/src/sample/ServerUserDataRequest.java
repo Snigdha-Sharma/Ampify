@@ -101,7 +101,24 @@ public class ServerUserDataRequest {
             System.out.println(str);
             if(str.isEmpty())
                 continue;
-            sql = "INSERT INTO usergenre(USERID, genre) VALUES ('"+username+"','"+str+"')";
+
+            String data="";
+            sql = "SELECT ID FROM Genre WHERE Genre='"+str+"'";
+            statement = connection.createStatement();
+            try {
+                resultSet = statement.executeQuery(sql);
+                if(resultSet.next()){
+                    data = resultSet.getString(1);
+                }
+                else registered=false;
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                registered = false;
+                return registered;
+            }
+
+            sql = "INSERT INTO usergenre(USERID, genre) VALUES ('"+username+"','"+data+"')";
             statement = connection.createStatement();
             try {
                 statement.executeUpdate(sql);
@@ -117,7 +134,23 @@ public class ServerUserDataRequest {
             System.out.println(str);
             if(str.isEmpty())
                 continue;
-            sql = "INSERT INTO userlang(USERID, Language) VALUES ('"+username+"','"+str+"')";
+            String data="";
+            sql = "SELECT ID FROM Language WHERE Language='"+str+"'";
+            statement = connection.createStatement();
+            try {
+                resultSet = statement.executeQuery(sql);
+                if(resultSet.next()){
+                    data = resultSet.getString(1);
+                }
+                else registered=false;
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                registered = false;
+                return registered;
+            }
+
+            sql = "INSERT INTO userlang(USERID, Language) VALUES ('"+username+"','"+data+"')";
             statement = connection.createStatement();
             try {
                 statement.executeUpdate(sql);
@@ -133,7 +166,24 @@ public class ServerUserDataRequest {
             System.out.println(str);
             if(str.isEmpty())
                 continue;
-            sql = "INSERT INTO userartist(USERID, Artist) VALUES ('"+username+"','"+str+"')";
+
+            String data="";
+            sql = "SELECT ID FROM Artist WHERE Artist='"+str+"'";
+            statement = connection.createStatement();
+            try {
+                resultSet = statement.executeQuery(sql);
+                if(resultSet.next()){
+                    data = resultSet.getString(1);
+                }
+                else registered=false;
+
+            } catch (Exception e) {
+                e.printStackTrace();
+                registered = false;
+                return registered;
+            }
+
+            sql = "INSERT INTO userartist(USERID, Artist) VALUES ('"+username+"','"+data+"')";
             statement = connection.createStatement();
             try {
                 statement.executeUpdate(sql);

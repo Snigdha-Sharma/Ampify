@@ -5,7 +5,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
 <ScrollPane prefHeight="1080.0" prefWidth="921.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UserControl">
    <content>
       <Pane prefHeight="1080.0" prefWidth="901.0">
@@ -22,11 +21,11 @@
                         <Region prefHeight="5.0" prefWidth="325.0" />
                         <Label text="Phone Number" />
                         <TextField fx:id="phn" />
-                        <Label fx:id="lphn" />
+                        <Label fx:id="lphn" textFill="RED" />
                         <Region prefHeight="5.0" prefWidth="325.0" />
                         <Label text="E-Mail ID" />
                         <TextField fx:id="email" />
-                        <Label fx:id="lemail" />
+                        <Label fx:id="lemail" textFill="RED" />
                         <Region prefHeight="6.0" prefWidth="600.0" />
                         <Label text="State of Residence" />
                         <HBox prefHeight="25.0" prefWidth="600.0">
@@ -50,7 +49,7 @@
                            <children>
                               <Label text="Genres preferred" />
                               <Region prefHeight="27.0" prefWidth="60.0" />
-                              <Label fx:id="lgen" />
+                              <Label fx:id="lgen" textFill="RED" />
                            </children>
                         </HBox>
                         <VBox prefHeight="75.0" prefWidth="600.0">
@@ -93,7 +92,7 @@
                            <children>
                               <Label text="Languages preferred" />
                               <Region prefHeight="27.0" prefWidth="47.0" />
-                              <Label fx:id="llang" />
+                              <Label fx:id="llang" textFill="RED" />
                            </children>
                         </HBox>
                         <VBox prefHeight="91.0" prefWidth="600.0">
@@ -133,7 +132,7 @@
                            <children>
                               <Label text="Artist Choice" />
                               <Region prefHeight="27.0" prefWidth="22.0" />
-                              <Label fx:id="lart" />
+                              <Label fx:id="lart" textFill="RED" />
                            </children>
                         </HBox>
                         <VBox prefHeight="173.0" prefWidth="600.0">
