@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
@@ -14,31 +18,60 @@
                   <HBox prefHeight="398.0" prefWidth="655.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <Region prefHeight="398.0" prefWidth="181.0" />
-                        <VBox>
+                        <VBox alignment="CENTER_LEFT">
                            <children>
                               <Region prefHeight="45.0" prefWidth="614.0" />
-                              <Label alignment="CENTER" contentDisplay="CENTER" text="Username" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="Username">
+                                 <font>
+                                    <Font name="Agency FB Bold" size="31.0" />
+                                 </font>
+                                 <effect>
+                                    <Glow level="0.49" />
+                                 </effect></Label>
                               <Region prefHeight="3.0" prefWidth="614.0" />
-                              <TextField fx:id="uname1" />
+                              <TextField fx:id="uname1" opacity="0.8" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 4;">
+                                 <font>
+                                    <Font name="System Bold" size="22.0" />
+                                 </font></TextField>
                               <Region prefHeight="41.0" prefWidth="614.0" />
-                              <Label alignment="CENTER" text="Password" />
+                              <Label alignment="CENTER" text="Password">
+                                 <font>
+                                    <Font name="Agency FB Bold" size="31.0" />
+                                 </font>
+                                 <effect>
+                                    <Glow />
+                                 </effect></Label>
                               <Region prefHeight="0.0" prefWidth="274.0" />
-                              <PasswordField fx:id="pass1" />
+                              <PasswordField fx:id="pass1" opacity="0.8" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 4;">
+                                 <font>
+                                    <Font size="22.0" />
+                                 </font></PasswordField>
                               <Region prefHeight="21.0" prefWidth="274.0" />
                               <HBox prefHeight="100.0" prefWidth="200.0">
                                  <children>
-                                    <Region prefHeight="100.0" prefWidth="185.0" />
+                                    <Region prefHeight="92.0" prefWidth="171.0" />
                                     <VBox prefHeight="100.0" prefWidth="301.0">
                                        <children>
-                                          <CheckBox fx:id="check" mnemonicParsing="false" text="Not a robot" />
+                                          <CheckBox fx:id="check" mnemonicParsing="false" prefHeight="32.0" prefWidth="164.0" style="-fx-background-color: rgba(0,0,0,0.3);" text="Not a robot" textFill="WHITE">
+                                             <font>
+                                                <Font size="22.0" />
+                                             </font></CheckBox>
                                           <Region prefHeight="22.0" prefWidth="614.0" />
-                                          <HBox prefHeight="100.0" prefWidth="200.0">
+                                          <HBox prefHeight="60.0" prefWidth="291.0">
                                              <children>
                                                 <Region prefHeight="73.0" prefWidth="26.0" />
                                                 <VBox prefHeight="73.0" prefWidth="89.0">
                                                    <children>
-                                                      <Region prefHeight="51.0" prefWidth="89.0" />
-                                                      <Button fx:id="login" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#LoginAct" text="Login" />
+                                                      <Region prefHeight="58.0" prefWidth="89.0" />
+                                                      <Region prefHeight="200.0" prefWidth="200.0" />
+                                                      <Button fx:id="login" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#LoginAct" prefHeight="48.0" prefWidth="131.0" style="-fx-background-color: rgb(0,0,0,0.4);" text="Login" textFill="WHITE">
+                                                         <font>
+                                                            <Font size="22.0" />
+                                                         </font>
+                                                         <effect>
+                                                            <DropShadow />
+                                                         </effect>
+                                                      </Button>
                                                    </children>
                                                 </VBox>
                                              </children>
@@ -48,7 +81,7 @@
                                  </children>
                               </HBox>
                               <Region prefHeight="17.0" prefWidth="501.0" />
-                              <Label fx:id="warning" contentDisplay="CENTER" prefHeight="27.0" prefWidth="511.0" />
+                              <Label fx:id="warning" contentDisplay="CENTER" prefHeight="0.0" prefWidth="501.0" />
                            </children>
                         </VBox>
                         <Region prefHeight="200.0" prefWidth="200.0" />
@@ -66,27 +99,61 @@
                         <Region prefHeight="398.0" prefWidth="181.0" />
                         <VBox>
                            <children>
-                              <Region prefHeight="26.0" prefWidth="274.0" />
-                              <Label alignment="CENTER" contentDisplay="CENTER" text="Username" />
+                              <Region prefHeight="50.0" prefWidth="501.0" />
+                              <Label alignment="CENTER" contentDisplay="CENTER" text="Username">
+                                 <font>
+                                    <Font name="Agency FB Bold" size="27.0" />
+                                 </font>
+                                 <effect>
+                                    <Glow level="0.5" />
+                                 </effect></Label>
                               <Region prefHeight="3.0" prefWidth="614.0" />
-                              <TextField fx:id="uname2" />
+                              <TextField fx:id="uname2" opacity="0.8" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 4;">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font></TextField>
                               <Region prefHeight="30.0" prefWidth="274.0" />
-                              <Label alignment="CENTER" text="Password" />
+                              <Label alignment="CENTER" text="Password">
+                                 <font>
+                                    <Font name="Agency FB Bold" size="27.0" />
+                                 </font>
+                                 <effect>
+                                    <Glow level="0.5" />
+                                 </effect></Label>
                               <Region prefHeight="0.0" prefWidth="274.0" />
-                              <PasswordField fx:id="pass2" />
+                              <PasswordField fx:id="pass2" opacity="0.8" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 4;">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font></PasswordField>
                               <Region prefHeight="30.0" prefWidth="274.0" />
-                              <Label prefHeight="27.0" prefWidth="171.0" text="Repeat Password" />
+                              <Label prefHeight="27.0" prefWidth="171.0" text="Repeat Password">
+                                 <font>
+                                    <Font name="Agency FB Bold" size="27.0" />
+                                 </font>
+                                 <effect>
+                                    <Glow level="0.5" />
+                                 </effect></Label>
                               <Region prefHeight="5.0" prefWidth="274.0" />
-                              <PasswordField fx:id="repass" />
+                              <PasswordField fx:id="repass" opacity="0.8" style="-fx-background-color: transparent; -fx-border-color: black; -fx-border-width: 4;">
+                                 <font>
+                                    <Font size="21.0" />
+                                 </font></PasswordField>
                               <Region prefHeight="17.0" prefWidth="274.0" />
-                              <Label fx:id="warning2" prefHeight="27.0" prefWidth="538.0" />
-                              <HBox>
+                              <Label fx:id="warning2" minWidth="0.0" prefHeight="0.0" prefWidth="501.0" />
+                              <HBox prefHeight="111.0" prefWidth="501.0">
                                  <children>
-                                    <Region prefHeight="100.0" prefWidth="200.0" />
-                                    <VBox>
+                                    <Region prefHeight="84.0" prefWidth="172.0" />
+                                    <VBox prefHeight="30.0" prefWidth="188.0">
                                        <children>
-                                          <Region prefHeight="19.0" prefWidth="188.0" />
-                                          <Button fx:id="signup" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#RegisterAct" text="Sign Up" />
+                                          <Region prefHeight="0.0" prefWidth="188.0" />
+                                          <Button fx:id="signup" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#RegisterAct" style="-fx-background-color: rgb(0,0,0,0.4);" text="Sign Up" textFill="WHITE">
+                                             <effect>
+                                                <DropShadow />
+                                             </effect>
+                                             <font>
+                                                <Font size="25.0" />
+                                             </font>
+                                          </Button>
                                        </children>
                                     </VBox>
                                  </children>

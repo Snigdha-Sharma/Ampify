@@ -17,7 +17,13 @@ public class Main extends Application
         window=primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("loginscene.fxml"));
         window.setTitle("Login/Register");
-        window.setScene(new Scene(root, 800, 500));
+
+
+        primaryStage.setOpacity(0.9); //new
+        Scene scene=new Scene(root);
+        scene.getStylesheets().add("resources/css/logincss.css");
+        window.setScene(scene);
+
         window.setOnCloseRequest(e->closeProgram());
         window.show();
     }
