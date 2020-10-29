@@ -5,134 +5,199 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<Pane prefHeight="897.0" prefWidth="907.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UserControl">
-   <children>
-      <HBox prefHeight="897.0" prefWidth="907.0">
+
+<ScrollPane prefHeight="1080.0" prefWidth="921.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UserControl">
+   <content>
+      <Pane prefHeight="1080.0" prefWidth="901.0">
          <children>
-            <Region prefHeight="759.0" prefWidth="424.0" />
-            <VBox>
+            <HBox prefHeight="1080.0" prefWidth="899.0">
                <children>
-                  <Region prefHeight="30.0" prefWidth="600.0" />
-                  <Label text="Name" />
-                  <TextField fx:id="name" />
-                  <Region prefHeight="12.0" prefWidth="325.0" />
-                  <Label text="Phone Number" />
-                  <TextField fx:id="phn" />
-                  <Region prefHeight="12.0" prefWidth="325.0" />
-                  <Label text="E-Mail ID" />
-                  <TextField fx:id="email" />
-                  <Region prefHeight="22.0" prefWidth="488.0" />
-                  <Label text="State of Residence" />
-                  <ChoiceBox fx:id="state" prefWidth="150.0" />
-                  <Region prefHeight="22.0" prefWidth="488.0" />
-                  <Button fx:id="submit" mnemonicParsing="false" onAction="#submitAct" text="Submit" />
-                  <Label text="Date of Birth" />
-                  <DatePicker fx:id="dob" />
-                  <Region prefHeight="21.0" prefWidth="488.0" />
-                  <Label text="Genres preferred" />
-                  <VBox prefHeight="137.0" prefWidth="422.0">
+                  <Region prefHeight="945.0" prefWidth="171.0" />
+                  <VBox>
                      <children>
-                        <Region prefHeight="12.0" prefWidth="374.0" />
-                        <HBox prefHeight="39.0" prefWidth="374.0">
+                        <Region prefHeight="30.0" prefWidth="600.0" />
+                        <Label text="Name" />
+                        <TextField fx:id="name" />
+                        <Label fx:id="lname" />
+                        <Region prefHeight="5.0" prefWidth="325.0" />
+                        <Label text="Phone Number" />
+                        <TextField fx:id="phn" />
+                        <Label fx:id="lphn" />
+                        <Region prefHeight="5.0" prefWidth="325.0" />
+                        <Label text="E-Mail ID" />
+                        <TextField fx:id="email" />
+                        <Label fx:id="lemail" />
+                        <Region prefHeight="6.0" prefWidth="600.0" />
+                        <Label text="State of Residence" />
+                        <HBox prefHeight="25.0" prefWidth="600.0">
                            <children>
-                              <CheckBox fx:id="pop" mnemonicParsing="false" text="Pop" />
-                              <Region prefHeight="33.0" prefWidth="15.0" />
-                              <CheckBox fx:id="classical" mnemonicParsing="false" text="Classical" />
-                              <Region prefHeight="33.0" prefWidth="15.0" />
-                              <CheckBox fx:id="metal" mnemonicParsing="false" text="Metal" />
+                              <ChoiceBox fx:id="state" prefWidth="150.0" />
+                              <Region prefHeight="39.0" prefWidth="35.0" />
+                              <Label fx:id="lstate" textFill="RED" />
                            </children>
                         </HBox>
-                        <Region prefHeight="13.0" prefWidth="374.0" />
-                        <HBox prefHeight="39.0" prefWidth="374.0">
+                        <Region prefHeight="22.0" prefWidth="488.0" />
+                        <Label text="Date of Birth" />
+                        <HBox prefHeight="30.0" prefWidth="600.0">
                            <children>
-                              <CheckBox fx:id="folk" mnemonicParsing="false" text="Folk" />
-                              <Region prefHeight="33.0" prefWidth="15.0" />
-                              <CheckBox fx:id="romantic" mnemonicParsing="false" text="Romantic" />
-                              <Region prefHeight="33.0" prefWidth="15.0" />
-                              <CheckBox fx:id="contemp" mnemonicParsing="false" text="Contemporary" />
+                              <DatePicker fx:id="dob" />
+                              <Region prefHeight="39.0" prefWidth="22.0" />
+                              <Label fx:id="ldob" textFill="RED" />
                            </children>
                         </HBox>
-                        <Region prefHeight="13.0" prefWidth="422.0" />
-                        <HBox prefHeight="39.0" prefWidth="374.0">
+                        <Region prefHeight="16.0" prefWidth="600.0" />
+                        <HBox prefHeight="8.0" prefWidth="600.0">
                            <children>
-                              <CheckBox fx:id="rap" mnemonicParsing="false" text="Rap" />
-                              <Region prefHeight="33.0" prefWidth="15.0" />
-                              <CheckBox fx:id="brostep" mnemonicParsing="false" text="Brostep" />
-                              <Region prefHeight="33.0" prefWidth="15.0" />
-                              <CheckBox fx:id="regional" mnemonicParsing="false" text="Regional" />
+                              <Label text="Genres preferred" />
+                              <Region prefHeight="27.0" prefWidth="60.0" />
+                              <Label fx:id="lgen" />
                            </children>
                         </HBox>
-                        <Region prefHeight="13.0" prefWidth="422.0" />
-                        <HBox prefHeight="39.0" prefWidth="374.0">
+                        <VBox prefHeight="75.0" prefWidth="600.0">
                            <children>
-                              <CheckBox fx:id="hiphop" mnemonicParsing="false" text="Hip-hop" />
-                              <Region prefHeight="33.0" prefWidth="15.0" />
-                              <CheckBox fx:id="band" mnemonicParsing="false" text="Band" />
-                              <Region prefHeight="33.0" prefWidth="15.0" />
-                              <CheckBox fx:id="rock" mnemonicParsing="false" text="Rock" />
+                              <Region prefHeight="12.0" prefWidth="374.0" />
+                              <HBox prefHeight="39.0" prefWidth="374.0">
+                                 <children>
+                                    <CheckBox fx:id="pop" mnemonicParsing="false" text="Pop" />
+                                    <Region prefHeight="33.0" prefWidth="15.0" />
+                                    <CheckBox fx:id="classical" mnemonicParsing="false" text="Classical" />
+                                    <Region prefHeight="33.0" prefWidth="15.0" />
+                                    <CheckBox fx:id="metal" mnemonicParsing="false" text="Metal" />
+                                    <Region prefHeight="33.0" prefWidth="15.0" />
+                                    <CheckBox fx:id="folk" mnemonicParsing="false" text="Folk" />
+                                    <Region prefHeight="33.0" prefWidth="15.0" />
+                                    <CheckBox fx:id="romantic" mnemonicParsing="false" text="Romantic" />
+                                    <Region prefHeight="33.0" prefWidth="15.0" />
+                                    <CheckBox fx:id="rap" mnemonicParsing="false" text="Rap" />
+                                 </children>
+                              </HBox>
+                              <Region prefHeight="13.0" prefWidth="374.0" />
+                              <HBox prefHeight="39.0" prefWidth="374.0">
+                                 <children>
+                                    <CheckBox fx:id="contemp" mnemonicParsing="false" text="Contemporary" />
+                                    <Region prefHeight="33.0" prefWidth="15.0" />
+                                    <CheckBox fx:id="brostep" mnemonicParsing="false" text="Brostep" />
+                                    <Region prefHeight="33.0" prefWidth="15.0" />
+                                    <Region prefHeight="33.0" prefWidth="15.0" />
+                                    <CheckBox fx:id="hiphop" mnemonicParsing="false" text="Hip-hop" />
+                                    <Region prefHeight="33.0" prefWidth="15.0" />
+                                    <CheckBox fx:id="band" mnemonicParsing="false" text="Band" />
+                                    <Region prefHeight="33.0" prefWidth="15.0" />
+                                    <CheckBox fx:id="rock" mnemonicParsing="false" text="Rock" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Region prefHeight="17.0" prefWidth="422.0" />
+                        <HBox prefHeight="13.0" prefWidth="600.0">
+                           <children>
+                              <Label text="Languages preferred" />
+                              <Region prefHeight="27.0" prefWidth="47.0" />
+                              <Label fx:id="llang" />
+                           </children>
+                        </HBox>
+                        <VBox prefHeight="91.0" prefWidth="600.0">
+                           <children>
+                              <Region prefHeight="12.0" prefWidth="374.0" />
+                              <HBox prefHeight="39.0" prefWidth="374.0">
+                                 <children>
+                                    <CheckBox fx:id="english" mnemonicParsing="false" text="English" />
+                                    <Region prefHeight="33.0" prefWidth="15.0" />
+                                    <CheckBox fx:id="hindi" mnemonicParsing="false" text="Hindi" />
+                                    <Region prefHeight="33.0" prefWidth="15.0" />
+                                    <CheckBox fx:id="punjabi" mnemonicParsing="false" text="Punjabi" />
+                                    <Region prefHeight="33.0" prefWidth="15.0" />
+                                    <CheckBox fx:id="harayanvi" mnemonicParsing="false" text="Harayanvi" />
+                                    <Region prefHeight="33.0" prefWidth="15.0" />
+                                    <CheckBox fx:id="bihari" mnemonicParsing="false" text="Bihari" />
+                                 </children>
+                              </HBox>
+                              <Region prefHeight="13.0" prefWidth="374.0" />
+                              <HBox prefHeight="39.0" prefWidth="374.0">
+                                 <children>
+                                    <CheckBox fx:id="marathi" mnemonicParsing="false" text="Marathi" />
+                                    <Region prefHeight="33.0" prefWidth="15.0" />
+                                    <CheckBox fx:id="gujarati" mnemonicParsing="false" text="Gujarati" />
+                                    <Region prefHeight="33.0" prefWidth="15.0" />
+                                    <CheckBox fx:id="french" mnemonicParsing="false" text="French" />
+                                    <Region prefHeight="33.0" prefWidth="15.0" />
+                                    <CheckBox fx:id="telugu" mnemonicParsing="false" text="Telugu" />
+                                    <Region prefHeight="33.0" prefWidth="15.0" />
+                                    <CheckBox fx:id="spanish" mnemonicParsing="false" text="Spanish" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Region prefHeight="17.0" prefWidth="422.0" />
+                        <HBox prefHeight="24.0" prefWidth="600.0">
+                           <children>
+                              <Label text="Artist Choice" />
+                              <Region prefHeight="27.0" prefWidth="22.0" />
+                              <Label fx:id="lart" />
+                           </children>
+                        </HBox>
+                        <VBox prefHeight="173.0" prefWidth="600.0">
+                           <children>
+                              <Region prefHeight="12.0" prefWidth="374.0" />
+                              <HBox prefHeight="39.0" prefWidth="374.0">
+                                 <children>
+                                    <CheckBox fx:id="e1" mnemonicParsing="false" text="Ed Sheeran" />
+                                    <Region prefHeight="33.0" prefWidth="15.0" />
+                                    <CheckBox fx:id="e2" mnemonicParsing="false" text="Shawn Mendes" />
+                                    <Region prefHeight="33.0" prefWidth="15.0" />
+                                    <CheckBox fx:id="e3" mnemonicParsing="false" text="Eminem" />
+                                    <Region prefHeight="33.0" prefWidth="15.0" />
+                                    <CheckBox fx:id="e4" mnemonicParsing="false" text="Harry Styles" />
+                                 </children>
+                              </HBox>
+                              <Region prefHeight="13.0" prefWidth="374.0" />
+                              <HBox prefHeight="39.0" prefWidth="374.0">
+                                 <children>
+                                    <CheckBox fx:id="e5" mnemonicParsing="false" text="Marshmallow" />
+                                    <Region prefHeight="33.0" prefWidth="15.0" />
+                                    <CheckBox fx:id="e6" mnemonicParsing="false" text="Alec Benjamin" />
+                                    <Region prefHeight="33.0" prefWidth="15.0" />
+                                    <CheckBox fx:id="e7" mnemonicParsing="false" text="The Chainsmokers" />
+                                 </children>
+                              </HBox>
+                              <Region prefHeight="13.0" prefWidth="374.0" />
+                              <HBox prefHeight="39.0" prefWidth="374.0">
+                                 <children>
+                                    <CheckBox fx:id="e8" mnemonicParsing="false" text="Queen" />
+                                    <Region prefHeight="33.0" prefWidth="15.0" />
+                                    <CheckBox fx:id="e9" mnemonicParsing="false" text="Billie Eilish" />
+                                    <Region prefHeight="33.0" prefWidth="15.0" />
+                                    <CheckBox fx:id="e10" mnemonicParsing="false" text="Lil Nas X" />
+                                    <Region prefHeight="33.0" prefWidth="15.0" />
+                                    <CheckBox fx:id="e11" mnemonicParsing="false" text="Post Malone" />
+                                 </children>
+                              </HBox>
+                              <Region prefHeight="13.0" prefWidth="374.0" />
+                              <HBox prefHeight="39.0" prefWidth="374.0">
+                                 <children>
+                                    <CheckBox fx:id="e12" mnemonicParsing="false" text="Panic! And the Disco" />
+                                    <Region prefHeight="33.0" prefWidth="15.0" />
+                                    <CheckBox fx:id="e13" mnemonicParsing="false" text="Tones and I" />
+                                    <Region prefHeight="33.0" prefWidth="15.0" />
+                                    <CheckBox fx:id="e14" mnemonicParsing="false" text="Maroon 5" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <Region prefHeight="28.0" prefWidth="600.0" />
+                        <HBox prefHeight="60.0" prefWidth="422.0">
+                           <children>
+                              <Region prefHeight="60.0" prefWidth="253.0" />
+                              <Button fx:id="submit" mnemonicParsing="false" onAction="#submitAct" text="Submit" />
+                              <Region prefHeight="60.0" prefWidth="260.0" />
                            </children>
                         </HBox>
                      </children>
                   </VBox>
-                  <Region prefHeight="17.0" prefWidth="422.0" />
-                  <Label text="Languages preferred" />
-                  <VBox prefHeight="136.0" prefWidth="422.0">
-                     <children>
-                        <Region prefHeight="12.0" prefWidth="374.0" />
-                        <HBox prefHeight="39.0" prefWidth="374.0">
-                           <children>
-                              <CheckBox fx:id="english" mnemonicParsing="false" text="English" />
-                              <Region prefHeight="33.0" prefWidth="15.0" />
-                              <CheckBox fx:id="hindi" mnemonicParsing="false" text="Hindi" />
-                              <Region prefHeight="33.0" prefWidth="15.0" />
-                              <CheckBox fx:id="punjabi" mnemonicParsing="false" text="Punjabi" />
-                           </children>
-                        </HBox>
-                        <Region prefHeight="13.0" prefWidth="374.0" />
-                        <HBox prefHeight="39.0" prefWidth="374.0">
-                           <children>
-                              <CheckBox fx:id="harayanvi" mnemonicParsing="false" text="Harayanvi" />
-                              <Region prefHeight="33.0" prefWidth="15.0" />
-                              <CheckBox fx:id="bihari" mnemonicParsing="false" text="Bihari" />
-                              <Region prefHeight="33.0" prefWidth="15.0" />
-                              <CheckBox fx:id="telugu" mnemonicParsing="false" text="Telugu" />
-                           </children>
-                        </HBox>
-                        <Region prefHeight="13.0" prefWidth="374.0" />
-                        <HBox prefHeight="39.0" prefWidth="374.0">
-                           <children>
-                              <CheckBox fx:id="marathi" mnemonicParsing="false" text="Marathi" />
-                              <Region prefHeight="33.0" prefWidth="15.0" />
-                              <CheckBox fx:id="gujarati" mnemonicParsing="false" text="Gujarati" />
-                              <Region prefHeight="33.0" prefWidth="15.0" />
-                              <CheckBox fx:id="french" mnemonicParsing="false" text="French" />
-                           </children>
-                        </HBox>
-                        <Region prefHeight="13.0" prefWidth="374.0" />
-                        <HBox prefHeight="39.0" prefWidth="374.0">
-                           <children>
-                              <CheckBox fx:id="spanish" mnemonicParsing="false" text="Spanish" />
-                              <Region prefHeight="33.0" prefWidth="15.0" />
-                              <CheckBox fx:id="rajasthani" mnemonicParsing="false" text="Rajasthani" />
-                              <Region prefHeight="33.0" prefWidth="15.0" />
-                              <CheckBox fx:id="tamil" mnemonicParsing="false" text="Tamil" />
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
-                  <Region prefHeight="12.0" prefWidth="325.0" />
-                  <Label fx:id="warn" />
-                  <Region prefHeight="7.0" prefWidth="422.0" />
-                  <HBox prefHeight="60.0" prefWidth="422.0">
-                     <children>
-                        <Region prefHeight="60.0" prefWidth="162.0" />
-                        <Region prefHeight="60.0" prefWidth="176.0" />
-                     </children>
-                  </HBox>
+                  <Region prefHeight="945.0" prefWidth="128.0" />
                </children>
-            </VBox>
-            <Region prefHeight="759.0" prefWidth="416.0" />
+            </HBox>
          </children>
-      </HBox>
-   </children>
-</Pane>
+      </Pane>
+   </content>
+</ScrollPane>
