@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 29, 2020 at 05:35 PM
+-- Generation Time: Oct 29, 2020 at 07:22 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -50,7 +50,10 @@ INSERT INTO `artist` (`ID`, `Artist`) VALUES
 (11, 'Panic! And the Disco'),
 (12, 'Tones and I'),
 (13, 'Queen'),
-(14, 'Lil Nas X');
+(14, 'Lil Nas X'),
+(15, 'The Weeknd'),
+(16, '5 Seconds of Summer'),
+(17, 'Navv Inder');
 
 -- --------------------------------------------------------
 
@@ -144,35 +147,161 @@ CREATE TABLE `song` (
   `Path` varchar(100) DEFAULT NULL,
   `Lyrics` varchar(100) DEFAULT NULL,
   `PublishYear` year(4) DEFAULT NULL,
-  `DateAdded` date DEFAULT NULL
+  `DateAdded` date DEFAULT NULL,
+  `Likes` int(11) NOT NULL DEFAULT 0,
+  `Dislikes` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `song`
 --
 
-INSERT INTO `song` (`SongId`, `Name`, `Path`, `Lyrics`, `PublishYear`, `DateAdded`) VALUES
-(1, 'I Don\'t Care', '..\\Songs\\IDon\'tCare.mp3', '..\\Songs\\IDon\'tCare.srt', 2019, '2020-10-16'),
-(2, 'Blinding Lights', '..\\Songs\\BlindingLights.mp3', '..\\Songs\\BlindingLights.srt', 2019, '2020-10-16'),
-(3, 'Sunflower', '..\\Songs\\Sunflower.mp3', '..\\Songs\\Sunflower.srt', 2019, '2020-10-16'),
-(4, 'Adore You', '..\\Songs\\AdoreYou.mp3', '..\\Songs\\AdoreYou.srt', 2019, '2020-10-18'),
-(5, 'Circles', '..\\Songs\\Circles.mp3', '..\\Songs\\Circles.srt', 2019, '2020-10-18'),
-(6, 'Dance Monkey', '..\\Songs\\DanceMonkey.mp3', '..\\Songs\\DanceMonkey.srt', 2019, '2020-10-18'),
-(7, 'Girls Like You', '..\\Songs\\GirlsLikeYou.mp3', '..\\Songs\\GirlsLikeYou.srt', 2018, '2020-10-18'),
-(8, 'Happier', '..\\Songs\\Happier.mp3', '..\\Songs\\Happier.srt', 2018, '2020-10-18'),
-(9, 'High Hopes', '..\\Songs\\HighHopes.mp3', '..\\Songs\\HighHopes.srt', 2018, '2020-10-18'),
-(10, 'If I Can\'t Have You', '..\\Songs\\IfICan\'tHaveYou.mp3', '..\\Songs\\IfICan\'tHaveYou.srt', 2019, '2020-10-18'),
-(11, 'Let Me Down Slowly', '..\\Songs\\LetMeDownSlowly.mp3', '..\\Songs\\LetMeDownSlowly.srt', 2018, '2020-10-18'),
-(12, 'Lose Yourself', '..\\Songs\\LoseYourself.mp3', '..\\Songs\\LoseYourself.srt', 2004, '2020-10-18'),
-(13, 'Lovely', '..\\Songs\\Lovely.mp3', '..\\Songs\\Lovely.srt', 2018, '2020-10-18'),
-(14, 'No Time To Die', '..\\Songs\\NoTimeToDie.mp3', '..\\Songs\\NoTimeToDie.srt', 2020, '2020-10-18'),
-(15, 'Old Town Remix', '..\\Songs\\OldTownRemix.mp3', '..\\Songs\\OldTownRemix.srt', 2019, '2020-10-18'),
-(16, 'Photograph', '..\\Songs\\Photograph.mp3', '..\\Songs\\Photograph.srt', 2013, '2020-10-18'),
-(17, 'Something Just Like This', '..\\Songs\\SomethingJustLikeThis.mp3', '..\\Songs\\SomethingJustLikeThis.srt', 2017, '2020-10-18'),
-(18, 'Takeaway', '..\\Songs\\Takeaway.mp3', '..\\Songs\\Takeaway.srt', 2019, '2020-10-18'),
-(19, 'We Are The Champions', '..\\Songs\\WeAreTheChampions.mp3', '..\\Songs\\WeAreTheChampions.srt', 1977, '2020-10-18'),
-(20, 'Youngblood', '..\\Songs\\Youngblood.mp3', '..\\Songs\\Youngblood.srt', 2018, '2020-10-18'),
-(21, 'Wakhra Swag', '..\\Songs\\WakhraSwag.mp3', '\\Songs\\WakhraSwag.srt', 2015, '2020-10-19');
+INSERT INTO `song` (`SongId`, `Name`, `Path`, `Lyrics`, `PublishYear`, `DateAdded`, `Likes`, `Dislikes`) VALUES
+(1, 'I Don\'t Care', '..\\Songs\\IDon\'tCare.mp3', '..\\Songs\\IDon\'tCare.srt', 2019, '2020-10-16', 0, 0),
+(2, 'Blinding Lights', '..\\Songs\\BlindingLights.mp3', '..\\Songs\\BlindingLights.srt', 2019, '2020-10-16', 0, 0),
+(3, 'Sunflower', '..\\Songs\\Sunflower.mp3', '..\\Songs\\Sunflower.srt', 2019, '2020-10-16', 0, 0),
+(4, 'Adore You', '..\\Songs\\AdoreYou.mp3', '..\\Songs\\AdoreYou.srt', 2019, '2020-10-18', 0, 0),
+(5, 'Circles', '..\\Songs\\Circles.mp3', '..\\Songs\\Circles.srt', 2019, '2020-10-18', 0, 0),
+(6, 'Dance Monkey', '..\\Songs\\DanceMonkey.mp3', '..\\Songs\\DanceMonkey.srt', 2019, '2020-10-18', 0, 0),
+(7, 'Girls Like You', '..\\Songs\\GirlsLikeYou.mp3', '..\\Songs\\GirlsLikeYou.srt', 2018, '2020-10-18', 0, 0),
+(8, 'Happier', '..\\Songs\\Happier.mp3', '..\\Songs\\Happier.srt', 2018, '2020-10-18', 0, 0),
+(9, 'High Hopes', '..\\Songs\\HighHopes.mp3', '..\\Songs\\HighHopes.srt', 2018, '2020-10-18', 0, 0),
+(10, 'If I Can\'t Have You', '..\\Songs\\IfICan\'tHaveYou.mp3', '..\\Songs\\IfICan\'tHaveYou.srt', 2019, '2020-10-18', 0, 0),
+(11, 'Let Me Down Slowly', '..\\Songs\\LetMeDownSlowly.mp3', '..\\Songs\\LetMeDownSlowly.srt', 2018, '2020-10-18', 0, 0),
+(12, 'Lose Yourself', '..\\Songs\\LoseYourself.mp3', '..\\Songs\\LoseYourself.srt', 2004, '2020-10-18', 0, 0),
+(13, 'Lovely', '..\\Songs\\Lovely.mp3', '..\\Songs\\Lovely.srt', 2018, '2020-10-18', 0, 0),
+(14, 'No Time To Die', '..\\Songs\\NoTimeToDie.mp3', '..\\Songs\\NoTimeToDie.srt', 2020, '2020-10-18', 0, 0),
+(15, 'Old Town Remix', '..\\Songs\\OldTownRemix.mp3', '..\\Songs\\OldTownRemix.srt', 2019, '2020-10-18', 0, 0),
+(16, 'Photograph', '..\\Songs\\Photograph.mp3', '..\\Songs\\Photograph.srt', 2013, '2020-10-18', 0, 0),
+(17, 'Something Just Like This', '..\\Songs\\SomethingJustLikeThis.mp3', '..\\Songs\\SomethingJustLikeThis.srt', 2017, '2020-10-18', 0, 0),
+(18, 'Takeaway', '..\\Songs\\Takeaway.mp3', '..\\Songs\\Takeaway.srt', 2019, '2020-10-18', 0, 0),
+(19, 'We Are The Champions', '..\\Songs\\WeAreTheChampions.mp3', '..\\Songs\\WeAreTheChampions.srt', 1977, '2020-10-18', 0, 0),
+(20, 'Youngblood', '..\\Songs\\Youngblood.mp3', '..\\Songs\\Youngblood.srt', 2018, '2020-10-18', 0, 0),
+(21, 'Wakhra Swag', '..\\Songs\\WakhraSwag.mp3', '\\Songs\\WakhraSwag.srt', 2015, '2020-10-19', 0, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `songartist`
+--
+
+CREATE TABLE `songartist` (
+  `SongID` int(11) NOT NULL,
+  `ArtistID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `songartist`
+--
+
+INSERT INTO `songartist` (`SongID`, `ArtistID`) VALUES
+(1, 7),
+(2, 15),
+(3, 10),
+(5, 10),
+(6, 12),
+(7, 8),
+(8, 3),
+(9, 11),
+(10, 6),
+(11, 2),
+(12, 5),
+(13, 9),
+(14, 9),
+(15, 14),
+(16, 7),
+(17, 1),
+(18, 1),
+(20, 16),
+(21, 17);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `songgenre`
+--
+
+CREATE TABLE `songgenre` (
+  `SongID` int(11) NOT NULL,
+  `GenreID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `songgenre`
+--
+
+INSERT INTO `songgenre` (`SongID`, `GenreID`) VALUES
+(1, 1),
+(2, 4),
+(3, 2),
+(4, 1),
+(5, 2),
+(6, 1),
+(7, 1),
+(8, 9),
+(9, 1),
+(10, 1),
+(11, 1),
+(12, 10),
+(13, 1),
+(14, 1),
+(15, 2),
+(16, 1),
+(17, 1),
+(18, 1),
+(19, 11),
+(20, 6),
+(21, 10);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `songlang`
+--
+
+CREATE TABLE `songlang` (
+  `SongID` int(11) NOT NULL,
+  `LangID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `songlang`
+--
+
+INSERT INTO `songlang` (`SongID`, `LangID`) VALUES
+(1, 1),
+(2, 1),
+(3, 1),
+(4, 1),
+(5, 1),
+(6, 1),
+(7, 1),
+(8, 1),
+(9, 1),
+(10, 1),
+(11, 1),
+(12, 1),
+(13, 1),
+(14, 1),
+(15, 1),
+(16, 1),
+(17, 1),
+(18, 1),
+(19, 1),
+(20, 1),
+(21, 10);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user-song`
+--
+
+CREATE TABLE `user-song` (
+  `USERID` varchar(20) NOT NULL,
+  `SongID` int(11) NOT NULL,
+  `Liked` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -288,17 +417,51 @@ ALTER TABLE `song`
   ADD PRIMARY KEY (`SongId`);
 
 --
+-- Indexes for table `songartist`
+--
+ALTER TABLE `songartist`
+  ADD PRIMARY KEY (`SongID`,`ArtistID`),
+  ADD KEY `ArtistID` (`ArtistID`),
+  ADD KEY `SongID` (`SongID`);
+
+--
+-- Indexes for table `songgenre`
+--
+ALTER TABLE `songgenre`
+  ADD PRIMARY KEY (`SongID`,`GenreID`),
+  ADD KEY `GenreID` (`GenreID`),
+  ADD KEY `SongID` (`SongID`);
+
+--
+-- Indexes for table `songlang`
+--
+ALTER TABLE `songlang`
+  ADD PRIMARY KEY (`SongID`,`LangID`),
+  ADD KEY `LangID` (`LangID`),
+  ADD KEY `SongID` (`SongID`) USING BTREE;
+
+--
+-- Indexes for table `user-song`
+--
+ALTER TABLE `user-song`
+  ADD PRIMARY KEY (`USERID`,`SongID`),
+  ADD KEY `SongID` (`SongID`),
+  ADD KEY `USERID` (`USERID`);
+
+--
 -- Indexes for table `userartist`
 --
 ALTER TABLE `userartist`
   ADD PRIMARY KEY (`USERID`,`Artist`),
-  ADD KEY `Artist` (`Artist`);
+  ADD KEY `Artist` (`Artist`),
+  ADD KEY `USERID` (`USERID`);
 
 --
 -- Indexes for table `userdata`
 --
 ALTER TABLE `userdata`
-  ADD PRIMARY KEY (`USERID`,`Name`);
+  ADD PRIMARY KEY (`USERID`,`Name`),
+  ADD KEY `USERID` (`USERID`);
 
 --
 -- Indexes for table `usergenre`
@@ -324,7 +487,7 @@ ALTER TABLE `userlang`
 -- AUTO_INCREMENT for table `artist`
 --
 ALTER TABLE `artist`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `genre`
@@ -347,6 +510,36 @@ ALTER TABLE `song`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `songartist`
+--
+ALTER TABLE `songartist`
+  ADD CONSTRAINT `songartist_ibfk_1` FOREIGN KEY (`SongID`) REFERENCES `song` (`SongId`),
+  ADD CONSTRAINT `songartist_ibfk_2` FOREIGN KEY (`ArtistID`) REFERENCES `artist` (`ID`);
+
+--
+-- Constraints for table `songgenre`
+--
+ALTER TABLE `songgenre`
+  ADD CONSTRAINT `songgenre_ibfk_1` FOREIGN KEY (`GenreID`) REFERENCES `genre` (`ID`),
+  ADD CONSTRAINT `songgenre_ibfk_2` FOREIGN KEY (`SongID`) REFERENCES `song` (`SongId`),
+  ADD CONSTRAINT `songgenre_ibfk_3` FOREIGN KEY (`SongID`) REFERENCES `song` (`SongId`);
+
+--
+-- Constraints for table `songlang`
+--
+ALTER TABLE `songlang`
+  ADD CONSTRAINT `songlang_ibfk_1` FOREIGN KEY (`SongID`) REFERENCES `song` (`SongId`),
+  ADD CONSTRAINT `songlang_ibfk_2` FOREIGN KEY (`LangID`) REFERENCES `language` (`ID`),
+  ADD CONSTRAINT `songlang_ibfk_3` FOREIGN KEY (`SongID`) REFERENCES `song` (`SongId`);
+
+--
+-- Constraints for table `user-song`
+--
+ALTER TABLE `user-song`
+  ADD CONSTRAINT `user-song_ibfk_1` FOREIGN KEY (`SongID`) REFERENCES `song` (`SongId`),
+  ADD CONSTRAINT `user-song_ibfk_2` FOREIGN KEY (`USERID`) REFERENCES `login` (`Uname`);
 
 --
 -- Constraints for table `userartist`
