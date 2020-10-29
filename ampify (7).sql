@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 29, 2020 at 07:22 PM
+-- Generation Time: Oct 29, 2020 at 07:41 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -138,6 +138,28 @@ INSERT INTO `login` (`Uname`, `Passwd`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `playlist-song`
+--
+
+CREATE TABLE `playlist-song` (
+  `PlaylistID` int(11) NOT NULL,
+  `SongID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `playlist-user`
+--
+
+CREATE TABLE `playlist-user` (
+  `USERID` varchar(20) NOT NULL,
+  `PlaylistID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `song`
 --
 
@@ -149,35 +171,36 @@ CREATE TABLE `song` (
   `PublishYear` year(4) DEFAULT NULL,
   `DateAdded` date DEFAULT NULL,
   `Likes` int(11) NOT NULL DEFAULT 0,
-  `Dislikes` int(11) NOT NULL DEFAULT 0
+  `Dislikes` int(11) NOT NULL DEFAULT 0,
+  `TimesPlayed` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `song`
 --
 
-INSERT INTO `song` (`SongId`, `Name`, `Path`, `Lyrics`, `PublishYear`, `DateAdded`, `Likes`, `Dislikes`) VALUES
-(1, 'I Don\'t Care', '..\\Songs\\IDon\'tCare.mp3', '..\\Songs\\IDon\'tCare.srt', 2019, '2020-10-16', 0, 0),
-(2, 'Blinding Lights', '..\\Songs\\BlindingLights.mp3', '..\\Songs\\BlindingLights.srt', 2019, '2020-10-16', 0, 0),
-(3, 'Sunflower', '..\\Songs\\Sunflower.mp3', '..\\Songs\\Sunflower.srt', 2019, '2020-10-16', 0, 0),
-(4, 'Adore You', '..\\Songs\\AdoreYou.mp3', '..\\Songs\\AdoreYou.srt', 2019, '2020-10-18', 0, 0),
-(5, 'Circles', '..\\Songs\\Circles.mp3', '..\\Songs\\Circles.srt', 2019, '2020-10-18', 0, 0),
-(6, 'Dance Monkey', '..\\Songs\\DanceMonkey.mp3', '..\\Songs\\DanceMonkey.srt', 2019, '2020-10-18', 0, 0),
-(7, 'Girls Like You', '..\\Songs\\GirlsLikeYou.mp3', '..\\Songs\\GirlsLikeYou.srt', 2018, '2020-10-18', 0, 0),
-(8, 'Happier', '..\\Songs\\Happier.mp3', '..\\Songs\\Happier.srt', 2018, '2020-10-18', 0, 0),
-(9, 'High Hopes', '..\\Songs\\HighHopes.mp3', '..\\Songs\\HighHopes.srt', 2018, '2020-10-18', 0, 0),
-(10, 'If I Can\'t Have You', '..\\Songs\\IfICan\'tHaveYou.mp3', '..\\Songs\\IfICan\'tHaveYou.srt', 2019, '2020-10-18', 0, 0),
-(11, 'Let Me Down Slowly', '..\\Songs\\LetMeDownSlowly.mp3', '..\\Songs\\LetMeDownSlowly.srt', 2018, '2020-10-18', 0, 0),
-(12, 'Lose Yourself', '..\\Songs\\LoseYourself.mp3', '..\\Songs\\LoseYourself.srt', 2004, '2020-10-18', 0, 0),
-(13, 'Lovely', '..\\Songs\\Lovely.mp3', '..\\Songs\\Lovely.srt', 2018, '2020-10-18', 0, 0),
-(14, 'No Time To Die', '..\\Songs\\NoTimeToDie.mp3', '..\\Songs\\NoTimeToDie.srt', 2020, '2020-10-18', 0, 0),
-(15, 'Old Town Remix', '..\\Songs\\OldTownRemix.mp3', '..\\Songs\\OldTownRemix.srt', 2019, '2020-10-18', 0, 0),
-(16, 'Photograph', '..\\Songs\\Photograph.mp3', '..\\Songs\\Photograph.srt', 2013, '2020-10-18', 0, 0),
-(17, 'Something Just Like This', '..\\Songs\\SomethingJustLikeThis.mp3', '..\\Songs\\SomethingJustLikeThis.srt', 2017, '2020-10-18', 0, 0),
-(18, 'Takeaway', '..\\Songs\\Takeaway.mp3', '..\\Songs\\Takeaway.srt', 2019, '2020-10-18', 0, 0),
-(19, 'We Are The Champions', '..\\Songs\\WeAreTheChampions.mp3', '..\\Songs\\WeAreTheChampions.srt', 1977, '2020-10-18', 0, 0),
-(20, 'Youngblood', '..\\Songs\\Youngblood.mp3', '..\\Songs\\Youngblood.srt', 2018, '2020-10-18', 0, 0),
-(21, 'Wakhra Swag', '..\\Songs\\WakhraSwag.mp3', '\\Songs\\WakhraSwag.srt', 2015, '2020-10-19', 0, 0);
+INSERT INTO `song` (`SongId`, `Name`, `Path`, `Lyrics`, `PublishYear`, `DateAdded`, `Likes`, `Dislikes`, `TimesPlayed`) VALUES
+(1, 'I Don\'t Care', '..\\Songs\\IDon\'tCare.mp3', '..\\Songs\\IDon\'tCare.srt', 2019, '2020-10-16', 0, 0, 0),
+(2, 'Blinding Lights', '..\\Songs\\BlindingLights.mp3', '..\\Songs\\BlindingLights.srt', 2019, '2020-10-16', 0, 0, 0),
+(3, 'Sunflower', '..\\Songs\\Sunflower.mp3', '..\\Songs\\Sunflower.srt', 2019, '2020-10-16', 0, 0, 0),
+(4, 'Adore You', '..\\Songs\\AdoreYou.mp3', '..\\Songs\\AdoreYou.srt', 2019, '2020-10-18', 0, 0, 0),
+(5, 'Circles', '..\\Songs\\Circles.mp3', '..\\Songs\\Circles.srt', 2019, '2020-10-18', 0, 0, 0),
+(6, 'Dance Monkey', '..\\Songs\\DanceMonkey.mp3', '..\\Songs\\DanceMonkey.srt', 2019, '2020-10-18', 0, 0, 0),
+(7, 'Girls Like You', '..\\Songs\\GirlsLikeYou.mp3', '..\\Songs\\GirlsLikeYou.srt', 2018, '2020-10-18', 0, 0, 0),
+(8, 'Happier', '..\\Songs\\Happier.mp3', '..\\Songs\\Happier.srt', 2018, '2020-10-18', 0, 0, 0),
+(9, 'High Hopes', '..\\Songs\\HighHopes.mp3', '..\\Songs\\HighHopes.srt', 2018, '2020-10-18', 0, 0, 0),
+(10, 'If I Can\'t Have You', '..\\Songs\\IfICan\'tHaveYou.mp3', '..\\Songs\\IfICan\'tHaveYou.srt', 2019, '2020-10-18', 0, 0, 0),
+(11, 'Let Me Down Slowly', '..\\Songs\\LetMeDownSlowly.mp3', '..\\Songs\\LetMeDownSlowly.srt', 2018, '2020-10-18', 0, 0, 0),
+(12, 'Lose Yourself', '..\\Songs\\LoseYourself.mp3', '..\\Songs\\LoseYourself.srt', 2004, '2020-10-18', 0, 0, 0),
+(13, 'Lovely', '..\\Songs\\Lovely.mp3', '..\\Songs\\Lovely.srt', 2018, '2020-10-18', 0, 0, 0),
+(14, 'No Time To Die', '..\\Songs\\NoTimeToDie.mp3', '..\\Songs\\NoTimeToDie.srt', 2020, '2020-10-18', 0, 0, 0),
+(15, 'Old Town Remix', '..\\Songs\\OldTownRemix.mp3', '..\\Songs\\OldTownRemix.srt', 2019, '2020-10-18', 0, 0, 0),
+(16, 'Photograph', '..\\Songs\\Photograph.mp3', '..\\Songs\\Photograph.srt', 2013, '2020-10-18', 0, 0, 0),
+(17, 'Something Just Like This', '..\\Songs\\SomethingJustLikeThis.mp3', '..\\Songs\\SomethingJustLikeThis.srt', 2017, '2020-10-18', 0, 0, 0),
+(18, 'Takeaway', '..\\Songs\\Takeaway.mp3', '..\\Songs\\Takeaway.srt', 2019, '2020-10-18', 0, 0, 0),
+(19, 'We Are The Champions', '..\\Songs\\WeAreTheChampions.mp3', '..\\Songs\\WeAreTheChampions.srt', 1977, '2020-10-18', 0, 0, 0),
+(20, 'Youngblood', '..\\Songs\\Youngblood.mp3', '..\\Songs\\Youngblood.srt', 2018, '2020-10-18', 0, 0, 0),
+(21, 'Wakhra Swag', '..\\Songs\\WakhraSwag.mp3', '\\Songs\\WakhraSwag.srt', 2015, '2020-10-19', 0, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -300,7 +323,8 @@ INSERT INTO `songlang` (`SongID`, `LangID`) VALUES
 CREATE TABLE `user-song` (
   `USERID` varchar(20) NOT NULL,
   `SongID` int(11) NOT NULL,
-  `Liked` tinyint(1) NOT NULL
+  `Liked` tinyint(1) NOT NULL,
+  `TimesPlayed` int(11) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -411,6 +435,21 @@ ALTER TABLE `login`
   ADD PRIMARY KEY (`Uname`);
 
 --
+-- Indexes for table `playlist-song`
+--
+ALTER TABLE `playlist-song`
+  ADD PRIMARY KEY (`PlaylistID`,`SongID`),
+  ADD KEY `SongID` (`SongID`),
+  ADD KEY `PlaylistID` (`PlaylistID`);
+
+--
+-- Indexes for table `playlist-user`
+--
+ALTER TABLE `playlist-user`
+  ADD PRIMARY KEY (`PlaylistID`),
+  ADD KEY `USERID` (`USERID`);
+
+--
 -- Indexes for table `song`
 --
 ALTER TABLE `song`
@@ -502,6 +541,12 @@ ALTER TABLE `language`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
+-- AUTO_INCREMENT for table `playlist-user`
+--
+ALTER TABLE `playlist-user`
+  MODIFY `PlaylistID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `song`
 --
 ALTER TABLE `song`
@@ -510,6 +555,19 @@ ALTER TABLE `song`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `playlist-song`
+--
+ALTER TABLE `playlist-song`
+  ADD CONSTRAINT `playlist-song_ibfk_1` FOREIGN KEY (`SongID`) REFERENCES `song` (`SongId`),
+  ADD CONSTRAINT `playlist-song_ibfk_2` FOREIGN KEY (`PlaylistID`) REFERENCES `playlist-user` (`PlaylistID`);
+
+--
+-- Constraints for table `playlist-user`
+--
+ALTER TABLE `playlist-user`
+  ADD CONSTRAINT `playlist-user_ibfk_1` FOREIGN KEY (`USERID`) REFERENCES `login` (`Uname`);
 
 --
 -- Constraints for table `songartist`
