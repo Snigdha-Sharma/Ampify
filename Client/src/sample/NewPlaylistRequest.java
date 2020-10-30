@@ -6,12 +6,13 @@ import java.util.List;
 
 public class NewPlaylistRequest extends Request
 {
-    String uname="";
+    String uname=UserData.getUname();
     String nameOfPlaylist;
     ArrayList<String> songs;
 
     NewPlaylistRequest(String nameOfPlaylist, List<String> songList) throws IOException
     {
+        this.uname=uname;
         this.nameOfPlaylist=nameOfPlaylist;
         songs=new ArrayList<>();
         for (String x:songList)

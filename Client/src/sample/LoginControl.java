@@ -42,22 +42,12 @@ public class LoginControl implements Initializable
         check.setSelected(false);
     }
 
-    private String unamee;
-    String getUname()
-    {
-        return unamee;
-    }
-
-    void setUname(String uname)
-    {
-        unamee=uname;
-    }
-
     public void LoginAct(ActionEvent event)
     {
         try
         {
             String u1=uname1.getText();
+
             String p1=pass1.getText();
             if(!check.isSelected())
             {
@@ -80,8 +70,8 @@ public class LoginControl implements Initializable
             {
                 try
                 {
-                    setUname(u1);
-                    OpenPlayerHome(event,u1);
+                    UserData.setUname(u1);
+                    OpenPlayerHome(event);
                 }
                 catch(IOException e)
                 {
@@ -188,7 +178,8 @@ public class LoginControl implements Initializable
             if(ob.isSuccessfullyRegistered())
             {
 //                setUname(u1);
-                GoToData(event, u1);
+                UserData.setUname(u1);
+                GoToData();
             }
             else
             {
@@ -236,30 +227,21 @@ public class LoginControl implements Initializable
         return returnValue;
     }
 
-    public void GoToData(ActionEvent event, String u1) throws IOException
+    public void GoToData() throws IOException
     {
-        LoginControl lg = new LoginControl();
         Parent root1 = FXMLLoader.load(getClass().getResource("UserDetails.fxml"));
         Scene second=new Scene(root1);
-        //window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-        lg.setUname(u1);
-        Main.window.setUserData(lg);
 
         Main.window.setScene(second);
         Main.window.show();
-        warning.setText("Registration Successful! Ready to login.");
+//        warning.setText("Registration Successful! Ready to login.");
     }
 
-    public void OpenPlayerHome(ActionEvent event,String u1) throws IOException
+    public void OpenPlayerHome(ActionEvent event) throws IOException
     {
-        LoginControl lg = new LoginControl();
         Parent root1 = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
         Scene second=new Scene(root1);
         window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-        lg.setUname(u1);
-        window.setUserData(lg);
 
         window.setScene(second);
         window.show();

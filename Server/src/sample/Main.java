@@ -182,6 +182,8 @@ class ClientHandler extends Thread
                     {
                         System.out.println(x);
                     }
+                    ServerPlaylistSet spset = new ServerPlaylistSet(selectedSongs, uname, playlistName);
+                    dos.writeBoolean(spset.isSuccess());
                     break;
 
                 case "LogOff":

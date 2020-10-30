@@ -113,7 +113,7 @@ public class ServerUserDataRequest {
                 else registered=false;
 
             } catch (Exception e) {
-                e.printStackTrace();
+//                e.printStackTrace();
                 registered = false;
                 return registered;
             }

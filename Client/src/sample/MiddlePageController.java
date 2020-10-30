@@ -46,6 +46,8 @@ public class MiddlePageController
         Parent root1 = FXMLLoader.load(getClass().getResource("SongsForPlaylist.fxml"));
         Scene second=new Scene(root1);
         Main.window.setScene(second);
+
+
         Main.window.show();
     }
 

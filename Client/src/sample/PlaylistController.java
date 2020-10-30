@@ -3,12 +3,15 @@ package sample;
 import com.jfoenix.controls.JFXButton;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import org.controlsfx.control.CheckListView;
 
 import java.io.IOException;
@@ -45,6 +48,8 @@ public class PlaylistController implements Initializable
         String playlistName=nameOfPlaylist.getText();
         List<String> selectedSongs=allSongsList.getCheckModel().getCheckedItems();
         NewPlaylistRequest o=new NewPlaylistRequest(playlistName,selectedSongs);
+
+        System.out.println(UserData.getUname());
         o.myRequest();
         goBack();
     }

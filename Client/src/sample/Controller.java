@@ -19,9 +19,7 @@ import javafx.scene.control.SelectionMode;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
+import javafx.scene.media.*;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -188,6 +186,20 @@ public class Controller implements Initializable
         playOrPause();
         mv.setMediaPlayer(mediaPlayer);
         seekbar.setValue(0);
+        AudioEqualizer ae = mediaPlayer.getAudioEqualizer();
+        if(ae!=null)
+        {
+            ae.setEnabled(true);
+        }
+        if(ae.isEnabled()){
+            EqualizerBand eb = new EqualizerBand();
+            ObservableList<EqualizerBand> l = ae.getBands();
+            for (EqualizerBand i: l) {
+//                String p = i.toString();
+                System.out.println(i.getBandwidth());
+            }
+            System.out.println(l.toString());
+        }
     }
 
     public String getPathForLocalSong(String s)
@@ -472,21 +484,11 @@ public class Controller implements Initializable
         System.exit(0);
     }
 
-    public void displayName(ActionEvent event)
-    {
-        String username = receiveData(event);
-        System.out.println("hello "+username);
-    }
+//    public void displayName(ActionEvent event)
+//    {
+//        String username = UserData.getUname();
+//        System.out.println("hello "+username);
+//    }
 
-    public static String receiveData(ActionEvent event)
-    {
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        LoginControl lg = (LoginControl) stage.getUserData();
-        String username;
-        username = lg.getUname();
-        System.out.println(username);
-        return username;
-    }
 
 }
