@@ -16,8 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-import static java.lang.Thread.sleep;
-
 public class MiddlePageController
 {
     public JFXButton allSongsButton;
@@ -25,7 +23,7 @@ public class MiddlePageController
     public JFXButton refreshLocalSongListButton;
     public static List<String> currPlayList=null;
     public static List<String> localSongsPlaylist=null;
-    boolean updated=false;
+    public JFXButton playlistButton;
 
     public void getAllSongs() throws IOException
     {
@@ -36,6 +34,17 @@ public class MiddlePageController
         Parent root1 = FXMLLoader.load(getClass().getResource("sample.fxml"));
         Scene second=new Scene(root1);
         //window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Main.window.setScene(second);
+        Main.window.show();
+    }
+
+    public void createPlaylist() throws IOException
+    {
+        AllSongsRequest asr=new AllSongsRequest();
+        asr.myRequest();
+        currPlayList=asr.allSongsList();
+        Parent root1 = FXMLLoader.load(getClass().getResource("SongsForPlaylist.fxml"));
+        Scene second=new Scene(root1);
         Main.window.setScene(second);
         Main.window.show();
     }
