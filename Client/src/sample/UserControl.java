@@ -292,7 +292,7 @@ public class UserControl implements Initializable
             }
 
             //            --------------------------------CHECKING CONTRAINTS---------------------------------------\
-            username = receiveData(event);
+            username = UserData.getUname();
             System.out.println(username);
             boolean isVal=true;
             if(!lingo)
@@ -381,19 +381,6 @@ public class UserControl implements Initializable
         return pat.matcher(e).matches();
     }
 
-    protected String receiveData(ActionEvent event) {
-        // Step 1
-        Node node = (Node) event.getSource();
-        Stage stage = (Stage) node.getScene().getWindow();
-        // Step 2
-        LoginControl lg = (LoginControl) stage.getUserData();
-
-        String username;
-        username = lg.getUname();
-        System.out.println(username);
-        return username;
-    }
-
 //    public void GoToLogin(ActionEvent event) throws IOException
 //    {
 //        Parent root1 = FXMLLoader.load(getClass().getResource("loginscene.fxml"));
@@ -404,13 +391,9 @@ public class UserControl implements Initializable
 //    }
     public void OpenPlayerHome(ActionEvent event,String u1) throws IOException
     {
-        LoginControl lg = new LoginControl();
         Parent root1 = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
         Scene second=new Scene(root1);
         window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
-        lg.setUname(u1);
-        window.setUserData(lg);
 
         window.setScene(second);
         window.show();

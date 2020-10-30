@@ -6,12 +6,14 @@ import java.util.List;
 
 public class NewPlaylistRequest extends Request
 {
-    String uname="";
+    String uname=UserData.getUname();
     String nameOfPlaylist;
     ArrayList<String> songs;
+    boolean created;
 
     NewPlaylistRequest(String nameOfPlaylist, List<String> songList) throws IOException
     {
+        this.uname=uname;
         this.nameOfPlaylist=nameOfPlaylist;
         songs=new ArrayList<>();
         for (String x:songList)
@@ -30,8 +32,13 @@ public class NewPlaylistRequest extends Request
         dos.writeUTF(uname);
         ObjectOutputStream oos=new ObjectOutputStream(s.getOutputStream());
         oos.writeObject(songs);
+        created=dis.readBoolean();
         dis.close();
         dos.close();
         oos.close();
+    }
+    public boolean isSuccessfullyCreation()
+    {
+        return created;
     }
 }

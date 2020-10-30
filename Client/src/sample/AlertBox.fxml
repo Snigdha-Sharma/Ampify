@@ -5,11 +5,11 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="Fetching Local songs" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="sample.AlertBox">
+<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" text="Fetching Local songs" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.AlertBox">
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
          <children>
-            <VBox prefHeight="370.0" prefWidth="594.0">
+            <VBox id="vbox1" fx:id="vbox1" prefHeight="370.0" prefWidth="594.0">
                <children>
                   <Label prefHeight="18.0" prefWidth="594.0" text="Please wait while we are fetching awesome songs from your device!" textAlignment="CENTER" />
                   <Label fx:id="label" text="Progress" />
