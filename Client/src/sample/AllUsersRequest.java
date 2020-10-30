@@ -1,0 +1,39 @@
+package sample;
+
+import java.io.*;
+import java.util.List;
+
+public class AllUsersRequest extends Request
+{
+
+    List<String> ls;
+
+    AllUsersRequest() throws IOException
+    {
+        dis=new DataInputStream(s.getInputStream());
+        dos=new DataOutputStream(s.getOutputStream());
+    }
+
+    @Override
+    public void myRequest() throws IOException
+    {
+        dos.writeUTF("AllUsersRequest");
+        InputStream is=s.getInputStream();
+        ObjectInputStream ois=new ObjectInputStream(is);
+        try
+        {
+            ls= (List<String>) ois.readObject();
+        }
+        catch (ClassNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+        dis.close();
+        dos.close();
+    }
+
+    public List<String> allUsersList()
+    {
+        return ls;
+    }
+}
