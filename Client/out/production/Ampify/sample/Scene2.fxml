@@ -67,6 +67,20 @@
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor>
             </JFXButton>
+            <JFXButton fx:id="groupButton" onAction="#makeUserGroup" text="Create User Group" textAlignment="CENTER" textFill="#750e0e">
+               <font>
+                  <Font name="Comic Sans MS Bold" size="33.0" />
+               </font>
+               <effect>
+                  <ColorAdjust />
+               </effect>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+            </JFXButton>
          </children>
       </VBox>
    </children>

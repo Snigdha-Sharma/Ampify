@@ -22,8 +22,10 @@ public class MiddlePageController
     public JFXButton localSongsButton;
     public JFXButton refreshLocalSongListButton;
     public static List<String> currPlayList=null;
+    public static List<String> allUserList=null;
     public static List<String> localSongsPlaylist=null;
     public JFXButton playlistButton;
+    public JFXButton groupButton;
 
     public void getAllSongs() throws IOException
     {
@@ -101,6 +103,17 @@ public class MiddlePageController
         progressStage.showAndWait();
         root1 = FXMLLoader.load(getClass().getResource("sample.fxml"));
         second=new Scene(root1);
+        Main.window.setScene(second);
+        Main.window.show();
+    }
+
+    public void makeUserGroup() throws IOException
+    {
+        AllUsersRequest aur=new AllUsersRequest();
+        aur.myRequest();
+        allUserList=aur.allUsersList();
+        Parent root1 = FXMLLoader.load(getClass().getResource("UserGroupsCreation.fxml"));
+        Scene second=new Scene(root1);
         Main.window.setScene(second);
         Main.window.show();
     }

@@ -7,16 +7,16 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class ServerAllSongsRequest
+public class ServerAllUsersRequest
 {
     ResultSet rs;
 
-    public ResultSet getAllSongsSet() throws SQLException
+    public ResultSet getAllUsersSet() throws SQLException
     {
         Connectivity.ConnClass connectionClass=new ConnClass();
         Connection connection=connectionClass.getConnection();
         Statement statement=connection.createStatement();
-        String query="Select Name from Song";
+        String query="Select Uname from login";
         rs=statement.executeQuery(query);
         return rs;
     }

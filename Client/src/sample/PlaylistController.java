@@ -43,6 +43,7 @@ public class PlaylistController implements Initializable
     public void makePlaylist() throws IOException
     {
         String playlistName=nameOfPlaylist.getText();
+        System.out.println(playlistName);
         List<String> selectedSongs=allSongsList.getCheckModel().getCheckedItems();
         NewPlaylistRequest o=new NewPlaylistRequest(playlistName,selectedSongs);
         o.myRequest();

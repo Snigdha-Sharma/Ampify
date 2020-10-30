@@ -183,7 +183,31 @@ class ClientHandler extends Thread
                         System.out.println(x);
                     }
                     break;
+                case "AllUsersRequest":
+                    ServerAllUsersRequest aur=new ServerAllUsersRequest();
+                    rs= aur.getAllUsersSet();
+                    os=s.getOutputStream();
+                    oos=new ObjectOutputStream(os);
+                    List<String> users = new ArrayList<>();
+                    while(rs.next())
+                    {
+                        users.add(rs.getString(1));
+                    }
+                    oos.writeObject(users);
+                    break;
 
+                case "NewUserGroupRequest":
+                    String grpName=dis.readUTF();
+                    uname=dis.readUTF();
+                    System.out.println(grpName);
+                    System.out.println(uname);
+                    ois=new ObjectInputStream(s.getInputStream());
+                    ArrayList<String> selectedUsers= (ArrayList<String>) ois.readObject();
+                    for (String x:selectedUsers)
+                    {
+                        System.out.println(x);
+                    }
+                    break;
                 case "LogOff":
                     break;
 
