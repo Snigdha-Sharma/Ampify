@@ -19,7 +19,7 @@ public class Main extends Application
         window.setTitle("Login/Register");
 
 
-        primaryStage.setOpacity(0.9); //new
+        window.setOpacity(0.9); //new
         Scene scene=new Scene(root);
         scene.getStylesheets().add("resources/css/logincss.css");
         window.setScene(scene);
