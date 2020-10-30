@@ -1,0 +1,18 @@
+.bodybg{
+    -fx-background-image: url('login2.jpg');
+}
+
+.root{
+    /*-fx-background-color: #2b2b99;*/
+    -fx-background-image: url('login2.jpg');
+    -fx-background-size: cover;
+    -fx-background-repeat: repeat-y;
+    /*background-repeat: repeat-y;*/
+}
+.vbox1{
+    -fx-background-color: #2b2b99;
+}
+.text-area{
+    -fx-background-color: white;
+    -fx-background-radius: 5;
+}
