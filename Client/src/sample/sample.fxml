@@ -22,6 +22,15 @@
             </JFXSlider>
             <HBox alignment="TOP_CENTER" VBox.vgrow="ALWAYS">
                <children>
+                  <JFXButton fx:id="shuffleButton" buttonType="RAISED" onAction="#shuffleSongs" text="" textAlignment="CENTER">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/Shuffle.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
                   <JFXButton fx:id="prevSongButton" buttonType="RAISED" onAction="#goToPrevSong" text="" textAlignment="CENTER">
                      <graphic>
                         <ImageView pickOnBounds="true" preserveRatio="true">
@@ -45,6 +54,15 @@
                         <ImageView pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../Images/Next.jpg" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="repeatButton" buttonType="RAISED" onAction="#repeat" text="">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../Images/RepeatPlaylist.jpg" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -93,15 +111,6 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton fx:id="shuffleButton" buttonType="RAISED" onAction="#shuffleSongs" text="" textAlignment="CENTER">
-                     <graphic>
-                        <ImageView pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../Images/Shuffle.jpg" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </JFXButton>
                   <JFXButton fx:id="downloadButton" buttonType="RAISED" onAction="#downloadSongs" text="" textAlignment="CENTER">
                      <graphic>
                         <ImageView pickOnBounds="true" preserveRatio="true">
@@ -111,13 +120,12 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton fx:id="repeatButton" buttonType="RAISED" onAction="#repeat" text="">
+                  <JFXButton>
                      <graphic>
                         <ImageView pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../Images/RepeatPlaylist.jpg" />
-                           </image>
-                        </ImageView>
+                              <Image url="@../Images/Like.jpg" />
+                           </image></ImageView>
                      </graphic>
                   </JFXButton>
                   <Label fx:id="duration" alignment="BOTTOM_CENTER" textAlignment="CENTER" textFill="#1d1057">
@@ -183,4 +191,23 @@
          </BorderPane.margin>
       </AnchorPane>
    </left>
+   <right>
+      <SplitPane dividerPositions="0.5" minWidth="200.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Label prefHeight="220.0" prefWidth="198.0" text="Lyrics" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Label prefHeight="220.0" prefWidth="198.0" text="Song Metadata" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+        </items>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </BorderPane.margin>
+      </SplitPane>
+   </right>
 </BorderPane>

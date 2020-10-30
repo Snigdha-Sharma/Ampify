@@ -104,21 +104,16 @@ class ClientHandler extends Thread
                     break;
 
                 case "AllSongsRequest":
-                    System.out.println("Request Reached");
                     ServerAllSongsRequest asr=new ServerAllSongsRequest();
                     ResultSet rs=asr.getAllSongsSet();
                     OutputStream os=s.getOutputStream();
                     ObjectOutputStream oos=new ObjectOutputStream(os);
-                    //System.out.println(rs);
                     List<String> back = new ArrayList<>();
                     while(rs.next())
                     {
-                        System.out.println(rs.getString(1));
                         back.add(rs.getString(1));
-                        //dos.writeUTF(rs.getString(1));
                     }
                     oos.writeObject(back);
-                    System.out.println("Object sent to client");
                     break;
 
                 case "UserRequest":
@@ -174,6 +169,19 @@ class ClientHandler extends Thread
 
                     ServerUserDataRequest newData=new ServerUserDataRequest(username, name, phn, email, dob, state, pop1, rap1, classical1, metal1, contemp1, folk1, romantic1, hiphop1, brostep1, band1, rock1, eng1, hindi1, telugu1, harayanvi1, bihari1, punjabi1, french1, spanish1, marathi1, guj1, a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14);
                     dos.writeBoolean(newData.isFullSuccessful());
+                    break;
+
+                case "NewPlaylistRequest":
+                    String playlistName=dis.readUTF();
+                    uname=dis.readUTF();
+                    System.out.println(playlistName);
+                    System.out.println(uname);
+                    ObjectInputStream ois=new ObjectInputStream(s.getInputStream());
+                    ArrayList<String> selectedSongs= (ArrayList<String>) ois.readObject();
+                    for (String x:selectedSongs)
+                    {
+                        System.out.println(x);
+                    }
                     break;
 
                 case "LogOff":

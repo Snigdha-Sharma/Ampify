@@ -1,0 +1,750 @@
+D:\Study Material\Java\Java Video Lectures\Lecture 1 _ Programming Methodology (Stanford).mp4
+D:\Study Material\Java\Java Video Lectures\Lecture 10 _ Programming Methodology (Stanford).mp4
+D:\Study Material\Java\Java Video Lectures\Lecture 11 _ Programming Methodology (Stanford).mp4
+D:\Study Material\Java\Java Video Lectures\Lecture 12 _ Programming Methodology (Stanford).mp4
+D:\Study Material\Java\Java Video Lectures\Lecture 13 _ Programming Methodology (Stanford).mp4
+D:\Study Material\Java\Java Video Lectures\Lecture 14 _ Programming Methodology (Stanford).mp4
+D:\Study Material\Java\Java Video Lectures\Lecture 15 _ Programming Methodology (Stanford).mp4
+D:\Study Material\Java\Java Video Lectures\Lecture 16 _ Programming Methodology (Stanford).mp4
+D:\Study Material\Java\Java Video Lectures\Lecture 17 _ Programming Methodology (Stanford).mp4
+D:\Study Material\Java\Java Video Lectures\Lecture 18 _ Programming Methodology (Stanford).mp4
+D:\Study Material\Java\Java Video Lectures\Lecture 19 _ Programming Methodology (Stanford).mp4
+D:\Study Material\Java\Java Video Lectures\Lecture 2 _ Programming Methodology (Stanford).mp4
+D:\Study Material\Java\Java Video Lectures\Lecture 20 _ Programming Methodology (Stanford).mp4
+D:\Study Material\Java\Java Video Lectures\Lecture 21 _ Programming Methodology (Stanford).mp4
+D:\Study Material\Java\Java Video Lectures\Lecture 22 _ Programming Methodology (Stanford).mp4
+D:\Study Material\Java\Java Video Lectures\Lecture 23 _ Programming Methodology (Stanford).mp4
+D:\Study Material\Java\Java Video Lectures\Lecture 24 _ Programming Methodology (Stanford).mp4
+D:\Study Material\Java\Java Video Lectures\Lecture 25 _ Programming Methodology (Stanford).mp4
+D:\Study Material\Java\Java Video Lectures\Lecture 26 _ Programming Methodology (Stanford).mp4
+D:\Study Material\Java\Java Video Lectures\Lecture 27 _ Programming Methodology (Stanford).mp4
+D:\Study Material\Java\Java Video Lectures\Lecture 28 _ Programming Methodology (Stanford).mp4
+D:\Study Material\Java\Java Video Lectures\Lecture 3 _ Programming Methodology (Stanford).mp4
+D:\Study Material\Java\Java Video Lectures\Lecture 4 _ Programming Methodology (Stanford).mp4
+D:\Study Material\Java\Java Video Lectures\Lecture 5 _ Programming Methodology (Stanford).mp4
+D:\Study Material\Java\Java Video Lectures\Lecture 6 _ Programming Methodology (Stanford).mp4
+D:\Study Material\Java\Java Video Lectures\Lecture 7 _ Programming Methodology (Stanford).mp4
+D:\Study Material\Java\Java Video Lectures\Lecture 8 _ Programming Methodology (Stanford).mp4
+D:\Study Material\Java\Java Video Lectures\Lecture 9 _ Programming Methodology (Stanford).mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 1 - Threads_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 10 - Finishing the Animation Class_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 11 - Loading Pictures for the Movie_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 12 - Main Movie Loop_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 13 - Completing the Animation_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 14 - Making a Better Screen Class_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 15 - Finding Compatible Modes_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 16 - Comparing Display Modes_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 17 - Full Screen with Buffer Strategy_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 18 - Updating Display and Restore Screen_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 19 - Compatible Buffer Images_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 2 - Starting Threads_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 20 - Creating Display Modes List_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 21 - Run and Movie Loop Methods_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 22 - Finishing the Perfect Animation_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 23 - Introduction to Sprites_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 24 - Finishing the Sprite Class_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 25 - Starting the Sprites Movement_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 26 - Watching the Sprite Move_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 27 - Creating a Core Class_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 28 - Intro to Keyboard Input_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 29 - Handling Key Events_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 3 - Creating a Screen for Games_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 30 - Final Keyboard Input_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 31 - User Mouse Input_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 32 - Final Mouse Input_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 33 - Intro to Mouselook_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 34 - Mouselooks draw Method_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 35 - Using the Robot_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 36 - Final Mouselook Program_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 4 - Restoring Screen Size_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 5 - Creating a Full Screen Display_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 6 - Making Text Smooth_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 7 - Loading Images_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 8 - Beginning Animation_‏.mp4
+D:\Study Material\Java\Java Game Development Tutorial Set [thenewboston]\Tutorials\_Java Game Development - 9 - Changing Scenes_‏.mp4
+D:\Study Material\GATE Material\OS\Ravindrababu_OS\1.Process_I\0.About the lectures-T6ckTqH1zyo.mp4
+D:\Study Material\GATE Material\OS\Ravindrababu_OS\1.Process_I\1.Introduction to OS-2i2N_Qo_FyM.mp4
+D:\Study Material\GATE Material\OS\Ravindrababu_OS\1.Process_I\10.FCFS example-SMyoEuh6t4k.mp4
+D:\Study Material\GATE Material\OS\Ravindrababu_OS\1.Process_I\11.FCFS with overhead-tf1mSL1XKj0.mp4
+D:\Study Material\GATE Material\OS\Ravindrababu_OS\1.Process_I\12.SJF-xh8hRjtbu3k.mp4
+D:\Study Material\GATE Material\OS\Ravindrababu_OS\1.Process_I\13.Analysis of SJF-pknLjapNc2g.mp4
+D:\Study Material\GATE Material\OS\Ravindrababu_OS\1.Process_I\14.Round Robin Algorithm-vuBt54W3hXk.mp4
+D:\Study Material\GATE Material\OS\Ravindrababu_OS\1.Process_I\15.SJF with prediction of BT-8SLj1Z4ness.mp4
+D:\Study Material\GATE Material\OS\Ravindrababu_OS\1.Process_I\16.RR example 1-Sa600YsU16U.mp4
+D:\Study Material\GATE Material\OS\Ravindrababu_OS\1.Process_I\17.RR example 2-Q3CIg_aAQtw.mp4
+D:\Study Material\GATE Material\OS\Ravindrababu_OS\1.Process_I\18.Round Robin Example 3-v9PbedfdrVE.mp4
+D:\Study Material\GATE Material\OS\Ravindrababu_OS\1.Process_I\19.Round Robin example 4-g2vqTYUimTo.mp4
+D:\Study Material\GATE Material\OS\Ravindrababu_OS\1.Process_I\2.Process, PCB and Attributes-ucVm_arB-fw.mp4
+D:\Study Material\GATE Material\OS\Ravindrababu_OS\1.Process_I\20.Longest job first-xsOjx2Ih1-s.mp4
+D:\Study Material\GATE Material\OS\Ravindrababu_OS\1.Process_I\21.Longest remaining time first-QoDe5B2x8bo.mp4
+D:\Study Material\GATE Material\OS\Ravindrababu_OS\1.Process_I\22.Longest remaining time first Gate 2006 question-5DlzEI5vfdA.mp4
+D:\Study Material\GATE Material\OS\Ravindrababu_OS\1.Process_I\23.Highest Response Ratio Next(HRRN)-ABKa32ZS0Os.mp4
+D:\Study Material\GATE Material\OS\Ravindrababu_OS\1.Process_I\24.Priority scheduling-lw0XyasWxDk.mp4
+D:\Study Material\GATE Material\OS\Ravindrababu_OS\1.Process_I\25.non preemptive priority scheduling-i4PQucowf1c.mp4
+D:\Study Material\GATE Material\OS\Ravindrababu_OS\1.Process_I\26.Pre-emptive priority scheduling-hDn4hM148V8.mp4
+D:\Study Material\GATE Material\OS\Ravindrababu_OS\1.Process_I\27.Pre-emptive priority with processes contains CPU and IO time-eZGnmbT79R0.mp4
+D:\Study Material\GATE Material\OS\Ravindrababu_OS\1.Process_I\28.SRTF with processes contains CPU and IO time example 1-EvWdPgK9Jt8.mp4
+D:\Study Material\GATE Material\OS\Ravindrababu_OS\1.Process_I\29.Multi level queues and multi level feedback queues-1w9FybdNi_Y.mp4
+D:\Study Material\GATE Material\OS\Ravindrababu_OS\1.Process_I\3.Process State Transition Diagram and various Schedulers-e8YxIdwodB8.mp4
+D:\Study Material\GATE Material\OS\OS_NPTEL_IITKH(Memory_mange.)\1. Introduction to Operating Systems.mp4
+D:\Study Material\GATE Material\OS\OS_NPTEL_IITKH(Memory_mange.)\10. Dead Lock - 1.mp4
+D:\Study Material\GATE Material\OS\OS_NPTEL_IITKH(Memory_mange.)\11 Dead Lock - 2.mp4
+D:\Study Material\GATE Material\OS\OS_NPTEL_IITKH(Memory_mange.)\12 Dead Lock - 3.mp4
+D:\Study Material\GATE Material\OS\OS_NPTEL_IITKH(Memory_mange.)\13 Dead Lock - 4.mp4
+D:\Study Material\GATE Material\OS\OS_NPTEL_IITKH(Memory_mange.)\14 Dead Lock - 5.mp4
+D:\Study Material\GATE Material\OS\OS_NPTEL_IITKH(Memory_mange.)\15 Memory Mangement - 1.mp4
+D:\Study Material\GATE Material\OS\OS_NPTEL_IITKH(Memory_mange.)\16 Memory Mangement - 2_2.mp4
+D:\Study Material\GATE Material\OS\OS_NPTEL_IITKH(Memory_mange.)\17 Memory Mangement - 3.mp4
+D:\Study Material\GATE Material\OS\OS_NPTEL_IITKH(Memory_mange.)\18 Memory Mangement - 4.mp4
+D:\Study Material\GATE Material\OS\OS_NPTEL_IITKH(Memory_mange.)\19 Cache Memory - 1.mp4
+D:\Study Material\GATE Material\OS\OS_NPTEL_IITKH(Memory_mange.)\2. Process Management - 1.mp4
+D:\Study Material\GATE Material\OS\OS_NPTEL_IITKH(Memory_mange.)\20 Cache Memory - 2.mp4
+D:\Study Material\GATE Material\OS\OS_NPTEL_IITKH(Memory_mange.)\21 Secondary Storage Memories.mp4
+D:\Study Material\GATE Material\OS\OS_NPTEL_IITKH(Memory_mange.)\22 Buffer Cache - 1.mp4
+D:\Study Material\GATE Material\OS\OS_NPTEL_IITKH(Memory_mange.)\23 Buffer Cache - 2.mp4
+D:\Study Material\GATE Material\OS\OS_NPTEL_IITKH(Memory_mange.)\24 File Representation - 1.mp4
+D:\Study Material\GATE Material\OS\OS_NPTEL_IITKH(Memory_mange.)\25 File Representation - 2.mp4
+D:\Study Material\GATE Material\OS\OS_NPTEL_IITKH(Memory_mange.)\26 File Representation - 3.mp4
+D:\Study Material\GATE Material\OS\OS_NPTEL_IITKH(Memory_mange.)\27 File System Architecture - 1.mp4
+D:\Study Material\GATE Material\OS\OS_NPTEL_IITKH(Memory_mange.)\28 File System Architecture - 2.mp4
+D:\Study Material\GATE Material\OS\OS_NPTEL_IITKH(Memory_mange.)\29 File System Architecture - 3.mp4
+D:\Study Material\GATE Material\OS\OS_NPTEL_IITKH(Memory_mange.)\3. Process Management - 2.mp4
+D:\Study Material\GATE Material\OS\OS_NPTEL_IITKH(Memory_mange.)\30 Introduction to Distribution Systems.mp4
+D:\Study Material\GATE Material\OS\OS_NPTEL_IITKH(Memory_mange.)\31 Conclusion - Introduction to Operating Systems.mp4
+D:\Study Material\GATE Material\OS\OS_NPTEL_IITKH(Memory_mange.)\4. Process Management - 2.mp4
+D:\Study Material\GATE Material\OS\OS_NPTEL_IITKH(Memory_mange.)\5. Concurrent Management - 2.mp4
+D:\Study Material\GATE Material\OS\OS_NPTEL_IITKH(Memory_mange.)\6. Concurrent Management - 3.mp4
+D:\Study Material\GATE Material\OS\OS_NPTEL_IITKH(Memory_mange.)\7. Critical Section Problem - 1.mp4
+D:\Study Material\GATE Material\OS\OS_NPTEL_IITKH(Memory_mange.)\8. Critical Section Problem - 2.mp4
+D:\Study Material\GATE Material\OS\OS_NPTEL_IITKH(Memory_mange.)\9. Critical Section Problem - 3.mp4
+D:\Study Material\GATE Material\Notes_ALL_Subject\LOGICAL CLOCK AND LAMPORT CLOCK - EASY EXPLAINED.mp4
+D:\Study Material\C\C Programming Tutorial\C Programming Tutorial - 10 - Logical Operators.mp4
+D:\Study Material\C\C Programming Tutorial\C Programming Tutorial - 11 - Into to Functions.mp4
+D:\Study Material\C\C Programming Tutorial\C Programming Tutorial - 12 - Random Number Function.mp4
+D:\Study Material\C\C Programming Tutorial\C Programming Tutorial - 13 - Seeding Random Numbers.mp4
+D:\Study Material\C\C Programming Tutorial\C Programming Tutorial - 14 - Intro to Arrays.mp4
+D:\Study Material\C\C Programming Tutorial\C Programming Tutorial - 15 - Simple Array Program.mp4
+D:\Study Material\C\C Programming Tutorial\C Programming Tutorial - 2 - Intro to Variables - Copy.mp4
+D:\Study Material\C\C Programming Tutorial\C Programming Tutorial - 3 - Comments and Math Functions - Copy.mp4
+D:\Study Material\C\C Programming Tutorial\C Programming Tutorial - 4 - If Statement Decision - Copy.mp4
+D:\Study Material\C\C Programming Tutorial\C Programming Tutorial - 5 - If, Else If, Else Statements - Copy.mp4
+D:\Study Material\C\C Programming Tutorial\C Programming Tutorial - 6 - While Loops.mp4
+D:\Study Material\C\C Programming Tutorial\C Programming Tutorial - 7 - More on Loops.mp4
+D:\Study Material\C\C Programming Tutorial\C Programming Tutorial - 8 - Switch Statement.mp4
+D:\Study Material\C\C Programming Tutorial\C Programming Tutorial - 9 - Do While Loops.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 1 - Introduction to PHP_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 10 - print_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 100 - Creating a Simple Contact Form Part 1_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 101 - Creating a Simple Contact Form Part 2_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 102 - Creating a Simple Contact Form Part 3_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 103 - Creating a Simple Contact Form Part 4_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 104 - An Introduction to XML_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 105 - Reading a Simple XML File Part 1_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 106 - Reading a Simple XML File Part 2_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 107 - A YouTube XML Example_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 108 - An Introduction to Databases_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 109 - More About Databases_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 11 - Output HTML Using echo_print_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 110 - phpMyAdmin Part 1_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 111 - phpMyAdmin Part 2_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 112 - phpMyAdmin Part 3_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 113 - Connecting to a Server and Database Part 1_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 114 - Connecting to a Server and Database Part 2_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 115 - SELECT Part 1_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 116 - SELECT Part 2_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 117 - SELECT Part 3_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 118 - SELECT By Example Part 1_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 119 - SELECT By Example Part 2_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 12 - Embedding PHP Inside HTML_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 120 - More Basic Querying Part 1_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 121 - More Basic Querying Part 2_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 122 - More Basic Querying Part 3_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 123 - Creating a Database Hit Counter Part 1_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 124 - Creating a Database Hit Counter Part 2_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 125 - Creating a Database Hit Counter Part 3_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 126 - Creating a Database Hit Counter Part 4_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 127 - LEFT JOIN_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 128 - RIGHT JOIN_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 129 - JOIN_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 13 - comments_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 130 - LIKE With a Search Engine Example Part 1_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 131 - LIKE With a Search Engine Example Part 2_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 132 - LIKE With a Search Engine Example Part 3_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 133 - LIKE With a Search Engine Example Part 4_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 134 - SELECT DISTINCT_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 135 - Creating Tables_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 136 - Logging the User In Part 1_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 137 - Logging the User In Part 2_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 138 - Logging the User In Part 3_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 139 - Logging the User In Part 4_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 14 - Error Reporting_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 140 - Logging the User Out_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 141 - Getting User Data Part 1_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 142 - Getting User Data Part 2_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 143 - Protecting the User Against SQL Injection_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 144 - Registration Form Part 1_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 145 - Registration Form Part 2_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 146 - Registration Form Part 3_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 147 - Registration Form Part 4_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 148 - More Validation Part 1_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 149 - More Validation Part 2_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 15 - More on Error Reporting_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 150 - More Validation Part 3_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 151 - SQL Injection Part 1_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 152 - SQL Injection Part 2_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 153 - SQL Injection Part 3_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 154 - SQL Injection Part 4_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 155 - SQL Injection Part 5_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 156 - Introduction to GD_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 157 - Protecting Email with String to Image Part 1_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 158 - Protecting Email with String to Image Part 2_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 159 - Protecting Email with String to Image Part 3_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 16 - Variables_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 160 - Protecting Email with String to Image Part 4_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 161 - Watermarking Images Part 1_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 162 - Watermarking Images Part 2_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 163 - Watermarking Images Part 3_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 164 - Creating Captcha Image Security Part 1_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 165 - Creating Captcha Image Security Part 2_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 166 - Creating Captcha Image Security Part 3_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 167 - Creating Captcha Image Security Part 4_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 168 - Scaling Down Images to Thumbnails Part 1_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 169 - Scaling Down Images to Thumbnails Part 2_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 17 - Concatenation_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 170 - Scaling Down Images to Thumbnails Part 3_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 171 - Introduction to AJAX_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 172 - Loading in file Contents to a DIV Part 1_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 173 - Loading in file Contents to a DIV Part 2_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 174 - Loading in file Contents to a DIV Part 3_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 175 - Auto Suggest Application Part 1_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 176 - Auto Suggest Application Part 2_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 177 - Auto Suggest Application Part 3_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 178 - Auto Suggest Application Part 4_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 179 - Auto Suggest Application Part 5_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 18 - if _ if else Statement_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 180 - POSTing Data Part 1_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 181 - POSTing Data Part 2_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 182 - POSTing Data Part 3_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 183 - POSTing Data Part 4_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 184 - POSTing Data Part 5_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 185 - Throwing an Exception_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 186 - try, throw, catch_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 187 - Custom Exceptions_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 188 - Custom Error Messages_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 189 - Introduction to OOP_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 19 - if _ else if Statement_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 190 - Classes, Properties, and Methods_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 191 - Return a Property Value_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 192 - Changing a Property Value_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 193 - public, private, and protected_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 194 - Constants_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 195 - Class Constructor_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 196 - Multiple Instances of Classes_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 197 - extends Part 1_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 198 - extends Part 2_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 199 - Connecting to a Database the OOP Way_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 2 - Installing XAMPP Part 1_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 20 - Assignment Operators_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 200 - Final PHP Video!!!_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 21 - Comparison Operators_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 22 - Arithmetic Operators_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 23 - Logical Operators_‏.mp4
+D:\Study Material\Beginner PHP 200 Tutorials  thenewboston\Tutorial Set\_Beginner PHP Tutorial - 24 - Triple Equals_‏.mp4
+D:\Study Material\Automata\Theory Of Computation 1,Introduction to TOC and DFA.mp4
+D:\Study Material\Automata\Theory Of Computation 12,Comparison between different DFAs.mp4
+D:\Study Material\Automata\Theory Of Computation 2, Construction of minimal DFA and problems.mp4
+D:\Study Material\Automata\Theory Of Computation 3 , Construction of DFA and cross product of DFA.mp4
+D:\Study Material\Automata\Theory Of Computation 33,Introduction to NFA.mp4
+D:\Study Material\Automata\Theory Of Computation 34,Examples of NFA.mp4
+D:\Study Material\Automata\Theory Of Computation 35,Conversion of NFA to DFA.mp4
+D:\Study Material\Automata\Theory Of Computation 36,Conversion of NFA to DFA.mp4
+D:\Study Material\Automata\Theory Of Computation 37,convertion of NFA to DFA.mp4
+D:\Study Material\Automata\Theory Of Computation 38, convertion of NFA to DFA.mp4
+D:\Study Material\Automata\Theory Of Computation 4, DFA and problem.mp4
+D:\Study Material\Automata\Theory Of Computation 5,DFA construction.mp4
+D:\Pictures\Family\Miscellaneous\VID-20190609-WA0018.mp4
+D:\Pictures\Family\Miscellaneous\VID-20190609-WA0019.mp4
+D:\Pictures\Family\2020\Holi\VID-20200310-WA0081.mp4
+D:\Pictures\Family\2020\Holi\VID-20200310-WA0082.mp4
+D:\Pictures\Family\2020\Holi\VID-20200310-WA0090.mp4
+D:\Pictures\Family\2020\Holi\VID-20200310-WA0091.mp4
+D:\Pictures\Family\2020\Holi\VID-20200310-WA0100.mp4
+D:\Pictures\Family\2020\Holi\VID-20200310-WA0106.mp4
+D:\Pictures\Family\2019\ShekharBhaiyaWedding\VID_20190711_182233.mp4
+D:\Pictures\Family\2019\ShekharBhaiyaWedding\VID_20190711_184836.mp4
+D:\Pictures\Family\2019\Ruby Mausi's Marriage\VID_20190421_000042.mp4
+D:\Pictures\Family\2019\Hunny Didi's Marriage\VID-20190506-WA0005.mp4
+D:\Pictures\Family\2019\Diwali\VID_20191028_191632.mp4
+D:\Pictures\Family\2018\Shirdi\VID_20181017_193504.mp4
+D:\Pictures\Family\2018\Shirdi\VID_20181018_073050.mp4
+D:\Pictures\Family\2018\Shirdi\VID_20181018_073200.mp4
+D:\Pictures\Family\2018\Shirdi\VID_20181018_101538.mp4
+D:\Pictures\Family\2018\Ranu Mama's Wedding\VID-20181214-WA0063.mp4
+D:\Pictures\Family\2018\Ranu Mama's Wedding\VID-20181214-WA0064.mp4
+D:\Pictures\Family\2018\Ranu Mama's Wedding\VID-20181214-WA0066.mp4
+D:\Pictures\Family\2018\Ranu Mama's Wedding\VID-20181214-WA0067.mp4
+D:\Pictures\Family\2018\Ranu Mama's Wedding\VID-20181214-WA0068.mp4
+D:\Pictures\Family\2018\Ranu Mama's Wedding\VID-20181214-WA0069.mp4
+D:\Pictures\Family\2018\Ranu Mama's Wedding\VID-20181215-WA0087.mp4
+D:\Pictures\Family\2018\Ranu Mama's Wedding\VID-20181215-WA0114.mp4
+D:\Pictures\Family\2018\Ranu Mama's Wedding\VID-20181216-WA0027.mp4
+D:\Pictures\Family\2018\Ranu Mama's Wedding\VID_20181213_194700.mp4
+D:\Pictures\Family\2018\Ranu Mama's Wedding\VID_20181213_194732.mp4
+D:\Pictures\Family\2018\Ranu Mama's Wedding\VID_20181213_195236.mp4
+D:\Pictures\Family\2018\Ranu Mama's Wedding\VID_20181213_210909.mp4
+D:\Pictures\Family\2018\Lori's Bday\VID-20181220-WA0090.mp4
+D:\Pictures\Family\2018\Lori's Bday\VID-20181220-WA0091.mp4
+D:\Pictures\College\2019-2020\Misc\VID-20200306-WA0018.mp4
+D:\Pictures\College\2019-2020\Misc\VID-20200306-WA0139.mp4
+D:\Pictures\College\2019-2020\Misc\VID-20200306-WA0140.mp4
+D:\Pictures\College\2019-2020\Misc\VID-20200306-WA0141.mp4
+D:\Pictures\College\2019-2020\Misc\VID_20190727_171511.mp4
+D:\Pictures\College\2019-2020\Misc\VID_20190901_111928.mp4
+D:\Pictures\College\2019-2020\Misc\VID_20190901_112047.mp4
+D:\Pictures\College\2019-2020\Misc\VID_20190901_113138.mp4
+D:\Pictures\College\2019-2020\Misc\VID_20200128_173130.mp4
+D:\Pictures\College\2019-2020\KGP\VID_20200124_203313.mp4
+D:\Pictures\College\2019-2020\KGP\VID_20200124_212423.mp4
+D:\Pictures\College\2019-2020\KGP\VID_20200126_220442.mp4
+D:\Pictures\College\2019-2020\KGP\VID_20200126_225335.mp4
+D:\Pictures\College\2019-2020\KGP\VID_20200127_154619.mp4
+D:\Pictures\College\2019-2020\KGP\VID_20200127_154643.mp4
+D:\Pictures\College\2019-2020\KGP\VID_20200127_154750.mp4
+D:\Pictures\College\2019-2020\KGP\VID_20200127_154806.mp4
+D:\Pictures\College\2019-2020\KGP\VID_20200127_154927.mp4
+D:\Pictures\College\2019-2020\KGP\VID_20200127_154957.mp4
+D:\Pictures\College\2019-2020\KGP\VID_20200127_155047.mp4
+D:\Pictures\College\2019-2020\KGP\VID_20200127_155112.mp4
+D:\Pictures\College\2019-2020\KGP\VID_20200127_155201.mp4
+D:\Pictures\College\2019-2020\KGP\VID_20200127_155258.mp4
+D:\Pictures\College\2019-2020\KGP\VID_20200127_155357.mp4
+D:\Pictures\College\2019-2020\KGP\VID_20200127_155426.mp4
+D:\Pictures\College\2019-2020\KGP\VID_20200127_155513.mp4
+D:\Pictures\College\2019-2020\KGP\VID_20200127_155631.mp4
+D:\Pictures\College\2019-2020\KGP\VID_20200127_155700.mp4
+D:\Pictures\College\2019-2020\KGP\VID_20200127_155733.mp4
+D:\Pictures\College\2019-2020\KGP\VID_20200127_155825.mp4
+D:\Pictures\College\2019-2020\KGP\VID_20200127_155858.mp4
+D:\Pictures\College\2019-2020\KGP\VID_20200127_155916.mp4
+D:\Pictures\College\2019-2020\KGP\VID_20200127_161140.mp4
+D:\Pictures\College\2019-2020\KGP\VID_20200127_161233.mp4
+D:\Pictures\College\2019-2020\Divya's Bday\VID_20190915_011621.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\AUD-20190105-WA0021.mp3
+D:\Pictures\College\2018-2019\Miscellaneous\AUD-20190123-WA0017.mp3
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20180930-WA0199.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20180930-WA0200.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20181104-WA0076.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20181104-WA0077.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20181104-WA0095.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20181127-WA0000.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20181127-WA0008.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190108-WA0001.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190108-WA0002.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190115-WA0024.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190115-WA0105.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190119-WA0013.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190120-WA0000.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190120-WA0001.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190120-WA0178.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190120-WA0179.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190204-WA0084.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190204-WA0096.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190204-WA0097.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190204-WA0098.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190204-WA0099.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190204-WA0100.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190204-WA0101.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190204-WA0103.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190204-WA0104.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190204-WA0110.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190204-WA0111.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190204-WA0115.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190204-WA0116.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190204-WA0120.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190204-WA0121.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190204-WA0122.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190204-WA0123.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190204-WA0125.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190206-WA0058.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190210-WA0010.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190210-WA0016.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190210-WA0017.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190210-WA0074.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190224-WA0354.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190225-WA0109.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190225-WA0110.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190225-WA0111.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190225-WA0112.mp4
+D:\Pictures\College\2018-2019\Miscellaneous\VID-20190225-WA0115.mp4
+D:\Pictures\College\2018-2019\Lohri\VID-20190113-WA0057.mp4
+D:\Pictures\College\2018-2019\Lohri\VID-20190114-WA0136.mp4
+D:\Pictures\College\2018-2019\Lohri\VID-20190114-WA0137.mp4
+D:\Pictures\College\2018-2019\Lohri\VID-20190114-WA0138.mp4
+D:\Pictures\College\2018-2019\Lohri\VID-20190114-WA0139.mp4
+D:\Pictures\College\2018-2019\Lohri\VID-20190114-WA0140.mp4
+D:\Pictures\College\2018-2019\Lohri\VID-20190114-WA0141.mp4
+D:\Pictures\College\2018-2019\Lohri\VID-20190114-WA0142.mp4
+D:\Pictures\College\2018-2019\Bhangra\VID-20180922-WA0032.mp4
+D:\Pictures\College\2018-2019\Bhangra\VID-20180922-WA0033.mp4
+D:\Pictures\College\2018-2019\Bhangra\VID-20190128-WA0009.mp4
+C:\Users\Spardha Sharma\Videos\Captures\Cuphead 2020-05-21 17-55-42.mp4
+C:\Users\Spardha Sharma\Videos\Captures\Cuphead 2020-05-21 18-02-00.mp4
+C:\Users\Spardha Sharma\Videos\Captures\Cuphead 2020-05-21 18-02-08.mp4
+C:\Users\Spardha Sharma\Videos\Captures\Cuphead 2020-05-21 18-03-26.mp4
+C:\Users\Spardha Sharma\Videos\Captures\Cuphead 2020-05-21 18-04-11.mp4
+C:\Users\Spardha Sharma\Videos\Captures\Cuphead 2020-05-21 18-04-16.mp4
+C:\Users\Spardha Sharma\Videos\Captures\Cuphead 2020-05-21 18-05-41.mp4
+C:\Users\Spardha Sharma\Videos\Captures\Cuphead 2020-05-21 18-07-20.mp4
+C:\Users\Spardha Sharma\Videos\Captures\Cuphead 2020-05-21 18-07-59.mp4
+C:\Users\Spardha Sharma\Videos\Captures\Cuphead 2020-05-21 18-09-30.mp4
+C:\Users\Spardha Sharma\Videos\Captures\Cuphead 2020-05-21 18-09-43.mp4
+C:\Users\Spardha Sharma\Videos\Captures\Cuphead 2020-05-21 18-12-25.mp4
+C:\Users\Spardha Sharma\Videos\Captures\Cuphead 2020-05-21 18-16-10.mp4
+C:\Users\Spardha Sharma\Videos\Captures\Cuphead 2020-05-21 18-17-07.mp4
+C:\Users\Spardha Sharma\Videos\Captures\Cuphead 2020-05-21 18-17-23.mp4
+C:\Users\Spardha Sharma\Videos\Captures\Cuphead 2020-05-21 18-18-52.mp4
+C:\Users\Spardha Sharma\Videos\Captures\Cuphead 2020-05-21 18-20-05.mp4
+C:\Users\Spardha Sharma\Videos\Captures\Cuphead 2020-05-21 18-21-08.mp4
+C:\Users\Spardha Sharma\Videos\Captures\Cuphead 2020-05-21 18-21-52.mp4
+C:\Users\Spardha Sharma\Videos\Captures\Cuphead 2020-05-21 18-23-12.mp4
+C:\Users\Spardha Sharma\Videos\Captures\Cuphead 2020-05-21 18-25-52.mp4
+C:\Users\Spardha Sharma\Videos\Captures\Cuphead 2020-05-21 18-27-01.mp4
+C:\Users\Spardha Sharma\Videos\Captures\Cuphead 2020-05-21 18-28-21.mp4
+C:\Users\Spardha Sharma\Videos\Captures\Cuphead 2020-05-21 18-30-03.mp4
+C:\Users\Spardha Sharma\Videos\Captures\Cuphead 2020-05-21 18-30-15.mp4
+C:\Users\Spardha Sharma\Videos\Captures\Cuphead 2020-05-21 18-32-03.mp4
+C:\Users\Spardha Sharma\Videos\Captures\Cuphead 2020-05-21 18-32-18.mp4
+C:\Users\Spardha Sharma\Videos\Captures\Cuphead 2020-05-23 18-56-56.mp4
+C:\Users\Spardha Sharma\Videos\Captures\Microsoft Teams 2020-09-15 00-35-14.mp4
+C:\Users\Spardha Sharma\Videos\Captures\Movies & TV 2020-07-03 18-39-23.mp4
+C:\Users\Spardha Sharma\Videos\Captures\Naruto Shippuden Episode 340 English Subbed _ _ Naruto360 - Google Chrome 2020-09-09 21-18-53.mp4
+C:\Users\Spardha Sharma\Pictures\Camera Roll\WIN_20200807_10_05_10_Pro.mp4
+C:\Users\Spardha Sharma\Music\Aayat.mp3
+C:\Users\Spardha Sharma\Music\Achha To Hum Chalte Hain.mp3
+C:\Users\Spardha Sharma\Music\Ae Ajnabi.mp3
+C:\Users\Spardha Sharma\Music\Ae Dil E Nadan.mp3
+C:\Users\Spardha Sharma\Music\Agar Tum Na Hote.mp3
+C:\Users\Spardha Sharma\Music\Agar Tum Saath Ho.mp3
+C:\Users\Spardha Sharma\Music\Ahista Ahista.mp3
+C:\Users\Spardha Sharma\Music\Ajeeb Dastan Hai Ye.mp3
+C:\Users\Spardha Sharma\Music\Alice In Wonderland.mp3
+C:\Users\Spardha Sharma\Music\Allah Waariyan.mp3
+C:\Users\Spardha Sharma\Music\Ambarsariya.mp3
+C:\Users\Spardha Sharma\Music\Are Re Are Ye Kya Hua.mp3
+C:\Users\Spardha Sharma\Music\AsLongAsYouLoveMe.mp3
+C:\Users\Spardha Sharma\Music\Awaarapan Banjarapan.mp3
+C:\Users\Spardha Sharma\Music\Aya Karo Ji Kabhi Sadi Gali Bhul Ke Bhi.mp3
+C:\Users\Spardha Sharma\Music\Baarish.mp3
+C:\Users\Spardha Sharma\Music\Bahara bahara.mp3
+C:\Users\Spardha Sharma\Music\Bairiya.mp3
+C:\Users\Spardha Sharma\Music\Bang Bang.mp3
+C:\Users\Spardha Sharma\Music\Banjaara.mp3
+C:\Users\Spardha Sharma\Music\Be With You.mp3
+C:\Users\Spardha Sharma\Music\Beautiful Soul.mp3
+C:\Users\Spardha Sharma\Music\Beautiful.mp3
+C:\Users\Spardha Sharma\Music\Befikra.mp3
+C:\Users\Spardha Sharma\Music\Bella's lullaby.mp3
+C:\Users\Spardha Sharma\Music\Bezuban.mp3
+C:\Users\Spardha Sharma\Music\Bheegi Bheegi Raaton Mein.mp3
+C:\Users\Spardha Sharma\Music\Bholi Si Surat.mp3
+C:\Users\Spardha Sharma\Music\Birthmark.mp3
+C:\Users\Spardha Sharma\Music\Blue Mountain Dub.mp3
+C:\Users\Spardha Sharma\Music\Bol Na Halke Halke.mp3
+C:\Users\Spardha Sharma\Music\Break Your Heart.mp3
+C:\Users\Spardha Sharma\Music\Can I Have This Dance.mp3
+C:\Users\Spardha Sharma\Music\Carry Underwood.mp3
+C:\Users\Spardha Sharma\Music\Catch Me.mp3
+C:\Users\Spardha Sharma\Music\Chaar Kadam.mp3
+C:\Users\Spardha Sharma\Music\Chahoon Bhi.mp3
+C:\Users\Spardha Sharma\Music\Chahun Main Ya Na.mp3
+C:\Users\Spardha Sharma\Music\Chand Sifarish.mp3
+C:\Users\Spardha Sharma\Music\Chupke Se.mp3
+C:\Users\Spardha Sharma\Music\Coca Cola.mp3
+C:\Users\Spardha Sharma\Music\Crank It Up.mp3
+C:\Users\Spardha Sharma\Music\Dil Ka Mizaaj.mp3
+C:\Users\Spardha Sharma\Music\Dil Toh Bachcha Hai.mp3
+C:\Users\Spardha Sharma\Music\Dildara.mp3
+C:\Users\Spardha Sharma\Music\Diya Aur Baati Hum.mp3
+C:\Users\Spardha Sharma\Music\Dooba Dooba Rehta Hun.mp3
+C:\Users\Spardha Sharma\Music\Emptiness(female version).mp3
+C:\Users\Spardha Sharma\Music\Emptiness.mp3
+C:\Users\Spardha Sharma\Music\Everybody.mp3
+C:\Users\Spardha Sharma\Music\Far From Leave.mp3
+C:\Users\Spardha Sharma\Music\Feels Like Tonight.mp3
+C:\Users\Spardha Sharma\Music\Fly To Your Heart.mp3
+C:\Users\Spardha Sharma\Music\Follow Me.mp3
+C:\Users\Spardha Sharma\Music\Galliyan.mp3
+C:\Users\Spardha Sharma\Music\Give Me Some Sunshine.mp3
+C:\Users\Spardha Sharma\Music\Green Day.mp3
+C:\Users\Spardha Sharma\Music\Gun gun guna.mp3
+C:\Users\Spardha Sharma\Music\Hall Of Fame.mp3
+C:\Users\Spardha Sharma\Music\Hamari Atariya.mp3
+C:\Users\Spardha Sharma\Music\Hamdard.mp3
+C:\Users\Spardha Sharma\Music\Hamne Dekhi Hai Un Ankhon Ki.mp3
+C:\Users\Spardha Sharma\Music\Heartbreaker.mp3
+C:\Users\Spardha Sharma\Music\Heer To Bari Sad Hai.mp3
+C:\Users\Spardha Sharma\Music\Helpless When She Smiles.mp3
+C:\Users\Spardha Sharma\Music\Holiday.mp3
+C:\Users\Spardha Sharma\Music\Holla Holla.mp3
+C:\Users\Spardha Sharma\Music\Hona Tha Pyar.mp3
+C:\Users\Spardha Sharma\Music\Hosanna Ringtone.mp3
+C:\Users\Spardha Sharma\Music\How Did I Fall In Love With You.mp3
+C:\Users\Spardha Sharma\Music\Hum Dum Suniyo Re.mp3
+C:\Users\Spardha Sharma\Music\I Can't Make You Love Me.mp3
+C:\Users\Spardha Sharma\Music\I Wanna Love You.mp3
+C:\Users\Spardha Sharma\Music\I Want It That Way.mp3
+C:\Users\Spardha Sharma\Music\I'm So Paid.mp3
+C:\Users\Spardha Sharma\Music\I'm With You.mp3
+C:\Users\Spardha Sharma\Music\Ik Larki Bheegi Bhagi Si.mp3
+C:\Users\Spardha Sharma\Music\Incomplete.mp3
+C:\Users\Spardha Sharma\Music\Is This Love.mp3
+C:\Users\Spardha Sharma\Music\Jab Koi Baat Bigad Jaye.mp3
+C:\Users\Spardha Sharma\Music\Jab Mila Tu.mp3
+C:\Users\Spardha Sharma\Music\Jag Ghoomeya.mp3
+C:\Users\Spardha Sharma\Music\Jaise Mera Tu.mp3
+C:\Users\Spardha Sharma\Music\Janam Janam.mp3
+C:\Users\Spardha Sharma\Music\Jashn-E-Bahara.mp3
+C:\Users\Spardha Sharma\Music\Jesus Takes The Wheel.mp3
+C:\Users\Spardha Sharma\Music\Jhallah Wallah.mp3
+C:\Users\Spardha Sharma\Music\Jiyen Kyun Gaye Kyun.mp3
+C:\Users\Spardha Sharma\Music\Just The Way You Are.mp3
+C:\Users\Spardha Sharma\Music\Kabhi Jo Badal Barse.mp3
+C:\Users\Spardha Sharma\Music\Kabira.mp3
+C:\Users\Spardha Sharma\Music\Kahin Door Jab Din Dhal Jae.mp3
+C:\Users\Spardha Sharma\Music\Kahin Toh Hogi Woh.mp3
+C:\Users\Spardha Sharma\Music\Kamli.mp3
+C:\Users\Spardha Sharma\Music\Katra Katra.mp3
+C:\Users\Spardha Sharma\Music\Keep You Much Longer.mp3
+C:\Users\Spardha Sharma\Music\Kehna Hi Kya.mp3
+C:\Users\Spardha Sharma\Music\Khabar Nahi.mp3
+C:\Users\Spardha Sharma\Music\Khwabon Ke Parindey.mp3
+C:\Users\Spardha Sharma\Music\Kill Dil.mp3
+C:\Users\Spardha Sharma\Music\Kuch Is Tarah.mp3
+C:\Users\Spardha Sharma\Music\Kun Faya Kun.mp3
+C:\Users\Spardha Sharma\Music\Kya Hua Tera Vada (Instrumental).mp3
+C:\Users\Spardha Sharma\Music\Kyon.mp3
+C:\Users\Spardha Sharma\Music\Leaving.mp3
+C:\Users\Spardha Sharma\Music\Live For The Night.mp3
+C:\Users\Spardha Sharma\Music\London Thumakda.mp3
+C:\Users\Spardha Sharma\Music\Love Is A Waste Of Time.mp3
+C:\Users\Spardha Sharma\Music\Luka Chuppi.mp3
+C:\Users\Spardha Sharma\Music\Maahi Ve.mp3
+C:\Users\Spardha Sharma\Music\Mahiya.mp3
+C:\Users\Spardha Sharma\Music\Malang.mp3
+C:\Users\Spardha Sharma\Music\Man Mera.mp3
+C:\Users\Spardha Sharma\Music\Manja.mp3
+C:\Users\Spardha Sharma\Music\Mann Ki Lagan.mp3
+C:\Users\Spardha Sharma\Music\Manwa Lage.mp3
+C:\Users\Spardha Sharma\Music\Mar Jaiyan.mp3
+C:\Users\Spardha Sharma\Music\Mashooqana.mp3
+C:\Users\Spardha Sharma\Music\Mast Magan.mp3
+C:\Users\Spardha Sharma\Music\Matargashti.mp3
+C:\Users\Spardha Sharma\Music\Maula Maula.mp3
+C:\Users\Spardha Sharma\Music\Maula Mere Maula.mp3
+C:\Users\Spardha Sharma\Music\Meethi Boliyaan.mp3
+C:\Users\Spardha Sharma\Music\Meharbani.mp3
+C:\Users\Spardha Sharma\Music\Meherbaan.mp3
+C:\Users\Spardha Sharma\Music\Mera Pehla Pehla Pyar.mp3
+C:\Users\Spardha Sharma\Music\Mere Dil Me Aj Kya Hai.mp3
+C:\Users\Spardha Sharma\Music\Mere Haath Mein.mp3
+C:\Users\Spardha Sharma\Music\Mere Mehboob Qayamat Hogi.mp3
+C:\Users\Spardha Sharma\Music\Mere Sajan Hai Us Par.mp3
+C:\Users\Spardha Sharma\Music\Mileya Mileya.mp3
+C:\Users\Spardha Sharma\Music\More To Giridhar Gopala.mp3
+C:\Users\Spardha Sharma\Music\Muri Muri Ittefaq Se.mp3
+C:\Users\Spardha Sharma\Music\Musu Musu Hasi.mp3
+C:\Users\Spardha Sharma\Music\My Heart Will Go On.mp3
+C:\Users\Spardha Sharma\Music\My Love.mp3
+C:\Users\Spardha Sharma\Music\Na Jiya Lage Na.mp3
+C:\Users\Spardha Sharma\Music\Nanga Punga Dost.mp3
+C:\Users\Spardha Sharma\Music\Navrai Majhi.mp3
+C:\Users\Spardha Sharma\Music\Nazar.mp3
+C:\Users\Spardha Sharma\Music\Neel Gagan Ki Chaon Mein.mp3
+C:\Users\Spardha Sharma\Music\Nothing On You.mp3
+C:\Users\Spardha Sharma\Music\Nothing's Gonna Change My Love For You.mp3
+C:\Users\Spardha Sharma\Music\Numb.mp3
+C:\Users\Spardha Sharma\Music\O Re Piya.mp3
+C:\Users\Spardha Sharma\Music\O Saiyan.mp3
+C:\Users\Spardha Sharma\Music\Pakeezah.mp3
+C:\Users\Spardha Sharma\Music\Pal Pal Dil Ke Pas Tum Rehti Ho.mp3
+C:\Users\Spardha Sharma\Music\Pani Da Rang.mp3
+C:\Users\Spardha Sharma\Music\Papi.mp3
+C:\Users\Spardha Sharma\Music\Pareshaan.mp3
+C:\Users\Spardha Sharma\Music\Pashmina.mp3
+C:\Users\Spardha Sharma\Music\Patakha Guddi.mp3
+C:\Users\Spardha Sharma\Music\Pee Lun.mp3
+C:\Users\Spardha Sharma\Music\Pehla Nasha.mp3
+C:\Users\Spardha Sharma\Music\Pehli Baar.mp3
+C:\Users\Spardha Sharma\Music\Pehli Nazar Me.mp3
+C:\Users\Spardha Sharma\Music\Phoolon Ke Rang Se.mp3
+C:\Users\Spardha Sharma\Music\Raanjhanaa.mp3
+C:\Users\Spardha Sharma\Music\Rang Jo Lagyo.mp3
+C:\Users\Spardha Sharma\Music\Rehna Tu.mp3
+C:\Users\Spardha Sharma\Music\Roja Janeman.mp3
+C:\Users\Spardha Sharma\Music\Saathiya.mp3
+C:\Users\Spardha Sharma\Music\Sanam Re.mp3
+C:\Users\Spardha Sharma\Music\Sawaar Loon.mp3
+C:\Users\Spardha Sharma\Music\Senorita.mp3
+C:\Users\Spardha Sharma\Music\Sham.mp3
+C:\Users\Spardha Sharma\Music\Shape Of You.mp3
+C:\Users\Spardha Sharma\Music\Shubhaarambh.mp3
+C:\Users\Spardha Sharma\Music\Shuddh Desi Romance.mp3
+C:\Users\Spardha Sharma\Music\Socha Hai.mp3
+C:\Users\Spardha Sharma\Music\Soniye.mp3
+C:\Users\Spardha Sharma\Music\Stop The Lights.mp3
+C:\Users\Spardha Sharma\Music\Sunn Sathiyaa.mp3
+C:\Users\Spardha Sharma\Music\Suno Na Sangemarmar.mp3
+C:\Users\Spardha Sharma\Music\Tera Hone Laga Hoon.mp3
+C:\Users\Spardha Sharma\Music\Tere Hoke Rahengey.mp3
+C:\Users\Spardha Sharma\Music\Tere Liye.mp3
+C:\Users\Spardha Sharma\Music\Tere Mere Beech Mein.mp3
+C:\Users\Spardha Sharma\Music\Tere Naina.mp3
+C:\Users\Spardha Sharma\Music\Tere Sang Yaara.mp3
+C:\Users\Spardha Sharma\Music\Titanic Instrumental.mp3
+C:\Users\Spardha Sharma\Music\Tu Meri.mp3
+C:\Users\Spardha Sharma\Music\Tujhe Sochta Hun.mp3
+C:\Users\Spardha Sharma\Music\Tujhse Naraz Nahi Zindagi.mp3
+C:\Users\Spardha Sharma\Music\Tum Ho Toh.mp3
+C:\Users\Spardha Sharma\Music\Tum Itna Jo Muskura Rahe Ho.mp3
+C:\Users\Spardha Sharma\Music\Tum Pukar Lo Tumhara Intezar Hai.mp3
+C:\Users\Spardha Sharma\Music\Tum Tak.mp3
+C:\Users\Spardha Sharma\Music\Tumhe Yad Karte Karte.mp3
+C:\Users\Spardha Sharma\Music\Tumko Dekha To Ye Khayal Aya.mp3
+C:\Users\Spardha Sharma\Music\Tunhe Ho Na Ho.mp3
+C:\Users\Spardha Sharma\Music\Ud Ud Jaye.mp3
+C:\Users\Spardha Sharma\Music\Uff.mp3
+C:\Users\Spardha Sharma\Music\Vande Mataram.mp3
+C:\Users\Spardha Sharma\Music\What You've Got.mp3
+C:\Users\Spardha Sharma\Music\Ye Haseen Vadiyan.mp3
+C:\Users\Spardha Sharma\Music\Ye Moh-Moh Ke Dhage.mp3
+C:\Users\Spardha Sharma\Music\Yeh Chand Sa Roshan Chehra.mp3
+C:\Users\Spardha Sharma\Music\Yeh Tumhari Meri Batein.mp3
+C:\Users\Spardha Sharma\Music\Yun Hi.mp3
+C:\Users\Spardha Sharma\Music\Zara Zara.mp3
+C:\Users\Spardha Sharma\Music\Zehnaseeb.mp3
+C:\Users\Spardha Sharma\Documents\Zoom\2020-04-04 10.00.39 Minakshi Sharma's Personal Meeting Room 5141149037\zoom_0.mp4
+C:\Users\Spardha Sharma\Documents\Zoom\2020-04-04 10.00.39 Minakshi Sharma's Personal Meeting Room 5141149037\zoom_1.mp4
+C:\Users\Spardha Sharma\Documents\Zoom\2020-04-04 10.00.39 Minakshi Sharma's Personal Meeting Room 5141149037\zoom_2.mp4
+C:\Users\Spardha Sharma\Documents\Zoom\2020-04-04 09.54.00 Minakshi Sharma's Personal Meeting Room 5141149037\zoom_0.mp4
+C:\Users\Spardha Sharma\Documents\Zoom\2020-04-02 22.12.32 Minakshi Sharma's Zoom Meeting 440778364\zoom_0.mp4
+C:\Users\Spardha Sharma\Documents\Apowersoft\Apowersoft Screen Recorder Pro\20200905_123149.mp4
+C:\Users\Spardha Sharma\Documents\Apowersoft\Apowersoft Screen Recorder Pro\20200906_135919.mp4
+C:\Users\Spardha Sharma\Documents\Apowersoft\Apowersoft Screen Recorder Pro\20200915_002659.mp4
+C:\Users\Spardha Sharma\Documents\Apowersoft\Apowersoft Screen Recorder Pro\20201005_100919.mp4
+C:\Users\Spardha Sharma\Documents\Apowersoft\Apowersoft Screen Recorder Pro\4NFFormDBMS.mp4
+C:\Users\Spardha Sharma\Documents\Apowersoft\Apowersoft Screen Recorder Pro\TransportationProblemOR.mp4
+C:\Users\Spardha Sharma\Desktop\TestHTTPServer\src\sample\sunflower.mp3
+C:\Users\Spardha Sharma\Desktop\TestHTTPServer\src\sample\video.mp4
+C:\Users\Spardha Sharma\Desktop\TestHTTPServer\out\production\TestHTTPServer\sample\sunflower.mp3
+C:\Users\Spardha Sharma\Desktop\TestHTTPServer\out\production\TestHTTPServer\sample\video.mp4
+C:\Users\Spardha Sharma\Desktop\Songs\Adore You.mp3
+C:\Users\Spardha Sharma\Desktop\Songs\Blinding Lights.mp3
+C:\Users\Spardha Sharma\Desktop\Songs\Circles.mp3
+C:\Users\Spardha Sharma\Desktop\Songs\Dance Monkey.mp3
+C:\Users\Spardha Sharma\Desktop\Songs\Girls Like You.mp3
+C:\Users\Spardha Sharma\Desktop\Songs\Happier.mp3
+C:\Users\Spardha Sharma\Desktop\Songs\High Hopes.mp3
+C:\Users\Spardha Sharma\Desktop\Songs\I Don't Care.mp3
+C:\Users\Spardha Sharma\Desktop\Songs\If I Can't Have You.mp3
+C:\Users\Spardha Sharma\Desktop\Songs\Let Me Down Slowly.mp3
+C:\Users\Spardha Sharma\Desktop\Songs\Lose Yourself.mp3
+C:\Users\Spardha Sharma\Desktop\Songs\Lovely.mp3
+C:\Users\Spardha Sharma\Desktop\Songs\No Time To Die.mp3
+C:\Users\Spardha Sharma\Desktop\Songs\Old Town Remix.mp3
+C:\Users\Spardha Sharma\Desktop\Songs\Photograph.mp3
+C:\Users\Spardha Sharma\Desktop\Songs\playVideo.mp4
+C:\Users\Spardha Sharma\Desktop\Songs\Something Just Like This.mp3
+C:\Users\Spardha Sharma\Desktop\Songs\Sunflower.mp3
+C:\Users\Spardha Sharma\Desktop\Songs\Takeaway.mp3
+C:\Users\Spardha Sharma\Desktop\Songs\We Are The Champions.mp3
+C:\Users\Spardha Sharma\Desktop\Songs\Youngblood.mp3
+C:\Users\Spardha Sharma\Desktop\Snigdha\Valley2010\video-2012-08-06-13-57-55.mp4
+C:\Users\Spardha Sharma\Desktop\GitAmpify\Ampify\Server\src\Songs\AdoreYou.mp3
+C:\Users\Spardha Sharma\Desktop\GitAmpify\Ampify\Server\src\Songs\WakhraSwag.mp3
+C:\Users\Spardha Sharma\Desktop\GitAmpify\Ampify\Server\out\production\AmpifyServer\Songs\AdoreYou.mp3
+C:\Users\Spardha Sharma\Desktop\GitAmpify\Ampify\Server\out\production\AmpifyServer\Songs\WakhraSwag.mp3
+C:\Users\Spardha Sharma\Desktop\GitAmpify\Ampify\Client\src\Songs\0hVXuCcriWRGvwMV1r5Yn9.mp3
+C:\Users\Spardha Sharma\Desktop\GitAmpify\Ampify\Client\src\Songs\Bang Bang.mp3
+C:\Users\Spardha Sharma\Desktop\GitAmpify\Ampify\Client\src\Songs\Group theory and why I love 808,017,424,794,512,875,886,459,904,961,710,757,005,754,368,000,000,000.mp4
+C:\Users\Spardha Sharma\Desktop\GitAmpify\Ampify\Client\src\Songs\Offo.mp3
+C:\Users\Spardha Sharma\Desktop\GitAmpify\Ampify\Client\src\Songs\playVideo.mp4
+C:\Users\Spardha Sharma\Desktop\GitAmpify\Ampify\Client\out\production\Ampify\Songs\0hVXuCcriWRGvwMV1r5Yn9.mp3
+C:\Users\Spardha Sharma\Desktop\GitAmpify\Ampify\Client\out\production\Ampify\Songs\Bang Bang.mp3
+C:\Users\Spardha Sharma\Desktop\GitAmpify\Ampify\Client\out\production\Ampify\Songs\Group theory and why I love 808,017,424,794,512,875,886,459,904,961,710,757,005,754,368,000,000,000.mp4
+C:\Users\Spardha Sharma\Desktop\GitAmpify\Ampify\Client\out\production\Ampify\Songs\Offo.mp3
+C:\Users\Spardha Sharma\Desktop\GitAmpify\Ampify\Client\out\production\Ampify\Songs\playVideo.mp4
+C:\Users\Spardha Sharma\Desktop\Capture The Flag\SUS_FILE_6722947532_061ac7bb74775120aaa65a857e1165aa_061ac7bb74775120aaa65a857e1165aa.mp3
+C:\Users\Spardha Sharma\Desktop\Avishkar2020-2021\Revengg\SuspiciousMp3\SUS_FILE.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\src\Songs\AdoreYou.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\src\Songs\BlindingLights.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\src\Songs\Circles.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\src\Songs\DanceMonkey.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\src\Songs\GirlsLikeYou.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\src\Songs\Happier.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\src\Songs\HighHopes.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\src\Songs\IDon'tCare.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\src\Songs\IfICan'tHaveYou.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\src\Songs\LetMeDownSlowly.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\src\Songs\LoseYourself.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\src\Songs\Lovely.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\src\Songs\NoTimeToDie.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\src\Songs\OldTownRemix.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\src\Songs\Photograph.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\src\Songs\playVideo.mp4
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\src\Songs\SomethingJustLikeThis.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\src\Songs\Sunflower.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\src\Songs\Takeaway.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\src\Songs\WakhraSwag.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\src\Songs\WeAreTheChampions.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\src\Songs\Youngblood.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\out\production\AmpifyServer\Songs\AdoreYou.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\out\production\AmpifyServer\Songs\BlindingLights.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\out\production\AmpifyServer\Songs\Circles.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\out\production\AmpifyServer\Songs\DanceMonkey.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\out\production\AmpifyServer\Songs\GirlsLikeYou.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\out\production\AmpifyServer\Songs\Happier.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\out\production\AmpifyServer\Songs\HighHopes.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\out\production\AmpifyServer\Songs\IDon'tCare.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\out\production\AmpifyServer\Songs\IfICan'tHaveYou.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\out\production\AmpifyServer\Songs\LetMeDownSlowly.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\out\production\AmpifyServer\Songs\LoseYourself.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\out\production\AmpifyServer\Songs\Lovely.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\out\production\AmpifyServer\Songs\NoTimeToDie.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\out\production\AmpifyServer\Songs\OldTownRemix.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\out\production\AmpifyServer\Songs\Photograph.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\out\production\AmpifyServer\Songs\playVideo.mp4
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\out\production\AmpifyServer\Songs\SomethingJustLikeThis.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\out\production\AmpifyServer\Songs\Sunflower.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\out\production\AmpifyServer\Songs\Takeaway.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\out\production\AmpifyServer\Songs\WakhraSwag.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\out\production\AmpifyServer\Songs\WeAreTheChampions.mp3
+C:\Users\Spardha Sharma\Desktop\AmpifyServer\out\production\AmpifyServer\Songs\Youngblood.mp3
+C:\Users\Spardha Sharma\Desktop\Ampify\src\Songs\0hVXuCcriWRGvwMV1r5Yn9.mp3
+C:\Users\Spardha Sharma\Desktop\Ampify\src\Songs\Bang Bang.mp3
+C:\Users\Spardha Sharma\Desktop\Ampify\src\Songs\Group theory and why I love 808,017,424,794,512,875,886,459,904,961,710,757,005,754,368,000,000,000.mp4
+C:\Users\Spardha Sharma\Desktop\Ampify\src\Songs\Offo.mp3
+C:\Users\Spardha Sharma\Desktop\Ampify\src\Songs\playVideo.mp4
+C:\Users\Spardha Sharma\Desktop\Ampify\out\production\Ampify\Songs\0hVXuCcriWRGvwMV1r5Yn9.mp3
+C:\Users\Spardha Sharma\Desktop\Ampify\out\production\Ampify\Songs\Bang Bang.mp3
+C:\Users\Spardha Sharma\Desktop\Ampify\out\production\Ampify\Songs\Group theory and why I love 808,017,424,794,512,875,886,459,904,961,710,757,005,754,368,000,000,000.mp4
+C:\Users\Spardha Sharma\Desktop\Ampify\out\production\Ampify\Songs\Offo.mp3
+C:\Users\Spardha Sharma\Desktop\Ampify\out\production\Ampify\Songs\playVideo.mp4
+C:\Users\Spardha Sharma\AppData\Local\Packages\Microsoft.MicrosoftSolitaireCollection_8wekyb3d8bbwe\LocalState\VungleSDK\880e202766408dae098ee11b5cd9bce5\e6869e8b-6075-4f47-a74b-669e8bff28b3.mp4
+C:\Users\Spardha Sharma\AppData\Local\Packages\KaliLinux.54290C8133FEE_ey8k8hqnwqnmg\LocalState\rootfs\home\snigdha\Revengg\SuspiciousMp3\SUS_FILE.mp3
+C:\Users\Spardha Sharma\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu20.04onWindows_79rhkp1fndgsc\LocalState\rootfs\home\snigdha\Revengg\SuspiciousMp3\SUS_FILE.mp3
+C:\Users\Spardha Sharma\AppData\Local\Google\Chrome\User Data\Default\Extensions\kbfnbcaeplbcioakkpcpgfkobkghlhen\14.980.0_1\src\files\a9b4e989735ae17176a7b9a1bf4d2e97\pdf.mp4
+C:\Users\Spardha Sharma\AppData\Local\Google\Chrome\User Data\Default\Extensions\kbfnbcaeplbcioakkpcpgfkobkghlhen\14.980.0_1\src\files\9ed982ea0d5085eb92610b521b7e989b\clarity.mp4
+C:\Users\Spardha Sharma\AppData\Local\Google\Chrome\User Data\Default\Extensions\kbfnbcaeplbcioakkpcpgfkobkghlhen\14.980.0_1\src\files\7801d705e409c6fbb6e45d3dbbfd9efe\rtf.mp4
+C:\Users\Spardha Sharma\AppData\Local\Google\Chrome\User Data\Default\Extensions\kbfnbcaeplbcioakkpcpgfkobkghlhen\14.980.0_1\src\files\6f454f13521685cf379a0107acaa2545\background.mp4
+C:\Users\Spardha Sharma\AppData\Local\Google\Chrome\User Data\Default\Extensions\kbfnbcaeplbcioakkpcpgfkobkghlhen\14.980.0_1\src\files\2fdff5731e4f939b623f3e6d82b7eacf\mutedAlerts.mp4
+C:\Program Files (x86)\Microsoft Office\root\fre\StartMenu_Win10.mp4
+C:\Program Files (x86)\Microsoft Office\root\fre\StartMenu_Win10_RTL.mp4
+C:\Program Files (x86)\Microsoft Office\root\fre\StartMenu_Win8.mp4
+C:\Program Files (x86)\Microsoft Office\root\fre\StartMenu_Win8_RTL.mp4
+C:\Anaconda\pkgs\notebook-6.0.3-py37_0\Lib\site-packages\notebook\static\components\MathJax\extensions\a11y\invalid_keypress.mp3
+C:\Anaconda\pkgs\imageio-2.6.1-py37_0\Lib\site-packages\imageio\resources\images\cockatoo.mp4
+C:\Anaconda\pkgs\imageio-2.6.1-py37_0\Lib\site-packages\imageio\resources\images\realshort.mp4
+C:\Anaconda\Lib\site-packages\notebook\static\components\MathJax\extensions\a11y\invalid_keypress.mp3
+C:\Anaconda\Lib\site-packages\imageio\resources\images\cockatoo.mp4
+C:\Anaconda\Lib\site-packages\imageio\resources\images\realshort.mp4
+C:\Anaconda\envs\LearningR\Lib\site-packages\notebook\static\components\MathJax\extensions\a11y\invalid_keypress.mp3

@@ -478,14 +478,14 @@ public class Controller implements Initializable
         System.out.println("hello "+username);
     }
 
-    public String receiveData(ActionEvent event)
+    public static String receiveData(ActionEvent event)
     {
         Node node = (Node) event.getSource();
         Stage stage = (Stage) node.getScene().getWindow();
         LoginControl lg = (LoginControl) stage.getUserData();
         String username;
         username = lg.getUname();
-//        System.out.println(username);
+        System.out.println(username);
         return username;
     }
 
