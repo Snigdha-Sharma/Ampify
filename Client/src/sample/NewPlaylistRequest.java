@@ -9,6 +9,7 @@ public class NewPlaylistRequest extends Request
     String uname=UserData.getUname();
     String nameOfPlaylist;
     ArrayList<String> songs;
+    boolean created;
 
     NewPlaylistRequest(String nameOfPlaylist, List<String> songList) throws IOException
     {
@@ -31,8 +32,13 @@ public class NewPlaylistRequest extends Request
         dos.writeUTF(uname);
         ObjectOutputStream oos=new ObjectOutputStream(s.getOutputStream());
         oos.writeObject(songs);
+        created=dis.readBoolean();
         dis.close();
         dos.close();
         oos.close();
+    }
+    public boolean isSuccessfullyCreation()
+    {
+        return created;
     }
 }

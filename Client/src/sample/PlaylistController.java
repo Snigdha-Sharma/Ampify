@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -21,7 +22,7 @@ import java.util.ResourceBundle;
 
 public class PlaylistController implements Initializable
 {
-
+    public Label warn;
     public JFXButton backButton;
     public JFXButton doneButton;
     public CheckListView<String> allSongsList;
@@ -46,11 +47,20 @@ public class PlaylistController implements Initializable
     public void makePlaylist() throws IOException
     {
         String playlistName=nameOfPlaylist.getText();
+        if(playlistName==null) {
+            warn.setText("Playlist name cannot be empty!");
+            return;
+        }
         List<String> selectedSongs=allSongsList.getCheckModel().getCheckedItems();
         NewPlaylistRequest o=new NewPlaylistRequest(playlistName,selectedSongs);
 
-        System.out.println(UserData.getUname());
+//        System.out.println(UserData.getUname());
         o.myRequest();
+        if(!o.isSuccessfullyCreation())
+        {
+            warn.setText("Playlist name should not match with other playlists!");
+            return;
+        }
         goBack();
     }
 

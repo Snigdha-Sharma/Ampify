@@ -30,9 +30,17 @@ public class ServerPlaylistSet {
         Connectivity.ConnClass connectionClass = new ConnClass();
         Connection connection = connectionClass.getConnection();
         Statement statement;
-//--------------------------------------------creating new playlist in user-playlist table--------------------
+//--------------------------------------------Checking for duplicate name from table--------------------
 
-        String sql = "INSERT INTO playlistuser(USERID, PlaylistName) VALUES ('"+username+"','"+playlistName+"')";
+        String sql="SELECT * FROM playlistuser WHERE USERID = '"+username+"' AND PlaylistName = '"+playlistName+"'";
+        statement = connection.createStatement();
+        ResultSet resultSet=statement.executeQuery(sql);
+        if (resultSet.next())
+        {
+            return false;
+        }
+//--------------------------------------------creating new playlist in user-playlist table--------------------
+        sql = "INSERT INTO playlistuser(USERID, PlaylistName) VALUES ('"+username+"','"+playlistName+"')";
         statement = connection.createStatement();
         try {
             statement.executeUpdate(sql);
@@ -42,7 +50,7 @@ public class ServerPlaylistSet {
             created = false;
             return created;
         }
-        ResultSet resultSet;
+
 //        ------------------------------------Selecting playlist id---------------------------------------
         String playlistid="";
         sql = "SELECT PlaylistID FROM playlistuser WHERE USERID='"+username+"' AND PlaylistName='"+playlistName+"'";
@@ -62,11 +70,11 @@ public class ServerPlaylistSet {
             return created;
         }
 //--------------------------------------------Inserting songs into playlist-song table-------------------------
-        for(String s : songs)
+        for(String str : songs)
         {
 //-----------------------------         Getting song ID
             String sname = "";
-            sql = "SELECT SongId FROM Song WHERE Name='"+s+"'";
+            sql = "SELECT SongId FROM Song WHERE Name='"+str+"'";
             statement = connection.createStatement();
             try {
                 resultSet = statement.executeQuery(sql);
