@@ -6,6 +6,7 @@ import java.util.List;
 
 public class NewPlaylistRequest extends Request
 {
+    String uname="";
     String nameOfPlaylist;
     ArrayList<String> songs;
 
@@ -26,6 +27,7 @@ public class NewPlaylistRequest extends Request
     {
         dos.writeUTF("NewPlaylistRequest");
         dos.writeUTF(nameOfPlaylist);
+        dos.writeUTF(uname);
         ObjectOutputStream oos=new ObjectOutputStream(s.getOutputStream());
         oos.writeObject(songs);
         dis.close();

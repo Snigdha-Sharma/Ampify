@@ -173,7 +173,9 @@ class ClientHandler extends Thread
 
                 case "NewPlaylistRequest":
                     String playlistName=dis.readUTF();
+                    uname=dis.readUTF();
                     System.out.println(playlistName);
+                    System.out.println(uname);
                     ObjectInputStream ois=new ObjectInputStream(s.getInputStream());
                     ArrayList<String> selectedSongs= (ArrayList<String>) ois.readObject();
                     for (String x:selectedSongs)
