@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 31, 2020 at 04:18 PM
+-- Generation Time: Oct 31, 2020 at 07:53 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -100,8 +100,7 @@ CREATE TABLE `groupadmin` (
 --
 
 INSERT INTO `groupadmin` (`GroupID`, `GroupName`, `USERID`) VALUES
-(1, 'Rns', 'snigdha'),
-(2, 'Rise up', 'snigdha');
+(3, 'Hola', 'Purva15');
 
 -- --------------------------------------------------------
 
@@ -119,18 +118,11 @@ CREATE TABLE `groupusers` (
 --
 
 INSERT INTO `groupusers` (`GroupID`, `Members`) VALUES
-(1, 'divyasri'),
-(1, 'Purva@123'),
-(1, 'Purva@1234'),
-(1, 'saloni'),
-(1, 'Sni@13'),
-(1, 'snigdha'),
-(2, 'Ajeeb@13'),
-(2, 'Anon@123'),
-(2, 'Purva@1234'),
-(2, 'rishabh'),
-(2, 'saloni'),
-(2, 'snigdha');
+(3, 'Abcd@13'),
+(3, 'Afk@13'),
+(3, 'Ajeeb@13'),
+(3, 'divyasri'),
+(3, 'Purva15');
 
 -- --------------------------------------------------------
 
@@ -181,6 +173,7 @@ INSERT INTO `login` (`Uname`, `Passwd`) VALUES
 ('Hello@3', 'uX/8i1UqB8D0JQXeT2Dz6g1il6SkGRr7m78W1AmbYOU='),
 ('HEYAa!@12', 'xoZ71k61bIfpsHqPwqla7WJfBC4h9vIS4SMJJwjECGc='),
 ('Ksh12@', '/A4V3QIkObJduVHhAqD2mTOXVD9RfNuQG/e9rWhvZeM='),
+('Purva15', 'n8Tqm9ALuZFJ84Dd4lQqIu3V+xpKkohTX0HTcN1WXBg='),
 ('Purva@123', 'EBLwN4oc7RBGwI8dl0/TMQ1sfCW00NxC3XqbrPNXEdA='),
 ('Purva@1234', 'uXcyhDs29cEz/Iti8h5GztMkjB+lhYd7h2YsUH/c8F0='),
 ('rishabh', 'VTNGyc+ZtL7fQjsuzE/p9eg40CdlrrlbX4r6kL8wmaM='),
@@ -223,7 +216,10 @@ INSERT INTO `playlistsong` (`PlaylistID`, `SongID`) VALUES
 (11, 20),
 (11, 21),
 (13, 1),
-(14, 2);
+(14, 2),
+(15, 6),
+(15, 7),
+(15, 8);
 
 -- --------------------------------------------------------
 
@@ -253,7 +249,8 @@ INSERT INTO `playlistuser` (`USERID`, `PlaylistID`, `PlaylistName`) VALUES
 ('snigdha', 11, '3566'),
 ('snigdha', 12, '46'),
 ('snigdha', 13, 'abcd'),
-('snigdha', 14, 'fv');
+('snigdha', 14, 'fv'),
+('Purva15', 15, 'new');
 
 -- --------------------------------------------------------
 
@@ -437,6 +434,10 @@ INSERT INTO `userartist` (`USERID`, `Artist`) VALUES
 ('Ksh12@', 6),
 ('Ksh12@', 7),
 ('Ksh12@', 8),
+('Purva15', 1),
+('Purva15', 6),
+('Purva15', 7),
+('Purva15', 8),
 ('Sni@13', 4);
 
 -- --------------------------------------------------------
@@ -461,6 +462,7 @@ CREATE TABLE `userdata` (
 INSERT INTO `userdata` (`USERID`, `Name`, `PhoneNo`, `Dob`, `Email`, `State`) VALUES
 ('Hello@3', 'kjbfekjw', '9988732414', '2003-10-31 00:00:00.000000', 'gnm@hjn.com', 'North-Eastern States'),
 ('Ksh12@', 'Kshitij', '9263046669', '2000-02-04 00:00:00.000000', 'kshtj09@gmail.com', 'Madhya Pradesh'),
+('Purva15', 'Purva Gautam', '7987318738', '2001-01-15 00:00:00.000000', 'gautam.purva@gmail.com', 'Madhya Pradesh'),
 ('Purva@1234', 'Purva Gautam', '7987318738', '2001-01-15 00:00:00.000000', 'gautam.purva@gmail.com', 'Madhya Pradesh'),
 ('Sni@13', 'gj', '9888999878', '2003-10-23 00:00:00.000000', 'fbg@ab.com', 'Uttarakhand'),
 ('uhU@123', 'Hello', '8978939890', '1999-10-08 00:00:00.000000', 'mdsnkj@manksh.com', 'Karnataka');
@@ -482,6 +484,13 @@ CREATE TABLE `usergenre` (
 
 INSERT INTO `usergenre` (`USERID`, `Genre`) VALUES
 ('Hello@3', 5),
+('Purva15', 3),
+('Purva15', 4),
+('Purva15', 6),
+('Purva15', 7),
+('Purva15', 8),
+('Purva15', 10),
+('Purva15', 11),
 ('Sni@13', 5);
 
 -- --------------------------------------------------------
@@ -506,6 +515,11 @@ INSERT INTO `userlang` (`USERID`, `Language`) VALUES
 ('Ksh12@', 2),
 ('Ksh12@', 3),
 ('Ksh12@', 10),
+('Purva15', 1),
+('Purva15', 2),
+('Purva15', 3),
+('Purva15', 4),
+('Purva15', 10),
 ('Sni@13', 9);
 
 -- --------------------------------------------------------
@@ -668,7 +682,7 @@ ALTER TABLE `genre`
 -- AUTO_INCREMENT for table `groupadmin`
 --
 ALTER TABLE `groupadmin`
-  MODIFY `GroupID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `GroupID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `language`
@@ -680,7 +694,7 @@ ALTER TABLE `language`
 -- AUTO_INCREMENT for table `playlistuser`
 --
 ALTER TABLE `playlistuser`
-  MODIFY `PlaylistID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `PlaylistID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `song`
