@@ -11,6 +11,12 @@ public class HttpDownloadUtility
 {
     private static final int BUFFER_SIZE = 4096;
 
+    /**
+     * @param fileURL url from which file is fetched from http server
+     * @param saveDir directory in which file is to be saved
+     * @return filename of the saved encrypted file
+     * @throws IOException
+     */
     public static String downloadFile(String fileURL, String saveDir) throws IOException
     {
         URL url = new URL(fileURL);

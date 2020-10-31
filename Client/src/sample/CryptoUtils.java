@@ -14,20 +14,42 @@ import javax.crypto.IllegalBlockSizeException;
 import javax.crypto.NoSuchPaddingException;
 import javax.crypto.spec.SecretKeySpec;
 
+/**
+ * Encrypts and decrypts locally downloaded song files.
+ */
 public class CryptoUtils {
     private static final String ALGORITHM = "AES";
     private static final String TRANSFORMATION = "AES";
 
+    /**
+     * @param key for encryption
+     * @param inputFile file to be encrypted
+     * @param outputFile after encryption
+     * @throws CryptoException
+     */
     public static void encrypt(String key, File inputFile, File outputFile)
             throws CryptoException {
         doCrypto(Cipher.ENCRYPT_MODE, key, inputFile, outputFile);
     }
 
+    /**
+\     * @param key for decryption
+     * @param inputFile file to be decrypted
+     * @param outputFile after decryption
+     * @throws CryptoException
+     */
     public static void decrypt(String key, File inputFile, File outputFile)
             throws CryptoException {
         doCrypto(Cipher.DECRYPT_MODE, key, inputFile, outputFile);
     }
 
+    /**
+     * @param cipherMode encrypt/decrypt
+     * @param key
+     * @param inputFile
+     * @param outputFile
+     * @throws CryptoException
+     */
     private static void doCrypto(int cipherMode, String key, File inputFile,
                                  File outputFile) throws CryptoException {
         try {
