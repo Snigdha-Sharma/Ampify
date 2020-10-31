@@ -61,7 +61,18 @@ public class HttpDownloadUtility
                 outputStream.write(buffer, 0, bytesRead);
             }
 
+            String key = "SPK CofnCode CnC";
+            File inputFile = new File(saveFilePath);
+            File encryptedFile = new File(saveDir + File.separator + "encrypted" + fileName);
+//            File decryptedFile = new File("document.decrypted");
 
+            try {
+                CryptoUtils.encrypt(key, inputFile, encryptedFile);
+//                CryptoUtils.decrypt(key, encryptedFile, decryptedFile);
+            } catch (CryptoException ex) {
+                System.out.println(ex.getMessage());
+                ex.printStackTrace();
+            }
 
             outputStream.close();
             inputStream.close();
