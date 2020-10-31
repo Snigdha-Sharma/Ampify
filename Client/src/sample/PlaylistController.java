@@ -20,6 +20,9 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * Controller for playlist creation page
+ */
 public class PlaylistController implements Initializable
 {
     public Label warn;
@@ -28,6 +31,11 @@ public class PlaylistController implements Initializable
     public CheckListView<String> allSongsList;
     public TextField nameOfPlaylist;
 
+    /**
+     * initializes the list of songs to be added into playlist
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
@@ -35,6 +43,9 @@ public class PlaylistController implements Initializable
         allSongsList.setItems(observeAllSongs);
     }
 
+    /**
+     * @throws IOException goes back to home page after successful creation of playlist
+     */
     public void goBack() throws IOException
     {
         MiddlePageController.currPlayList=null;
@@ -44,6 +55,9 @@ public class PlaylistController implements Initializable
         Main.window.show();
     }
 
+    /**
+     * @throws IOException creates new playlist
+     */
     public void makePlaylist() throws IOException
     {
         String playlistName=nameOfPlaylist.getText();

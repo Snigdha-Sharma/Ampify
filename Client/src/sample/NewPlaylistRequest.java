@@ -4,6 +4,9 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Sends request to server for creating a new playlist
+ */
 public class NewPlaylistRequest extends Request
 {
     String uname=UserData.getUname();
@@ -11,6 +14,11 @@ public class NewPlaylistRequest extends Request
     ArrayList<String> songs;
     boolean created;
 
+    /**
+     * @param nameOfPlaylist Name of the playlist created
+     * @param songList List of songs in playlist
+     * @throws IOException
+     */
     NewPlaylistRequest(String nameOfPlaylist, List<String> songList) throws IOException
     {
         this.uname=uname;
@@ -24,6 +32,9 @@ public class NewPlaylistRequest extends Request
         dos=new DataOutputStream(s.getOutputStream());
     }
 
+    /**
+     * @throws IOException Sends request to server
+     */
     @Override
     public void myRequest() throws IOException
     {
@@ -37,6 +48,10 @@ public class NewPlaylistRequest extends Request
         dos.close();
         oos.close();
     }
+
+    /**
+     * @return returns if playlist creation was successful or not
+     */
     public boolean isSuccessfullyCreation()
     {
         return created;

@@ -16,6 +16,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Controller for home page
+ */
 public class MiddlePageController
 {
     public JFXButton allSongsButton;
@@ -27,6 +30,9 @@ public class MiddlePageController
     public JFXButton playlistButton;
     public JFXButton groupButton;
 
+    /**
+     * @throws IOException get list of all songs
+     */
     public void getAllSongs() throws IOException
     {
         AllSongsRequest asr=new AllSongsRequest();
@@ -43,6 +49,9 @@ public class MiddlePageController
         Main.window.show();
     }
 
+    /**
+     * @throws IOException invokes page for creating new playlist
+     */
     public void createPlaylist() throws IOException
     {
         AllSongsRequest asr=new AllSongsRequest();
@@ -61,6 +70,9 @@ public class MiddlePageController
         Main.window.show();
     }
 
+    /**
+     * @throws IOException Gets songs from local machine into a file.txt to play
+     */
     public void getLocalSongs() throws IOException
     {
         localSongsPlaylist=new ArrayList<>();
@@ -107,6 +119,9 @@ public class MiddlePageController
         Main.window.show();
     }
 
+    /**
+     * @throws IOException refreshes local songs list
+     */
     public void refreshLocalSongList() throws IOException
     {
         Parent root1 = FXMLLoader.load(getClass().getResource("AlertBox.fxml"));
@@ -128,6 +143,9 @@ public class MiddlePageController
         Main.window.show();
     }
 
+    /**
+     * @throws IOException invokes page to create new users group
+     */
     public void makeUserGroup() throws IOException
     {
         AllUsersRequest aur=new AllUsersRequest();

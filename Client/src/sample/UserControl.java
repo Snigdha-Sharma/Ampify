@@ -15,6 +15,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
+/**
+ * Controller class for user details filling page
+ */
 public class UserControl implements Initializable
 {
     static Stage window;
@@ -74,6 +77,11 @@ public class UserControl implements Initializable
     public CheckBox e13;
     public CheckBox e14;
 
+    /**
+     * Initializes all warning labels to empty
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
@@ -91,6 +99,9 @@ public class UserControl implements Initializable
         state.setItems(FXCollections.observableArrayList(states));
     }
 
+    /**
+     * to change warning labels back to empty after resolving previous warning by user
+     */
     private void setEmpty()
     {
         lname.setText("");
@@ -103,6 +114,9 @@ public class UserControl implements Initializable
     }
 
 
+    /**
+     * @param event On click, submits the details form
+     */
     public void submitAct(ActionEvent event)
     {
         setEmpty();
@@ -346,7 +360,7 @@ public class UserControl implements Initializable
             if(ob.isSuccessful())
             {
 //                setUname(u1);
-                OpenPlayerHome(event, username);
+                OpenPlayerHome(event);
             }
             else
             {
@@ -360,6 +374,10 @@ public class UserControl implements Initializable
         }
     }
 
+    /**
+     * @param phn phone number entered by user
+     * @return if the phone number is valid or not
+     */
     private boolean isValidPhone(String phn)
     {
         String regex = "(0/91)?[6-9][0-9]{9}";
@@ -369,7 +387,11 @@ public class UserControl implements Initializable
         return pat.matcher(phn).matches();
     }
 
-    private boolean isValidEmail(String e)
+    /**
+     * @param e email id of user
+     * @return if user has entered valid email id or not
+     */
+    private boolean isValidEmail(String email)
     {
         String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
                 "[a-zA-Z0-9_+&*-]+)*@" +
@@ -377,20 +399,16 @@ public class UserControl implements Initializable
                 "A-Z]{2,7}$";
 
         Pattern pat = Pattern.compile(emailRegex);
-        if (e == null)
+        if (email == null)
             return false;
-        return pat.matcher(e).matches();
+        return pat.matcher(email).matches();
     }
 
-//    public void GoToLogin(ActionEvent event) throws IOException
-//    {
-//        Parent root1 = FXMLLoader.load(getClass().getResource("loginscene.fxml"));
-//        Scene second=new Scene(root1);
-//        window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-//        window.setScene(second);
-//        window.show();
-//    }
-    public void OpenPlayerHome(ActionEvent event,String u1) throws IOException
+    /**
+     * @param event on successful submission of details form, open media player's home page
+     * @throws IOException
+     */
+    public void OpenPlayerHome(ActionEvent event) throws IOException
     {
         Parent root1 = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
         Scene second=new Scene(root1);
@@ -400,6 +418,10 @@ public class UserControl implements Initializable
         window.show();
         window.setOnCloseRequest(e->closePlayer());
     }
+
+    /**
+     * close media player
+     */
     public static void closePlayer()
     {
         Controller.closePlayer();

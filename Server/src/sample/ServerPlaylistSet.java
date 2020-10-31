@@ -9,10 +9,18 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Creates playlist and stores in database
+ */
 public class ServerPlaylistSet {
     ArrayList<String> songs;
     String username, playlistName;
 
+    /**
+     * @param songList List of songs in the playlist
+     * @param username  username of person creating the playlist
+     * @param playlistName  name of playlist
+     */
     ServerPlaylistSet(List<String> songList, String username, String playlistName)
     {
         this.username=username;
@@ -24,6 +32,10 @@ public class ServerPlaylistSet {
         }
     }
 
+    /**
+     * @return if playlist creation was successful after adding data into database
+     * @throws SQLException
+     */
     boolean isSuccess() throws SQLException
     {
         boolean created;
