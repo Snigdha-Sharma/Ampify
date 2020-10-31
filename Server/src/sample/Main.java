@@ -82,6 +82,7 @@ class ClientHandler extends Thread
         String uname="",pwd;
         ResultSet rs;
         OutputStream os;
+        ObjectOutputStream oos;
         try
         {
             requestType=dis.readUTF();
@@ -109,7 +110,7 @@ class ClientHandler extends Thread
                     ServerAllSongsRequest asr=new ServerAllSongsRequest();
                     rs=asr.getAllSongsSet();
                     os=s.getOutputStream();
-                    ObjectOutputStream oos=new ObjectOutputStream(os);
+                    oos=new ObjectOutputStream(os);
                     List<String> back = new ArrayList<>();
                     while(rs.next())
                     {
@@ -118,17 +119,44 @@ class ClientHandler extends Thread
                     oos.writeObject(back);
                     break;
 
+                case "SearchSongs":
+                    SearchSong ss = new SearchSong("Shaw");
+                    ResultSet rs1=ss.byArtist();
+                    ResultSet rs2 = ss.byGenre();
+                    ResultSet rs3 = ss.byLanguage();
+                    os=s.getOutputStream();
+                    oos=new ObjectOutputStream(os);
+                    List<String> back1 = new ArrayList<>();
+                    while(rs1.next())
+                    {
+                        back1.add(rs1.getString(1));
+                    }
+                    oos.writeObject(back1);
+                    List<String> back2 = new ArrayList<>();
+                    while(rs2.next())
+                    {
+                        back2.add(rs2.getString(1));
+                    }
+                    oos.writeObject(back2);
+                    List<String> back3 = new ArrayList<>();
+                    while(rs3.next())
+                    {
+                        back3.add(rs3.getString(1));
+                    }
+                    oos.writeObject(back3);
+                    break;
+
                 case "RecentlyAdded":
                     RecentlyAddedSongs ras = new RecentlyAddedSongs();
                     rs = ras.getRs();
                     os=s.getOutputStream();
                     ObjectOutputStream oosi=new ObjectOutputStream(os);
-                    List<String> back1 = new ArrayList<>();
+                    List<String> back22 = new ArrayList<>();
                     while(rs.next())
                     {
-                        back1.add(rs.getString(1));
+                        back22.add(rs.getString(1));
                     }
-                    oosi.writeObject(back1);
+                    oosi.writeObject(back22);
                     break;
 
                 case "UserRequest":
