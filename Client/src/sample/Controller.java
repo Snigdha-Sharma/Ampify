@@ -1,16 +1,12 @@
 package sample;
 
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXSlider;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -18,15 +14,10 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
 import javafx.scene.media.*;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
 import java.io.*;
 import java.net.*;
 import java.util.*;
@@ -116,7 +107,18 @@ public class Controller implements Initializable
 
     public void downloadSongs()
     {
-
+        String fileURL=allSongs.get(currIdx);
+        fileURL=getPathForHostedSong(fileURL);
+        //System.out.println("Current Directory:"+System.getProperty("user.dir"));
+        String saveDir = ".\\src\\DownloadedSongs";
+        try
+        {
+            HttpDownloadUtility.downloadFile(fileURL, saveDir);
+        }
+        catch (IOException ex)
+        {
+            ex.printStackTrace();
+        }
     }
 
     public void shuffleSongs()
@@ -261,6 +263,9 @@ public class Controller implements Initializable
         LoginControl.closePlayer();
     }
 
+    /**
+     * Implementing seekbar logic
+     */
     synchronized public void getToAnySongLocation()
     {
         if (mediaPlayer.getStatus()==MediaPlayer.Status.PAUSED)
@@ -284,6 +289,9 @@ public class Controller implements Initializable
         }
     }
 
+    /**
+     * Previous media button in the media player
+     */
     public void goToPrevSong()
     {
         if (mediaPlayer!=null)
@@ -306,6 +314,9 @@ public class Controller implements Initializable
         }
     }
 
+    /**
+     * Next media button in media player
+     */
     public void goToNextSong()
     {
         if (mediaPlayer!=null)

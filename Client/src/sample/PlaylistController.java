@@ -47,13 +47,11 @@ public class PlaylistController implements Initializable
     public void makePlaylist() throws IOException
     {
         String playlistName=nameOfPlaylist.getText();
-<<<<<<< HEAD
         System.out.println(playlistName);
         if(playlistName==null) {
             warn.setText("Playlist name cannot be empty!");
             return;
         }
-=======
 
         System.out.println(playlistName);
 
@@ -62,7 +60,6 @@ public class PlaylistController implements Initializable
             return;
         }
 
->>>>>>> 25af5206632086ac31f026d03940ff533301ea3a
         List<String> selectedSongs=allSongsList.getCheckModel().getCheckedItems();
 
         if(selectedSongs.isEmpty())
