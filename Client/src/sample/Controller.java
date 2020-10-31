@@ -60,14 +60,14 @@ public class Controller implements Initializable
     Thread currSong;
     HashMap<String,String> localSongMap;
     List<String> allSongs;
-    List<String> history=new ArrayList<>();
     TreeMap<Integer,String> lyricsMap;
-//    history=new ArrayList<>();
+    List<String> history=new ArrayList<>();
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
         createCurrSongList();
+
         playButtonImage=new Image(getClass().getResourceAsStream("..\\Images\\Play.jpg"));
         pauseButtonImage=new Image(getClass().getResourceAsStream("..\\Images\\Pause.jpg"));
         muteButtonImage=new Image(getClass().getResourceAsStream("..\\Images\\Mute.jpg"));
@@ -89,8 +89,6 @@ public class Controller implements Initializable
             mediaPlayer.pause();
         }
         MiddlePageController.currPlayList=null;
-        MiddlePageController.currHistory=null;
-
         Parent root1 = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
         Scene second=new Scene(root1);
         Main.window.setScene(second);
@@ -194,7 +192,6 @@ public class Controller implements Initializable
             {
                 name=extractSongName(path);
                 allSongs.add(name);
-                System.out.println("source="+name);
                 localSongMap.put(name,path);
             }
             isLocal=true;
@@ -227,6 +224,7 @@ public class Controller implements Initializable
             SrtParser temp=new SrtParser(saveDir);
             lyricsMap=temp.setup();
             lyricsMap.put(0,"");
+            //System.out.println(lyricsMap);
         }
 
         media=new Media(s);
@@ -282,26 +280,14 @@ public class Controller implements Initializable
         {
             source=getPathForLocalSong(source);
         }
+        setSongOnPlayer(source);
 
-
-//        history=MiddlePageController.currHistory;
-//        if(history==null)
-//        {
-//            history=
-//        }
-//        history=new ArrayList<>();
         String name=extractSongName(source);
-//        System.out.println("name = "+extractSongName(source));
-//        setSongOnPlayer(name);
         history.add(name);
-//        System.out.println("name = "+extractSongName(source));
         ObservableList<String> observeHistory=FXCollections.observableArrayList(history);
-//        System.out.println("name = "+extractSongName(source));
-        //---
         History.setItems(observeHistory);
-//        System.out.println("name = "+extractSongName(source));
         History.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
-//        System.out.println("name = "+extractSongName(source));
+        System.out.println("name = "+extractSongName(source));
 
     }
 
@@ -380,9 +366,10 @@ public class Controller implements Initializable
     }
 
     /**
-     * Next media button in media player
+     * @throws IOException -Go to next media
      */
-    public void goToNextSong() throws IOException {
+    public void goToNextSong() throws IOException
+    {
         if (mediaPlayer!=null)
         {
             stopCurrSong();
@@ -453,7 +440,8 @@ public class Controller implements Initializable
         }
     }
 
-    public void setRandomSong() throws IOException {
+    public void setRandomSong() throws IOException
+    {
         int len=allSongs.size()-1;
         currIdx=(int)(Math.random()*len);
         if (isLocal==true)

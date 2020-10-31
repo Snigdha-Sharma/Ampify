@@ -212,7 +212,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <ListView fx:id="History" layoutX="5.0" layoutY="3.0" onMouseClicked="#selectSong" prefHeight="157.0" prefWidth="242.0" />
+                  <ListView fx:id="History" layoutX="-7.0" layoutY="-5.0" onMouseClicked="#selectSong" prefHeight="175.0" prefWidth="255.0" />
                </children>
             </AnchorPane>
         </items>

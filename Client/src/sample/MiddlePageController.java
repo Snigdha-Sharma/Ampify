@@ -21,7 +21,7 @@ import java.util.Scanner;
  */
 public class MiddlePageController
 {
-    public static List<String> currHistory=null;
+//    public static List<String> currHistory=null;
     public JFXButton allSongsButton;
     public JFXButton localSongsButton;
     public JFXButton refreshLocalSongListButton;
