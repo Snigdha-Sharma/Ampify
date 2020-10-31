@@ -42,8 +42,6 @@ public class HttpDownloadUtility
                         fileURL.length());
             }
 
-            
-
             System.out.println("Content-Type = " + contentType);
             System.out.println("Content-Disposition = " + disposition);
             System.out.println("Content-Length = " + contentLength);
@@ -74,4 +72,5 @@ public class HttpDownloadUtility
         }
         httpConn.disconnect();
     }
+
 }
