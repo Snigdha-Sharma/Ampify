@@ -30,7 +30,13 @@
                            <font>
                               <Font size="21.0" />
                            </font></TextField>
-                        <Label fx:id="lname" />
+                        <Label fx:id="lname" textFill="RED">
+                           <font>
+                              <Font name="Agency FB" size="18.0" />
+                           </font>
+                           <effect>
+                              <Glow />
+                           </effect></Label>
                         <Region prefHeight="5.0" prefWidth="325.0" />
                         <Label text="Phone Number">
                            <font>
@@ -43,7 +49,13 @@
                            <font>
                               <Font size="21.0" />
                            </font></TextField>
-                        <Label fx:id="lphn" textFill="RED" />
+                        <Label fx:id="lphn" textFill="RED">
+                           <font>
+                              <Font name="Agency FB" size="18.0" />
+                           </font>
+                           <effect>
+                              <Glow />
+                           </effect></Label>
                         <Region prefHeight="5.0" prefWidth="325.0" />
                         <Label text="E-Mail ID">
                            <font>
@@ -56,7 +68,13 @@
                            <font>
                               <Font size="21.0" />
                            </font></TextField>
-                        <Label fx:id="lemail" textFill="RED" />
+                        <Label fx:id="lemail" textFill="RED">
+                           <font>
+                              <Font name="Agency FB" size="18.0" />
+                           </font>
+                           <effect>
+                              <Glow />
+                           </effect></Label>
                         <Region prefHeight="6.0" prefWidth="600.0" />
                         <Label text="State of Residence">
                            <font>
@@ -90,7 +108,13 @@
                                     <DropShadow />
                                  </effect></DatePicker>
                               <Region prefHeight="39.0" prefWidth="22.0" />
-                              <Label fx:id="ldob" textFill="RED" />
+                              <Label fx:id="ldob" textFill="RED">
+                                 <effect>
+                                    <Glow />
+                                 </effect>
+                                 <font>
+                                    <Font name="Agency FB" size="19.0" />
+                                 </font></Label>
                            </children>
                         </HBox>
                         <Region prefHeight="16.0" prefWidth="600.0" />
@@ -104,7 +128,13 @@
                                     <Glow level="0.52" />
                                  </effect></Label>
                               <Region prefHeight="27.0" prefWidth="60.0" />
-                              <Label fx:id="lgen" textFill="RED" />
+                              <Label fx:id="lgen" textFill="RED">
+                                 <effect>
+                                    <Glow />
+                                 </effect>
+                                 <font>
+                                    <Font name="Agency FB" size="19.0" />
+                                 </font></Label>
                            </children>
                         </HBox>
                         <VBox prefHeight="75.0" prefWidth="600.0">
@@ -192,7 +222,13 @@
                                     <Glow level="0.5" />
                                  </effect></Label>
                               <Region prefHeight="27.0" prefWidth="47.0" />
-                              <Label fx:id="llang" textFill="RED" />
+                              <Label fx:id="llang" textFill="RED">
+                                 <effect>
+                                    <Glow />
+                                 </effect>
+                                 <font>
+                                    <Font name="Agency FB" size="19.0" />
+                                 </font></Label>
                            </children>
                         </HBox>
                         <VBox prefHeight="91.0" prefWidth="600.0">
@@ -274,7 +310,13 @@
                                     <Glow level="0.5" />
                                  </effect></Label>
                               <Region prefHeight="27.0" prefWidth="22.0" />
-                              <Label fx:id="lart" textFill="RED" />
+                              <Label fx:id="lart" textFill="RED">
+                                 <effect>
+                                    <Glow />
+                                 </effect>
+                                 <font>
+                                    <Font name="Agency FB" size="19.0" />
+                                 </font></Label>
                            </children>
                         </HBox>
                         <VBox prefHeight="173.0" prefWidth="600.0">
