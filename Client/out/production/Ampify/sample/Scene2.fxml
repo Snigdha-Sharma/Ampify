@@ -74,6 +74,18 @@
                   <DropShadow />
                </effect>
             </JFXButton>
+            <Region prefHeight="32.0" prefWidth="900.0" />
+            <JFXButton fx:id="downloadedSongsButton" onAction="#playDownloadedSongs" ripplerFill="#830c0c" text="Downloaded Songs">
+               <font>
+                  <Font size="38.0" />
+               </font>
+            </JFXButton>
+            <Region prefHeight="32.0" prefWidth="900.0" />
+            <JFXButton text="Latest Songs">
+               <font>
+                  <Font size="38.0" />
+               </font>
+            </JFXButton>
          </children>
       </VBox>
    </children>
