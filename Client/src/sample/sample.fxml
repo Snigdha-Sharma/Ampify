@@ -200,11 +200,14 @@
       </AnchorPane>
    </left>
    <right>
-      <SplitPane dividerPositions="0.5" minWidth="200.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" BorderPane.alignment="CENTER">
+      <SplitPane dividerPositions="0.5" minWidth="200.0" orientation="VERTICAL" prefHeight="200.0" prefWidth="250.0" BorderPane.alignment="CENTER">
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <Label text="Lyrics" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Label fx:id="lyrics" text="Lyrics" textAlignment="CENTER" textFill="#e8c7c7" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font name="Comic Sans MS Bold" size="20.0" />
+                     </font></Label>
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
