@@ -147,13 +147,13 @@ public class LoginControl implements Initializable
             repass.setText("");
             return;
         }
-        else if(u1.indexOf('*')==-1 && u1.indexOf('&')==-1 && u1.indexOf('@')==-1 && u1.indexOf('%')==-1) {
-            warning2.setText("Username should have atleast one special character: *, &, @, %.");
-            uname2.setText("");
-            pass2.setText("");
-            repass.setText("");
-            return;
-        }
+//        else if(u1.indexOf('*')==-1 && u1.indexOf('&')==-1 && u1.indexOf('@')==-1 && u1.indexOf('%')==-1) {
+//            warning2.setText("Username should have atleast one special character: *, &, @, %.");
+//            uname2.setText("");
+//            pass2.setText("");
+//            repass.setText("");
+//            return;
+//        }
         else if(p1.isEmpty() || retype.isEmpty())
         {
             warning2.setText("Password field empty!");
