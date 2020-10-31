@@ -4,6 +4,9 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
+/**
+ * Sends request to server to fill user details into database
+ */
 public class UserRequest extends Request {
     private boolean registered=false;
     private final String name, phn, username, email, dob, state;
@@ -59,6 +62,9 @@ public class UserRequest extends Request {
         dos=new DataOutputStream(s.getOutputStream());
     }
 
+    /**
+     * @throws IOException sends request to server
+     */
     @Override
     public void myRequest() throws IOException
     {
@@ -113,6 +119,9 @@ public class UserRequest extends Request {
         dos.close();
     }
 
+    /**
+     * @return if user data is successfully filled into database
+     */
     public boolean isSuccessful()
     {
         return registered;
