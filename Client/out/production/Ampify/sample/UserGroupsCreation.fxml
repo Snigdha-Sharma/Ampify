@@ -29,7 +29,7 @@
                         <DropShadow />
                      </effect>
                   </Label>
-                  <JFXTextField fx:id="grpName" focusColor="#bf3a3a" maxWidth="-Infinity" pickOnBounds="false" prefWidth="400.0" promptText="Group Name" style="-fx-background-color: white;" unFocusColor="BLACK">
+                  <JFXTextField fx:id="grpName" focusColor="BLACK" maxWidth="-Infinity" pickOnBounds="false" prefWidth="400.0" promptText="Group Name" style="-fx-background-color: white;" unFocusColor="BLACK">
                      <font>
                         <Font name="Agency FB Bold" size="27.0" />
                      </font>
