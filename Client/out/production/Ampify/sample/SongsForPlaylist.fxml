@@ -30,6 +30,7 @@
                         <Font name="Comic Sans MS" size="28.0" />
                      </font>
                   </TextField>
+                  <Region prefHeight="200.0" prefWidth="200.0" />
                   <Label style="-fx-background-color: rgb(0,0,0,0.6);" text="Select Songs" textFill="WHITE">
                      <font>
                         <Font name="Agency FB Bold" size="35.0" />
@@ -40,10 +41,6 @@
                   </Label>
                   <CheckListView fx:id="allSongsList" minWidth="400.0" />
                   <Region prefHeight="200.0" prefWidth="200.0" />
-                  <Label fx:id="warn" style="-fx-background-color: rgb(0,0,0,0.6);" textFill="WHITE">
-                     <font>
-                        <Font name="Agency FB" size="35.0" />
-                     </font></Label>
                   <Region prefHeight="200.0" prefWidth="200.0" />
                   <JFXButton fx:id="doneButton" buttonType="RAISED" onAction="#makePlaylist" style="-fx-background-color: rgba(150, 8, 34, 0.8);" text="All Done!" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                      <padding>
@@ -59,6 +56,10 @@
                         <DropShadow />
                      </effect>
                   </JFXButton>
+                  <Label fx:id="warn" style="-fx-background-color: rgb(0,0,0,0.6);" textFill="WHITE">
+                     <font>
+                        <Font name="Agency FB" size="29.0" />
+                     </font></Label>
                </children>
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
