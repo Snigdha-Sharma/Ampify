@@ -6,6 +6,9 @@ import java.io.IOException;
 import java.net.InetAddress;
 import java.net.Socket;
 
+/**
+ * Abstract (parent) class of all kinds of requests
+ */
 abstract public class Request
 {
     InetAddress ip;
@@ -13,6 +16,9 @@ abstract public class Request
     DataInputStream dis;
     DataOutputStream dos;
 
+    /**
+     * Creates socket to send requests to server
+     */
     Request()
     {
         try
@@ -26,5 +32,8 @@ abstract public class Request
         }
     }
 
+    /**
+     * @throws IOException overridden in subclasses
+     */
     public abstract void myRequest() throws IOException;
 }

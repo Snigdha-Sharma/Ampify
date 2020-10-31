@@ -6,8 +6,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.IOException;
-
 public class Main extends Application
 {
     public static Stage window;
@@ -17,7 +15,7 @@ public class Main extends Application
         window=primaryStage;
         Parent root = FXMLLoader.load(getClass().getResource("loginscene.fxml"));
         window.setTitle("Login/Register");
-        window.setOpacity(0.9); //new
+        window.setOpacity(0.95 ); //new
         Scene scene=new Scene(root);
         scene.getStylesheets().add("resources/css/logincss.css");
         window.setScene(scene);

@@ -11,6 +11,9 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
+/**
+ * Fills user data and preferences into database
+ */
 public class ServerUserDataRequest {
     String username, name, phn, email, dob, state;
     String pop1, rap1, classical1, metal1, contemp1, folk1, romantic1, hiphop1, brostep1, band1, rock1;
@@ -18,6 +21,7 @@ public class ServerUserDataRequest {
     String a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14;
     boolean registered=false;
 
+//    initializes all the variables
     ServerUserDataRequest(String username, String name, String phn, String email, String dob, String state, String pop1, String rap1, String classical1, String metal1, String folk1, String romantic1, String contemp1, String brostep1, String hiphop1, String band1, String rock1, String eng1, String hindi1, String punjabi1, String harayanvi1, String bihari1, String telugu1, String marathi1, String guj1, String french1, String spanish1, String a1, String a2, String a3, String a4, String a5, String a6, String a7, String a8, String a9, String a10, String a11, String a12, String a13, String a14) throws IOException {
         this.username = username;
         this.name = name;
@@ -64,12 +68,20 @@ public class ServerUserDataRequest {
         this.a14=a14;
     }
 
+    /**
+     * @return if user data insertion into database was successful or not
+     * @throws SQLException
+     */
     boolean isFullSuccessful() throws SQLException {
         //copied definition from register user to test
         System.out.println("reached here");
         Connectivity.ConnClass connectionClass = new ConnClass();
         Connection connection = connectionClass.getConnection();
         Statement statement = connection.createStatement();
+
+
+//      ------------------CHECKING IF USER OF THE SAME USERNAME EXISTS IN THE DATABASE---------------------
+
         String sql = "SELECT * FROM userdata WHERE USERID = '"+username+"' AND Name='"+name+"';";
         ResultSet resultSet = statement.executeQuery(sql);
         System.out.println(phn);
@@ -95,7 +107,8 @@ public class ServerUserDataRequest {
         String lang[]={eng1, hindi1, telugu1, harayanvi1, bihari1, punjabi1, french1, spanish1, marathi1, guj1};
         String art[]={a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14};
 
-        //Traversing the list of genres and storing ticked entries in database
+
+//        ----------------------Traversing the list of genres and storing ticked entries in database----
         for (String str : gen)
         {
             System.out.println(str);
@@ -128,7 +141,7 @@ public class ServerUserDataRequest {
                 return registered;
             }
         }
-        //Traversing the list of languages and storing ticked entries in database
+//        ----------------------Traversing the list of languages and storing ticked entries in database------
         for (String str : lang)
         {
             System.out.println(str);
@@ -160,7 +173,7 @@ public class ServerUserDataRequest {
                 return registered;
             }
         }
-
+//        ----------------------Traversing the list of artists and storing ticked entries in database------
         for (String str : art)
         {
             System.out.println(str);

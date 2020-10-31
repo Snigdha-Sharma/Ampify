@@ -7,6 +7,9 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Sends request to server for creating a new user group
+ */
 public class NewUserGroupRequest extends Request
 {
     String uname=UserData.getUname();
@@ -14,6 +17,11 @@ public class NewUserGroupRequest extends Request
     boolean created;
     ArrayList<String> selUsers;
 
+    /**
+     * @param grpName Name of the group created
+     * @param selectedUsers list of members in the group
+     * @throws IOException
+     */
     NewUserGroupRequest(String grpName, List<String> selectedUsers) throws IOException
     {
         this.grpName=grpName;
@@ -26,6 +34,9 @@ public class NewUserGroupRequest extends Request
         dos=new DataOutputStream(s.getOutputStream());
     }
 
+    /**
+     * @throws IOException sends request to server
+     */
     @Override
     public void myRequest() throws IOException
     {
@@ -39,6 +50,10 @@ public class NewUserGroupRequest extends Request
         dos.close();
         oos.close();
     }
+
+    /**
+     * @return if the creation of user group was successful or not
+     */
     public boolean isSuccessfullyCreation()
     {
         return created;

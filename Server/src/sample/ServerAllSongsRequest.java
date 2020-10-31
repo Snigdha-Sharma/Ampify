@@ -7,10 +7,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * Gets names of all songs from the database
+ */
 public class ServerAllSongsRequest
 {
     ResultSet rs;
 
+    /**
+     * @return all songs in list format
+     * @throws SQLException
+     */
     public ResultSet getAllSongsSet() throws SQLException
     {
         Connectivity.ConnClass connectionClass=new ConnClass();

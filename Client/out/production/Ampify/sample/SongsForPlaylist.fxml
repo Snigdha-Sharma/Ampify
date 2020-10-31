@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.*?>
 <?import org.controlsfx.control.*?>
 <?import javafx.geometry.*?>
@@ -10,53 +11,55 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PlaylistController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.PlaylistController">
    <children>
-      <ScrollPane prefHeight="200.0" prefWidth="200.0">
-        <content>
-          <AnchorPane>
-               <children>
-                  <ImageView pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Images/SceneMakePlaylist.jpg" />
-                     </image>
-                  </ImageView>
-               </children>
-            </AnchorPane>
-        </content>
-      </ScrollPane>
-      <HBox alignment="TOP_RIGHT" spacing="50.0">
+      <HBox alignment="TOP_RIGHT" prefHeight="544.0" prefWidth="1180.0" spacing="50.0">
          <children>
             <VBox alignment="TOP_CENTER" fillWidth="false">
                <children>
-                  <Label alignment="TOP_RIGHT" text="Enter Playlist Name" textFill="#e8c7c7" wrapText="true">
+                  <Label alignment="TOP_RIGHT" style="-fx-background-color: rgb(0,0,0,0.6);" text="Enter Playlist Name" textFill="WHITE" wrapText="true">
                      <font>
-                        <Font name="Comic Sans MS Bold" size="33.0" />
+                        <Font name="Agency FB Bold" size="35.0" />
                      </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
                   </Label>
                   <TextField fx:id="nameOfPlaylist" prefHeight="40.0" prefWidth="400.0" promptText="Playlist Name">
                      <font>
                         <Font name="Comic Sans MS" size="28.0" />
                      </font>
                   </TextField>
-                  <Label text="Select Songs" textFill="#e8c7c7">
+                  <Region prefHeight="200.0" prefWidth="200.0" />
+                  <Label style="-fx-background-color: rgb(0,0,0,0.6);" text="Select Songs" textFill="WHITE">
                      <font>
-                        <Font name="Comic Sans MS Bold" size="33.0" />
+                        <Font name="Agency FB Bold" size="35.0" />
                      </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
                   </Label>
                   <CheckListView fx:id="allSongsList" minWidth="400.0" />
-                  <Label fx:id="warn" />
-                  <JFXButton fx:id="doneButton" buttonType="RAISED" onAction="#makePlaylist" text="All Done!" textAlignment="CENTER" textFill="#e8c7c7" wrapText="true">
+                  <Region prefHeight="200.0" prefWidth="200.0" />
+                  <Region prefHeight="200.0" prefWidth="200.0" />
+                  <JFXButton fx:id="doneButton" buttonType="RAISED" onAction="#makePlaylist" style="-fx-background-color: rgba(150, 8, 34, 0.8);" text="All Done!" textAlignment="CENTER" textFill="WHITE" wrapText="true">
                      <padding>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </padding>
                      <font>
-                        <Font name="Comic Sans MS Bold" size="33.0" />
+                        <Font name="Agency FB Bold" size="34.0" />
                      </font>
                      <cursor>
                         <Cursor fx:constant="OPEN_HAND" />
                      </cursor>
+                     <effect>
+                        <DropShadow />
+                     </effect>
                   </JFXButton>
+                  <Label fx:id="warn" style="-fx-background-color: rgb(0,0,0,0.6);" textFill="WHITE">
+                     <font>
+                        <Font name="Agency FB" size="29.0" />
+                     </font></Label>
                </children>
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

@@ -17,6 +17,9 @@ import java.net.URL;
 import java.util.List;
 import java.util.ResourceBundle;
 
+/**
+ * Controller for Usergroup creation page
+ */
 public class UserGroupController implements Initializable
 {
     public JFXButton back;
@@ -25,6 +28,11 @@ public class UserGroupController implements Initializable
     public JFXTextField grpName;
     public Label warning;
 
+    /**
+     * Initializes observable list of users
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
@@ -41,6 +49,9 @@ public class UserGroupController implements Initializable
         allUsers.setItems(observeAllUsers);
     }
 
+    /**
+     * @throws IOException goes back to home page
+     */
     public void goBack() throws IOException
     {
         MiddlePageController.allUserList=null;
@@ -50,6 +61,9 @@ public class UserGroupController implements Initializable
         Main.window.show();
     }
 
+    /**
+     * @throws IOException sends a request to create user group
+     */
     public void makeUserGroup() throws IOException
     {
         String groupName=grpName.getText();
