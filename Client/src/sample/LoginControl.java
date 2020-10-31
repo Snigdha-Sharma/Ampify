@@ -242,10 +242,12 @@ public class LoginControl implements Initializable
         Parent root1 = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
         Scene second=new Scene(root1);
         window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
+        second.getStylesheets().add("resources/css/middle.css");
         window.setScene(second);
-        window.show();
+
+        window.setX(200);
         window.setOnCloseRequest(e->closePlayer());
+        window.show();
     }
 
     public static void closePlayer()

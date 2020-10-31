@@ -15,11 +15,11 @@ public class Main extends Application
     public void start(Stage primaryStage) throws Exception
     {
         window=primaryStage;
-        Parent root = FXMLLoader.load(getClass().getResource("loginscene.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
         window.setTitle("Login/Register");
         window.setOpacity(0.9); //new
         Scene scene=new Scene(root);
-        scene.getStylesheets().add("resources/css/logincss.css");
+        scene.getStylesheets().add("resources/css/middle.css");
         window.setScene(scene);
 
         window.setOnCloseRequest(e->closeProgram());

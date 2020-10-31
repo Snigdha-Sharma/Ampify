@@ -36,7 +36,10 @@ public class MiddlePageController
         Parent root1 = FXMLLoader.load(getClass().getResource("sample.fxml"));
         Scene second=new Scene(root1);
         //window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        second.getStylesheets().add("resources/css/sample.css");
         Main.window.setScene(second);
+        Main.window.setX(40);
+        Main.window.setY(25);
         Main.window.show();
     }
 
