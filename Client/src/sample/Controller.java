@@ -61,7 +61,7 @@ public class Controller implements Initializable
     HashMap<String,String> localSongMap;
     List<String> allSongs;
     TreeMap<Integer,String> lyricsMap;
-    List<String> history=new ArrayList<>();
+//    List<String> history=new ArrayList<>();
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
@@ -283,8 +283,8 @@ public class Controller implements Initializable
         setSongOnPlayer(source);
 
         String name=extractSongName(source);
-        history.add(name);
-        ObservableList<String> observeHistory=FXCollections.observableArrayList(history);
+        MiddlePageController.history.add(name);
+        ObservableList<String> observeHistory=FXCollections.observableArrayList(MiddlePageController.history);
         History.setItems(observeHistory);
         History.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         System.out.println("name = "+extractSongName(source));
@@ -581,6 +581,15 @@ public class Controller implements Initializable
     {
         clearDirectory();
         System.exit(0);
+    }
+
+    public void ClearHistory()
+    {
+        MiddlePageController.history.clear();
+        ObservableList<String> observeHistory=FXCollections.observableArrayList(MiddlePageController.history);
+        History.setItems(observeHistory);
+        History.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+
     }
 
 //    public void displayName(ActionEvent event)

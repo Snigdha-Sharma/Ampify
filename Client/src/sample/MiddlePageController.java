@@ -30,7 +30,7 @@ public class MiddlePageController
     public static List<String> localSongsPlaylist=null;
     public JFXButton playlistButton;
     public JFXButton groupButton;
-
+    public static List<String> history=new ArrayList<>();
     /**
      * @throws IOException get list of all songs
      */

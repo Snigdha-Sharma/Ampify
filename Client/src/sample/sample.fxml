@@ -212,7 +212,19 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <ListView fx:id="History" layoutX="-7.0" layoutY="-5.0" onMouseClicked="#selectSong" prefHeight="175.0" prefWidth="255.0" />
+                  <VBox layoutX="-2.0" layoutY="-2.0" prefHeight="162.0" prefWidth="247.0">
+                     <children>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Region prefHeight="39.0" prefWidth="37.0" />
+                              <Label prefHeight="27.0" prefWidth="104.0" text="History" textAlignment="CENTER" />
+                              <Button mnemonicParsing="false" onMouseClicked="#ClearHistory" prefHeight="39.0" prefWidth="66.0" style="-fx-background-color: rgb(0,0,0,0.6);" text="Clear" textFill="WHITE" />
+                              <Region prefHeight="39.0" prefWidth="34.0" />
+                           </children>
+                        </HBox>
+                        <ListView fx:id="History" onMouseClicked="#selectSong" prefHeight="200.0" prefWidth="200.0" />
+                     </children>
+                  </VBox>
                </children>
             </AnchorPane>
         </items>
