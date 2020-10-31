@@ -17,7 +17,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.media.*;
 import javafx.stage.FileChooser;
 import javafx.util.Duration;
-import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 import java.io.*;
 import java.net.*;
@@ -47,6 +46,8 @@ public class Controller implements Initializable
     public Label lyrics;
     public ListView<String> SongList;
     public ListView<String> History;
+    public int sync=0;
+    public Label diff;
 
     String repeatMode="None";
     int currIdx=-1;
@@ -56,9 +57,9 @@ public class Controller implements Initializable
     public Media media;
     public MediaPlayer mediaPlayer;
     Image playButtonImage,pauseButtonImage,muteButtonImage,unmuteButtonImage,shuffleButtonOn,shuffleButtonOff,repeatSongImage,repeatPlaylistImage,repeatOffImage;
-    boolean songPlaying=false,isLocal=false,isShuffleOn=false;
+    boolean songPlaying=false,isLocal=false,isShuffleOn=false,isDownloaded=false;
     Thread currSong;
-    HashMap<String,String> localSongMap;
+    HashMap<String,String> localSongMap,downloadedSongMap;
     List<String> allSongs;
     TreeMap<Integer,String> lyricsMap;
     List<String> history=new ArrayList<>();
@@ -67,7 +68,6 @@ public class Controller implements Initializable
     public void initialize(URL location, ResourceBundle resources)
     {
         createCurrSongList();
-
         playButtonImage=new Image(getClass().getResourceAsStream("..\\Images\\Play.jpg"));
         pauseButtonImage=new Image(getClass().getResourceAsStream("..\\Images\\Pause.jpg"));
         muteButtonImage=new Image(getClass().getResourceAsStream("..\\Images\\Mute.jpg"));
@@ -185,16 +185,35 @@ public class Controller implements Initializable
         allSongs=MiddlePageController.currPlayList;
         if (allSongs==null)
         {
-            allSongs=new ArrayList<>();
-            localSongMap=new HashMap<>();
-            String name=null;
-            for (String path:MiddlePageController.localSongsPlaylist)
+            if (MiddlePageController.localSongsPlaylist==null)
             {
-                name=extractSongName(path);
-                allSongs.add(name);
-                localSongMap.put(name,path);
+                allSongs=new ArrayList<>();
+                localSongMap=new HashMap<>();
+                downloadedSongMap=new HashMap<>();
+                String name=null;
+                //System.out.println(MiddlePageController.downloadedSongsPlaylist.size());
+                for (String path:MiddlePageController.downloadedSongsPlaylist)
+                {
+                    name=extractSongName(path);
+                    System.out.println("Name:"+name);
+                    allSongs.add(name);
+                    downloadedSongMap.put(name,path);
+                }
+                isDownloaded=true;
             }
-            isLocal=true;
+            else
+            {
+                allSongs=new ArrayList<>();
+                localSongMap=new HashMap<>();
+                String name=null;
+                for (String path:MiddlePageController.localSongsPlaylist)
+                {
+                    name=extractSongName(path);
+                    allSongs.add(name);
+                    localSongMap.put(name,path);
+                }
+                isLocal=true;
+            }
         }
         ObservableList<String> observeAllSongs=FXCollections.observableArrayList(allSongs);
         SongList.setItems(observeAllSongs);
@@ -205,7 +224,7 @@ public class Controller implements Initializable
     {
         System.out.println("Selecting song:"+s);
 
-        if (isLocal==false)
+        if (isLocal==false && isDownloaded==false)
         {
             int len=s.length();
             String fileURL=s.substring(0,len-4);
@@ -262,8 +281,20 @@ public class Controller implements Initializable
         return s;
     }
 
-    public void selectSong() throws IOException
+    private String getPathForDownloadedSong(String s) throws CryptoException
     {
+        s=downloadedSongMap.get(s);
+        s=new File(s).toURI().toString();
+        System.out.println("Pathfds:"+s);
+        String key = "SPK CofnCode CnC";
+        File inputFile = new File(s);
+        File decryptedFile = new File(s);
+        CryptoUtils.decrypt(key,inputFile,decryptedFile);
+        System.out.println("Downloaded path:"+s);
+        return s;
+    }
+
+    public void selectSong() throws IOException, CryptoException {
         source=SongList.getSelectionModel().getSelectedItem();
         songName.setText(source);
         currIdx=SongList.getSelectionModel().getSelectedIndex();
@@ -272,9 +303,13 @@ public class Controller implements Initializable
         {
             stopCurrSong();
         }
-        if (isLocal==false)
+        if (isLocal==false && isDownloaded==false)
         {
             source=getPathForHostedSong(source);
+        }
+        else if (isDownloaded==true)
+        {
+            source=getPathForDownloadedSong(source);
         }
         else
         {
@@ -288,7 +323,6 @@ public class Controller implements Initializable
         History.setItems(observeHistory);
         History.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         System.out.println("name = "+extractSongName(source));
-
     }
 
     public void uploadSong()
@@ -368,8 +402,7 @@ public class Controller implements Initializable
     /**
      * @throws IOException -Go to next media
      */
-    public void goToNextSong() throws IOException
-    {
+    public void goToNextSong() throws IOException, CryptoException {
         if (mediaPlayer!=null)
         {
             stopCurrSong();
@@ -394,6 +427,10 @@ public class Controller implements Initializable
         if (isLocal==true)
         {
             setSongOnPlayer(getPathForLocalSong(allSongs.get(currIdx)));
+        }
+        else if (isDownloaded==true)
+        {
+            setSongOnPlayer(getPathForDownloadedSong(allSongs.get(currIdx)));
         }
         else
         {
@@ -440,13 +477,16 @@ public class Controller implements Initializable
         }
     }
 
-    public void setRandomSong() throws IOException
-    {
+    public void setRandomSong() throws IOException, CryptoException {
         int len=allSongs.size()-1;
         currIdx=(int)(Math.random()*len);
         if (isLocal==true)
         {
             setSongOnPlayer(getPathForLocalSong(allSongs.get(currIdx)));
+        }
+        else if (isDownloaded==true)
+        {
+            setSongOnPlayer(getPathForDownloadedSong(allSongs.get(currIdx)));
         }
         else
         {
@@ -463,9 +503,9 @@ public class Controller implements Initializable
                 seekbar.setValue((mediaPlayer.getCurrentTime().toSeconds()/ media.getDuration().toSeconds()) *100);
                 songName.setText((String) media.getMetadata().get("title"));
                 long insec= (long) mediaPlayer.getCurrentTime().toSeconds();
-                if (isLocal==false)
+                if (isLocal==false && isDownloaded==false)
                 {
-                    String l=lyricsMap.get(lyricsMap.floorKey((int) insec));
+                    String l=lyricsMap.get(lyricsMap.floorKey((int) (sync+insec)));
                     lyrics.setText(l);
                 }
                 long min=insec/60;
@@ -483,12 +523,32 @@ public class Controller implements Initializable
                 mediaPlayer.setOnEndOfMedia(()->{
                     System.out.println("Song complete");
                     mediaPlayer.stop();
+                    if (isDownloaded==true)
+                    {
+                        try
+                        {
+                            String key = "SPK CofnCode CnC";
+                            File inputFile = new File(getPathForDownloadedSong(allSongs.get(currIdx)));
+                            File encryptedFile = new File(getPathForDownloadedSong(allSongs.get(currIdx)));
+
+                            try {
+                                CryptoUtils.encrypt(key, inputFile, encryptedFile);
+                            } catch (CryptoException ex) {
+                                System.out.println(ex.getMessage());
+                                ex.printStackTrace();
+                            }
+                        }
+                        catch (CryptoException ex)
+                        {
+                            ex.printStackTrace();
+                        }
+                    }
                     if (repeatMode=="Song")
                     {
                         currIdx=currIdx-1;
                         try {
                             goToNextSong();
-                        } catch (IOException e) {
+                        } catch (IOException | CryptoException e) {
                             e.printStackTrace();
                         }
                         return;
@@ -501,7 +561,7 @@ public class Controller implements Initializable
                         }
                         try {
                             goToNextSong();
-                        } catch (IOException e) {
+                        } catch (IOException | CryptoException e) {
                             e.printStackTrace();
                         }
                         return;
@@ -510,7 +570,7 @@ public class Controller implements Initializable
                     {
                         try {
                             goToNextSong();
-                        } catch (IOException e) {
+                        } catch (IOException | CryptoException e) {
                             e.printStackTrace();
                         }
                     }
@@ -518,7 +578,7 @@ public class Controller implements Initializable
                     {
                         try {
                             setRandomSong();
-                        } catch (IOException e) {
+                        } catch (IOException | CryptoException e) {
                             e.printStackTrace();
                         }
                     }
@@ -569,6 +629,9 @@ public class Controller implements Initializable
         }
     }
 
+    /**
+     * decrease volume of media
+     */
     public void decreaseVolume()
     {
         if (mediaPlayer.getVolume()>0)
@@ -583,6 +646,28 @@ public class Controller implements Initializable
         System.exit(0);
     }
 
+    public void ClearHistory()
+    {
+        MiddlePageController.history.clear();
+        ObservableList<String> observeHistory=FXCollections.observableArrayList(MiddlePageController.history);
+        History.setItems(observeHistory);
+        History.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+
+    }
+
+    public void incSync()
+    {
+        sync=sync+1;
+        System.out.println(sync);
+        diff.setText(String.valueOf(sync));
+    }
+    public void decSync()
+    {
+        sync=sync-1;
+        System.out.println("dec"+sync);
+        diff.setText(String.valueOf(sync));
+
+    }
 //    public void displayName(ActionEvent event)
 //    {
 //        String username = UserData.getUname();

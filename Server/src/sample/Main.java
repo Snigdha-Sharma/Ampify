@@ -276,6 +276,15 @@ class ClientHandler extends Thread
                     ServerPlaylistSet spset = new ServerPlaylistSet(selectedSongs, uname, playlistName);
                     dos.writeBoolean(spset.isSuccess());
                     break;
+
+                case "AddtoPlaylist":
+                    String username1= dis.readUTF();
+                    String songName=dis.readUTF();
+                    String playlistname= dis.readUTF();
+                    AddSongtoPlaylist asp = new AddSongtoPlaylist(username1, songName, playlistname);
+                    dos.writeBoolean(asp.playlistAdd());
+                    return;
+
                 case "AllUsersRequest":
                     ServerAllUsersRequest aur=new ServerAllUsersRequest();
                     rs= aur.getAllUsersSet();
