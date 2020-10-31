@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.media.*?>
 <?import javafx.scene.text.*?>
@@ -24,7 +25,7 @@
                <children>
                   <JFXButton fx:id="shuffleButton" buttonType="RAISED" onAction="#shuffleSongs" text="" textAlignment="CENTER">
                      <graphic>
-                        <ImageView pickOnBounds="true" preserveRatio="true" style="-fx-opacity: 0.7;">
+                        <ImageView pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../Images/Shuffle.jpg" />
                            </image>
@@ -33,13 +34,10 @@
                   </JFXButton>
                   <JFXButton fx:id="prevSongButton" buttonType="RAISED" onAction="#goToPrevSong" text="" textAlignment="CENTER">
                      <graphic>
-                        <ImageView opacity="0.7" pickOnBounds="true" preserveRatio="true">
+                        <ImageView pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../Images/Prev.jpg" />
                            </image>
-                           <effect>
-                              <DropShadow />
-                           </effect>
                         </ImageView>
                      </graphic>
                   </JFXButton>
@@ -107,10 +105,13 @@
                   </JFXButton>
                   <JFXButton fx:id="uploadButton" buttonType="RAISED" onAction="#uploadSong" text="">
                      <graphic>
-                        <ImageView pickOnBounds="true" preserveRatio="true">
+                        <ImageView pickOnBounds="true">
                            <image>
                               <Image url="@../Images/Upload.jpg" />
                            </image>
+                           <cursor>
+                              <Cursor fx:constant="SE_RESIZE" />
+                           </cursor>
                         </ImageView>
                      </graphic>
                   </JFXButton>
@@ -168,17 +169,20 @@
                <graphic>
                   <ImageView pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Images/allpng.png" />
+                        <Image url="@../Images/logoff.jpg" />
                      </image>
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="goBackButton" buttonType="RAISED" onAction="#goBackToMiddlePage" text="">
+            <JFXButton fx:id="goBackButton" buttonType="RAISED" onAction="#goBackToMiddlePage" style="-fx-background-color: transparent; -fx-border-width: 4;" text="" textFill="WHITE">
                <graphic>
                   <ImageView pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/GoBack.jpg" />
                      </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
                   </ImageView>
                </graphic>
             </JFXButton>
