@@ -89,6 +89,9 @@ public class Controller implements Initializable
         Parent root1 = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
         Scene second=new Scene(root1);
         Main.window.setScene(second);
+        second.getStylesheets().add("resources/css/middle.css");
+        Main.window.setX(40);
+        Main.window.setY(25);
         Main.window.show();
     }
 
