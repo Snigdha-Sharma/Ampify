@@ -45,8 +45,10 @@ public class Controller implements Initializable
     public Label duration;
     public Label songName;
     public Label lyrics;
+    public Label diff;
     public ListView<String> SongList;
     public ListView<String> History;
+    public int sync=0;
 
     String repeatMode="None";
     int currIdx=-1;
@@ -465,7 +467,7 @@ public class Controller implements Initializable
                 long insec= (long) mediaPlayer.getCurrentTime().toSeconds();
                 if (isLocal==false)
                 {
-                    String l=lyricsMap.get(lyricsMap.floorKey((int) insec));
+                    String l=lyricsMap.get(lyricsMap.floorKey((int) (sync+insec)));
                     lyrics.setText(l);
                 }
                 long min=insec/60;
@@ -589,6 +591,20 @@ public class Controller implements Initializable
         ObservableList<String> observeHistory=FXCollections.observableArrayList(MiddlePageController.history);
         History.setItems(observeHistory);
         History.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+
+    }
+
+    public void incSync()
+    {
+        sync=sync+1;
+        System.out.println(sync);
+        diff.setText(String.valueOf(sync));
+    }
+    public void decSync()
+    {
+        sync=sync-1;
+        System.out.println("dec"+sync);
+        diff.setText(String.valueOf(sync));
 
     }
 

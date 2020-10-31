@@ -220,18 +220,20 @@
                               <Font name="System Bold" size="21.0" />
                            </font>
                         </Label>
-                        <HBox prefHeight="46.0" prefWidth="198.0">
+                        <HBox prefHeight="0.0" prefWidth="249.0">
                            <children>
                               <Region prefHeight="46.0" prefWidth="6.0" />
-                              <Label prefHeight="55.0" prefWidth="127.0" text="Sync Subtitle" textAlignment="CENTER" wrapText="true">
+                              <Label prefHeight="39.0" prefWidth="107.0" text="Sync Subtitle" textAlignment="CENTER" wrapText="true">
                                  <font>
                                     <Font size="16.0" />
                                  </font>
                               </Label>
-                              <Region prefHeight="39.0" prefWidth="38.0" />
-                              <Button mnemonicParsing="false" style="-fx-background-color: rgb(0,0,0,0.6);" text="&lt;-" textFill="WHITE" />
+                              <Region prefHeight="39.0" prefWidth="15.0" />
+                              <Label fx:id="diff" prefHeight="39.0" prefWidth="34.0" text="0" />
+                              <Region prefHeight="39.0" prefWidth="13.0" />
+                              <Button mnemonicParsing="false" onAction="#decSync" style="-fx-background-color: rgb(0,0,0,0.6);" text="&lt;-" textFill="WHITE" />
                               <Region maxHeight="46.0" maxWidth="9.0" prefHeight="46.0" prefWidth="9.0" />
-                              <Button mnemonicParsing="false" style="-fx-background-color: rgb(0,0,0,0.6);" text="-&gt;" textFill="WHITE" />
+                              <Button mnemonicParsing="false" onAction="#incSync" style="-fx-background-color: rgb(0,0,0,0.6);" text="-&gt;" textFill="WHITE" />
                            </children>
                         </HBox>
                      </children>
