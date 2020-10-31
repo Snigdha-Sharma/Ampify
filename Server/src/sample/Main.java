@@ -159,6 +159,33 @@ class ClientHandler extends Thread
                     oosi.writeObject(back22);
                     break;
 
+                case "Recommendations":
+                    String usern = dis.readUTF();
+                    Recommendation rr = new Recommendation(usern);
+                    rs1 = rr.byArtist();
+                    rs2 = rr.byGenre();
+                    rs3 = rr.byLanguage();
+                    List<String> back12 = new ArrayList<>();
+                    while(rs1.next())
+                    {
+                        back12.add(rs1.getString(1));
+                    }
+                    os=s.getOutputStream();
+                    oos = new ObjectOutputStream(os);
+                    oos.writeObject(back12);
+                    List<String> back23 = new ArrayList<>();
+                    while(rs2.next())
+                    {
+                        back23.add(rs2.getString(1));
+                    }
+                    oos.writeObject(back23);
+                    List<String> back33 = new ArrayList<>();
+                    while(rs3.next())
+                    {
+                        back33.add(rs3.getString(1));
+                    }
+                    oos.writeObject(back33);
+
                 case "UserRequest":
                     String username, name, phn, email, dob, state;
                     String pop1, rap1, classical1, metal1, contemp1, folk1, romantic1, hiphop1, brostep1, band1, rock1;
