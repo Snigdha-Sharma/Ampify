@@ -284,7 +284,8 @@ public class LoginControl implements Initializable
         second.getStylesheets().add("resources/css/middle.css");
         window.setScene(second);
 
-        window.setX(200);
+        Main.window.setX(40);
+        Main.window.setY(25);
         window.setOnCloseRequest(e->closePlayer());
         window.show();
     }
