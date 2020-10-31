@@ -1503,4 +1503,102 @@ C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\scenario\w6w.mp3
 C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\scenario\w7a.mp3
 C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\scenario\w7b.mp3
 C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\scenario\w7c.mp3
-C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\scenario
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\scenario\w7d.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\scenario\w7e.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\scenario\w7f.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\scenario\w7g.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\scenario\w7h.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\scenario\w7i.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\scenario\w7j.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\scenario\w7k.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\scenario\w7l.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\scenario\w7m.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\scenario\w7n.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\scenario\w7o.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\scenario\w7p.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\scenario\w7q.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c1s1.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c1s1end.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c1s2.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c1s2end.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c1s3.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c1s3end.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c1s4.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c1s4end.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c1s5.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c1s5end.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c1s6.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c1s6end.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c2s1.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c2s1end.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c2s2.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c2s2end.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c2s3.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c2s3end.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c2s4.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c2s4end.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c2s5.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c2s5end.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c2s6.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c2s6end.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c3s1.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c3s1end.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c3s2.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c3s2end.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c3s3.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c3s3end.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c3s4.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c3s4end.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c3s5.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c3s5end.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c3s6.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c3s6end.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c4s1.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c4s1end.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c4s2.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c4s2end.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c4s3.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c4s3end.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c4s4.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c4s4end.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c4s5.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c4s5end.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c4s6.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c4s6end.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c8s1.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c8s1end.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c8s2.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c8s2end.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c8s3.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c8s3end.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c8s4.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c8s4end.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c8s5.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c8s5end.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c8s6.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c8s6end.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c8s7.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\c8s7end.mp3
+C:\Users\kshit\Desktop\Age Of Empires\Age Of Empires\Sound\campaign\intro.mp3
+C:\Users\kshit\AppData\Local\Android\Sdk\emulator\resources\macroPreviews\Reset_position.mp4
+C:\Users\kshit\AppData\Local\Android\Sdk\emulator\resources\macroPreviews\Track_horizontal_plane.mp4
+C:\Users\kshit\AppData\Local\Android\Sdk\emulator\resources\macroPreviews\Track_vertical_plane.mp4
+C:\Users\kshit\AppData\Local\Android\Sdk\emulator\resources\macroPreviews\Walk_to_image_room.mp4
+C:\Users\kshit\AppData\Local\Adobe\Lightroom CC\Data\6c8b3ce765564c04a1f6062ababc00c7\proxies\720p\f52\ebc9459634f0eaec3f75bbeb48cd4.mp4
+C:\Users\kshit\AppData\Local\Adobe\Lightroom CC\Data\6c8b3ce765564c04a1f6062ababc00c7\proxies\720p\7ee\999fe67464956aaabf981f828d3b7.mp4
+C:\Users\kshit\AppData\Local\Adobe\Lightroom CC\Data\6c8b3ce765564c04a1f6062ababc00c7\originals\2019\2019-06-21\GOT theme.mp4
+C:\Users\kshit\AppData\Local\Adobe\Lightroom CC\Data\6c8b3ce765564c04a1f6062ababc00c7\originals\2019\2019-03-27\culrav goat elims 1st year oc.mp4
+C:\Users\kshit\Anaconda3\pkgs\notebook-5.7.4-py37_0\Lib\site-packages\notebook\static\components\MathJax\extensions\a11y\invalid_keypress.mp3
+C:\Users\kshit\Anaconda3\pkgs\imageio-2.4.1-py37_0\Lib\site-packages\imageio\resources\images\cockatoo.mp4
+C:\Users\kshit\Anaconda3\pkgs\imageio-2.4.1-py37_0\Lib\site-packages\imageio\resources\images\realshort.mp4
+C:\Users\kshit\Anaconda3\Lib\site-packages\notebook\static\components\MathJax\extensions\a11y\invalid_keypress.mp3
+C:\Users\kshit\Anaconda3\Lib\site-packages\imageio\resources\images\cockatoo.mp4
+C:\Users\kshit\Anaconda3\Lib\site-packages\imageio\resources\images\realshort.mp4
+C:\Users\kshit\Ampify\Client\src\Songs\0hVXuCcriWRGvwMV1r5Yn9.mp3
+C:\Users\kshit\Ampify\Client\src\Songs\Bang Bang.mp3
+C:\Users\kshit\Ampify\Client\src\Songs\Group theory and why I love 808,017,424,794,512,875,886,459,904,961,710,757,005,754,368,000,000,000.mp4
+C:\Users\kshit\Ampify\Client\src\Songs\Offo.mp3
+C:\Users\kshit\Ampify\Client\src\Songs\playVideo.mp4
+C:\Users\kshit\Ampify\Client\out\production\Ampify\Songs\0hVXuCcriWRGvwMV1r5Yn9.mp3
+C:\Users\kshit\Ampify\Client\out\production\Ampify\Songs\Bang Bang.mp3
+C:\Users\kshit\Ampify\Client\out\production\Ampify\Songs\Group theory and why I love 808,017,424,794,512,875,886,459,904,961,710,757,005,754,368,000,000,000.mp4

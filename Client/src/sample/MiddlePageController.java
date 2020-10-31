@@ -135,7 +135,13 @@ public class MiddlePageController
         allUserList=aur.allUsersList();
         Parent root1 = FXMLLoader.load(getClass().getResource("UserGroupsCreation.fxml"));
         Scene second=new Scene(root1);
+//        Main.window.setScene(second);
+//        Main.window.show();
+        second.getStylesheets().add("resources/css/playlistmake.css");
         Main.window.setScene(second);
+        Main.window.setX(40);
+        Main.window.setY(25);
         Main.window.show();
+
     }
 }
