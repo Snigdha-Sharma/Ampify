@@ -124,7 +124,19 @@ public class Controller implements Initializable
         String saveDir = ".\\src\\DownloadedSongs";
         try
         {
-            HttpDownloadUtility.downloadFile(fileURL, saveDir);
+            String fileName = HttpDownloadUtility.downloadFile(fileURL, saveDir);
+
+            String saveFilePath = saveDir + File.separator + fileName;
+            String key = "SPK CofnCode CnC";
+            File inputFile = new File(saveFilePath);
+            File encryptedFile = new File(saveFilePath);
+
+            try {
+                CryptoUtils.encrypt(key, inputFile, encryptedFile);
+            } catch (CryptoException ex) {
+                System.out.println(ex.getMessage());
+                ex.printStackTrace();
+            }
         }
         catch (IOException ex)
         {
