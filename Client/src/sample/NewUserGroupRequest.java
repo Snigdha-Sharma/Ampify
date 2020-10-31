@@ -11,6 +11,7 @@ public class NewUserGroupRequest extends Request
 {
     String uname=UserData.getUname();
     String grpName;
+    boolean created;
     ArrayList<String> selUsers;
 
     NewUserGroupRequest(String grpName, List<String> selectedUsers) throws IOException
@@ -33,8 +34,13 @@ public class NewUserGroupRequest extends Request
         dos.writeUTF(uname);
         ObjectOutputStream oos=new ObjectOutputStream(s.getOutputStream());
         oos.writeObject(selUsers);
+        created=dis.readBoolean();
         dis.close();
         dos.close();
         oos.close();
+    }
+    public boolean isSuccessfullyCreation()
+    {
+        return created;
     }
 }

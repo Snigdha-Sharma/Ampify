@@ -34,6 +34,16 @@ public class ServerUserGroup {
         String sql;
         ResultSet resultSet;
 
+        //--------------------------------------------Checking for duplicate name from table--------------------
+
+        sql="SELECT * FROM groupadmin WHERE USERID = '"+username+"' AND GroupName = '"+groupName+"'";
+        statement = connection.createStatement();
+        resultSet=statement.executeQuery(sql);
+        if (resultSet.next())
+        {
+            return false;
+        }
+
 //        --------------------------------CREATING A NEW GROUP------------------------------------------
         sql = "INSERT INTO groupadmin(GroupName, USERID) VALUES ('"+groupName+"','"+username+"')";
         statement = connection.createStatement();

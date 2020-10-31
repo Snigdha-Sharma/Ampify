@@ -8,6 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import org.controlsfx.control.CheckListView;
 
@@ -22,6 +23,7 @@ public class UserGroupController implements Initializable
     public JFXButton done;
     public CheckListView<String> allUsers;
     public JFXTextField grpName;
+    public Label warning;
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
@@ -51,10 +53,25 @@ public class UserGroupController implements Initializable
     public void makeUserGroup() throws IOException
     {
         String groupName=grpName.getText();
+        if(groupName.isEmpty())
+        {
+            warning.setText("Group Name can't be empty!");
+            return;
+        }
         System.out.println(groupName);
         List<String> selectedUsers=allUsers.getCheckModel().getCheckedItems();
+        if(selectedUsers.isEmpty())
+        {
+            warning.setText("Select atleast 1 member for creating a group");
+            return;
+        }
         NewUserGroupRequest o=new NewUserGroupRequest(groupName,selectedUsers);
         o.myRequest();
+        if(!o.isSuccessfullyCreation())
+        {
+            warning.setText("Group name should not match with previously created groups!");
+            return;
+        }
         goBack();
     }
 }
