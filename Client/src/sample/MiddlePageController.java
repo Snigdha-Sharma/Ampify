@@ -50,7 +50,12 @@ public class MiddlePageController
         currPlayList=asr.allSongsList();
         Parent root1 = FXMLLoader.load(getClass().getResource("SongsForPlaylist.fxml"));
         Scene second=new Scene(root1);
+//        Main.window.setScene(second);
+        second.getStylesheets().add("resources/css/playlistmake.css");
         Main.window.setScene(second);
+        Main.window.setX(40);
+        Main.window.setY(25);
+        Main.window.show();
 
 
         Main.window.show();
@@ -114,7 +119,12 @@ public class MiddlePageController
         progressStage.showAndWait();
         root1 = FXMLLoader.load(getClass().getResource("sample.fxml"));
         second=new Scene(root1);
+//        Main.window.setScene(second);
+//        Main.window.show();
+        second.getStylesheets().add("resources/css/sample.css");
         Main.window.setScene(second);
+        Main.window.setX(40);
+        Main.window.setY(25);
         Main.window.show();
     }
 
