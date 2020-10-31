@@ -9,14 +9,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<ScrollPane maxHeight="600.0" maxWidth="700.0" prefHeight="1200.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UserControl">
+<ScrollPane maxHeight="1192.0" maxWidth="700.0" prefHeight="518.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UserControl">
    <content>
-      <Pane fx:id="pane1" prefHeight="1013.0" prefWidth="641.0" stylesheets="@../resources/css/logincss.css">
+      <Pane fx:id="pane1" stylesheets="@../resources/css/logincss.css">
          <children>
-            <HBox layoutX="-10.0" prefHeight="1000.0" prefWidth="593.0">
+            <HBox layoutX="-10.0">
                <children>
                   <Region prefHeight="1080.0" prefWidth="47.0" />
-                  <VBox prefHeight="1059.0" prefWidth="566.0" stylesheets="@../resources/css/userdetail.css">
+                  <VBox stylesheets="@../resources/css/userdetail.css">
                      <children>
                         <Region prefHeight="30.0" prefWidth="600.0" />
                         <Label text="Name">

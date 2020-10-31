@@ -69,10 +69,9 @@ public class ServerPlaylistSet {
             created = false;
             return created;
         }
-//--------------------------------------------Inserting songs into playlist-song table-------------------------
+//--------------------------------------------Getting song ID----------------------------------------
         for(String str : songs)
         {
-//-----------------------------         Getting song ID
             String sname = "";
             sql = "SELECT SongId FROM Song WHERE Name='"+str+"'";
             statement = connection.createStatement();
@@ -90,7 +89,7 @@ public class ServerPlaylistSet {
                 created = false;
                 return created;
             }
-
+//--------------------------------------------Inserting songs into playlist-song table-----------------------
             sql = "INSERT INTO playlistsong(PlaylistID, SongID) VALUES ('"+playlistid+"','"+sname+"')";
             statement = connection.createStatement();
             try {

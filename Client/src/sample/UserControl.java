@@ -219,6 +219,7 @@ public class UserControl implements Initializable
             }
 
             //            --------------------------------ARTISTS---------------------------------------\
+
             boolean art=false;
             if(e1.isSelected())
             {
@@ -361,7 +362,7 @@ public class UserControl implements Initializable
 
     private boolean isValidPhone(String phn)
     {
-        String regex = "(0/91)?[7-9][0-9]{9}";
+        String regex = "(0/91)?[6-9][0-9]{9}";
         Pattern pat = Pattern.compile(regex);
         if (phn == null)
             return false;

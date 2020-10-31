@@ -9,7 +9,7 @@ import java.util.List;
 
 public class NewUserGroupRequest extends Request
 {
-    String uname="";
+    String uname=UserData.getUname();
     String grpName;
     ArrayList<String> selUsers;
 

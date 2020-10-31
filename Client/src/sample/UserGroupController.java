@@ -27,6 +27,15 @@ public class UserGroupController implements Initializable
     public void initialize(URL location, ResourceBundle resources)
     {
         ObservableList<String> observeAllUsers= FXCollections.observableArrayList(MiddlePageController.allUserList);
+        for (String s:observeAllUsers)
+        {
+            if(s.equals(UserData.getUname())) {
+                int i=observeAllUsers.indexOf(s);
+                observeAllUsers.remove(i);
+                break;
+            }
+        }
+        System.out.println(observeAllUsers);
         allUsers.setItems(observeAllUsers);
     }
 

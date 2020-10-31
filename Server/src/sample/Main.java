@@ -209,6 +209,8 @@ class ClientHandler extends Thread
                     {
                         System.out.println(x);
                     }
+                    ServerUserGroup sug = new ServerUserGroup(selectedUsers, uname, grpName);
+                    dos.writeBoolean(sug.isCreateSuccessful());
                     break;
                 case "LogOff":
                     break;
