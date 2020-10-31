@@ -80,6 +80,8 @@ class ClientHandler extends Thread
     {
         String requestType;
         String uname="",pwd;
+        ResultSet rs;
+        OutputStream os;
         try
         {
             requestType=dis.readUTF();
@@ -94,7 +96,7 @@ class ClientHandler extends Thread
                     {
                         //Main.activeUsers.add(uname);
                     }
-                break;
+                    break;
 
                 case "RegisterNewUser":
                     uname=dis.readUTF();
@@ -104,11 +106,9 @@ class ClientHandler extends Thread
                     break;
 
                 case "AllSongsRequest":
-//                    ServerAllSongsRequest asr=new ServerAllSongsRequest();
-//                    ResultSet rs=asr.getAllSongsSet();
-                    RecentlyAddedSongs ras = new RecentlyAddedSongs();
-                    ResultSet rs = ras.getRs();
-                    OutputStream os=s.getOutputStream();
+                    ServerAllSongsRequest asr=new ServerAllSongsRequest();
+                    rs=asr.getAllSongsSet();
+                    os=s.getOutputStream();
                     ObjectOutputStream oos=new ObjectOutputStream(os);
                     List<String> back = new ArrayList<>();
                     while(rs.next())
@@ -116,6 +116,19 @@ class ClientHandler extends Thread
                         back.add(rs.getString(1));
                     }
                     oos.writeObject(back);
+                    break;
+
+                case "RecentlyAdded":
+                    RecentlyAddedSongs ras = new RecentlyAddedSongs();
+                    rs = ras.getRs();
+                    os=s.getOutputStream();
+                    ObjectOutputStream oosi=new ObjectOutputStream(os);
+                    List<String> back1 = new ArrayList<>();
+                    while(rs.next())
+                    {
+                        back1.add(rs.getString(1));
+                    }
+                    oosi.writeObject(back1);
                     break;
 
                 case "UserRequest":

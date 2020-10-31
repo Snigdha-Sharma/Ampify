@@ -16,7 +16,7 @@ public class RecentlyAddedSongs {
         Statement statement=connection.createStatement();
         ResultSet rs;
         Date date=java.util.Calendar.getInstance().getTime();
-        String query="Select Name from Song WHERE DATEDIFF(DateAdded, '"+date+"')<=365";
+        String query="Select Name from Song WHERE DATEDIFF(DateAdded, NOW())<=365";
         rs=statement.executeQuery(query);
 //        System.out.println(rs);
         return rs;
