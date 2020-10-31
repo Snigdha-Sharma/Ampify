@@ -7,16 +7,26 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * Logs in the user
+ */
 public class ServerLoginRequest
 {
     String uname,pwd;
 
+    /**
+     * @param uname username of user
+     * @param pwd password of user
+     */
     ServerLoginRequest(String uname,String pwd)
     {
         this.uname=uname;
         this.pwd=pwd;
     }
 
+    /**
+     * @return checks if the credentials entered by user are present in database or not
+     */
     public boolean isValidUser()
     {
         Connectivity.ConnClass connectionClass=new ConnClass();//Connection through JDBC driver to database

@@ -15,6 +15,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
+/**
+ * Controller class for user details filling page
+ */
 public class UserControl implements Initializable
 {
     static Stage window;

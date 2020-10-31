@@ -7,10 +7,17 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * Gets data of all the users registered from the databasa
+ */
 public class ServerAllUsersRequest
 {
     ResultSet rs;
 
+    /**
+     * @return gets all the names of users in a list
+     * @throws SQLException
+     */
     public ResultSet getAllUsersSet() throws SQLException
     {
         Connectivity.ConnClass connectionClass=new ConnClass();

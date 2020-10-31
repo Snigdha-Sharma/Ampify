@@ -13,6 +13,11 @@ public class ServerUserGroup {
     ArrayList<String> groups;
     String username, groupName;
 
+    /**
+     * @param members List of members in the group created
+     * @param username  Username of the person creating the group
+     * @param groupName Name of the new group
+     */
     ServerUserGroup(List<String> members, String username, String groupName)
     {
         this.username=username;
@@ -25,6 +30,10 @@ public class ServerUserGroup {
         groups.add(username);
     }
 
+    /**
+     * @return checks if user-group creation is successful or not after adding data into database
+     * @throws SQLException
+     */
     boolean isCreateSuccessful() throws SQLException
     {
         boolean created;

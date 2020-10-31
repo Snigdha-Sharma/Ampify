@@ -19,6 +19,9 @@ import java.util.Base64;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 
+/**
+ * controller class for loginscene.fxml
+ */
 public class LoginControl implements Initializable
 {
     public Button signup;
@@ -34,6 +37,11 @@ public class LoginControl implements Initializable
 
     static Stage window;
 
+    /**
+     * initializes all the warning the labels to empty strings
+     * @param location
+     * @param resources
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources)
     {
@@ -42,6 +50,10 @@ public class LoginControl implements Initializable
         check.setSelected(false);
     }
 
+    /**
+     * Fetches login details and creates a login request.
+     * @param event onClick
+     */
     public void LoginAct(ActionEvent event)
     {
         try
@@ -89,6 +101,11 @@ public class LoginControl implements Initializable
         }
     }
 
+    /**
+     * Fetches register details and sends register request
+     * @param event onClick
+     * @throws IOException
+     */
     public void RegisterAct (ActionEvent event) throws IOException
     {
         String u1=uname2.getText();
@@ -201,6 +218,12 @@ public class LoginControl implements Initializable
     private static final int ITERATIONS = 10000;
     private static final int KEY_LENGTH = 256;
 
+    /**
+     * Hashes the password to secure it
+     * @param password
+     * @param salt
+     * @return
+     */
     public static byte[] hash(char[] password, byte[] salt)
     {
         PBEKeySpec spec = new PBEKeySpec(password, salt, ITERATIONS, KEY_LENGTH);
@@ -219,6 +242,13 @@ public class LoginControl implements Initializable
             spec.clearPassword();
         }
     }
+
+    /**
+     * Uses base64 encoding to hash the password
+     * @param password
+     * @param salt
+     * @return
+     */
     public static String generateSecurePassword(String password, String salt)
     {
         String returnValue = null;
@@ -227,6 +257,10 @@ public class LoginControl implements Initializable
         return returnValue;
     }
 
+    /**
+     * Loads new scene with userdetails page
+     * @throws IOException
+     */
     public void GoToData() throws IOException
     {
         Parent root1 = FXMLLoader.load(getClass().getResource("UserDetails.fxml"));
@@ -237,6 +271,11 @@ public class LoginControl implements Initializable
 //        warning.setText("Registration Successful! Ready to login.");
     }
 
+    /**
+     * Loads new scene with PLAYER HOME page
+     * @param event
+     * @throws IOException
+     */
     public void OpenPlayerHome(ActionEvent event) throws IOException
     {
         Parent root1 = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
@@ -248,6 +287,9 @@ public class LoginControl implements Initializable
         window.setOnCloseRequest(e->closePlayer());
     }
 
+    /**
+     * Closes media player
+     */
     public static void closePlayer()
     {
         Controller.closePlayer();

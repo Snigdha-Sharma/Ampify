@@ -13,17 +13,29 @@ import java.sql.Statement;
 import java.util.Arrays;
 import java.util.Base64;
 
+
+/**
+ * Registers new user
+ */
 public class ServerRegisterNewUser
 {
     String uname,pwd;
     boolean registered=false;
 
+    /**
+     * @param uname username of new user
+     * @param pwd hashed password of the user
+     */
     ServerRegisterNewUser(String uname,String pwd)
     {
         this.uname=uname;
         this.pwd=pwd;
     }
 
+    /**
+     * @return checks if the username and password of user is successfully stored into database
+     * @throws SQLException
+     */
     boolean isRegisteredSuccessfully() throws SQLException
     {
         Connectivity.ConnClass connectionClass=new ConnClass();

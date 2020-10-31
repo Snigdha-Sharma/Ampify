@@ -3,10 +3,18 @@ package Connectivity;
 import java.sql.Connection;
 import java.sql.DriverManager;
 
+/**
+ * just to create connection with database
+ */
 public class ConnClass {
+
     public Connection connection;
+
+    /**
+     * @return if connection with database was successful or not
+     */
     public  Connection getConnection(){
-//        String dbName="Ampify";
+        String dbName="Ampify";
         String userName="root";
         String password="";
 
