@@ -17,6 +17,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.media.*;
 import javafx.stage.FileChooser;
 import javafx.util.Duration;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 
 import java.io.*;
 import java.net.*;
@@ -43,6 +44,7 @@ public class Controller implements Initializable
     public JFXSlider seekbar;
     public Label duration;
     public Label songName;
+    public Label lyrics;
     public ListView<String> SongList;
 
     String repeatMode="None";
@@ -57,6 +59,7 @@ public class Controller implements Initializable
     Thread currSong;
     HashMap<String,String> localSongMap;
     List<String> allSongs;
+    TreeMap<Integer,String> lyricsMap;
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
@@ -98,7 +101,7 @@ public class Controller implements Initializable
         int len=path.length(),i=len-1;
         while(i>0)
         {
-            if (path.charAt(i)=='\\')
+            if (path.charAt(i)=='\\' || path.charAt(i)=='/')
             {
                 name=path.substring(i+1,len-4);
                 break;
@@ -183,28 +186,50 @@ public class Controller implements Initializable
         SongList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
     }
 
-    public void setSongOnPlayer(String s)
+    public void setSongOnPlayer(String s) throws IOException
     {
         System.out.println("Selecting song:"+s);
+
+        if (isLocal==false)
+        {
+            int len=s.length();
+            String fileURL=s.substring(0,len-4);
+            fileURL=fileURL+".srt";
+            //System.out.println("Current Directory:"+System.getProperty("user.dir"));
+            String saveDir = ".\\src\\SongInfo";
+            try
+            {
+                HttpDownloadUtility.downloadFile(fileURL, saveDir);
+            }
+            catch (IOException ex)
+            {
+                ex.printStackTrace();
+            }
+            saveDir=saveDir+"\\"+extractSongName(fileURL)+".srt";
+            SrtParser temp=new SrtParser(saveDir);
+            lyricsMap=temp.setup();
+            lyricsMap.put(0,"");
+        }
+
         media=new Media(s);
         mediaPlayer = new MediaPlayer(media);
         playOrPause();
         mv.setMediaPlayer(mediaPlayer);
         seekbar.setValue(0);
-        AudioEqualizer ae = mediaPlayer.getAudioEqualizer();
-        if(ae!=null)
-        {
-            ae.setEnabled(true);
-        }
-        if(ae.isEnabled()){
-            EqualizerBand eb = new EqualizerBand();
-            ObservableList<EqualizerBand> l = ae.getBands();
-            for (EqualizerBand i: l) {
-//                String p = i.toString();
-                System.out.println(i.getBandwidth());
-            }
-            System.out.println(l.toString());
-        }
+//        AudioEqualizer ae = mediaPlayer.getAudioEqualizer();
+//        if(ae!=null)
+//        {
+//            ae.setEnabled(true);
+//        }
+//        if(ae.isEnabled()){
+//            EqualizerBand eb = new EqualizerBand();
+//            ObservableList<EqualizerBand> l = ae.getBands();
+//            for (EqualizerBand i: l) {
+////                String p = i.toString();
+//                System.out.println(i.getBandwidth());
+//            }
+//            System.out.println(l.toString());
+//        }
     }
 
     public String getPathForLocalSong(String s)
@@ -221,7 +246,7 @@ public class Controller implements Initializable
         return s;
     }
 
-    public void selectSong()
+    public void selectSong() throws IOException
     {
         source=SongList.getSelectionModel().getSelectedItem();
         songName.setText(source);
@@ -295,8 +320,7 @@ public class Controller implements Initializable
     /**
      * Previous media button in the media player
      */
-    public void goToPrevSong()
-    {
+    public void goToPrevSong() throws IOException {
         if (mediaPlayer!=null)
         {
             stopCurrSong();
@@ -320,8 +344,7 @@ public class Controller implements Initializable
     /**
      * Next media button in media player
      */
-    public void goToNextSong()
-    {
+    public void goToNextSong() throws IOException {
         if (mediaPlayer!=null)
         {
             stopCurrSong();
@@ -392,8 +415,7 @@ public class Controller implements Initializable
         }
     }
 
-    public void setRandomSong()
-    {
+    public void setRandomSong() throws IOException {
         int len=allSongs.size()-1;
         currIdx=(int)(Math.random()*len);
         if (isLocal==true)
@@ -414,8 +436,12 @@ public class Controller implements Initializable
             {
                 seekbar.setValue((mediaPlayer.getCurrentTime().toSeconds()/ media.getDuration().toSeconds()) *100);
                 songName.setText((String) media.getMetadata().get("title"));
-//                System.out.println("Thread:"+mediaPlayer.getMedia().getMetadata());
                 long insec= (long) mediaPlayer.getCurrentTime().toSeconds();
+                if (isLocal==false)
+                {
+                    String l=lyricsMap.get(lyricsMap.floorKey((int) insec));
+                    lyrics.setText(l);
+                }
                 long min=insec/60;
                 long sec=insec%60;
                 if (sec/10==0)
@@ -434,7 +460,11 @@ public class Controller implements Initializable
                     if (repeatMode=="Song")
                     {
                         currIdx=currIdx-1;
-                        goToNextSong();
+                        try {
+                            goToNextSong();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                         return;
                     }
                     else if (repeatMode=="Playlist")
@@ -443,16 +473,28 @@ public class Controller implements Initializable
                         {
                             currIdx=-1;
                         }
-                        goToNextSong();
+                        try {
+                            goToNextSong();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                         return;
                     }
                     if (isShuffleOn==false)
                     {
-                        goToNextSong();
+                        try {
+                            goToNextSong();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
                     else
                     {
-                        setRandomSong();
+                        try {
+                            setRandomSong();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
                 });
             });
@@ -468,8 +510,24 @@ public class Controller implements Initializable
         currSong.stop();
     }
 
+    public static void clearDirectory()
+    {
+        File file = new File(".\\src\\SongInfo");
+        String[] myFiles;
+        if (file.isDirectory())
+        {
+            myFiles = file.list();
+            for (int i = 0; i < myFiles.length; i++)
+            {
+                File myFile = new File(file, myFiles[i]);
+                myFile.delete();
+            }
+        }
+    }
+
     public void stopCurrSong()
     {
+        clearDirectory();
         mediaPlayer.stop();
         songPlaying=false;
         playPause.setGraphic(new ImageView(playButtonImage));
@@ -495,6 +553,7 @@ public class Controller implements Initializable
 
     protected static void closePlayer()
     {
+        clearDirectory();
         System.exit(0);
     }
 
