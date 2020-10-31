@@ -133,7 +133,7 @@
                            </image></ImageView>
                      </graphic>
                   </JFXButton>
-                  <Label fx:id="duration" alignment="BOTTOM_CENTER" prefHeight="52.0" prefWidth="117.0" style="-fx-background-color: rgb(0,0,0,0.6);" text="sj" textAlignment="CENTER" textFill="WHITE">
+                  <Label fx:id="duration" alignment="BOTTOM_CENTER" prefHeight="52.0" prefWidth="117.0" style="-fx-background-color: rgb(0,0,0,0.6);" textAlignment="CENTER" textFill="WHITE">
                      <HBox.margin>
                         <Insets top="20.0" />
                      </HBox.margin>
@@ -212,7 +212,7 @@
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <Label text="Song Metadata" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <ListView fx:id="History" layoutX="5.0" layoutY="3.0" onMouseClicked="#selectSong" prefHeight="157.0" prefWidth="242.0" />
                </children>
             </AnchorPane>
         </items>

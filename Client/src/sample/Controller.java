@@ -46,6 +46,7 @@ public class Controller implements Initializable
     public Label songName;
     public Label lyrics;
     public ListView<String> SongList;
+    public ListView<String> History;
 
     String repeatMode="None";
     int currIdx=-1;
@@ -59,7 +60,9 @@ public class Controller implements Initializable
     Thread currSong;
     HashMap<String,String> localSongMap;
     List<String> allSongs;
+    List<String> history=new ArrayList<>();
     TreeMap<Integer,String> lyricsMap;
+//    history=new ArrayList<>();
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
@@ -86,6 +89,8 @@ public class Controller implements Initializable
             mediaPlayer.pause();
         }
         MiddlePageController.currPlayList=null;
+        MiddlePageController.currHistory=null;
+
         Parent root1 = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
         Scene second=new Scene(root1);
         Main.window.setScene(second);
@@ -177,6 +182,7 @@ public class Controller implements Initializable
             {
                 name=extractSongName(path);
                 allSongs.add(name);
+                System.out.println("source="+name);
                 localSongMap.put(name,path);
             }
             isLocal=true;
@@ -264,7 +270,27 @@ public class Controller implements Initializable
         {
             source=getPathForLocalSong(source);
         }
-        setSongOnPlayer(source);
+
+
+//        history=MiddlePageController.currHistory;
+//        if(history==null)
+//        {
+//            history=
+//        }
+//        history=new ArrayList<>();
+        String name=extractSongName(source);
+//        System.out.println("name = "+extractSongName(source));
+//        setSongOnPlayer(name);
+        history.add(name);
+//        System.out.println("name = "+extractSongName(source));
+        ObservableList<String> observeHistory=FXCollections.observableArrayList(history);
+//        System.out.println("name = "+extractSongName(source));
+        //---
+        History.setItems(observeHistory);
+//        System.out.println("name = "+extractSongName(source));
+        History.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
+//        System.out.println("name = "+extractSongName(source));
+
     }
 
     public void uploadSong()
