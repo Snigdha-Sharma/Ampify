@@ -21,16 +21,19 @@ import java.util.Scanner;
  */
 public class MiddlePageController
 {
-//    public static List<String> currHistory=null;
+    public static List<String> currHistory=null;
     public JFXButton allSongsButton;
     public JFXButton localSongsButton;
     public JFXButton refreshLocalSongListButton;
     public static List<String> currPlayList=null;
     public static List<String> allUserList=null;
     public static List<String> localSongsPlaylist=null;
+    public static List<String> downloadedSongsPlaylist=null;
     public JFXButton playlistButton;
     public JFXButton groupButton;
+    public JFXButton downloadedSongsButton;
     public static List<String> history=new ArrayList<>();
+
     /**
      * @throws IOException get list of all songs
      */
@@ -43,6 +46,25 @@ public class MiddlePageController
         Parent root1 = FXMLLoader.load(getClass().getResource("sample.fxml"));
         Scene second=new Scene(root1);
         //window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        second.getStylesheets().add("resources/css/sample.css");
+        Main.window.setScene(second);
+        Main.window.setX(40);
+        Main.window.setY(25);
+        Main.window.show();
+    }
+
+    public void playDownloadedSongs() throws IOException
+    {
+        File directoryPath=new File(".\\src\\DownloadedSongs");
+        File songs[]=directoryPath.listFiles();
+        downloadedSongsPlaylist=new ArrayList<>();
+        for (File x:songs)
+        {
+            downloadedSongsPlaylist.add(String.valueOf(x));
+            System.out.println(x);
+        }
+        Parent root1 = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Scene second=new Scene(root1);
         second.getStylesheets().add("resources/css/sample.css");
         Main.window.setScene(second);
         Main.window.setX(40);
