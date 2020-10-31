@@ -11,16 +11,16 @@ public class HttpDownloadUtility
 {
     private static final int BUFFER_SIZE = 4096;
 
-    public static void downloadFile(String fileURL, String saveDir) throws IOException
+    public static String downloadFile(String fileURL, String saveDir) throws IOException
     {
         URL url = new URL(fileURL);
         HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
         int responseCode = httpConn.getResponseCode();
+        String fileName = "";
 
         // always check HTTP response code first
         if (responseCode == HttpURLConnection.HTTP_OK)
         {
-            String fileName = "";
             String disposition = httpConn.getHeaderField("Content-Disposition");
             String contentType = httpConn.getContentType();
             int contentLength = httpConn.getContentLength();
@@ -51,6 +51,7 @@ public class HttpDownloadUtility
             InputStream inputStream = httpConn.getInputStream();
             String saveFilePath = saveDir + File.separator + fileName;
 
+            System.out.println(saveFilePath);
             // opens an output stream to save into file
             FileOutputStream outputStream = new FileOutputStream(saveFilePath);
 
@@ -59,19 +60,6 @@ public class HttpDownloadUtility
             while ((bytesRead = inputStream.read(buffer)) != -1)
             {
                 outputStream.write(buffer, 0, bytesRead);
-            }
-
-            String key = "SPK CofnCode CnC";
-            File inputFile = new File(saveFilePath);
-            File encryptedFile = new File(saveDir + File.separator + "encrypted" + fileName);
-//            File decryptedFile = new File("document.decrypted");
-
-            try {
-                CryptoUtils.encrypt(key, inputFile, encryptedFile);
-//                CryptoUtils.decrypt(key, encryptedFile, decryptedFile);
-            } catch (CryptoException ex) {
-                System.out.println(ex.getMessage());
-                ex.printStackTrace();
             }
 
             outputStream.close();
@@ -84,6 +72,7 @@ public class HttpDownloadUtility
             System.out.println("No file to download. Server replied HTTP code: " + responseCode);
         }
         httpConn.disconnect();
+        return fileName;
     }
 
 }
