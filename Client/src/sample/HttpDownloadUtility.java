@@ -61,6 +61,8 @@ public class HttpDownloadUtility
                 outputStream.write(buffer, 0, bytesRead);
             }
 
+
+
             outputStream.close();
             inputStream.close();
 
