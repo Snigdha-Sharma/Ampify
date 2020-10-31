@@ -33,26 +33,34 @@ public class ServerPlaylistSet {
     }
 
     /**
+     * @param username for creating default playlists
+     * @param playlistName
+     */
+    ServerPlaylistSet(String username, String playlistName)
+    {
+        this.username=username;
+        this.playlistName=playlistName;
+    }
+
+    /**
      * @return if playlist creation was successful after adding data into database
      * @throws SQLException
      */
-    boolean isSuccess() throws SQLException
-    {
+    boolean isSuccess() throws SQLException {
         boolean created;
         Connectivity.ConnClass connectionClass = new ConnClass();
         Connection connection = connectionClass.getConnection();
         Statement statement;
 //--------------------------------------------Checking for duplicate name from table--------------------
 
-        String sql="SELECT * FROM playlistuser WHERE USERID = '"+username+"' AND PlaylistName = '"+playlistName+"'";
+        String sql = "SELECT * FROM playlistuser WHERE USERID = '" + username + "' AND PlaylistName = '" + playlistName + "'";
         statement = connection.createStatement();
-        ResultSet resultSet=statement.executeQuery(sql);
-        if (resultSet.next())
-        {
+        ResultSet resultSet = statement.executeQuery(sql);
+        if (resultSet.next()) {
             return false;
         }
 //--------------------------------------------creating new playlist in user-playlist table--------------------
-        sql = "INSERT INTO playlistuser(USERID, PlaylistName) VALUES ('"+username+"','"+playlistName+"')";
+        sql = "INSERT INTO playlistuser(USERID, PlaylistName) VALUES ('" + username + "','" + playlistName + "')";
         statement = connection.createStatement();
         try {
             statement.executeUpdate(sql);
@@ -62,6 +70,21 @@ public class ServerPlaylistSet {
             created = false;
             return created;
         }
+        if(playlistName.equals("Liked Songs") || playlistName.equals("Disliked Songs"))
+        {
+            InsertSongs();
+        }
+        return created;
+    }
+
+    public boolean InsertSongs() throws SQLException
+    {
+        boolean created=true;
+        Connectivity.ConnClass connectionClass = new ConnClass();
+        Connection connection = connectionClass.getConnection();
+        Statement statement;
+        String sql;
+        ResultSet resultSet;
 
 //        ------------------------------------Selecting playlist id---------------------------------------
         String playlistid="";
@@ -113,7 +136,6 @@ public class ServerPlaylistSet {
                 return created;
             }
         }
-
         return created;
     }
 }

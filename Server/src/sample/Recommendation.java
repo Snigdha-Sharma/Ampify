@@ -61,4 +61,26 @@ public class Recommendation {
         resultSet=statement.executeQuery(query);
         return resultSet;
     }
+
+    /**
+     * @return Recommendation by most likes and least dislikes
+     * @throws SQLException
+     */
+    public ResultSet byLikes() throws SQLException
+    {
+        String query="Select Name from Song SORT BY Likes DESC Dislikes ASC LIMIT 10";
+        resultSet=statement.executeQuery(query);
+        return resultSet;
+    }
+
+    /**
+     * @return Recommendation by no. of times played
+     * @throws SQLException
+     */
+    public ResultSet byMostPlayed() throws SQLException
+    {
+        String query="Select Name from Song SORT BY TimesPlayed DESC LIMIT 10";
+        resultSet=statement.executeQuery(query);
+        return resultSet;
+    }
 }
