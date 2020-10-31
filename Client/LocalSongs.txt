@@ -457,6 +457,7 @@ C:\Users\kshit\Desktop\softa final day\Ampify\Client\src\Songs\Offo.mp3
 C:\Users\kshit\Desktop\softa final day\Ampify\Client\src\Songs\playVideo.mp4
 C:\Users\kshit\Desktop\softa final day\Ampify\Client\src\DownloadedSongs\AdoreYou.mp3
 C:\Users\kshit\Desktop\softa final day\Ampify\Client\src\DownloadedSongs\BlindingLights.mp3
+C:\Users\kshit\Desktop\softa final day\Ampify\Client\src\DownloadedSongs\encryptedAdoreYou.mp3
 C:\Users\kshit\Desktop\softa final day\Ampify\Client\out\production\Ampify\Songs\0hVXuCcriWRGvwMV1r5Yn9.mp3
 C:\Users\kshit\Desktop\softa final day\Ampify\Client\out\production\Ampify\Songs\Bang Bang.mp3
 C:\Users\kshit\Desktop\softa final day\Ampify\Client\out\production\Ampify\Songs\Group theory and why I love 808,017,424,794,512,875,886,459,904,961,710,757,005,754,368,000,000,000.mp4
@@ -464,6 +465,7 @@ C:\Users\kshit\Desktop\softa final day\Ampify\Client\out\production\Ampify\Songs
 C:\Users\kshit\Desktop\softa final day\Ampify\Client\out\production\Ampify\Songs\playVideo.mp4
 C:\Users\kshit\Desktop\softa final day\Ampify\Client\out\production\Ampify\DownloadedSongs\AdoreYou.mp3
 C:\Users\kshit\Desktop\softa final day\Ampify\Client\out\production\Ampify\DownloadedSongs\BlindingLights.mp3
+C:\Users\kshit\Desktop\softa final day\Ampify\Client\out\production\Ampify\DownloadedSongs\encryptedAdoreYou.mp3
 C:\Users\kshit\Desktop\softa\Ampify\Server\src\Songs\AdoreYou.mp3
 C:\Users\kshit\Desktop\softa\Ampify\Server\src\Songs\BlindingLights.mp3
 C:\Users\kshit\Desktop\softa\Ampify\Server\out\production\AmpifyServer\Songs\AdoreYou.mp3
