@@ -11,75 +11,68 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane prefHeight="736.0" prefWidth="1090.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MiddlePageController">
+<StackPane prefHeight="650.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MiddlePageController">
    <children>
-      <ScrollPane>
-        <content>
-          <AnchorPane>
-               <children>
-                  <ImageView pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../Images/BgScene2.jpg" />
-                     </image>
-                  </ImageView>
-               </children>
-            </AnchorPane>
-        </content>
-      </ScrollPane>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
          <children>
-            <JFXButton fx:id="allSongsButton" buttonType="RAISED" onAction="#getAllSongs" ripplerFill="#7c0606" text="All Songs" textAlignment="CENTER" textFill="#970c0c">
+            <JFXButton fx:id="allSongsButton" buttonType="RAISED" onAction="#getAllSongs" ripplerFill="#7c0606" style="-fx-background-color: rgb(0,0,0,0.6);" text="All Songs" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font name="Comic Sans MS Bold" size="33.0" />
+                  <Font name="Agency FB Bold" size="38.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton fx:id="localSongsButton" buttonType="RAISED" onAction="#getLocalSongs" text="Local Songs" textAlignment="CENTER" textFill="#860e0e">
+            <Region prefHeight="28.0" prefWidth="900.0" />
+            <JFXButton fx:id="localSongsButton" buttonType="RAISED" onAction="#getLocalSongs" ripplerFill="#830c0c" style="-fx-background-color: rgb(0,0,0,0.6);" text="Local Songs" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font name="Comic Sans MS Bold" size="33.0" />
+                  <Font name="Agency FB Bold" size="38.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
                <effect>
-                  <Glow level="0.43">
-                     <input>
-                        <Shadow />
-                     </input>
-                  </Glow>
+                  <DropShadow />
                </effect>
-               <cursor>
-                  <Cursor fx:constant="OPEN_HAND" />
-               </cursor>
             </JFXButton>
-            <JFXButton fx:id="refreshLocalSongListButton" buttonType="RAISED" onAction="#refreshLocalSongList" text="Refresh Local Song List" textAlignment="CENTER" textFill="#831010">
+            <Region prefHeight="30.0" prefWidth="900.0" />
+            <JFXButton fx:id="refreshLocalSongListButton" buttonType="RAISED" onAction="#refreshLocalSongList" ripplerFill="#830c0c" style="-fx-background-color: rgb(0,0,0,0.6);" text="Refresh Local Song List" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font name="Comic Sans MS Bold" size="33.0" />
+                  <Font name="Agency FB Bold" size="38.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor>
-            </JFXButton>
-            <JFXButton fx:id="playlistButton" buttonType="RAISED" onAction="#createPlaylist" text="Create Playlist" textAlignment="CENTER" textFill="#750e0e">
-               <font>
-                  <Font name="Comic Sans MS Bold" size="33.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="OPEN_HAND" />
-               </cursor>
-            </JFXButton>
-            <JFXButton fx:id="groupButton" onAction="#makeUserGroup" text="Create User Group" textAlignment="CENTER" textFill="#750e0e">
-               <font>
-                  <Font name="Comic Sans MS Bold" size="33.0" />
-               </font>
                <effect>
-                  <ColorAdjust />
+                  <DropShadow />
                </effect>
+            </JFXButton>
+            <Region prefHeight="32.0" prefWidth="900.0" />
+            <JFXButton fx:id="playlistButton" buttonType="RAISED" onAction="#createPlaylist" ripplerFill="#830c0c" style="-fx-background-color: rgb(0,0,0,0.6);" text="Create Playlist" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Agency FB Bold" size="38.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="OPEN_HAND" />
+               </cursor>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </JFXButton>
+            <Region prefHeight="32.0" prefWidth="900.0" />
+            <JFXButton fx:id="groupButton" onAction="#makeUserGroup" ripplerFill="#830c0c" style="-fx-background-color: rgb(0,0,0,0.6);" text="Create User Group" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Agency FB Bold" size="38.0" />
+               </font>
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
                <cursor>
                   <Cursor fx:constant="OPEN_HAND" />
                </cursor>
+               <effect>
+                  <DropShadow />
+               </effect>
             </JFXButton>
          </children>
       </VBox>

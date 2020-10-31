@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.media.*?>
 <?import javafx.scene.text.*?>
@@ -11,7 +12,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.media.MediaView?>
 
-<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<BorderPane prefHeight="600.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <bottom>
       <VBox BorderPane.alignment="CENTER">
          <children>
@@ -20,7 +21,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </JFXSlider>
-            <HBox alignment="TOP_CENTER" VBox.vgrow="ALWAYS">
+            <HBox alignment="TOP_CENTER" prefHeight="0.0" prefWidth="1308.0" VBox.vgrow="ALWAYS">
                <children>
                   <JFXButton fx:id="shuffleButton" buttonType="RAISED" onAction="#shuffleSongs" text="" textAlignment="CENTER">
                      <graphic>
@@ -104,10 +105,13 @@
                   </JFXButton>
                   <JFXButton fx:id="uploadButton" buttonType="RAISED" onAction="#uploadSong" text="">
                      <graphic>
-                        <ImageView pickOnBounds="true" preserveRatio="true">
+                        <ImageView pickOnBounds="true">
                            <image>
                               <Image url="@../Images/Upload.jpg" />
                            </image>
+                           <cursor>
+                              <Cursor fx:constant="SE_RESIZE" />
+                           </cursor>
                         </ImageView>
                      </graphic>
                   </JFXButton>
@@ -128,6 +132,7 @@
                            </image></ImageView>
                      </graphic>
                   </JFXButton>
+                  <Region prefHeight="200.0" prefWidth="200.0" />
                   <Label fx:id="duration" alignment="BOTTOM_CENTER" textAlignment="CENTER" textFill="#1d1057">
                      <HBox.margin>
                         <Insets />
@@ -142,9 +147,9 @@
       </VBox>
    </bottom>
    <center>
-      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" BorderPane.alignment="CENTER">
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" BorderPane.alignment="CENTER">
          <children>
-            <MediaView fx:id="mv" cacheHint="SCALE" fitHeight="450" fitWidth="800" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="false" smooth="false" />
+            <MediaView fx:id="mv" cacheHint="SCALE" fitHeight="300.0" fitWidth="400.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="false" smooth="false" />
          </children>
          <padding>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
@@ -164,17 +169,20 @@
                <graphic>
                   <ImageView pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../Images/LogOff.jpg" />
+                        <Image url="@../Images/logoff.jpg" />
                      </image>
                   </ImageView>
                </graphic>
             </JFXButton>
-            <JFXButton fx:id="goBackButton" buttonType="RAISED" onAction="#goBackToMiddlePage" text="">
+            <JFXButton fx:id="goBackButton" buttonType="RAISED" onAction="#goBackToMiddlePage" style="-fx-background-color: transparent; -fx-border-width: 4;" text="" textFill="WHITE">
                <graphic>
                   <ImageView pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../Images/GoBack.jpg" />
                      </image>
+                     <effect>
+                        <DropShadow />
+                     </effect>
                   </ImageView>
                </graphic>
             </JFXButton>
@@ -184,7 +192,7 @@
    <left>
       <AnchorPane BorderPane.alignment="CENTER">
          <children>
-            <ListView fx:id="SongList" onMouseClicked="#selectSong" prefHeight="172.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <ListView fx:id="SongList" onMouseClicked="#selectSong" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
          </children>
          <BorderPane.margin>
             <Insets left="20.0" />
@@ -196,12 +204,12 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <Label prefHeight="220.0" prefWidth="198.0" text="Lyrics" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Label text="Lyrics" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
                <children>
-                  <Label prefHeight="220.0" prefWidth="198.0" text="Song Metadata" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <Label text="Song Metadata" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                </children>
             </AnchorPane>
         </items>

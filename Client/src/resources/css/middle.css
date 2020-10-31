@@ -1,0 +1,5 @@
+.root{
+    /*-fx-background-color: #2b2b99;*/
+    -fx-background-image: url('BgScene2.jpg');
+    -fx-background-size: cover;
+}

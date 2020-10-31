@@ -1,0 +1,7 @@
+.root{
+    /*-fx-background-color: #2b2b99;*/
+    -fx-background-image: url('sample.jpg');
+    -fx-background-size: cover;
+    -fx-background-opacity:0.3;
+    opacity: 0.3;
+}

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 30, 2020 at 09:37 PM
+-- Generation Time: Oct 31, 2020 at 04:18 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -86,6 +86,55 @@ INSERT INTO `genre` (`ID`, `Genre`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `groupadmin`
+--
+
+CREATE TABLE `groupadmin` (
+  `GroupID` int(11) NOT NULL,
+  `GroupName` varchar(30) NOT NULL,
+  `USERID` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `groupadmin`
+--
+
+INSERT INTO `groupadmin` (`GroupID`, `GroupName`, `USERID`) VALUES
+(1, 'Rns', 'snigdha'),
+(2, 'Rise up', 'snigdha');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `groupusers`
+--
+
+CREATE TABLE `groupusers` (
+  `GroupID` int(11) NOT NULL,
+  `Members` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `groupusers`
+--
+
+INSERT INTO `groupusers` (`GroupID`, `Members`) VALUES
+(1, 'divyasri'),
+(1, 'Purva@123'),
+(1, 'Purva@1234'),
+(1, 'saloni'),
+(1, 'Sni@13'),
+(1, 'snigdha'),
+(2, 'Ajeeb@13'),
+(2, 'Anon@123'),
+(2, 'Purva@1234'),
+(2, 'rishabh'),
+(2, 'saloni'),
+(2, 'snigdha');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `language`
 --
 
@@ -126,9 +175,11 @@ CREATE TABLE `login` (
 INSERT INTO `login` (`Uname`, `Passwd`) VALUES
 ('Abcd@13', 'AsStZPbFc2awOObb7FHBZeZrq3sMJ3VD+FrlQnzQTlg='),
 ('Afk@13', 'GZ7bNNbbf0ddNWVk+nVNfgmQJYAfr/g0tOybpiTu79M='),
+('Ajeeb@13', 'cug6fQa0efRLIDw2snwivx+gNk9qixOavslCl7GMmmA='),
 ('Anon@123', '4cB4+xog3Vps3FHxT70tszVWfYVb9Z0jZsBhbF5c6hc='),
 ('divyasri', 'ESSpZsvTADsA1BifvkobtcQuCAre6SDYIQCcZOtAo7Y='),
 ('Hello@3', 'uX/8i1UqB8D0JQXeT2Dz6g1il6SkGRr7m78W1AmbYOU='),
+('HEYAa!@12', 'xoZ71k61bIfpsHqPwqla7WJfBC4h9vIS4SMJJwjECGc='),
 ('Ksh12@', '/A4V3QIkObJduVHhAqD2mTOXVD9RfNuQG/e9rWhvZeM='),
 ('Purva@123', 'EBLwN4oc7RBGwI8dl0/TMQ1sfCW00NxC3XqbrPNXEdA='),
 ('Purva@1234', 'uXcyhDs29cEz/Iti8h5GztMkjB+lhYd7h2YsUH/c8F0='),
@@ -487,6 +538,21 @@ ALTER TABLE `genre`
   ADD PRIMARY KEY (`ID`);
 
 --
+-- Indexes for table `groupadmin`
+--
+ALTER TABLE `groupadmin`
+  ADD PRIMARY KEY (`GroupID`),
+  ADD KEY `USERID` (`USERID`);
+
+--
+-- Indexes for table `groupusers`
+--
+ALTER TABLE `groupusers`
+  ADD PRIMARY KEY (`GroupID`,`Members`),
+  ADD KEY `Members` (`Members`),
+  ADD KEY `GroupID` (`GroupID`);
+
+--
 -- Indexes for table `language`
 --
 ALTER TABLE `language`
@@ -599,6 +665,12 @@ ALTER TABLE `genre`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
+-- AUTO_INCREMENT for table `groupadmin`
+--
+ALTER TABLE `groupadmin`
+  MODIFY `GroupID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `language`
 --
 ALTER TABLE `language`
@@ -619,6 +691,19 @@ ALTER TABLE `song`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `groupadmin`
+--
+ALTER TABLE `groupadmin`
+  ADD CONSTRAINT `groupadmin_ibfk_1` FOREIGN KEY (`USERID`) REFERENCES `login` (`Uname`);
+
+--
+-- Constraints for table `groupusers`
+--
+ALTER TABLE `groupusers`
+  ADD CONSTRAINT `groupusers_ibfk_1` FOREIGN KEY (`GroupID`) REFERENCES `groupadmin` (`GroupID`),
+  ADD CONSTRAINT `groupusers_ibfk_2` FOREIGN KEY (`Members`) REFERENCES `login` (`Uname`);
 
 --
 -- Constraints for table `playlistsong`
