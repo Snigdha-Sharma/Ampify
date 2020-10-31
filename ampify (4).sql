@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 29, 2020 at 07:41 PM
+-- Generation Time: Oct 30, 2020 at 09:37 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -124,38 +124,85 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`Uname`, `Passwd`) VALUES
+('Abcd@13', 'AsStZPbFc2awOObb7FHBZeZrq3sMJ3VD+FrlQnzQTlg='),
 ('Afk@13', 'GZ7bNNbbf0ddNWVk+nVNfgmQJYAfr/g0tOybpiTu79M='),
 ('Anon@123', '4cB4+xog3Vps3FHxT70tszVWfYVb9Z0jZsBhbF5c6hc='),
 ('divyasri', 'ESSpZsvTADsA1BifvkobtcQuCAre6SDYIQCcZOtAo7Y='),
+('Hello@3', 'uX/8i1UqB8D0JQXeT2Dz6g1il6SkGRr7m78W1AmbYOU='),
 ('Ksh12@', '/A4V3QIkObJduVHhAqD2mTOXVD9RfNuQG/e9rWhvZeM='),
 ('Purva@123', 'EBLwN4oc7RBGwI8dl0/TMQ1sfCW00NxC3XqbrPNXEdA='),
 ('Purva@1234', 'uXcyhDs29cEz/Iti8h5GztMkjB+lhYd7h2YsUH/c8F0='),
 ('rishabh', 'VTNGyc+ZtL7fQjsuzE/p9eg40CdlrrlbX4r6kL8wmaM='),
 ('saloni', 'zE8wdBA5XZ+jqX5PwqdoMh9gHSVqEGVsiJs+pOpXQEw='),
+('Sni@13', 'AsStZPbFc2awOObb7FHBZeZrq3sMJ3VD+FrlQnzQTlg='),
 ('snigdha', 'vXOAs9vj76icfhaiR28vgFitrofIxC/LhE4jrHekzA0='),
 ('uhU@123', 'WDZl5z82qfkbInrmPbzO3Kjx/X5gF7g0QJ8B+fjXzG0=');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `playlist-song`
+-- Table structure for table `playlistsong`
 --
 
-CREATE TABLE `playlist-song` (
+CREATE TABLE `playlistsong` (
   `PlaylistID` int(11) NOT NULL,
   `SongID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `playlistsong`
+--
+
+INSERT INTO `playlistsong` (`PlaylistID`, `SongID`) VALUES
+(3, 2),
+(3, 3),
+(3, 4),
+(3, 6),
+(3, 7),
+(5, 2),
+(5, 3),
+(5, 4),
+(7, 21),
+(8, 20),
+(9, 19),
+(11, 16),
+(11, 17),
+(11, 18),
+(11, 19),
+(11, 20),
+(11, 21),
+(13, 1),
+(14, 2);
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `playlist-user`
+-- Table structure for table `playlistuser`
 --
 
-CREATE TABLE `playlist-user` (
+CREATE TABLE `playlistuser` (
   `USERID` varchar(20) NOT NULL,
-  `PlaylistID` int(11) NOT NULL
+  `PlaylistID` int(11) NOT NULL,
+  `PlaylistName` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `playlistuser`
+--
+
+INSERT INTO `playlistuser` (`USERID`, `PlaylistID`, `PlaylistName`) VALUES
+('snigdha', 1, 'Hellothere'),
+('snigdha', 3, 'hym'),
+('snigdha', 5, '1122'),
+('snigdha', 6, 'waak'),
+('snigdha', 7, '78j'),
+('snigdha', 8, '97h'),
+('snigdha', 9, ''),
+('snigdha', 10, '6677hh'),
+('snigdha', 11, '3566'),
+('snigdha', 12, '46'),
+('snigdha', 13, 'abcd'),
+('snigdha', 14, 'fv');
 
 -- --------------------------------------------------------
 
@@ -180,7 +227,7 @@ CREATE TABLE `song` (
 --
 
 INSERT INTO `song` (`SongId`, `Name`, `Path`, `Lyrics`, `PublishYear`, `DateAdded`, `Likes`, `Dislikes`, `TimesPlayed`) VALUES
-(1, 'I Don\'t Care', '..\\Songs\\IDon\'tCare.mp3', '..\\Songs\\IDon\'tCare.srt', 2019, '2020-10-16', 0, 0, 0),
+(1, 'I Dont Care', '..\\Songs\\IDon\'tCare.mp3', '..\\Songs\\IDon\'tCare.srt', 2019, '2020-10-16', 0, 0, 0),
 (2, 'Blinding Lights', '..\\Songs\\BlindingLights.mp3', '..\\Songs\\BlindingLights.srt', 2019, '2020-10-16', 0, 0, 0),
 (3, 'Sunflower', '..\\Songs\\Sunflower.mp3', '..\\Songs\\Sunflower.srt', 2019, '2020-10-16', 0, 0, 0),
 (4, 'Adore You', '..\\Songs\\AdoreYou.mp3', '..\\Songs\\AdoreYou.srt', 2019, '2020-10-18', 0, 0, 0),
@@ -317,19 +364,6 @@ INSERT INTO `songlang` (`SongID`, `LangID`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user-song`
---
-
-CREATE TABLE `user-song` (
-  `USERID` varchar(20) NOT NULL,
-  `SongID` int(11) NOT NULL,
-  `Liked` tinyint(1) NOT NULL,
-  `TimesPlayed` int(11) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `userartist`
 --
 
@@ -343,12 +377,16 @@ CREATE TABLE `userartist` (
 --
 
 INSERT INTO `userartist` (`USERID`, `Artist`) VALUES
+('Hello@3', 1),
+('Hello@3', 5),
+('Hello@3', 10),
 ('Ksh12@', 1),
 ('Ksh12@', 3),
 ('Ksh12@', 5),
 ('Ksh12@', 6),
 ('Ksh12@', 7),
-('Ksh12@', 8);
+('Ksh12@', 8),
+('Sni@13', 4);
 
 -- --------------------------------------------------------
 
@@ -370,8 +408,10 @@ CREATE TABLE `userdata` (
 --
 
 INSERT INTO `userdata` (`USERID`, `Name`, `PhoneNo`, `Dob`, `Email`, `State`) VALUES
+('Hello@3', 'kjbfekjw', '9988732414', '2003-10-31 00:00:00.000000', 'gnm@hjn.com', 'North-Eastern States'),
 ('Ksh12@', 'Kshitij', '9263046669', '2000-02-04 00:00:00.000000', 'kshtj09@gmail.com', 'Madhya Pradesh'),
 ('Purva@1234', 'Purva Gautam', '7987318738', '2001-01-15 00:00:00.000000', 'gautam.purva@gmail.com', 'Madhya Pradesh'),
+('Sni@13', 'gj', '9888999878', '2003-10-23 00:00:00.000000', 'fbg@ab.com', 'Uttarakhand'),
 ('uhU@123', 'Hello', '8978939890', '1999-10-08 00:00:00.000000', 'mdsnkj@manksh.com', 'Karnataka');
 
 -- --------------------------------------------------------
@@ -384,6 +424,14 @@ CREATE TABLE `usergenre` (
   `USERID` varchar(20) NOT NULL,
   `Genre` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `usergenre`
+--
+
+INSERT INTO `usergenre` (`USERID`, `Genre`) VALUES
+('Hello@3', 5),
+('Sni@13', 5);
 
 -- --------------------------------------------------------
 
@@ -401,10 +449,26 @@ CREATE TABLE `userlang` (
 --
 
 INSERT INTO `userlang` (`USERID`, `Language`) VALUES
+('Hello@3', 7),
+('Hello@3', 8),
 ('Ksh12@', 1),
 ('Ksh12@', 2),
 ('Ksh12@', 3),
-('Ksh12@', 10);
+('Ksh12@', 10),
+('Sni@13', 9);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `usersong`
+--
+
+CREATE TABLE `usersong` (
+  `USERID` varchar(20) NOT NULL,
+  `SongID` int(11) NOT NULL,
+  `Liked` tinyint(1) NOT NULL,
+  `TimesPlayed` int(11) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
@@ -435,17 +499,17 @@ ALTER TABLE `login`
   ADD PRIMARY KEY (`Uname`);
 
 --
--- Indexes for table `playlist-song`
+-- Indexes for table `playlistsong`
 --
-ALTER TABLE `playlist-song`
+ALTER TABLE `playlistsong`
   ADD PRIMARY KEY (`PlaylistID`,`SongID`),
   ADD KEY `SongID` (`SongID`),
   ADD KEY `PlaylistID` (`PlaylistID`);
 
 --
--- Indexes for table `playlist-user`
+-- Indexes for table `playlistuser`
 --
-ALTER TABLE `playlist-user`
+ALTER TABLE `playlistuser`
   ADD PRIMARY KEY (`PlaylistID`),
   ADD KEY `USERID` (`USERID`);
 
@@ -480,14 +544,6 @@ ALTER TABLE `songlang`
   ADD KEY `SongID` (`SongID`) USING BTREE;
 
 --
--- Indexes for table `user-song`
---
-ALTER TABLE `user-song`
-  ADD PRIMARY KEY (`USERID`,`SongID`),
-  ADD KEY `SongID` (`SongID`),
-  ADD KEY `USERID` (`USERID`);
-
---
 -- Indexes for table `userartist`
 --
 ALTER TABLE `userartist`
@@ -519,6 +575,14 @@ ALTER TABLE `userlang`
   ADD KEY `Language` (`Language`);
 
 --
+-- Indexes for table `usersong`
+--
+ALTER TABLE `usersong`
+  ADD PRIMARY KEY (`USERID`,`SongID`),
+  ADD KEY `SongID` (`SongID`),
+  ADD KEY `USERID` (`USERID`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -541,10 +605,10 @@ ALTER TABLE `language`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `playlist-user`
+-- AUTO_INCREMENT for table `playlistuser`
 --
-ALTER TABLE `playlist-user`
-  MODIFY `PlaylistID` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `playlistuser`
+  MODIFY `PlaylistID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `song`
@@ -557,17 +621,17 @@ ALTER TABLE `song`
 --
 
 --
--- Constraints for table `playlist-song`
+-- Constraints for table `playlistsong`
 --
-ALTER TABLE `playlist-song`
-  ADD CONSTRAINT `playlist-song_ibfk_1` FOREIGN KEY (`SongID`) REFERENCES `song` (`SongId`),
-  ADD CONSTRAINT `playlist-song_ibfk_2` FOREIGN KEY (`PlaylistID`) REFERENCES `playlist-user` (`PlaylistID`);
+ALTER TABLE `playlistsong`
+  ADD CONSTRAINT `playlistsong_ibfk_1` FOREIGN KEY (`SongID`) REFERENCES `song` (`SongId`),
+  ADD CONSTRAINT `playlistsong_ibfk_2` FOREIGN KEY (`PlaylistID`) REFERENCES `playlistuser` (`PlaylistID`);
 
 --
--- Constraints for table `playlist-user`
+-- Constraints for table `playlistuser`
 --
-ALTER TABLE `playlist-user`
-  ADD CONSTRAINT `playlist-user_ibfk_1` FOREIGN KEY (`USERID`) REFERENCES `login` (`Uname`);
+ALTER TABLE `playlistuser`
+  ADD CONSTRAINT `playlistuser_ibfk_1` FOREIGN KEY (`USERID`) REFERENCES `login` (`Uname`);
 
 --
 -- Constraints for table `songartist`
@@ -591,13 +655,6 @@ ALTER TABLE `songlang`
   ADD CONSTRAINT `songlang_ibfk_1` FOREIGN KEY (`SongID`) REFERENCES `song` (`SongId`),
   ADD CONSTRAINT `songlang_ibfk_2` FOREIGN KEY (`LangID`) REFERENCES `language` (`ID`),
   ADD CONSTRAINT `songlang_ibfk_3` FOREIGN KEY (`SongID`) REFERENCES `song` (`SongId`);
-
---
--- Constraints for table `user-song`
---
-ALTER TABLE `user-song`
-  ADD CONSTRAINT `user-song_ibfk_1` FOREIGN KEY (`SongID`) REFERENCES `song` (`SongId`),
-  ADD CONSTRAINT `user-song_ibfk_2` FOREIGN KEY (`USERID`) REFERENCES `login` (`Uname`);
 
 --
 -- Constraints for table `userartist`
@@ -627,6 +684,13 @@ ALTER TABLE `usergenre`
 ALTER TABLE `userlang`
   ADD CONSTRAINT `userlang_ibfk_1` FOREIGN KEY (`USERID`) REFERENCES `login` (`Uname`),
   ADD CONSTRAINT `userlang_ibfk_2` FOREIGN KEY (`Language`) REFERENCES `language` (`ID`);
+
+--
+-- Constraints for table `usersong`
+--
+ALTER TABLE `usersong`
+  ADD CONSTRAINT `usersong_ibfk_1` FOREIGN KEY (`SongID`) REFERENCES `song` (`SongId`),
+  ADD CONSTRAINT `usersong_ibfk_2` FOREIGN KEY (`USERID`) REFERENCES `login` (`Uname`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

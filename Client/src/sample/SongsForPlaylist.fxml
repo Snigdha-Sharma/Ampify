@@ -45,7 +45,7 @@
                      </font>
                   </Label>
                   <CheckListView fx:id="allSongsList" minWidth="400.0" />
-                  <Label fx:id="warning" />
+                  <Label fx:id="warn" />
                   <JFXButton fx:id="doneButton" buttonType="RAISED" onAction="#makePlaylist" text="All Done!" textAlignment="CENTER" textFill="#e8c7c7" wrapText="true">
                      <padding>
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
