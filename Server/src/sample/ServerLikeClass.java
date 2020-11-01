@@ -231,19 +231,6 @@ public class ServerLikeClass {
             }
         }
 //--------------------------------------------------------------------------------------------------------
-//        String playedsong="";
-//        sql = "SELECT TimesPlayed FROM song WHERE Name='"+sname+"'";
-//        statement = connection.createStatement();
-//        try {
-//            resultSet = statement.executeQuery(sql);
-//            if(resultSet.next()){
-//                playedsong = resultSet.getString(1);
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//
-//        int playsong=Integer.parseInt(played);
 
         String dislikessong="";
         sql = "SELECT Dislikes FROM song WHERE Name='"+sname+"'";
@@ -296,5 +283,55 @@ public class ServerLikeClass {
                 e.printStackTrace();
             }
         }
+    }
+
+    public void TimesPLayedIncr() throws SQLException
+    {
+        String played="";
+        sql = "SELECT TimesPlayed FROM song WHERE Name='"+sname+"'";
+        statement = connection.createStatement();
+        try {
+            resultSet = statement.executeQuery(sql);
+            if(resultSet.next()){
+                played = resultSet.getString(1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        int playsong=Integer.parseInt(played);
+        playsong+=1;
+
+        sql = "UPDATE song SET TimesPLayed='"+playsong+"' WHERE Name ='"+sname+"'";
+        statement = connection.createStatement();
+        try {
+            statement.executeUpdate(sql);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        played="";
+        sql = "SELECT TimesPlayed FROM usersong WHERE USERID='"+uname+"'";
+        statement = connection.createStatement();
+        try {
+            resultSet = statement.executeQuery(sql);
+            if(resultSet.next()){
+                played = resultSet.getString(1);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        playsong=Integer.parseInt(played);
+        playsong+=1;
+
+        sql = "UPDATE song SET TimesPLayed='"+playsong+"' WHERE USERID='"+uname+"'";
+        statement = connection.createStatement();
+        try {
+            statement.executeUpdate(sql);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 }
