@@ -286,11 +286,15 @@ public class Controller implements Initializable
         s=downloadedSongMap.get(s);
         s=new File(s).toURI().toString();
         System.out.println("Pathfds:"+s);
+
+        int i=s.indexOf('.');
+        String str = s.substring(i);
+
         String key = "SPK CofnCode CnC";
-        File inputFile = new File(s);
-        File decryptedFile = new File(s);
+        File inputFile = new File(str);
+        File decryptedFile = new File(str);
         CryptoUtils.decrypt(key,inputFile,decryptedFile);
-        System.out.println("Downloaded path:"+s);
+        System.out.println("Downloaded path:"+str);
         return s;
     }
 
