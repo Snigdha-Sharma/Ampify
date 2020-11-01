@@ -255,6 +255,13 @@ class ClientHandler extends Thread
                     slk.likeStore();
                     return;
 
+                case "Dislike":
+                    String user11, songn11;
+                    user11=dis.readUTF();
+                    songn11= dis.readUTF();
+                    ServerLikeClass slk1 = new ServerLikeClass(user11, songn11);
+
+
                 case "UserRequest":
                     String username, name, phn, email, dob, state;
                     String pop1, rap1, classical1, metal1, contemp1, folk1, romantic1, hiphop1, brostep1, band1, rock1;
