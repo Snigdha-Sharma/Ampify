@@ -1,8 +1,6 @@
 package sample;
 
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.List;
 
 public class LatestSongsRequest extends Request
@@ -18,7 +16,19 @@ public class LatestSongsRequest extends Request
     @Override
     public void myRequest() throws IOException
     {
-
+        dos.writeUTF("RecentlyAdded");
+        InputStream is=s.getInputStream();
+        ObjectInputStream ois=new ObjectInputStream(is);
+        try
+        {
+            ls= (List<String>) ois.readObject();
+        }
+        catch (ClassNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+        dis.close();
+        dos.close();
     }
 
     public List<String> getLatestSongs()
