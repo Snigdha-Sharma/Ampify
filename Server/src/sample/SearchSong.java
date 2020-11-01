@@ -51,7 +51,7 @@ public class SearchSong {
             e.printStackTrace();
         }
 
-        String query="Select Name from Song WHERE SongId = (SELECT SongID FROM songartist WHERE ArtistID = '"+artistID+"')";
+        String query="Select Name from Song INNER JOIN songartist ON Song.SongId=songartist.SongID WHERE ArtistID = '"+artistID+"'";
         resultSet=statement.executeQuery(query);
         return resultSet;
     }
@@ -75,7 +75,7 @@ public class SearchSong {
             e.printStackTrace();
         }
 
-        String query="Select Name from Song WHERE SongId = (SELECT SongID FROM songgenre WHERE GenreID = '"+genreID+"')";
+        String query="Select Name from Song INNER JOIN songgenre ON Song.SongId=songgenre.SongID WHERE GenreID = '"+genreID+"'";
         resultSet=statement.executeQuery(query);
         return resultSet;
     }
@@ -99,7 +99,7 @@ public class SearchSong {
             e.printStackTrace();
         }
 
-        String query="Select Name from Song WHERE SongId = (SELECT SongID FROM songlang WHERE LangID = '"+langID+"')";
+        String query="Select Name from Song INNER JOIN songlang ON Song.SongId=songlang.SongID WHERE langID = '"+langID+"'";
         resultSet=statement.executeQuery(query);
         return resultSet;
     }

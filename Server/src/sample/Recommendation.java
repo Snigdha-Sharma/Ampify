@@ -35,7 +35,7 @@ public class Recommendation {
      */
     public ResultSet byArtist() throws SQLException
     {
-        String query="Select Name from Song WHERE SongId = (SELECT SongID FROM songartist WHERE ArtistID = (SELECT ArtistID from userartist where UserID = '"+username+"'))";
+        String query="Select Name from Song WHERE SongId IN (SELECT SongID FROM songartist WHERE ArtistID IN (SELECT ArtistID from userartist where UserID = '"+username+"'))";
         resultSet=statement.executeQuery(query);
         return resultSet;
     }
@@ -46,7 +46,7 @@ public class Recommendation {
      */
     public ResultSet byGenre() throws SQLException
     {
-        String query="Select Name from Song WHERE SongId = (SELECT SongID FROM songgenre WHERE GenreID = (SELECT ArtistID from usergenre where UserID = '"+username+"'))";
+        String query="Select Name from Song WHERE SongId IN (SELECT SongID FROM songgenre WHERE GenreID IN (SELECT ArtistID from usergenre where UserID = '"+username+"'))";
         resultSet=statement.executeQuery(query);
         return resultSet;
     }
@@ -57,7 +57,8 @@ public class Recommendation {
      */
     public ResultSet byLanguage() throws SQLException
     {
-        String query="Select Name from Song WHERE SongId = (SELECT SongID FROM songlang WHERE LangID = (SELECT LangID from userlang where UserID = '"+username+"'))";
+        String query="Select Name from Song WHERE SongId IN (SELECT SongID FROM songlang WHERE LangID IN (SELECT LangID from userlang where UserID = '"+username+"'))";
+//        String query = "Select Name from Song INNER JOIN songlan on Song.SongId=songlan"
         resultSet=statement.executeQuery(query);
         return resultSet;
     }

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 31, 2020 at 07:53 PM
+-- Generation Time: Nov 01, 2020 at 02:03 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.6
 
@@ -105,6 +105,29 @@ INSERT INTO `groupadmin` (`GroupID`, `GroupName`, `USERID`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `groupplaylist`
+--
+
+CREATE TABLE `groupplaylist` (
+  `GroupID` int(11) NOT NULL,
+  `PlaylistID` int(11) NOT NULL,
+  `PlaylistName` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `groupsongs`
+--
+
+CREATE TABLE `groupsongs` (
+  `PlaylistID` int(11) NOT NULL,
+  `SongID` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `groupusers`
 --
 
@@ -157,30 +180,31 @@ INSERT INTO `language` (`ID`, `Language`) VALUES
 
 CREATE TABLE `login` (
   `Uname` varchar(20) NOT NULL,
-  `Passwd` varchar(100) NOT NULL
+  `Passwd` varchar(100) NOT NULL,
+  `Active` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `login`
 --
 
-INSERT INTO `login` (`Uname`, `Passwd`) VALUES
-('Abcd@13', 'AsStZPbFc2awOObb7FHBZeZrq3sMJ3VD+FrlQnzQTlg='),
-('Afk@13', 'GZ7bNNbbf0ddNWVk+nVNfgmQJYAfr/g0tOybpiTu79M='),
-('Ajeeb@13', 'cug6fQa0efRLIDw2snwivx+gNk9qixOavslCl7GMmmA='),
-('Anon@123', '4cB4+xog3Vps3FHxT70tszVWfYVb9Z0jZsBhbF5c6hc='),
-('divyasri', 'ESSpZsvTADsA1BifvkobtcQuCAre6SDYIQCcZOtAo7Y='),
-('Hello@3', 'uX/8i1UqB8D0JQXeT2Dz6g1il6SkGRr7m78W1AmbYOU='),
-('HEYAa!@12', 'xoZ71k61bIfpsHqPwqla7WJfBC4h9vIS4SMJJwjECGc='),
-('Ksh12@', '/A4V3QIkObJduVHhAqD2mTOXVD9RfNuQG/e9rWhvZeM='),
-('Purva15', 'n8Tqm9ALuZFJ84Dd4lQqIu3V+xpKkohTX0HTcN1WXBg='),
-('Purva@123', 'EBLwN4oc7RBGwI8dl0/TMQ1sfCW00NxC3XqbrPNXEdA='),
-('Purva@1234', 'uXcyhDs29cEz/Iti8h5GztMkjB+lhYd7h2YsUH/c8F0='),
-('rishabh', 'VTNGyc+ZtL7fQjsuzE/p9eg40CdlrrlbX4r6kL8wmaM='),
-('saloni', 'zE8wdBA5XZ+jqX5PwqdoMh9gHSVqEGVsiJs+pOpXQEw='),
-('Sni@13', 'AsStZPbFc2awOObb7FHBZeZrq3sMJ3VD+FrlQnzQTlg='),
-('snigdha', 'vXOAs9vj76icfhaiR28vgFitrofIxC/LhE4jrHekzA0='),
-('uhU@123', 'WDZl5z82qfkbInrmPbzO3Kjx/X5gF7g0QJ8B+fjXzG0=');
+INSERT INTO `login` (`Uname`, `Passwd`, `Active`) VALUES
+('Abcd@13', 'AsStZPbFc2awOObb7FHBZeZrq3sMJ3VD+FrlQnzQTlg=', 0),
+('Afk@13', 'GZ7bNNbbf0ddNWVk+nVNfgmQJYAfr/g0tOybpiTu79M=', 0),
+('Ajeeb@13', 'cug6fQa0efRLIDw2snwivx+gNk9qixOavslCl7GMmmA=', 0),
+('Anon@123', '4cB4+xog3Vps3FHxT70tszVWfYVb9Z0jZsBhbF5c6hc=', 0),
+('divyasri', 'ESSpZsvTADsA1BifvkobtcQuCAre6SDYIQCcZOtAo7Y=', 0),
+('Hello@3', 'uX/8i1UqB8D0JQXeT2Dz6g1il6SkGRr7m78W1AmbYOU=', 0),
+('HEYAa!@12', 'xoZ71k61bIfpsHqPwqla7WJfBC4h9vIS4SMJJwjECGc=', 0),
+('Ksh12@', '/A4V3QIkObJduVHhAqD2mTOXVD9RfNuQG/e9rWhvZeM=', 0),
+('Purva15', 'n8Tqm9ALuZFJ84Dd4lQqIu3V+xpKkohTX0HTcN1WXBg=', 0),
+('Purva@123', 'EBLwN4oc7RBGwI8dl0/TMQ1sfCW00NxC3XqbrPNXEdA=', 0),
+('Purva@1234', 'uXcyhDs29cEz/Iti8h5GztMkjB+lhYd7h2YsUH/c8F0=', 0),
+('rishabh', 'VTNGyc+ZtL7fQjsuzE/p9eg40CdlrrlbX4r6kL8wmaM=', 0),
+('saloni', 'zE8wdBA5XZ+jqX5PwqdoMh9gHSVqEGVsiJs+pOpXQEw=', 0),
+('Sni@13', 'AsStZPbFc2awOObb7FHBZeZrq3sMJ3VD+FrlQnzQTlg=', 0),
+('snigdha', 'vXOAs9vj76icfhaiR28vgFitrofIxC/LhE4jrHekzA0=', 1),
+('uhU@123', 'WDZl5z82qfkbInrmPbzO3Kjx/X5gF7g0QJ8B+fjXzG0=', 0);
 
 -- --------------------------------------------------------
 
@@ -559,6 +583,21 @@ ALTER TABLE `groupadmin`
   ADD KEY `USERID` (`USERID`);
 
 --
+-- Indexes for table `groupplaylist`
+--
+ALTER TABLE `groupplaylist`
+  ADD PRIMARY KEY (`PlaylistID`),
+  ADD KEY `GroupID` (`GroupID`);
+
+--
+-- Indexes for table `groupsongs`
+--
+ALTER TABLE `groupsongs`
+  ADD PRIMARY KEY (`PlaylistID`,`SongID`),
+  ADD KEY `PlaylistID` (`PlaylistID`),
+  ADD KEY `SongID` (`SongID`);
+
+--
 -- Indexes for table `groupusers`
 --
 ALTER TABLE `groupusers`
@@ -683,6 +722,12 @@ ALTER TABLE `genre`
 --
 ALTER TABLE `groupadmin`
   MODIFY `GroupID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `groupplaylist`
+--
+ALTER TABLE `groupplaylist`
+  MODIFY `PlaylistID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `language`
