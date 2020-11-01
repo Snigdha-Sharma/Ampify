@@ -4,10 +4,12 @@ import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -285,8 +287,11 @@ public class LoginControl implements Initializable
 
         window.setScene(second);
 
-        Main.window.setX(40);
-        Main.window.setY(25);
+        Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
+        double x = bounds.getMinX() + (bounds.getWidth() - second.getWidth()) * 0.3;
+        double y = bounds.getMinY() + (bounds.getHeight() - second.getHeight()) * 0.7;
+        Main.window.setX(x);
+        Main.window.setY(y);
         window.setOnCloseRequest(e-> {
             try {
                 closePlayer();
