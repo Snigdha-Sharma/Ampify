@@ -282,6 +282,7 @@ public class LoginControl implements Initializable
         Scene second=new Scene(root1);
         window = (Stage)((Node)event.getSource()).getScene().getWindow();
         second.getStylesheets().add("resources/css/middle.css");
+
         window.setScene(second);
 
         Main.window.setX(40);
