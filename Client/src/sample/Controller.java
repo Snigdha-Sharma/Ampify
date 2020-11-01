@@ -60,7 +60,7 @@ public class Controller implements Initializable
     public Media media;
     public MediaPlayer mediaPlayer;
     Image playButtonImage,pauseButtonImage,muteButtonImage,unmuteButtonImage,shuffleButtonOn,shuffleButtonOff,repeatSongImage,repeatPlaylistImage,repeatOffImage;
-    boolean songPlaying=false,isLocal=false,isShuffleOn=false,isDownloaded=false;
+    boolean songPlaying=false,isLocal=false,isShuffleOn=false,isDownloaded=false,isLatest=false,isAllSongs=false,isCustom=false;
     Thread currSong;
     HashMap<String,String> localSongMap,downloadedSongMap;
     List<String> allSongs;
@@ -98,6 +98,7 @@ public class Controller implements Initializable
         MiddlePageController.currPlayList=null;
         MiddlePageController.downloadedSongsPlaylist=null;
         MiddlePageController.localSongsPlaylist=null;
+        MiddlePageController.latestSongsPlaylist=null;
         Parent root1 = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
         Scene second=new Scene(root1);
         Main.window.setScene(second);
@@ -194,37 +195,46 @@ public class Controller implements Initializable
 
     public void createCurrSongList()
     {
-        allSongs=MiddlePageController.currPlayList;
-        if (allSongs==null)
+        if (MiddlePageController.currPlayList!=null)
         {
-            if (MiddlePageController.localSongsPlaylist==null)
+            allSongs=MiddlePageController.currPlayList;
+            isAllSongs=true;
+        }
+        else if (MiddlePageController.downloadedSongsPlaylist!=null)
+        {
+            allSongs=new ArrayList<>();
+            downloadedSongMap=new HashMap<>();
+            String name=null;
+            for (String path:MiddlePageController.downloadedSongsPlaylist)
             {
-                allSongs=new ArrayList<>();
-                localSongMap=new HashMap<>();
-                downloadedSongMap=new HashMap<>();
-                String name=null;
-                //System.out.println(MiddlePageController.downloadedSongsPlaylist.size());
-                for (String path:MiddlePageController.downloadedSongsPlaylist)
-                {
-                    name=extractSongName(path);
-                    allSongs.add(name);
-                    downloadedSongMap.put(name,path);
-                }
-                isDownloaded=true;
+                name=extractSongName(path);
+                allSongs.add(name);
+                downloadedSongMap.put(name,path);
             }
-            else
+            isDownloaded=true;
+        }
+        else if (MiddlePageController.localSongsPlaylist!=null)
+        {
+            allSongs=new ArrayList<>();
+            localSongMap=new HashMap<>();
+            String name=null;
+            for (String path:MiddlePageController.localSongsPlaylist)
             {
-                allSongs=new ArrayList<>();
-                localSongMap=new HashMap<>();
-                String name=null;
-                for (String path:MiddlePageController.localSongsPlaylist)
-                {
-                    name=extractSongName(path);
-                    allSongs.add(name);
-                    localSongMap.put(name,path);
-                }
-                isLocal=true;
+                name=extractSongName(path);
+                allSongs.add(name);
+                localSongMap.put(name,path);
             }
+            isLocal=true;
+        }
+        else if (MiddlePageController.latestSongsPlaylist!=null)
+        {
+            allSongs=MiddlePageController.latestSongsPlaylist;
+            isLatest=true;
+        }
+        else if (MiddlePageController.customSearchPlaylist!=null)
+        {
+            allSongs=MiddlePageController.customSearchPlaylist;
+            isCustom=true;
         }
         ObservableList<String> observeAllSongs=FXCollections.observableArrayList(allSongs);
         SongList.setItems(observeAllSongs);
@@ -235,7 +245,7 @@ public class Controller implements Initializable
     {
         System.out.println("Selecting song:"+s);
 
-        if (isLocal==false && isDownloaded==false)
+        if (isAllSongs || isLatest || isCustom)
         {
             int len=s.length();
             String fileURL=s.substring(0,len-4);
@@ -315,15 +325,15 @@ public class Controller implements Initializable
         {
             stopCurrSong();
         }
-        if (isLocal==false && isDownloaded==false)
+        if (isAllSongs || isLatest || isCustom)
         {
             source=getPathForHostedSong(source);
         }
-        else if (isDownloaded==true)
+        else if (isDownloaded)
         {
             source=getPathForDownloadedSong(source);
         }
-        else
+        else if (isLocal)
         {
             source=getPathForLocalSong(source);
         }
@@ -390,7 +400,7 @@ public class Controller implements Initializable
     /**
      * Previous media button in the media player
      */
-    public void goToPrevSong() throws IOException {
+    public void goToPrevSong() throws IOException, CryptoException {
         if (mediaPlayer!=null)
         {
             stopCurrSong();
@@ -399,12 +409,16 @@ public class Controller implements Initializable
         currIdx=currIdx-1;
         if (currIdx>=0)
         {
-            if (isLocal==true)
+            if (isLocal)
             {
                 System.out.println("Prev Song:"+allSongs.get(currIdx));
                 setSongOnPlayer(getPathForLocalSong(allSongs.get(currIdx)));
             }
-            else
+            else if (isDownloaded)
+            {
+                setSongOnPlayer(getPathForDownloadedSong(allSongs.get(currIdx)));
+            }
+            else//isAllSongs,isCustom,isLatest
             {
                 setSongOnPlayer(getPathForHostedSong(allSongs.get(currIdx)));
             }

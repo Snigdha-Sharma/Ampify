@@ -36,7 +36,8 @@ public class MiddlePageController
     public static List<String> allUserList=null;
     public static List<String> localSongsPlaylist=null;
     public static List<String> downloadedSongsPlaylist=null;
-    public static List<String> searchResultPlaylist=null;
+    public static List<String> latestSongsPlaylist=null;
+    public static List<String> customSearchPlaylist=null;
     public static List<String> history=new ArrayList<>();
     public JFXTextField searchBar;
     public JFXButton searchBarInput;
@@ -49,7 +50,7 @@ public class MiddlePageController
         AllSongsRequest asr=new AllSongsRequest();
         asr.myRequest();
         currPlayList=asr.allSongsList();
-        System.out.println("Curr Playlist has songs now");
+        System.out.println("All Songs Playlist");
         Parent root1 = FXMLLoader.load(getClass().getResource("sample.fxml"));
         Scene second=new Scene(root1);
         //window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -63,9 +64,19 @@ public class MiddlePageController
         Main.window.show();
     }
 
-    public void getLatestSongs()
+    public void getLatestSongs() throws IOException
     {
-
+        LatestSongsRequest lsr=new LatestSongsRequest();
+        lsr.myRequest();
+        latestSongsPlaylist=lsr.getLatestSongs();
+        System.out.println("Recenet Songs Playlist");
+        Parent root1 = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Scene second=new Scene(root1);
+        second.getStylesheets().add("resources/css/sample.css");
+        Main.window.setScene(second);
+        Main.window.setX(40);
+        Main.window.setY(25);
+        Main.window.show();
     }
 
     public void playDownloadedSongs() throws IOException
@@ -82,8 +93,11 @@ public class MiddlePageController
         Scene second=new Scene(root1);
         second.getStylesheets().add("resources/css/sample.css");
         Main.window.setScene(second);
-        Main.window.setX(40);
-        Main.window.setY(25);
+        Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
+        double x = bounds.getMinX() + (bounds.getWidth() - second.getWidth()) * 0.3;
+        double y = bounds.getMinY() + (bounds.getHeight() - second.getHeight()) * 0.7;
+        Main.window.setX(x);
+        Main.window.setY(y);
         Main.window.show();
     }
 
@@ -100,11 +114,11 @@ public class MiddlePageController
 //        Main.window.setScene(second);
         second.getStylesheets().add("resources/css/playlistmake.css");
         Main.window.setScene(second);
-        Main.window.setX(40);
-        Main.window.setY(25);
-        Main.window.show();
-
-
+        Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
+        double x = bounds.getMinX() + (bounds.getWidth() - second.getWidth()) * 0.3;
+        double y = bounds.getMinY() + (bounds.getHeight() - second.getHeight()) * 0.7;
+        Main.window.setX(x);
+        Main.window.setY(y);
         Main.window.show();
     }
 
@@ -152,8 +166,11 @@ public class MiddlePageController
 //        Main.window.show();
         second.getStylesheets().add("resources/css/sample.css");
         Main.window.setScene(second);
-        Main.window.setX(40);
-        Main.window.setY(25);
+        Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
+        double x = bounds.getMinX() + (bounds.getWidth() - second.getWidth()) * 0.3;
+        double y = bounds.getMinY() + (bounds.getHeight() - second.getHeight()) * 0.7;
+        Main.window.setX(x);
+        Main.window.setY(y);
         Main.window.show();
     }
 
@@ -176,8 +193,11 @@ public class MiddlePageController
 //        Main.window.show();
         second.getStylesheets().add("resources/css/sample.css");
         Main.window.setScene(second);
-        Main.window.setX(40);
-        Main.window.setY(25);
+        Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
+        double x = bounds.getMinX() + (bounds.getWidth() - second.getWidth()) * 0.3;
+        double y = bounds.getMinY() + (bounds.getHeight() - second.getHeight()) * 0.7;
+        Main.window.setX(x);
+        Main.window.setY(y);
         Main.window.show();
     }
 
@@ -195,8 +215,11 @@ public class MiddlePageController
 //        Main.window.show();
         second.getStylesheets().add("resources/css/playlistmake.css");
         Main.window.setScene(second);
-        Main.window.setX(40);
-        Main.window.setY(25);
+        Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
+        double x = bounds.getMinX() + (bounds.getWidth() - second.getWidth()) * 0.3;
+        double y = bounds.getMinY() + (bounds.getHeight() - second.getHeight()) * 0.7;
+        Main.window.setX(x);
+        Main.window.setY(y);
         Main.window.show();
     }
 
@@ -205,10 +228,16 @@ public class MiddlePageController
         String input = searchBar.getText();
         SearchRequest sr = new SearchRequest(input);
         sr.myRequest();
-        searchResultPlaylist = sr.searchResult();
-        for (String x : searchResultPlaylist) {
-            System.out.println(x);
-        }
+        customSearchPlaylist= sr.searchResult();
+        System.out.println("Custom Search Playlist");
+        Parent root1 = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Scene second=new Scene(root1);
+//        Main.window.setScene(second);
+        second.getStylesheets().add("resources/css/playlistmake.css");
+        Main.window.setScene(second);
+        Main.window.setX(40);
+        Main.window.setY(25);
+        Main.window.show();
     }
 
     protected static void closePlayer() throws IOException {
