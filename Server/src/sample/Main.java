@@ -104,6 +104,15 @@ class ClientHandler extends Thread
                     pwd= dis.readUTF();
                     ServerRegisterNewUser newUser=new ServerRegisterNewUser(uname,pwd);
                     dos.writeBoolean(newUser.isRegisteredSuccessfully());
+
+
+                    String playlistName1="Liked Songs";
+//                    System.out.println(uname);
+                    ServerPlaylistSet spseto = new ServerPlaylistSet(uname, playlistName1);
+                    spseto.isSuccess();
+                    playlistName1 = "Disliked Songs";
+                    ServerPlaylistSet spsetoo = new ServerPlaylistSet(uname, playlistName1);
+                    spsetoo.isSuccess();
                     break;
 
                 case "AllSongsRequest":
@@ -124,26 +133,18 @@ class ClientHandler extends Thread
                     ResultSet rs1=ss.byArtist();
                     ResultSet rs2 = ss.byGenre();
                     ResultSet rs3 = ss.byLanguage();
+                    ResultSet rs4 = ss.bySongName();
                     os=s.getOutputStream();
                     oos=new ObjectOutputStream(os);
                     List<String> back1 = new ArrayList<>();
                     while(rs1.next())
                     {
                         back1.add(rs1.getString(1));
+                        back1.add(rs2.getString(1));
+                        back1.add(rs3.getString(1));
+                        back1.add(rs4.getString(1));
                     }
                     oos.writeObject(back1);
-                    List<String> back2 = new ArrayList<>();
-                    while(rs2.next())
-                    {
-                        back2.add(rs2.getString(1));
-                    }
-                    oos.writeObject(back2);
-                    List<String> back3 = new ArrayList<>();
-                    while(rs3.next())
-                    {
-                        back3.add(rs3.getString(1));
-                    }
-                    oos.writeObject(back3);
                     break;
 
                 case "RecentlyAdded":
@@ -165,6 +166,9 @@ class ClientHandler extends Thread
                     rs1 = rr.byArtist();
                     rs2 = rr.byGenre();
                     rs3 = rr.byLanguage();
+                    ResultSet rs5 = rr.byLikes();
+                    ResultSet rs6 = rr.byMostPlayed();
+//                    By artist
                     List<String> back12 = new ArrayList<>();
                     while(rs1.next())
                     {
@@ -173,18 +177,35 @@ class ClientHandler extends Thread
                     os=s.getOutputStream();
                     oos = new ObjectOutputStream(os);
                     oos.writeObject(back12);
+//                    By genre
                     List<String> back23 = new ArrayList<>();
                     while(rs2.next())
                     {
                         back23.add(rs2.getString(1));
                     }
                     oos.writeObject(back23);
+//                    By language
                     List<String> back33 = new ArrayList<>();
                     while(rs3.next())
                     {
                         back33.add(rs3.getString(1));
                     }
                     oos.writeObject(back33);
+//                    By likes
+                    List<String> back333 = new ArrayList<>();
+                    while(rs3.next())
+                    {
+                        back33.add(rs3.getString(1));
+                    }
+//                    By no. of times song played
+                    oos.writeObject(back333);
+                    List<String> back343 = new ArrayList<>();
+                    while(rs3.next())
+                    {
+                        back33.add(rs3.getString(1));
+                    }
+                    oos.writeObject(back343);
+                    break;
 
                 case "UserRequest":
                     String username, name, phn, email, dob, state;
@@ -255,6 +276,15 @@ class ClientHandler extends Thread
                     ServerPlaylistSet spset = new ServerPlaylistSet(selectedSongs, uname, playlistName);
                     dos.writeBoolean(spset.isSuccess());
                     break;
+
+                case "AddtoPlaylist":
+                    String username1= dis.readUTF();
+                    String songName=dis.readUTF();
+                    String playlistname= dis.readUTF();
+                    AddSongtoPlaylist asp = new AddSongtoPlaylist(username1, songName, playlistname);
+                    dos.writeBoolean(asp.playlistAdd());
+                    return;
+
                 case "AllUsersRequest":
                     ServerAllUsersRequest aur=new ServerAllUsersRequest();
                     rs= aur.getAllUsersSet();
@@ -283,6 +313,9 @@ class ClientHandler extends Thread
                     dos.writeBoolean(sug.isCreateSuccessful());
                     break;
                 case "LogOff":
+                    String unameee = dis.readUTF();
+                    LogOffRequest lor = new LogOffRequest(unameee);
+                    dos.writeBoolean(lor.setLogout());
                     break;
 
                 default: dos.writeBoolean(false);

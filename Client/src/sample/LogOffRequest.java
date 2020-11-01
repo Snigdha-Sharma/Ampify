@@ -17,5 +17,7 @@ public class LogOffRequest extends Request
     public void myRequest() throws IOException
     {
         dos.writeUTF("LogOffRequest");
+        dos.writeUTF(UserData.getUname());
+        boolean b = dis.readBoolean();
     }
 }

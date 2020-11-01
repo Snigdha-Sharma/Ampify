@@ -62,6 +62,7 @@ public class Controller implements Initializable
     HashMap<String,String> localSongMap,downloadedSongMap;
     List<String> allSongs;
     TreeMap<Integer,String> lyricsMap;
+    List<String> history=new ArrayList<>();
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
@@ -285,11 +286,15 @@ public class Controller implements Initializable
         s=downloadedSongMap.get(s);
         s=new File(s).toURI().toString();
         System.out.println("Pathfds:"+s);
+
+        int i=s.indexOf('.');
+        String str = s.substring(i);
+
         String key = "SPK CofnCode CnC";
-        File inputFile = new File(s);
-        File decryptedFile = new File(s);
+        File inputFile = new File(str);
+        File decryptedFile = new File(str);
         CryptoUtils.decrypt(key,inputFile,decryptedFile);
-        System.out.println("Downloaded path:"+s);
+        System.out.println("Downloaded path:"+str);
         return s;
     }
 
@@ -317,8 +322,8 @@ public class Controller implements Initializable
         setSongOnPlayer(source);
 
         String name=extractSongName(source);
-        MiddlePageController.history.add(name);
-        ObservableList<String> observeHistory=FXCollections.observableArrayList(MiddlePageController.history);
+        history.add(name);
+        ObservableList<String> observeHistory=FXCollections.observableArrayList(history);
         History.setItems(observeHistory);
         History.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         System.out.println("name = "+extractSongName(source));
@@ -639,8 +644,9 @@ public class Controller implements Initializable
         }
     }
 
-    protected static void closePlayer()
-    {
+    protected static void closePlayer() throws IOException {
+        LogOffRequest lor = new LogOffRequest();
+        lor.myRequest();
         clearDirectory();
         System.exit(0);
     }
@@ -667,7 +673,6 @@ public class Controller implements Initializable
         diff.setText(String.valueOf(sync));
 
     }
-
 //    public void displayName(ActionEvent event)
 //    {
 //        String username = UserData.getUname();

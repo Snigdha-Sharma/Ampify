@@ -25,6 +25,13 @@ public class SearchSong {
         this.input = input;
     }
 
+    public ResultSet bySongName() throws SQLException
+    {
+        String query="Select Name from Song WHERE LOCATE('"+input+"', Name) <> 0";
+        resultSet=statement.executeQuery(query);
+        return resultSet;
+    }
+
     /**
      * @return resultset of search by artist
      * @throws SQLException
