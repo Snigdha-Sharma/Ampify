@@ -7,6 +7,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -16,6 +17,7 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.media.*;
 import javafx.stage.FileChooser;
+import javafx.stage.Screen;
 import javafx.util.Duration;
 
 import java.io.*;
@@ -49,6 +51,7 @@ public class Controller implements Initializable
     public int sync=0;
     public Label diff;
 
+
     String repeatMode="None";
     int currIdx=-1;
 
@@ -62,7 +65,7 @@ public class Controller implements Initializable
     HashMap<String,String> localSongMap,downloadedSongMap;
     List<String> allSongs;
     TreeMap<Integer,String> lyricsMap;
-    List<String> history=new ArrayList<>();
+//    List<String> history=new ArrayList<>();
 
     @Override
     public void initialize(URL location, ResourceBundle resources)
@@ -80,6 +83,10 @@ public class Controller implements Initializable
 
         seekbar.setValue(0);
         duration.setText("0:00");
+
+        ObservableList<String> observeHistory=FXCollections.observableArrayList(MiddlePageController.history);
+        History.setItems(observeHistory);
+        History.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
     }
 
     public void goBackToMiddlePage() throws IOException
@@ -93,8 +100,11 @@ public class Controller implements Initializable
         Scene second=new Scene(root1);
         Main.window.setScene(second);
         second.getStylesheets().add("resources/css/middle.css");
-        Main.window.setX(40);
-        Main.window.setY(25);
+        Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
+        double x = bounds.getMinX() + (bounds.getWidth() - second.getWidth()) * 0.3;
+        double y = bounds.getMinY() + (bounds.getHeight() - second.getHeight()) * 0.7;
+        Main.window.setX(x);
+        Main.window.setY(y);
         Main.window.show();
     }
 
@@ -321,8 +331,8 @@ public class Controller implements Initializable
         setSongOnPlayer(source);
 
         String name=extractSongName(source);
-        history.add(name);
-        ObservableList<String> observeHistory=FXCollections.observableArrayList(history);
+        MiddlePageController.history.add(name);
+        ObservableList<String> observeHistory=FXCollections.observableArrayList(MiddlePageController.history);
         History.setItems(observeHistory);
         History.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         System.out.println("name = "+extractSongName(source));
@@ -432,8 +442,8 @@ public class Controller implements Initializable
             setSongOnPlayer(getPathForLocalSong(allSongs.get(currIdx)));
             String source=getPathForLocalSong(allSongs.get(currIdx));
             String name=extractSongName(source);
-            history.add(name);
-            ObservableList<String> observeHistory=FXCollections.observableArrayList(history);
+            MiddlePageController.history.add(name);
+            ObservableList<String> observeHistory=FXCollections.observableArrayList(MiddlePageController.history);
             History.setItems(observeHistory);
             History.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         }
@@ -442,8 +452,8 @@ public class Controller implements Initializable
             setSongOnPlayer(getPathForDownloadedSong(allSongs.get(currIdx)));
             String source=getPathForDownloadedSong(allSongs.get(currIdx));
             String name=extractSongName(source);
-            history.add(name);
-            ObservableList<String> observeHistory=FXCollections.observableArrayList(history);
+            MiddlePageController.history.add(name);
+            ObservableList<String> observeHistory=FXCollections.observableArrayList(MiddlePageController.history);
             History.setItems(observeHistory);
             History.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         }
@@ -452,8 +462,8 @@ public class Controller implements Initializable
             setSongOnPlayer(getPathForHostedSong(allSongs.get(currIdx)));
             String source=getPathForHostedSong(allSongs.get(currIdx));
             String name=extractSongName(source);
-            history.add(name);
-            ObservableList<String> observeHistory=FXCollections.observableArrayList(history);
+            MiddlePageController.history.add(name);
+            ObservableList<String> observeHistory=FXCollections.observableArrayList(MiddlePageController.history);
             History.setItems(observeHistory);
             History.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         }
