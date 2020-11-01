@@ -120,7 +120,7 @@
                            </effect>
                         </JFXButton>
                         <Region prefHeight="39.0" prefWidth="600.0" />
-                        <JFXButton buttonType="RAISED" ripplerFill="#8a0a0a" style="-fx-background-color: rgb(0,0,0,0.6);" text="Song Recommendation" textFill="WHITE">
+                        <JFXButton fx:id="recommendationsButton" buttonType="RAISED" onAction="#ourRecommendations" ripplerFill="#8a0a0a" style="-fx-background-color: rgb(0,0,0,0.6);" text="Song Recommendation" textFill="WHITE">
                            <effect>
                               <DropShadow />
                            </effect>
@@ -129,7 +129,7 @@
                            </font>
                         </JFXButton>
                         <Region prefHeight="40.0" prefWidth="600.0" />
-                        <JFXButton buttonType="RAISED" ripplerFill="#8a0a0a" style="-fx-background-color: rgb(0,0,0,0.6);" text="Your Playlists" textFill="WHITE">
+                        <JFXButton fx:id="yourPlaylistsButton" buttonType="RAISED" onAction="#showUserPlaylist" ripplerFill="#8a0a0a" style="-fx-background-color: rgb(0,0,0,0.6);" text="Your Playlists" textFill="WHITE">
                            <effect>
                               <DropShadow />
                            </effect>

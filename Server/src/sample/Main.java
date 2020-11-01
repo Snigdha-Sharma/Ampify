@@ -210,8 +210,10 @@ class ClientHandler extends Thread
                     ResultSet rs6 = rr.byMostPlayed();
 //                    By artist
                     List<String> back12 = new ArrayList<>();
+                    System.out.println("Artist");
                     while(rs1.next())
                     {
+                        System.out.println(rs1.getString(1));
                         back12.add(rs1.getString(1));
                     }
                     os=s.getOutputStream();
@@ -219,29 +221,37 @@ class ClientHandler extends Thread
                     oos.writeObject(back12);
 //                    By genre
                     List<String> back23 = new ArrayList<>();
+                    System.out.println("Genre");
                     while(rs2.next())
                     {
+                        System.out.println(rs2.getString(1));
                         back23.add(rs2.getString(1));
                     }
                     oos.writeObject(back23);
 //                    By language
+                    System.out.println("Language");
                     List<String> back33 = new ArrayList<>();
                     while(rs3.next())
                     {
+                        System.out.println(rs3.getString(1));
                         back33.add(rs3.getString(1));
                     }
                     oos.writeObject(back33);
 //                    By likes
+                    System.out.println("Likes");
                     List<String> back333 = new ArrayList<>();
                     while(rs3.next())
                     {
+                        System.out.println(rs3.getString(1));
                         back33.add(rs3.getString(1));
                     }
 //                    By no. of times song played
                     oos.writeObject(back333);
                     List<String> back343 = new ArrayList<>();
+                    System.out.println("Frequency");
                     while(rs3.next())
                     {
+                        System.out.println(rs3.getString(1));
                         back33.add(rs3.getString(1));
                     }
                     oos.writeObject(back343);

@@ -32,12 +32,15 @@ public class MiddlePageController
     public JFXButton groupButton;
     public JFXButton downloadedSongsButton;
     public JFXButton latestSongsButton;
+    public JFXButton yourPlaylistsButton;
+    public JFXButton recommendationsButton;
     public static List<String> currPlayList=null;
     public static List<String> allUserList=null;
     public static List<String> localSongsPlaylist=null;
     public static List<String> downloadedSongsPlaylist=null;
     public static List<String> latestSongsPlaylist=null;
     public static List<String> customSearchPlaylist=null;
+    public static List<String> recommendationsList=null;
     public static List<String> history=new ArrayList<>();
     public JFXTextField searchBar;
     public JFXButton searchBarInput;
@@ -69,7 +72,7 @@ public class MiddlePageController
         LatestSongsRequest lsr=new LatestSongsRequest();
         lsr.myRequest();
         latestSongsPlaylist=lsr.getLatestSongs();
-        System.out.println("Recenet Songs Playlist");
+        System.out.println("Recent Songs Playlist");
         Parent root1 = FXMLLoader.load(getClass().getResource("sample.fxml"));
         Scene second=new Scene(root1);
         second.getStylesheets().add("resources/css/sample.css");
@@ -238,6 +241,55 @@ public class MiddlePageController
         Main.window.setX(40);
         Main.window.setY(25);
         Main.window.show();
+    }
+
+    public void showUserPlaylist()
+    {
+
+    }
+
+    public void ourRecommendations() throws IOException
+    {
+        System.out.println("Recommended Songs Playlist");
+        RecommendationsRequest rr=new RecommendationsRequest();
+        rr.myRequest();
+        recommendationsList=rr.getRecommendationsByArtist();
+        System.out.println("Artist");
+        for (String x:recommendationsList)
+        {
+            System.out.println(x);
+        }
+        System.out.println("Genre");
+        recommendationsList=rr.getRecommendationsByGenre();
+        for (String x:recommendationsList)
+        {
+            System.out.println(x);
+        }
+        System.out.println("Language");
+        recommendationsList=rr.getRecommendationsByLanguage();
+        for (String x:recommendationsList)
+        {
+            System.out.println(x);
+        }
+        System.out.println("Likes");
+        recommendationsList=rr.getRecommendationsByLikes();
+        for (String x:recommendationsList)
+        {
+            System.out.println(x);
+        }
+        System.out.println("MostPlayed");
+        recommendationsList=rr.getRecommendationsByMostPlayed();
+        for (String x:recommendationsList)
+        {
+            System.out.println(x);
+        }
+//        Parent root1 = FXMLLoader.load(getClass().getResource("sample.fxml"));
+//        Scene second=new Scene(root1);
+//        second.getStylesheets().add("resources/css/sample.css");
+//        Main.window.setScene(second);
+//        Main.window.setX(40);
+//        Main.window.setY(25);
+//        Main.window.show();
     }
 
     protected static void closePlayer() throws IOException {

@@ -60,7 +60,7 @@ public class Controller implements Initializable
     public Media media;
     public MediaPlayer mediaPlayer;
     Image playButtonImage,pauseButtonImage,muteButtonImage,unmuteButtonImage,shuffleButtonOn,shuffleButtonOff,repeatSongImage,repeatPlaylistImage,repeatOffImage;
-    boolean songPlaying=false,isLocal=false,isShuffleOn=false,isDownloaded=false,isLatest=false,isAllSongs=false,isCustom=false;
+    boolean songPlaying=false,isLocal=false,isShuffleOn=false,isDownloaded=false,isLatest=false,isAllSongs=false,isCustom=false,isRecommended=false;
     Thread currSong;
     HashMap<String,String> localSongMap,downloadedSongMap;
     List<String> allSongs;
@@ -99,6 +99,7 @@ public class Controller implements Initializable
         MiddlePageController.downloadedSongsPlaylist=null;
         MiddlePageController.localSongsPlaylist=null;
         MiddlePageController.latestSongsPlaylist=null;
+        MiddlePageController.recommendationsList=null;
         Parent root1 = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
         Scene second=new Scene(root1);
         Main.window.setScene(second);
@@ -236,6 +237,11 @@ public class Controller implements Initializable
             allSongs=MiddlePageController.customSearchPlaylist;
             isCustom=true;
         }
+        else if (MiddlePageController.recommendationsList!=null)
+        {
+            allSongs=MiddlePageController.recommendationsList;
+            isRecommended=true;
+        }
         ObservableList<String> observeAllSongs=FXCollections.observableArrayList(allSongs);
         SongList.setItems(observeAllSongs);
         SongList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
@@ -245,7 +251,7 @@ public class Controller implements Initializable
     {
         System.out.println("Selecting song:"+s);
 
-        if (isAllSongs || isLatest || isCustom)
+        if (isAllSongs || isLatest || isCustom || isRecommended)
         {
             int len=s.length();
             String fileURL=s.substring(0,len-4);
@@ -325,7 +331,7 @@ public class Controller implements Initializable
         {
             stopCurrSong();
         }
-        if (isAllSongs || isLatest || isCustom)
+        if (isAllSongs || isLatest || isCustom || isRecommended)
         {
             source=getPathForHostedSong(source);
         }
@@ -418,7 +424,7 @@ public class Controller implements Initializable
             {
                 setSongOnPlayer(getPathForDownloadedSong(allSongs.get(currIdx)));
             }
-            else//isAllSongs,isCustom,isLatest
+            else//isAllSongs,isCustom,isLatest,isRecommended
             {
                 setSongOnPlayer(getPathForHostedSong(allSongs.get(currIdx)));
             }
