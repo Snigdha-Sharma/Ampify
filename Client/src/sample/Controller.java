@@ -644,8 +644,9 @@ public class Controller implements Initializable
         }
     }
 
-    protected static void closePlayer()
-    {
+    protected static void closePlayer() throws IOException {
+        LogOffRequest lor = new LogOffRequest();
+        lor.myRequest();
         clearDirectory();
         System.exit(0);
     }

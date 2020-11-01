@@ -313,6 +313,9 @@ class ClientHandler extends Thread
                     dos.writeBoolean(sug.isCreateSuccessful());
                     break;
                 case "LogOff":
+                    String unameee = dis.readUTF();
+                    LogOffRequest lor = new LogOffRequest(unameee);
+                    dos.writeBoolean(lor.setLogout());
                     break;
 
                 default: dos.writeBoolean(false);

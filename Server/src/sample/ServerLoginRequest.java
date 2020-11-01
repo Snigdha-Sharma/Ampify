@@ -34,11 +34,20 @@ public class ServerLoginRequest
         try
         {
             Statement statement=connection.createStatement();
-            String sql="SELECT * FROM login WHERE Uname = '"+uname+"' AND Passwd = '"+pwd+"';";
+            String sql="SELECT * FROM login WHERE Uname = '"+uname+"' AND Passwd = '"+pwd+"'";
             ResultSet resultSet=statement.executeQuery(sql);
             if (resultSet.next())
             {
-                return true;
+                statement=connection.createStatement();
+                sql="UPDATE TABLE login SET Active=1 WHERE Uname = '"+uname+"' AND Passwd = '"+pwd+"'";
+                statement=connection.createStatement();
+                try {
+                    statement.executeUpdate(sql);
+                    return true;
+                }
+                catch(Exception e){
+                    return false;
+                }
             }
             else
             {
