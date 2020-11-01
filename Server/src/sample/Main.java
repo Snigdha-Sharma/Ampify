@@ -118,8 +118,6 @@ class ClientHandler extends Thread
                 case "AllSongsRequest":
                     ServerAllSongsRequest asr=new ServerAllSongsRequest();
                     rs=asr.getAllSongsSet();
-//                    SearchSong ss = new SearchSong("e");
-//                    rs = ss.byArtist();
                     os = s.getOutputStream();
                     oos = new ObjectOutputStream(os);
                     List<String> back = new ArrayList<>();
@@ -263,6 +261,14 @@ class ClientHandler extends Thread
                     songn1= dis.readUTF();
                     ServerLikeClass slk = new ServerLikeClass(user1, songn1);
                     slk.likeStore();
+                    return;
+
+                case "Dislike":
+                    String user11, songn11;
+                    user11=dis.readUTF();
+                    songn11= dis.readUTF();
+                    ServerLikeClass slk1 = new ServerLikeClass(user11, songn11);
+                    slk1.dislikeStore();
                     return;
 
                 case "UserRequest":
