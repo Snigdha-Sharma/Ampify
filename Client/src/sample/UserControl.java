@@ -388,7 +388,11 @@ public class UserControl implements Initializable
     }
 
     /**
+<<<<<<< HEAD
+     * @param  email id of user
+=======
      * @param email email id of user
+>>>>>>> 2727abe14eeeaddd0844ccd548347712e64fe96b
      * @return if user has entered valid email id or not
      */
     private boolean isValidEmail(String email)
@@ -420,7 +424,7 @@ public class UserControl implements Initializable
             try {
                 closePlayer();
             } catch (IOException ioException) {
-//                ioException.printStackTrace();
+                ioException.printStackTrace();
             }
         });
     }
