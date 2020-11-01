@@ -6,10 +6,12 @@ import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Modality;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.*;
@@ -54,8 +56,11 @@ public class MiddlePageController
         //window = (Stage)((Node)event.getSource()).getScene().getWindow();
         second.getStylesheets().add("resources/css/sample.css");
         Main.window.setScene(second);
-        Main.window.setX(40);
-        Main.window.setY(25);
+        Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
+        double x = bounds.getMinX() + (bounds.getWidth() - second.getWidth()) * 0.3;
+        double y = bounds.getMinY() + (bounds.getHeight() - second.getHeight()) * 0.7;
+        Main.window.setX(x);
+        Main.window.setY(y);
         Main.window.show();
     }
 

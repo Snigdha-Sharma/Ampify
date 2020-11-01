@@ -1,4 +1,6 @@
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
 D:\Study Material\Java\Java Video Lectures\Lecture 1 _ Programming Methodology (Stanford).mp4
 D:\Study Material\Java\Java Video Lectures\Lecture 10 _ Programming Methodology (Stanford).mp4
 D:\Study Material\Java\Java Video Lectures\Lecture 11 _ Programming Methodology (Stanford).mp4
@@ -750,6 +752,7 @@ C:\Anaconda\Lib\site-packages\imageio\resources\images\cockatoo.mp4
 C:\Anaconda\Lib\site-packages\imageio\resources\images\realshort.mp4
 C:\Anaconda\envs\LearningR\Lib\site-packages\notebook\static\components\MathJax\extensions\a11y\invalid_keypress.mp3
 =======
+>>>>>>> 16aa22e1973a72e5e37281cb8fffef16c83f6583
 C:\Users\Public\Documents\Lightworks\Projects\P50J0CBT\Milestones\E50J0CCS\S51J0CCS.mp4
 C:\Users\Public\Documents\Lightworks\Projects\P50J0CBT\Milestones\E50J0CCS\S52J0CCS.mp4
 C:\Users\Public\Documents\Lightworks\Projects\P50J0CBT\Milestones\E50J0CCS\V50J0CCS.mp4
@@ -1209,7 +1212,10 @@ C:\Users\kshit\Desktop\softa final day\Ampify\Client\src\Songs\Offo.mp3
 C:\Users\kshit\Desktop\softa final day\Ampify\Client\src\Songs\playVideo.mp4
 C:\Users\kshit\Desktop\softa final day\Ampify\Client\src\DownloadedSongs\AdoreYou.mp3
 C:\Users\kshit\Desktop\softa final day\Ampify\Client\src\DownloadedSongs\BlindingLights.mp3
+<<<<<<< HEAD
+=======
 C:\Users\kshit\Desktop\softa final day\Ampify\Client\src\DownloadedSongs\encryptedAdoreYou.mp3
+>>>>>>> 16aa22e1973a72e5e37281cb8fffef16c83f6583
 C:\Users\kshit\Desktop\softa final day\Ampify\Client\out\production\Ampify\Songs\0hVXuCcriWRGvwMV1r5Yn9.mp3
 C:\Users\kshit\Desktop\softa final day\Ampify\Client\out\production\Ampify\Songs\Bang Bang.mp3
 C:\Users\kshit\Desktop\softa final day\Ampify\Client\out\production\Ampify\Songs\Group theory and why I love 808,017,424,794,512,875,886,459,904,961,710,757,005,754,368,000,000,000.mp4
@@ -1217,7 +1223,10 @@ C:\Users\kshit\Desktop\softa final day\Ampify\Client\out\production\Ampify\Songs
 C:\Users\kshit\Desktop\softa final day\Ampify\Client\out\production\Ampify\Songs\playVideo.mp4
 C:\Users\kshit\Desktop\softa final day\Ampify\Client\out\production\Ampify\DownloadedSongs\AdoreYou.mp3
 C:\Users\kshit\Desktop\softa final day\Ampify\Client\out\production\Ampify\DownloadedSongs\BlindingLights.mp3
+<<<<<<< HEAD
+=======
 C:\Users\kshit\Desktop\softa final day\Ampify\Client\out\production\Ampify\DownloadedSongs\encryptedAdoreYou.mp3
+>>>>>>> 16aa22e1973a72e5e37281cb8fffef16c83f6583
 C:\Users\kshit\Desktop\softa\Ampify\Server\src\Songs\AdoreYou.mp3
 C:\Users\kshit\Desktop\softa\Ampify\Server\src\Songs\BlindingLights.mp3
 C:\Users\kshit\Desktop\softa\Ampify\Server\out\production\AmpifyServer\Songs\AdoreYou.mp3

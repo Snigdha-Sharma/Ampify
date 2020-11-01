@@ -132,12 +132,15 @@ class ClientHandler extends Thread
                     break;
 
                 case "SearchSongs":
+//                    SearchSong ss = new SearchSong("e");
+//                    ss = new SearchSong("s");
                     String input=dis.readUTF();
                     System.out.println("User input:"+input);
                     SearchSong ss = new SearchSong(input);
                     os=s.getOutputStream();
                     oos=new ObjectOutputStream(os);
                     List<String> back1 = new ArrayList<>();
+                    HashMap<String, Boolean>h;
                     ResultSet rs1=ss.byArtist();
                     while(rs1.next())
                     {
