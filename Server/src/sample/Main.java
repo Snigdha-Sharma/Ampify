@@ -228,6 +228,14 @@ class ClientHandler extends Thread
                     oos.writeObject(back343);
                     break;
 
+                case "Like":
+                    String user1, songn1;
+                    user1=dis.readUTF();
+                    songn1= dis.readUTF();
+                    ServerLikeClass slk = new ServerLikeClass(user1, songn1);
+                    slk.likeStore();
+                    return;
+
                 case "UserRequest":
                     String username, name, phn, email, dob, state;
                     String pop1, rap1, classical1, metal1, contemp1, folk1, romantic1, hiphop1, brostep1, band1, rock1;
