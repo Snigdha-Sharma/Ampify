@@ -132,21 +132,44 @@ class ClientHandler extends Thread
                     break;
 
                 case "SearchSongs":
+<<<<<<< HEAD
                     SearchSong ss = new SearchSong("e");
                     ss = new SearchSong("s");
                     ResultSet rs1=ss.byArtist();
                     ResultSet rs2 = ss.byGenre();
                     ResultSet rs3 = ss.byLanguage();
                     ResultSet rs4 = ss.bySongName();
+=======
+                    String input=dis.readUTF();
+                    System.out.println("User input:"+input);
+                    SearchSong ss = new SearchSong(input);
+>>>>>>> e13f93d9c4208236e6dee06e28e2ad3d44a827eb
                     os=s.getOutputStream();
                     oos=new ObjectOutputStream(os);
                     List<String> back1 = new ArrayList<>();
+                    ResultSet rs1=ss.byArtist();
                     while(rs1.next())
                     {
                         back1.add(rs1.getString(1));
+                    }
+                    ResultSet rs2 = ss.byGenre();
+                    while(rs2.next())
+                    {
                         back1.add(rs2.getString(1));
+                    }
+                    ResultSet rs3 = ss.byLanguage();
+                    while(rs3.next())
+                    {
                         back1.add(rs3.getString(1));
+                    }
+                    ResultSet rs4 = ss.bySongName();
+                    while(rs4.next())
+                    {
                         back1.add(rs4.getString(1));
+                    }
+                    for (String x:back1)
+                    {
+                        System.out.println(x);
                     }
                     oos.writeObject(back1);
                     break;

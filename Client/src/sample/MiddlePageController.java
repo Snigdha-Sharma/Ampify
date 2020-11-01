@@ -1,6 +1,7 @@
 package sample;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextField;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -25,14 +26,18 @@ public class MiddlePageController
     public JFXButton allSongsButton;
     public JFXButton localSongsButton;
     public JFXButton refreshLocalSongListButton;
+    public JFXButton playlistButton;
+    public JFXButton groupButton;
+    public JFXButton downloadedSongsButton;
+    public JFXButton latestSongsButton;
     public static List<String> currPlayList=null;
     public static List<String> allUserList=null;
     public static List<String> localSongsPlaylist=null;
     public static List<String> downloadedSongsPlaylist=null;
-    public JFXButton playlistButton;
-    public JFXButton groupButton;
-    public JFXButton downloadedSongsButton;
+    public static List<String> searchResultPlaylist=null;
     public static List<String> history=new ArrayList<>();
+    public JFXTextField searchBar;
+    public JFXButton searchBarInput;
 
     /**
      * @throws IOException get list of all songs
@@ -51,6 +56,11 @@ public class MiddlePageController
         Main.window.setX(40);
         Main.window.setY(25);
         Main.window.show();
+    }
+
+    public void getLatestSongs()
+    {
+
     }
 
     public void playDownloadedSongs() throws IOException
@@ -183,6 +193,17 @@ public class MiddlePageController
         Main.window.setX(40);
         Main.window.setY(25);
         Main.window.show();
+    }
+
+    public void customSearch() throws IOException
+    {
+        String input = searchBar.getText();
+        SearchRequest sr = new SearchRequest(input);
+        sr.myRequest();
+        searchResultPlaylist = sr.searchResult();
+        for (String x : searchResultPlaylist) {
+            System.out.println(x);
+        }
     }
 
     protected static void closePlayer() throws IOException {

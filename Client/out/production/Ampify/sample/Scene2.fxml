@@ -19,7 +19,11 @@
             <HBox alignment="CENTER">
                <children>
                   <JFXTextField fx:id="searchBar" focusColor="#a8162e" prefHeight="39.0" prefWidth="483.0" promptText="Search for your favorite genres, language and artist..." style="-fx-background-color: Transparent; -fx-border-width: 4; -fx-border-color: black;" />
+<<<<<<< HEAD
                   <JFXButton fx:id="searchBarInput" buttonType="RAISED" ripplerFill="#9e1d1d" style="-fx-background-color: rgb(0,0,0,0.6);" text="Find" textAlignment="CENTER" textFill="WHITE">
+=======
+                  <JFXButton fx:id="searchBarInput" buttonType="RAISED" onAction="#customSearch" ripplerFill="#9e1d1d" style="-fx-background-color: rgb(0,0,0,0.6);" text="Find" textAlignment="CENTER" textFill="WHITE">
+>>>>>>> e13f93d9c4208236e6dee06e28e2ad3d44a827eb
                      <font>
                         <Font size="22.0" />
                      </font>
