@@ -116,10 +116,10 @@ class ClientHandler extends Thread
                     break;
 
                 case "AllSongsRequest":
-//                    ServerAllSongsRequest asr=new ServerAllSongsRequest();
-//                    rs=asr.getAllSongsSet();
-                    SearchSong ss = new SearchSong("e");
-                    rs = ss.byArtist();
+                    ServerAllSongsRequest asr=new ServerAllSongsRequest();
+                    rs=asr.getAllSongsSet();
+//                    SearchSong ss = new SearchSong("e");
+//                    rs = ss.byArtist();
                     os = s.getOutputStream();
                     oos = new ObjectOutputStream(os);
                     List<String> back = new ArrayList<>();
@@ -132,6 +132,7 @@ class ClientHandler extends Thread
                     break;
 
                 case "SearchSongs":
+                    SearchSong ss = new SearchSong("e");
                     ss = new SearchSong("s");
                     ResultSet rs1=ss.byArtist();
                     ResultSet rs2 = ss.byGenre();
