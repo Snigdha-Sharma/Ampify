@@ -19,13 +19,14 @@ public class LogOffRequest {
         Connectivity.ConnClass connectionClass=new ConnClass();//Connection through JDBC driver to database
         Connection connection=connectionClass.getConnection();
         Statement statement=connection.createStatement();
-        String sql="UPDATE TABLE login SET Active=1 WHERE Uname = '"+uname+"'";
+        String sql="UPDATE TABLE login SET Active='0' WHERE Uname = '"+uname+"'";
         statement=connection.createStatement();
         try {
             statement.executeUpdate(sql);
             return true;
         }
         catch(Exception e){
+            e.printStackTrace();
             return false;
         }
     }

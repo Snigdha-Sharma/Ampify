@@ -38,14 +38,14 @@ public class ServerLoginRequest
             ResultSet resultSet=statement.executeQuery(sql);
             if (resultSet.next())
             {
-                statement=connection.createStatement();
-                sql="UPDATE TABLE login SET Active=1 WHERE Uname = '"+uname+"' AND Passwd = '"+pwd+"'";
+                sql="UPDATE login SET Active=1 WHERE Uname = '"+uname+"'";
                 statement=connection.createStatement();
                 try {
                     statement.executeUpdate(sql);
                     return true;
                 }
                 catch(Exception e){
+                    e.printStackTrace();
                     return false;
                 }
             }

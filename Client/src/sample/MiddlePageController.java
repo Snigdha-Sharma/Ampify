@@ -183,6 +183,11 @@ public class MiddlePageController
         Main.window.setX(40);
         Main.window.setY(25);
         Main.window.show();
+    }
 
+    protected static void closePlayer() throws IOException {
+        LogOffRequest lor = new LogOffRequest();
+        lor.myRequest();
+        System.exit(0);
     }
 }

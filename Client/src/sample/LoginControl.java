@@ -290,7 +290,7 @@ public class LoginControl implements Initializable
             try {
                 closePlayer();
             } catch (IOException ioException) {
-                ioException.printStackTrace();
+//                ioException.printStackTrace();
             }
         });
         window.show();
