@@ -430,14 +430,32 @@ public class Controller implements Initializable
         if (isLocal==true)
         {
             setSongOnPlayer(getPathForLocalSong(allSongs.get(currIdx)));
+            String source=getPathForLocalSong(allSongs.get(currIdx));
+            String name=extractSongName(source);
+            history.add(name);
+            ObservableList<String> observeHistory=FXCollections.observableArrayList(history);
+            History.setItems(observeHistory);
+            History.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         }
         else if (isDownloaded==true)
         {
             setSongOnPlayer(getPathForDownloadedSong(allSongs.get(currIdx)));
+            String source=getPathForDownloadedSong(allSongs.get(currIdx));
+            String name=extractSongName(source);
+            history.add(name);
+            ObservableList<String> observeHistory=FXCollections.observableArrayList(history);
+            History.setItems(observeHistory);
+            History.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         }
         else
         {
             setSongOnPlayer(getPathForHostedSong(allSongs.get(currIdx)));
+            String source=getPathForHostedSong(allSongs.get(currIdx));
+            String name=extractSongName(source);
+            history.add(name);
+            ObservableList<String> observeHistory=FXCollections.observableArrayList(history);
+            History.setItems(observeHistory);
+            History.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         }
     }
 
