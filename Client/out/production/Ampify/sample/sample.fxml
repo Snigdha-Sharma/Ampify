@@ -125,12 +125,21 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton minHeight="10.0" minWidth="10.0">
+                  <JFXButton minHeight="10.0" minWidth="10.0" prefHeight="92.0" prefWidth="122.0">
                      <graphic>
                         <ImageView pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../Images/Like.jpg" />
                            </image></ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton minHeight="10.0" minWidth="10.0">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true" rotate="180.0">
+                           <image>
+                              <Image url="@../Images/Like.jpg" />
+                           </image>
+                        </ImageView>
                      </graphic>
                   </JFXButton>
                   <Label fx:id="duration" alignment="BOTTOM_CENTER" prefHeight="52.0" prefWidth="117.0" style="-fx-background-color: rgb(0,0,0,0.6);" textAlignment="CENTER" textFill="WHITE">

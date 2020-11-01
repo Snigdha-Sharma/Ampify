@@ -140,26 +140,45 @@ class ClientHandler extends Thread
                     os=s.getOutputStream();
                     oos=new ObjectOutputStream(os);
                     List<String> back1 = new ArrayList<>();
-                    HashMap<String, Boolean>h;
+                    HashMap<String, Boolean> mp;
                     ResultSet rs1=ss.byArtist();
+                    Set<String> st=new HashSet<String>();
+
                     while(rs1.next())
                     {
-                        back1.add(rs1.getString(1));
+                        if(!st.contains(rs1.getString(1)))
+                        {
+                            back1.add(rs1.getString(1));
+                            st.add(rs1.getString(1));
+                        }
                     }
                     ResultSet rs2 = ss.byGenre();
                     while(rs2.next())
                     {
-                        back1.add(rs2.getString(1));
+                        if(!st.contains(rs2.getString(1)))
+                        {
+                            back1.add(rs2.getString(1));
+                            st.add(rs2.getString(1));
+                        }
                     }
                     ResultSet rs3 = ss.byLanguage();
                     while(rs3.next())
                     {
-                        back1.add(rs3.getString(1));
+                        if(!st.contains(rs3.getString(1)))
+                        {
+                            back1.add(rs3.getString(1));
+                            st.add(rs3.getString(1));
+                        }
                     }
                     ResultSet rs4 = ss.bySongName();
                     while(rs4.next())
                     {
-                        back1.add(rs4.getString(1));
+                        if(!st.contains(rs4.getString(1)))
+                        {
+                            back1.add(rs4.getString(1));
+                            st.add(rs4.getString(1));
+
+                        }
                     }
                     for (String x:back1)
                     {
@@ -227,6 +246,14 @@ class ClientHandler extends Thread
                     }
                     oos.writeObject(back343);
                     break;
+
+                case "Like":
+                    String user1, songn1;
+                    user1=dis.readUTF();
+                    songn1= dis.readUTF();
+                    ServerLikeClass slk = new ServerLikeClass(user1, songn1);
+                    slk.likeStore();
+                    return;
 
                 case "UserRequest":
                     String username, name, phn, email, dob, state;
