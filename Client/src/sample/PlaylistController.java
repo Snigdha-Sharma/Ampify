@@ -102,4 +102,9 @@ public class PlaylistController implements Initializable
         goBack();
     }
 
+    protected static void closePlayer() throws IOException {
+        LogOffRequest lor = new LogOffRequest();
+        lor.myRequest();
+        System.exit(0);
+    }
 }

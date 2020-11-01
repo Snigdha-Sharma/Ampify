@@ -388,7 +388,7 @@ public class UserControl implements Initializable
     }
 
     /**
-     * @param e email id of user
+     * @param email email id of user
      * @return if user has entered valid email id or not
      */
     private boolean isValidEmail(String email)
@@ -416,15 +416,21 @@ public class UserControl implements Initializable
 
         window.setScene(second);
         window.show();
-        window.setOnCloseRequest(e->closePlayer());
+        window.setOnCloseRequest(e-> {
+            try {
+                closePlayer();
+            } catch (IOException ioException) {
+//                ioException.printStackTrace();
+            }
+        });
     }
 
     /**
      * close media player
      */
-    public static void closePlayer()
-    {
-        Controller.closePlayer();
-        Main.window.close();
+    protected static void closePlayer() throws IOException {
+        LogOffRequest lor = new LogOffRequest();
+        lor.myRequest();
+        System.exit(0);
     }
 }
