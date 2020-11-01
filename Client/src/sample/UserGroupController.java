@@ -6,10 +6,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.stage.Screen;
 import org.controlsfx.control.CheckListView;
 
 import java.io.IOException;
@@ -58,8 +60,11 @@ public class UserGroupController implements Initializable
         Parent root1 = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
         Scene second=new Scene(root1);
         second.getStylesheets().add("resources/css/middle.css");
-        Main.window.setX(40);
-        Main.window.setY(25);
+        Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
+        double x = bounds.getMinX() + (bounds.getWidth() - second.getWidth()) * 0.3;
+        double y = bounds.getMinY() + (bounds.getHeight() - second.getHeight()) * 0.7;
+        Main.window.setX(x);
+        Main.window.setY(y);
         Main.window.setScene(second);
         Main.window.show();
 
