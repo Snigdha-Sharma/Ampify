@@ -25,7 +25,7 @@ import java.util.*;
 import static java.lang.Thread.sleep;
 import java.io.File;
 
-public class Controller implements Initializable
+public class Controller1 implements Initializable
 {
     public JFXButton prevSongButton;
     public JFXButton nextSongButton;
@@ -294,6 +294,7 @@ public class Controller implements Initializable
         File inputFile = new File(str);
         File decryptedFile = new File(str);
         CryptoUtils.decrypt(key,inputFile,decryptedFile);
+        System.out.println("Downloaded path:"+str);
         return s;
     }
 
@@ -430,15 +431,36 @@ public class Controller implements Initializable
         if (isLocal==true)
         {
             setSongOnPlayer(getPathForLocalSong(allSongs.get(currIdx)));
+            String source=getPathForLocalSong(allSongs.get(currIdx));
+            String name=extractSongName(source);
+            history.add(name);
+            ObservableList<String> observeHistory=FXCollections.observableArrayList(history);
+            History.setItems(observeHistory);
+            History.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         }
         else if (isDownloaded==true)
         {
             setSongOnPlayer(getPathForDownloadedSong(allSongs.get(currIdx)));
+            String source=getPathForDownloadedSong(allSongs.get(currIdx));
+            String name=extractSongName(source);
+            history.add(name);
+            ObservableList<String> observeHistory=FXCollections.observableArrayList(history);
+            History.setItems(observeHistory);
+            History.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         }
         else
         {
             setSongOnPlayer(getPathForHostedSong(allSongs.get(currIdx)));
+            String source=getPathForHostedSong(allSongs.get(currIdx));
+            String name=extractSongName(source);
+            history.add(name);
+            ObservableList<String> observeHistory=FXCollections.observableArrayList(history);
+            History.setItems(observeHistory);
+            History.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
         }
+
+//        System.out.println("name = "+extractSongName(source));
+//        ..
     }
 
     public void muteOrUnmute()
