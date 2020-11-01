@@ -93,8 +93,11 @@ public class MiddlePageController
         Scene second=new Scene(root1);
         second.getStylesheets().add("resources/css/sample.css");
         Main.window.setScene(second);
-        Main.window.setX(40);
-        Main.window.setY(25);
+        Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
+        double x = bounds.getMinX() + (bounds.getWidth() - second.getWidth()) * 0.3;
+        double y = bounds.getMinY() + (bounds.getHeight() - second.getHeight()) * 0.7;
+        Main.window.setX(x);
+        Main.window.setY(y);
         Main.window.show();
     }
 
@@ -111,8 +114,11 @@ public class MiddlePageController
 //        Main.window.setScene(second);
         second.getStylesheets().add("resources/css/playlistmake.css");
         Main.window.setScene(second);
-        Main.window.setX(40);
-        Main.window.setY(25);
+        Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
+        double x = bounds.getMinX() + (bounds.getWidth() - second.getWidth()) * 0.3;
+        double y = bounds.getMinY() + (bounds.getHeight() - second.getHeight()) * 0.7;
+        Main.window.setX(x);
+        Main.window.setY(y);
         Main.window.show();
     }
 
@@ -160,8 +166,11 @@ public class MiddlePageController
 //        Main.window.show();
         second.getStylesheets().add("resources/css/sample.css");
         Main.window.setScene(second);
-        Main.window.setX(40);
-        Main.window.setY(25);
+        Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
+        double x = bounds.getMinX() + (bounds.getWidth() - second.getWidth()) * 0.3;
+        double y = bounds.getMinY() + (bounds.getHeight() - second.getHeight()) * 0.7;
+        Main.window.setX(x);
+        Main.window.setY(y);
         Main.window.show();
     }
 
@@ -184,8 +193,11 @@ public class MiddlePageController
 //        Main.window.show();
         second.getStylesheets().add("resources/css/sample.css");
         Main.window.setScene(second);
-        Main.window.setX(40);
-        Main.window.setY(25);
+        Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
+        double x = bounds.getMinX() + (bounds.getWidth() - second.getWidth()) * 0.3;
+        double y = bounds.getMinY() + (bounds.getHeight() - second.getHeight()) * 0.7;
+        Main.window.setX(x);
+        Main.window.setY(y);
         Main.window.show();
     }
 
@@ -203,8 +215,11 @@ public class MiddlePageController
 //        Main.window.show();
         second.getStylesheets().add("resources/css/playlistmake.css");
         Main.window.setScene(second);
-        Main.window.setX(40);
-        Main.window.setY(25);
+        Rectangle2D bounds = Screen.getPrimary().getVisualBounds();
+        double x = bounds.getMinX() + (bounds.getWidth() - second.getWidth()) * 0.3;
+        double y = bounds.getMinY() + (bounds.getHeight() - second.getHeight()) * 0.7;
+        Main.window.setX(x);
+        Main.window.setY(y);
         Main.window.show();
     }
 
