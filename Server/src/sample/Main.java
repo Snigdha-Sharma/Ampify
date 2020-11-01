@@ -116,20 +116,23 @@ class ClientHandler extends Thread
                     break;
 
                 case "AllSongsRequest":
-                    ServerAllSongsRequest asr=new ServerAllSongsRequest();
-                    rs=asr.getAllSongsSet();
-                    os=s.getOutputStream();
-                    oos=new ObjectOutputStream(os);
+//                    ServerAllSongsRequest asr=new ServerAllSongsRequest();
+//                    rs=asr.getAllSongsSet();
+                    SearchSong ss = new SearchSong("e");
+                    rs = ss.byArtist();
+                    os = s.getOutputStream();
+                    oos = new ObjectOutputStream(os);
                     List<String> back = new ArrayList<>();
                     while(rs.next())
                     {
                         back.add(rs.getString(1));
+                        System.out.println(rs.getString(1));
                     }
                     oos.writeObject(back);
                     break;
 
                 case "SearchSongs":
-                    SearchSong ss = new SearchSong("Shaw");
+                    ss = new SearchSong("s");
                     ResultSet rs1=ss.byArtist();
                     ResultSet rs2 = ss.byGenre();
                     ResultSet rs3 = ss.byLanguage();
