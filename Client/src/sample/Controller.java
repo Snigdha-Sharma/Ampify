@@ -96,6 +96,8 @@ public class Controller implements Initializable
             mediaPlayer.pause();
         }
         MiddlePageController.currPlayList=null;
+        MiddlePageController.downloadedSongsPlaylist=null;
+        MiddlePageController.localSongsPlaylist=null;
         Parent root1 = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
         Scene second=new Scene(root1);
         Main.window.setScene(second);
@@ -205,7 +207,6 @@ public class Controller implements Initializable
                 for (String path:MiddlePageController.downloadedSongsPlaylist)
                 {
                     name=extractSongName(path);
-                    System.out.println("Name:"+name);
                     allSongs.add(name);
                     downloadedSongMap.put(name,path);
                 }
@@ -295,8 +296,6 @@ public class Controller implements Initializable
     {
         s=downloadedSongMap.get(s);
         s=new File(s).toURI().toString();
-        System.out.println("Pathfds:"+s);
-
         int i=s.indexOf('.');
         String str = s.substring(i);
 
