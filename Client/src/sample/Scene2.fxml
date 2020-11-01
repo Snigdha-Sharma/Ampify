@@ -111,7 +111,7 @@
                            </effect>
                         </JFXButton>
                         <Region prefHeight="27.0" prefWidth="600.0" />
-                        <JFXButton buttonType="RAISED" ripplerFill="#8a0a0a" style="-fx-background-color: rgb(0,0,0,0.6);" text="Latest Songs" textFill="WHITE">
+                        <JFXButton fx:id="latestSongsButton" buttonType="RAISED" onAction="#getLatestSongs" ripplerFill="#8a0a0a" style="-fx-background-color: rgb(0,0,0,0.6);" text="Latest Songs" textFill="WHITE">
                            <font>
                               <Font name="Agency FB Bold" size="38.0" />
                            </font>

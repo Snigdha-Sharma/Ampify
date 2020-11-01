@@ -35,6 +35,7 @@ public class MiddlePageController
     public static List<String> localSongsPlaylist=null;
     public static List<String> downloadedSongsPlaylist=null;
     public static List<String> searchResultPlaylist=null;
+    public static List<String> latestSongsPlaylist=null;
     public static List<String> history=new ArrayList<>();
     public JFXTextField searchBar;
     public JFXButton searchBarInput;
@@ -58,9 +59,11 @@ public class MiddlePageController
         Main.window.show();
     }
 
-    public void getLatestSongs()
+    public void getLatestSongs() throws IOException
     {
-
+        LatestSongsRequest lsr=new LatestSongsRequest();
+        lsr.myRequest();
+        latestSongsPlaylist=new ArrayList<>();
     }
 
     public void playDownloadedSongs() throws IOException
