@@ -13,11 +13,12 @@
 
 <StackPane prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.MiddlePageController">
    <children>
-      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+      <VBox prefHeight="200.0" prefWidth="100.0">
          <children>
+            <Region prefHeight="104.0" prefWidth="1200.0" />
             <HBox alignment="CENTER">
                <children>
-                  <TextField alignment="CENTER" prefWidth="500.0" promptText="Search for you favorite songs,artists,genre,language...">
+                  <TextField alignment="CENTER" prefWidth="500.0" promptText="Search for you favorite songs,artists,genre,language..." style="-fx-border-width: 4; -fx-border-color: black; -fx-background-color: transparent;">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -25,90 +26,132 @@
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
                      <HBox.margin>
-                        <Insets bottom="20.0" />
+                        <Insets />
                      </HBox.margin>
                   </TextField>
-                  <JFXButton buttonType="RAISED" text="Done!" textAlignment="CENTER">
+                  <JFXButton buttonType="RAISED" ripplerFill="#9e1d1d" style="-fx-background-color: rgb(0,0,0,0.6);" text="Find" textAlignment="CENTER" textFill="WHITE">
                      <font>
                         <Font size="22.0" />
                      </font>
                      <cursor>
                         <Cursor fx:constant="OPEN_HAND" />
                      </cursor>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
                   </JFXButton>
                </children>
             </HBox>
-            <JFXButton fx:id="allSongsButton" buttonType="RAISED" onAction="#getAllSongs" ripplerFill="#7c0606" style="-fx-background-color: rgb(0,0,0,0.6);" text="All Songs" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Agency FB Bold" size="38.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="OPEN_HAND" />
-               </cursor>
-            </JFXButton>
-            <Region prefHeight="28.0" prefWidth="900.0" />
-            <JFXButton fx:id="localSongsButton" buttonType="RAISED" onAction="#getLocalSongs" ripplerFill="#830c0c" style="-fx-background-color: rgb(0,0,0,0.6);" text="Local Songs" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Agency FB Bold" size="38.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="OPEN_HAND" />
-               </cursor>
-               <effect>
-                  <DropShadow />
-               </effect>
-            </JFXButton>
-            <Region prefHeight="30.0" prefWidth="900.0" />
-            <JFXButton fx:id="refreshLocalSongListButton" buttonType="RAISED" onAction="#refreshLocalSongList" ripplerFill="#830c0c" style="-fx-background-color: rgb(0,0,0,0.6);" text="Refresh Local Song List" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Agency FB Bold" size="38.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="OPEN_HAND" />
-               </cursor>
-               <effect>
-                  <DropShadow />
-               </effect>
-            </JFXButton>
-            <Region prefHeight="32.0" prefWidth="900.0" />
-            <JFXButton fx:id="playlistButton" buttonType="RAISED" onAction="#createPlaylist" ripplerFill="#830c0c" style="-fx-background-color: rgb(0,0,0,0.6);" text="Create Playlist" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Agency FB Bold" size="38.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="OPEN_HAND" />
-               </cursor>
-               <effect>
-                  <DropShadow />
-               </effect>
-            </JFXButton>
-            <Region prefHeight="32.0" prefWidth="900.0" />
-            <JFXButton fx:id="groupButton" onAction="#makeUserGroup" ripplerFill="#830c0c" style="-fx-background-color: rgb(0,0,0,0.6);" text="Create User Group" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Agency FB Bold" size="38.0" />
-               </font>
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <cursor>
-                  <Cursor fx:constant="OPEN_HAND" />
-               </cursor>
-               <effect>
-                  <DropShadow />
-               </effect>
-            </JFXButton>
-            <Region prefHeight="32.0" prefWidth="900.0" />
-            <JFXButton fx:id="downloadedSongsButton" onAction="#playDownloadedSongs" ripplerFill="#830c0c" text="Downloaded Songs">
-               <font>
-                  <Font size="38.0" />
-               </font>
-            </JFXButton>
-            <Region prefHeight="32.0" prefWidth="900.0" />
-            <JFXButton text="Latest Songs">
-               <font>
-                  <Font size="38.0" />
-               </font>
-            </JFXButton>
+            <HBox prefHeight="600.0" prefWidth="564.0">
+               <children>
+                  <VBox alignment="CENTER">
+                     <children>
+                        <Region prefHeight="19.0" prefWidth="584.0" />
+                        <JFXButton fx:id="allSongsButton" buttonType="RAISED" onAction="#getAllSongs" ripplerFill="#7c0606" style="-fx-background-color: rgb(0,0,0,0.6);" text="All Songs" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB Bold" size="38.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="OPEN_HAND" />
+                           </cursor>
+                        </JFXButton>
+                        <Region prefHeight="28.0" prefWidth="900.0" />
+                        <JFXButton fx:id="localSongsButton" buttonType="RAISED" onAction="#getLocalSongs" ripplerFill="#830c0c" style="-fx-background-color: rgb(0,0,0,0.6);" text="Local Songs" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB Bold" size="38.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="OPEN_HAND" />
+                           </cursor>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </JFXButton>
+                        <Region prefHeight="30.0" prefWidth="900.0" />
+                        <JFXButton fx:id="refreshLocalSongListButton" buttonType="RAISED" onAction="#refreshLocalSongList" ripplerFill="#830c0c" style="-fx-background-color: rgb(0,0,0,0.6);" text="Refresh Local Song List" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB Bold" size="38.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="OPEN_HAND" />
+                           </cursor>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </JFXButton>
+                        <Region prefHeight="32.0" prefWidth="900.0" />
+                        <JFXButton fx:id="playlistButton" buttonType="RAISED" onAction="#createPlaylist" ripplerFill="#830c0c" style="-fx-background-color: rgb(0,0,0,0.6);" text="Create Playlist" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB Bold" size="38.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="OPEN_HAND" />
+                           </cursor>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </JFXButton>
+                        <Region prefHeight="32.0" prefWidth="900.0" />
+                        <JFXButton fx:id="groupButton" onAction="#makeUserGroup" ripplerFill="#830c0c" style="-fx-background-color: rgb(0,0,0,0.6);" text="Create User Group" textAlignment="CENTER" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB Bold" size="38.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                           <cursor>
+                              <Cursor fx:constant="OPEN_HAND" />
+                           </cursor>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </JFXButton>
+                        <Region prefHeight="32.0" prefWidth="900.0" />
+                     </children>
+                  </VBox>
+                  <VBox alignment="TOP_CENTER">
+                     <children>
+                        <Region prefHeight="39.0" prefWidth="600.0" />
+                        <JFXButton fx:id="downloadedSongsButton" buttonType="RAISED" onAction="#playDownloadedSongs" ripplerFill="#8a0a0a" style="-fx-background-color: rgb(0,0,0,0.6);" text="Downloaded Songs" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB Bold" size="38.0" />
+                           </font>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </JFXButton>
+                        <Region prefHeight="27.0" prefWidth="600.0" />
+                        <JFXButton buttonType="RAISED" ripplerFill="#8a0a0a" style="-fx-background-color: rgb(0,0,0,0.6);" text="Latest Songs" textFill="WHITE">
+                           <font>
+                              <Font name="Agency FB Bold" size="38.0" />
+                           </font>
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                        </JFXButton>
+                        <Region prefHeight="39.0" prefWidth="600.0" />
+                        <JFXButton buttonType="RAISED" ripplerFill="#8a0a0a" style="-fx-background-color: rgb(0,0,0,0.6);" text="Song Recommendation" textFill="WHITE">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                           <font>
+                              <Font name="Agency FB Bold" size="38.0" />
+                           </font>
+                        </JFXButton>
+                        <Region prefHeight="40.0" prefWidth="600.0" />
+                        <JFXButton buttonType="RAISED" ripplerFill="#8a0a0a" style="-fx-background-color: rgb(0,0,0,0.6);" text="Your Playlists" textFill="WHITE">
+                           <effect>
+                              <DropShadow />
+                           </effect>
+                           <font>
+                              <Font name="Agency FB Bold" size="38.0" />
+                           </font>
+                        </JFXButton>
+                        <Region prefHeight="32.0" prefWidth="900.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
          </children>
       </VBox>
    </children>

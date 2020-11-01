@@ -286,15 +286,20 @@ public class LoginControl implements Initializable
 
         Main.window.setX(40);
         Main.window.setY(25);
-        window.setOnCloseRequest(e->closePlayer());
+        window.setOnCloseRequest(e-> {
+            try {
+                closePlayer();
+            } catch (IOException ioException) {
+                ioException.printStackTrace();
+            }
+        });
         window.show();
     }
 
     /**
      * Closes media player
      */
-    public static void closePlayer()
-    {
+    public static void closePlayer() throws IOException {
         Controller.closePlayer();
         Main.window.close();
     }
