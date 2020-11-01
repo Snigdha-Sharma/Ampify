@@ -36,8 +36,8 @@ public class MiddlePageController
     public static List<String> allUserList=null;
     public static List<String> localSongsPlaylist=null;
     public static List<String> downloadedSongsPlaylist=null;
-    public static List<String> searchResultPlaylist=null;
     public static List<String> latestSongsPlaylist=null;
+    public static List<String> customSearchPlaylist=null;
     public static List<String> history=new ArrayList<>();
     public JFXTextField searchBar;
     public JFXButton searchBarInput;
@@ -113,9 +113,6 @@ public class MiddlePageController
         Main.window.setScene(second);
         Main.window.setX(40);
         Main.window.setY(25);
-        Main.window.show();
-
-
         Main.window.show();
     }
 
@@ -216,11 +213,16 @@ public class MiddlePageController
         String input = searchBar.getText();
         SearchRequest sr = new SearchRequest(input);
         sr.myRequest();
-        searchResultPlaylist = sr.searchResult();
-        for (String x : searchResultPlaylist)
-        {
-            System.out.println(x);
-        }
+        customSearchPlaylist= sr.searchResult();
+        System.out.println("Custom Search Playlist");
+        Parent root1 = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Scene second=new Scene(root1);
+//        Main.window.setScene(second);
+        second.getStylesheets().add("resources/css/playlistmake.css");
+        Main.window.setScene(second);
+        Main.window.setX(40);
+        Main.window.setY(25);
+        Main.window.show();
     }
 
     protected static void closePlayer() throws IOException {

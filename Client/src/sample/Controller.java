@@ -60,7 +60,7 @@ public class Controller implements Initializable
     public Media media;
     public MediaPlayer mediaPlayer;
     Image playButtonImage,pauseButtonImage,muteButtonImage,unmuteButtonImage,shuffleButtonOn,shuffleButtonOff,repeatSongImage,repeatPlaylistImage,repeatOffImage;
-    boolean songPlaying=false,isLocal=false,isShuffleOn=false,isDownloaded=false,isLatest=false,isAllSongs=false;
+    boolean songPlaying=false,isLocal=false,isShuffleOn=false,isDownloaded=false,isLatest=false,isAllSongs=false,isCustom=false;
     Thread currSong;
     HashMap<String,String> localSongMap,downloadedSongMap;
     List<String> allSongs;
@@ -231,6 +231,11 @@ public class Controller implements Initializable
             allSongs=MiddlePageController.latestSongsPlaylist;
             isLatest=true;
         }
+        else if (MiddlePageController.customSearchPlaylist!=null)
+        {
+            allSongs=MiddlePageController.customSearchPlaylist;
+            isCustom=true;
+        }
         ObservableList<String> observeAllSongs=FXCollections.observableArrayList(allSongs);
         SongList.setItems(observeAllSongs);
         SongList.getSelectionModel().setSelectionMode(SelectionMode.SINGLE);
@@ -240,7 +245,7 @@ public class Controller implements Initializable
     {
         System.out.println("Selecting song:"+s);
 
-        if (isAllSongs || isLatest)
+        if (isAllSongs || isLatest || isCustom)
         {
             int len=s.length();
             String fileURL=s.substring(0,len-4);
@@ -320,7 +325,7 @@ public class Controller implements Initializable
         {
             stopCurrSong();
         }
-        if (isAllSongs || isLatest)
+        if (isAllSongs || isLatest || isCustom)
         {
             source=getPathForHostedSong(source);
         }
@@ -413,7 +418,7 @@ public class Controller implements Initializable
             {
                 setSongOnPlayer(getPathForDownloadedSong(allSongs.get(currIdx)));
             }
-            else
+            else//isAllSongs,isCustom,isLatest
             {
                 setSongOnPlayer(getPathForHostedSong(allSongs.get(currIdx)));
             }
