@@ -388,11 +388,8 @@ public class UserControl implements Initializable
     }
 
     /**
-<<<<<<< HEAD
      * @param  email id of user
-=======
      * @param email email id of user
->>>>>>> 2727abe14eeeaddd0844ccd548347712e64fe96b
      * @return if user has entered valid email id or not
      */
     private boolean isValidEmail(String email)
@@ -417,7 +414,7 @@ public class UserControl implements Initializable
         Parent root1 = FXMLLoader.load(getClass().getResource("Scene2.fxml"));
         Scene second=new Scene(root1);
         window = (Stage)((Node)event.getSource()).getScene().getWindow();
-
+        second.getStylesheets().add("resources/css/middle.css");
         window.setScene(second);
         window.show();
         window.setOnCloseRequest(e-> {

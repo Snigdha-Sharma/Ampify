@@ -9,7 +9,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<ScrollPane maxHeight="1192.0" maxWidth="700.0" prefHeight="518.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UserControl">
+<ScrollPane maxHeight="1192.0" maxWidth="700.0" prefHeight="600.0" prefWidth="668.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.UserControl">
    <content>
       <Pane fx:id="pane1" stylesheets="@../resources/css/logincss.css">
          <children>
@@ -144,32 +144,32 @@
                                  <children>
                                     <CheckBox fx:id="pop" mnemonicParsing="false" text="Pop">
                                        <font>
-                                          <Font name="Agency FB" size="20.0" />
+                                          <Font size="18.0" />
                                        </font></CheckBox>
                                     <Region prefHeight="33.0" prefWidth="15.0" />
                                     <CheckBox fx:id="classical" mnemonicParsing="false" text="Classical">
                                        <font>
-                                          <Font name="Agency FB" size="20.0" />
+                                          <Font size="18.0" />
                                        </font></CheckBox>
                                     <Region prefHeight="33.0" prefWidth="15.0" />
                                     <CheckBox fx:id="metal" mnemonicParsing="false" text="Metal">
                                        <font>
-                                          <Font name="Agency FB" size="20.0" />
+                                          <Font size="18.0" />
                                        </font></CheckBox>
                                     <Region prefHeight="33.0" prefWidth="15.0" />
                                     <CheckBox fx:id="folk" mnemonicParsing="false" text="Folk">
                                        <font>
-                                          <Font name="Agency FB" size="20.0" />
+                                          <Font size="18.0" />
                                        </font></CheckBox>
                                     <Region prefHeight="33.0" prefWidth="15.0" />
                                     <CheckBox fx:id="romantic" mnemonicParsing="false" text="Romantic">
                                        <font>
-                                          <Font name="Agency FB" size="20.0" />
+                                          <Font size="18.0" />
                                        </font></CheckBox>
                                     <Region prefHeight="33.0" prefWidth="15.0" />
                                     <CheckBox fx:id="rap" mnemonicParsing="false" text="Rap">
                                        <font>
-                                          <Font name="Agency FB" size="20.0" />
+                                          <Font size="18.0" />
                                        </font></CheckBox>
                                  </children>
                                  <effect>
@@ -181,28 +181,28 @@
                                  <children>
                                     <CheckBox fx:id="contemp" mnemonicParsing="false" text="Contemporary">
                                        <font>
-                                          <Font name="Agency FB" size="20.0" />
+                                          <Font size="18.0" />
                                        </font></CheckBox>
                                     <Region prefHeight="33.0" prefWidth="15.0" />
                                     <CheckBox fx:id="brostep" mnemonicParsing="false" text="Brostep">
                                        <font>
-                                          <Font name="Agency FB" size="20.0" />
+                                          <Font size="18.0" />
                                        </font></CheckBox>
                                     <Region prefHeight="33.0" prefWidth="15.0" />
                                     <Region prefHeight="33.0" prefWidth="15.0" />
                                     <CheckBox fx:id="hiphop" mnemonicParsing="false" text="Hip-hop">
                                        <font>
-                                          <Font name="Agency FB" size="20.0" />
+                                          <Font size="18.0" />
                                        </font></CheckBox>
                                     <Region prefHeight="33.0" prefWidth="15.0" />
                                     <CheckBox fx:id="band" mnemonicParsing="false" text="Band">
                                        <font>
-                                          <Font name="Agency FB" size="20.0" />
+                                          <Font size="18.0" />
                                        </font></CheckBox>
                                     <Region prefHeight="33.0" prefWidth="15.0" />
                                     <CheckBox fx:id="rock" mnemonicParsing="false" text="Rock">
                                        <font>
-                                          <Font name="Agency FB" size="20.0" />
+                                          <Font size="18.0" />
                                        </font></CheckBox>
                                  </children>
                                  <effect>
